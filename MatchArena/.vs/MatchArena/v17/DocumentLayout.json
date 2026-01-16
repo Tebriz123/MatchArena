@@ -1,0 +1,85 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3BA48B8F-F9D2-47D5-9ED9-BA0B0311DA31}|src\\Core\\MatchArena.Domain\\MatchArena.Domain.csproj|c:\\users\\necef\\onedrive\\\u0130\u015F masas\u0131\\matcharena\\src\\core\\matcharena.domain\\matcharena.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{3BA48B8F-F9D2-47D5-9ED9-BA0B0311DA31}|src\\Core\\MatchArena.Domain\\MatchArena.Domain.csproj|solutionrelative:src\\core\\matcharena.domain\\matcharena.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F08187-BAFE-488A-A62C-10C7942CEC23}|src\\Infrastructure\\MatchArena.Infrastructure\\MatchArena.Infrastructure.csproj|c:\\users\\necef\\onedrive\\\u0130\u015F masas\u0131\\matcharena\\src\\infrastructure\\matcharena.infrastructure\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F08187-BAFE-488A-A62C-10C7942CEC23}|src\\Infrastructure\\MatchArena.Infrastructure\\MatchArena.Infrastructure.csproj|solutionrelative:src\\infrastructure\\matcharena.infrastructure\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEAC5AAD-DB81-4C60-9919-768CC77B3D36}|src\\Infrastructure\\MatchArena.Persistence\\MatchArena.Persistence.csproj|c:\\users\\necef\\onedrive\\\u0130\u015F masas\u0131\\matcharena\\src\\infrastructure\\matcharena.persistence\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEAC5AAD-DB81-4C60-9919-768CC77B3D36}|src\\Infrastructure\\MatchArena.Persistence\\MatchArena.Persistence.csproj|solutionrelative:src\\infrastructure\\matcharena.persistence\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B20FD1C8-CD9C-4C47-9638-4EDAD4A39AD0}|src\\Core\\MatchArena.Application\\MatchArena.Application.csproj|c:\\users\\necef\\onedrive\\\u0130\u015F masas\u0131\\matcharena\\src\\core\\matcharena.application\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B20FD1C8-CD9C-4C47-9638-4EDAD4A39AD0}|src\\Core\\MatchArena.Application\\MatchArena.Application.csproj|solutionrelative:src\\core\\matcharena.application\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MatchArena.Domain.csproj",
+              "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena\\src\\Core\\MatchArena.Domain\\MatchArena.Domain.csproj",
+              "RelativeDocumentMoniker": "src\\Core\\MatchArena.Domain\\MatchArena.Domain.csproj",
+              "ToolTip": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena\\src\\Core\\MatchArena.Domain\\MatchArena.Domain.csproj",
+              "RelativeToolTip": "src\\Core\\MatchArena.Domain\\MatchArena.Domain.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-01-16T17:51:16.5Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena\\src\\Infrastructure\\MatchArena.Infrastructure\\Class1.cs",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\MatchArena.Infrastructure\\Class1.cs",
+              "ToolTip": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena\\src\\Infrastructure\\MatchArena.Infrastructure\\Class1.cs",
+              "RelativeToolTip": "src\\Infrastructure\\MatchArena.Infrastructure\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-16T17:45:28.059Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena\\src\\Infrastructure\\MatchArena.Persistence\\Class1.cs",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\MatchArena.Persistence\\Class1.cs",
+              "ToolTip": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena\\src\\Infrastructure\\MatchArena.Persistence\\Class1.cs",
+              "RelativeToolTip": "src\\Infrastructure\\MatchArena.Persistence\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-16T17:44:48.848Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena\\src\\Core\\MatchArena.Application\\Class1.cs",
+              "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\Class1.cs",
+              "ToolTip": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena\\src\\Core\\MatchArena.Application\\Class1.cs",
+              "RelativeToolTip": "src\\Core\\MatchArena.Application\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-16T17:43:40.819Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
