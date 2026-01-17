@@ -453,11 +453,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\necef\\OneDrive\\İş masası\\MatchArena\\Presentation\\MatchArena.API\\MatchArena.API.csproj",
+      "projectUniqueName": "C:\\Users\\necef\\OneDrive\\İş masası\\MatchArena2\\MatchArena\\Presentation\\MatchArena.API\\MatchArena.API.csproj",
       "projectName": "MatchArena.API",
-      "projectPath": "C:\\Users\\necef\\OneDrive\\İş masası\\MatchArena\\Presentation\\MatchArena.API\\MatchArena.API.csproj",
+      "projectPath": "C:\\Users\\necef\\OneDrive\\İş masası\\MatchArena2\\MatchArena\\Presentation\\MatchArena.API\\MatchArena.API.csproj",
       "packagesPath": "C:\\Users\\necef\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\necef\\OneDrive\\İş masası\\MatchArena\\Presentation\\MatchArena.API\\obj\\",
+      "outputPath": "C:\\Users\\necef\\OneDrive\\İş masası\\MatchArena2\\MatchArena\\Presentation\\MatchArena.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

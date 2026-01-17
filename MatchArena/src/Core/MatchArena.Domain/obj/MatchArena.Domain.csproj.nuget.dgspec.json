@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\necef\\OneDrive\\İş masası\\MatchArena\\src\\Core\\MatchArena.Domain\\MatchArena.Domain.csproj": {}
+    "C:\\Users\\necef\\OneDrive\\İş masası\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Domain\\MatchArena.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\necef\\OneDrive\\İş masası\\MatchArena\\src\\Core\\MatchArena.Domain\\MatchArena.Domain.csproj": {
+    "C:\\Users\\necef\\OneDrive\\İş masası\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Domain\\MatchArena.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\necef\\OneDrive\\İş masası\\MatchArena\\src\\Core\\MatchArena.Domain\\MatchArena.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\necef\\OneDrive\\İş masası\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Domain\\MatchArena.Domain.csproj",
         "projectName": "MatchArena.Domain",
-        "projectPath": "C:\\Users\\necef\\OneDrive\\İş masası\\MatchArena\\src\\Core\\MatchArena.Domain\\MatchArena.Domain.csproj",
+        "projectPath": "C:\\Users\\necef\\OneDrive\\İş masası\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Domain\\MatchArena.Domain.csproj",
         "packagesPath": "C:\\Users\\necef\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\necef\\OneDrive\\İş masası\\MatchArena\\src\\Core\\MatchArena.Domain\\obj\\",
+        "outputPath": "C:\\Users\\necef\\OneDrive\\İş masası\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -49,6 +49,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.23, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

@@ -1,0 +1,13 @@
+C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\src\Core\MatchArena.Domain\bin\Debug\net8.0\MatchArena.Domain.deps.json
+C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\src\Core\MatchArena.Domain\bin\Debug\net8.0\MatchArena.Domain.dll
+C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\src\Core\MatchArena.Domain\bin\Debug\net8.0\MatchArena.Domain.pdb
+C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\src\Core\MatchArena.Domain\obj\Debug\net8.0\MatchArena.Domain.csproj.AssemblyReference.cache
+C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\src\Core\MatchArena.Domain\obj\Debug\net8.0\MatchArena.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\src\Core\MatchArena.Domain\obj\Debug\net8.0\MatchArena.Domain.AssemblyInfoInputs.cache
+C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\src\Core\MatchArena.Domain\obj\Debug\net8.0\MatchArena.Domain.AssemblyInfo.cs
+C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\src\Core\MatchArena.Domain\obj\Debug\net8.0\MatchArena.Domain.csproj.CoreCompileInputs.cache
+C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\src\Core\MatchArena.Domain\obj\Debug\net8.0\MatchArena.Domain.sourcelink.json
+C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\src\Core\MatchArena.Domain\obj\Debug\net8.0\MatchArena.Domain.dll
+C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\src\Core\MatchArena.Domain\obj\Debug\net8.0\refint\MatchArena.Domain.dll
+C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\src\Core\MatchArena.Domain\obj\Debug\net8.0\MatchArena.Domain.pdb
+C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\src\Core\MatchArena.Domain\obj\Debug\net8.0\ref\MatchArena.Domain.dll

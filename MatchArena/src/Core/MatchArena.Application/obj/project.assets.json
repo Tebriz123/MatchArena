@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\necef\\OneDrive\\İş masası\\MatchArena\\src\\Core\\MatchArena.Application\\MatchArena.Application.csproj",
+      "projectUniqueName": "C:\\Users\\necef\\OneDrive\\İş masası\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\MatchArena.Application.csproj",
       "projectName": "MatchArena.Application",
-      "projectPath": "C:\\Users\\necef\\OneDrive\\İş masası\\MatchArena\\src\\Core\\MatchArena.Application\\MatchArena.Application.csproj",
+      "projectPath": "C:\\Users\\necef\\OneDrive\\İş masası\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\MatchArena.Application.csproj",
       "packagesPath": "C:\\Users\\necef\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\necef\\OneDrive\\İş masası\\MatchArena\\src\\Core\\MatchArena.Application\\obj\\",
+      "outputPath": "C:\\Users\\necef\\OneDrive\\İş masası\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
