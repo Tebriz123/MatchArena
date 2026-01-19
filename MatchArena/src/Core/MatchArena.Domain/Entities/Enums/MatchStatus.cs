@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MatchArena.Domain.Entities
 {
-    internal enum MatchStatus
+    public enum MatchStatus
     {
         Pending = 1,
         Accepted = 2,

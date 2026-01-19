@@ -9,7 +9,7 @@ namespace MatchArena.Domain.Entities
     public class PlayerRating:BaseAccountableEntity
     {
         public int Rating { get; set; }
-        public string Commet { get; set; }
+        public string Comment { get; set; }
 
         //reletion
 

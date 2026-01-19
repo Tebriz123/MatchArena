@@ -16,9 +16,10 @@ namespace MatchArena.Domain.Entities
         public long TeamAId { get; set; }
         public Team TeamA { get; set; }
         public long TeamBId { get; set; }
-        public Team Team { get; set; }
+        public Team TeamB { get; set; }
         public long? FieldId { get; set; }
         public Field Field { get; set; }
+        public MatchStatus Status { get; set; }
 
     }
 }

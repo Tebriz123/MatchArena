@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MatchArena.Domain.Entities
 {
-    internal enum PlayerLevel
+    public enum PlayerLevel
     {
         Beginner = 1,
         Amateur = 2,

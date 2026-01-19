@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MatchArena.Domain.Entities
 {
-    internal enum PlayerPosition
+    public enum PlayerPosition
     {
         GoalKeeper = 1,
         Defender = 2,

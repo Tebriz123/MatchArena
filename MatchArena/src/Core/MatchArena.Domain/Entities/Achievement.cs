@@ -8,6 +8,6 @@ namespace MatchArena.Domain.Entities
 {
     public class Achievement:BaseNameableEntity
     {
-        public string Icon { get; set; }
+        public string Title { get; set; }
     }
 }

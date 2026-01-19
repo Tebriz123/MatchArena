@@ -12,7 +12,6 @@ namespace MatchArena.Domain.Entities
         public int TotalTeams { get; set; }
         public int TotalMatches { get; set; }
         public int TotalFields { get; set; }
-
         public DateTime GeneratedAt { get; set; }
     }
 }
