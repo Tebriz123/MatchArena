@@ -16,7 +16,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Core\MatchArena.Application\MatchArena.Application.csproj" />
     <ProjectReference Include="..\..\Core\MatchArena.Domain\MatchArena.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Implementations\Services\" />
   </ItemGroup>
 
 </Project>

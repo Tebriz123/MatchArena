@@ -1574,6 +1574,19 @@
           }
         }
       },
+      "MatchArena.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "MatchArena.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/MatchArena.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MatchArena.Application.dll": {}
+        }
+      },
       "MatchArena.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -4180,6 +4193,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "MatchArena.Application/1.0.0": {
+      "type": "project",
+      "path": "../../Core/MatchArena.Application/MatchArena.Application.csproj",
+      "msbuildProject": "../../Core/MatchArena.Application/MatchArena.Application.csproj"
+    },
     "MatchArena.Domain/1.0.0": {
       "type": "project",
       "path": "../../Core/MatchArena.Domain/MatchArena.Domain.csproj",
@@ -4188,6 +4206,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "MatchArena.Application >= 1.0.0",
       "MatchArena.Domain >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 8.0.23",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.23",
@@ -4226,6 +4245,9 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
+            "C:\\Users\\necef\\OneDrive\\İş masası\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\MatchArena.Application.csproj": {
+              "projectPath": "C:\\Users\\necef\\OneDrive\\İş masası\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\MatchArena.Application.csproj"
+            },
             "C:\\Users\\necef\\OneDrive\\İş masası\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Domain\\MatchArena.Domain.csproj": {
               "projectPath": "C:\\Users\\necef\\OneDrive\\İş masası\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Domain\\MatchArena.Domain.csproj"
             }
