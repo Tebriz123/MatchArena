@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\MatchArena.Application\MatchArena.Application.csproj" />
+  </ItemGroup>
+
 </Project>
