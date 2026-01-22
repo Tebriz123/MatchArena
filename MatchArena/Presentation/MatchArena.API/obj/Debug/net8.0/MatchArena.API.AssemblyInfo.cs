@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MatchArena.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+271aeef83b717e8659553550aba7cc3eacd51dd7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b077cf0ac866af74a9381c0d49bf0c8ba167edaa")]
 [assembly: System.Reflection.AssemblyProductAttribute("MatchArena.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MatchArena.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

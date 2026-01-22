@@ -1,0 +1,16 @@
+C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\src\Core\MatchArena.Application\bin\Debug\net8.0\MatchArena.Application.deps.json
+C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\src\Core\MatchArena.Application\bin\Debug\net8.0\MatchArena.Application.dll
+C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\src\Core\MatchArena.Application\bin\Debug\net8.0\MatchArena.Application.pdb
+C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\src\Core\MatchArena.Application\bin\Debug\net8.0\MatchArena.Domain.dll
+C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\src\Core\MatchArena.Application\bin\Debug\net8.0\MatchArena.Domain.pdb
+C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\src\Core\MatchArena.Application\obj\Debug\net8.0\MatchArena.Application.csproj.AssemblyReference.cache
+C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\src\Core\MatchArena.Application\obj\Debug\net8.0\MatchArena.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\src\Core\MatchArena.Application\obj\Debug\net8.0\MatchArena.Application.AssemblyInfoInputs.cache
+C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\src\Core\MatchArena.Application\obj\Debug\net8.0\MatchArena.Application.AssemblyInfo.cs
+C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\src\Core\MatchArena.Application\obj\Debug\net8.0\MatchArena.Application.csproj.CoreCompileInputs.cache
+C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\src\Core\MatchArena.Application\obj\Debug\net8.0\MatchArena.Application.sourcelink.json
+C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\src\Core\MatchArena.Application\obj\Debug\net8.0\MatchAre.88813348.Up2Date
+C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\src\Core\MatchArena.Application\obj\Debug\net8.0\MatchArena.Application.dll
+C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\src\Core\MatchArena.Application\obj\Debug\net8.0\refint\MatchArena.Application.dll
+C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\src\Core\MatchArena.Application\obj\Debug\net8.0\MatchArena.Application.pdb
+C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\src\Core\MatchArena.Application\obj\Debug\net8.0\ref\MatchArena.Application.dll

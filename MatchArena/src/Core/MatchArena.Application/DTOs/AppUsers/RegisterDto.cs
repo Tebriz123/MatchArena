@@ -1,4 +1,5 @@
 ﻿using MatchArena.Domain.Entities;
+using MatchArena.Domain.Entities.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,11 +12,12 @@ namespace MatchArena.Application.DTOs.AppUsers
         string Name,
         string Surname,
         PlayerPosition Position,
+        PlayerLevel Level,
+        Gender Gender,
         string City,
         string Email,
-        string UserName,
-        string Password,
-        string ConfirmPassword
+        string Username,
+        string Password
         );
    
 }

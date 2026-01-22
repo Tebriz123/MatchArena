@@ -6,15 +6,18 @@ using MatchArena.Domain.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace MatchArena.Persistence.Implementations.Services
 {
-    internal class AuthenticationService
+    internal class AuthenticationService : IAuthenticationService
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly IMapper _mapper;
@@ -53,7 +56,7 @@ namespace MatchArena.Persistence.Implementations.Services
         {
             AppUser user = await _userManager.Users.FirstOrDefaultAsync(u => u.Email == loginDto.UsernameOrEmail || u.UserName == loginDto.UsernameOrEmail);
 
-            if(user is null)
+            if(user is null)  
             {
                 throw new Exception("User information is wrong");
             }
@@ -65,7 +68,9 @@ namespace MatchArena.Persistence.Implementations.Services
                 throw new Exception("User information is wrong");
             }
 
-            return _tokenService.CreateAccessToken(user, 15);
+           return _tokenService.CreateAccessToken(user, 15);
+
+            
         }
     }
 }
