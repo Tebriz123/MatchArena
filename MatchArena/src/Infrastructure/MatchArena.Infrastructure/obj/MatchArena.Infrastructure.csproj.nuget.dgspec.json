@@ -212,9 +212,9 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "System.IdentityModel.Tokens.Jwt": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
-              "version": "[8.15.0, )"
+              "version": "[8.0.23, )"
             }
           },
           "imports": [
