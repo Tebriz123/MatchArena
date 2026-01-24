@@ -2,6 +2,7 @@
 using MatchArena.Domain.Entities;
 using MatchArena.Persistence.Contexts;
 using MatchArena.Persistence.Implementations.Services;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -35,9 +36,26 @@ namespace MatchArena.Persistence
 
 
 
-          
+
             services.AddScoped<IAuthenticationService, AuthenticationService>();
+            services.AddScoped<IAppDbContextInitializer, AppDbContextInitializer>();
+
             return services;
         }
+
+
+        public static async Task<IApplicationBuilder> UseAppDbContextInitializer(this IApplicationBuilder app,IServiceScope scope)
+        {
+           
+                var initializer = scope.ServiceProvider.GetRequiredService<AppDbContextInitializer>();
+
+                await initializer.InitializeDbContext();
+                await initializer.InitializeRoleAsync();
+                await initializer.InitializeAdmin();
+
+            return app;
+
+        }
+
     }
 }
