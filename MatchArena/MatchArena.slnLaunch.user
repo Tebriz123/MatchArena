@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "Presentation\\MatchArena.API\\MatchArena.API.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Presentation\\MatchArena.MVC\\MatchArena.MVC.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

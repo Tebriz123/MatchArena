@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36429.23 d17.14
+VisualStudioVersion = 17.14.36429.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
@@ -20,6 +20,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatchArena.Infrastructure", "src\Infrastructure\MatchArena.Infrastructure\MatchArena.Infrastructure.csproj", "{F0F08187-BAFE-488A-A62C-10C7942CEC23}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatchArena.API", "Presentation\MatchArena.API\MatchArena.API.csproj", "{529EC2E4-7AA3-4584-8F1B-4C751C01132E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatchArena.MVC", "Presentation\MatchArena.MVC\MatchArena.MVC.csproj", "{04C6D07E-50DF-429C-BA07-0FF95E0F9715}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,10 @@ Global
 		{529EC2E4-7AA3-4584-8F1B-4C751C01132E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{529EC2E4-7AA3-4584-8F1B-4C751C01132E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{529EC2E4-7AA3-4584-8F1B-4C751C01132E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04C6D07E-50DF-429C-BA07-0FF95E0F9715}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04C6D07E-50DF-429C-BA07-0FF95E0F9715}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04C6D07E-50DF-429C-BA07-0FF95E0F9715}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04C6D07E-50DF-429C-BA07-0FF95E0F9715}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,6 +65,7 @@ Global
 		{CEAC5AAD-DB81-4C60-9919-768CC77B3D36} = {718F3ED8-DFAD-472C-BB76-F715A51B96DD}
 		{F0F08187-BAFE-488A-A62C-10C7942CEC23} = {718F3ED8-DFAD-472C-BB76-F715A51B96DD}
 		{529EC2E4-7AA3-4584-8F1B-4C751C01132E} = {83F9EC6B-F4D7-4AA6-A73D-F941FDB864C6}
+		{04C6D07E-50DF-429C-BA07-0FF95E0F9715} = {83F9EC6B-F4D7-4AA6-A73D-F941FDB864C6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B643BF1E-A48F-4FB8-8E09-159038964A78}
