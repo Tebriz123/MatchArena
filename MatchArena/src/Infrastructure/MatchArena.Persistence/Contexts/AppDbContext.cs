@@ -21,7 +21,12 @@ namespace MatchArena.Persistence.Contexts
 
             base.OnModelCreating(modelBuilder);
         }
-        
+
+
+
+
+
+        public DbSet<Field> Fields { get; set; }
 
     }
 }

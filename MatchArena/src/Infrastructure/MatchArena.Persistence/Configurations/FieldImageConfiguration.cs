@@ -16,9 +16,9 @@ namespace MatchArena.Persistence.Configurations
             builder.Property(i => i.ImageUrl)
                .IsRequired();
 
-            builder.HasOne<Field>()
-                   .WithMany(f => f.Images)
-                   .HasForeignKey(i => i.FieldId);
+            //builder.HasOne<Field>()
+            //       .WithMany(f => f.Images)
+            //       .HasForeignKey(i => i.FieldId);
         }
     }
 }

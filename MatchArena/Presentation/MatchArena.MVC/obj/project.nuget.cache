@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "f8lAgYeolc4=",
+  "dgSpecHash": "Ga3jftXwEcg=",
   "success": true,
   "projectFilePath": "C:\\Users\\necef\\OneDrive\\İş masası\\MatchArena2\\MatchArena\\Presentation\\MatchArena.MVC\\MatchArena.MVC.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\necef\\.nuget\\packages\\restsharp\\113.1.0\\restsharp.113.1.0.nupkg.sha512"
+  ],
   "logs": []
 }

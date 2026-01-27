@@ -9,6 +9,8 @@ namespace MatchArena.Domain.Entities
     public class FieldImage:BaseEntity
     {
         public string ImageUrl { get; set; }
+
+        //relation
         public long FieldId { get; set; }
         public Field Field { get; set; }
 

@@ -15,6 +15,7 @@ namespace MatchArena.Domain.Entities
 
         //Reletion
         public ICollection<FieldImage> Images { get; set; }
-        public ICollection<FieldSchedule> Schedules { get; set; }
+
+        //public ICollection<FieldSchedule> Schedules { get; set; }
     }
 }

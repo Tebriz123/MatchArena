@@ -13,9 +13,9 @@ namespace MatchArena.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<FieldSchedule> builder)
         {
-            builder.HasOne<Field>()
-               .WithMany(f => f.Schedules)
-               .HasForeignKey(s => s.FieldId);
+            //builder.HasOne<Field>()
+            //   .WithMany(f => f.Schedules)
+            //   .HasForeignKey(s => s.FieldId);
 
             builder.Property(s => s.IsReserved)
                    .HasDefaultValue(false);
