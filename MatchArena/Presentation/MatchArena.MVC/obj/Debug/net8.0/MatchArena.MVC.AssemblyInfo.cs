@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MatchArena.MVC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c93c3b1dc5ca2a5c21d8f9e775bc4fc354cdb17a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f5854242351d6c948085d893f6a47a54b30c0349")]
 [assembly: System.Reflection.AssemblyProductAttribute("MatchArena.MVC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MatchArena.MVC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
