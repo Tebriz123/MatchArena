@@ -8,12 +8,13 @@ using System.Threading.Tasks;
 namespace MatchArena.Application.DTOs.Player
 {
     public record GetPlayerItemDto(
-        long id,
+        long Id,
         string FullName,
         int Age,
         PlayerPosition Position,
         double Raiting,
-        int GameCount
+        int GameCount,
+        string Image
         ); 
    
 }

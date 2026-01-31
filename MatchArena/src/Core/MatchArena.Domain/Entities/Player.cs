@@ -16,11 +16,11 @@ namespace MatchArena.Domain.Entities
         public int Age { get; set; }
         public PlayerPosition Position { get; set; }
         public PlayerLevel Level { get; set; }
-
+        public bool IsCapitain { get; set; }
+        public string Image { get; set; }
         public string City { get; set; }
         public double Rating { get; set; }
         public int PlayedMatches { get; set; }
-        public ICollection<PlayerRating> RatingsReceived { get; set; }
         public ICollection<TeamPlayer> PlayerTeams { get; set; }
     }
 

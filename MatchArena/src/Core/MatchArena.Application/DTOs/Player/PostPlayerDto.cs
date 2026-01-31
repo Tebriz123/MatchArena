@@ -1,4 +1,5 @@
 ﻿using MatchArena.Domain.Entities;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,8 @@ namespace MatchArena.Application.DTOs.Player
         string Name,
         string Surname,
         int Age,
+        string Image,
+        IFormFile Photo, 
         string Description,
         string City,
         PlayerPosition Position,

@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 namespace MatchArena.Persistence.Configurations
 {
 
-    internal class PlayerProfileConfiguration : IEntityTypeConfiguration<Player>
+    internal class PlayeConfiguration : IEntityTypeConfiguration<Player>
     {
         public void Configure(EntityTypeBuilder<Player> builder)
         {

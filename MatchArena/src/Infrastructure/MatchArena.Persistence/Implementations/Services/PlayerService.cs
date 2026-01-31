@@ -59,17 +59,22 @@ namespace MatchArena.Persistence.Implementations.Services
             await _repository.SaveChangesAsync();
         }
 
-        public async Task UpdateProfileAsync(long id, PutPlayerDto playerDto)
+        public async Task UpdatePlayerAsync(long id, PutPlayerDto playerDto)
         {
-            bool result = await _repository.AnyAsync(p => p.Id != id);
-            if (result)
-            {
-                throw new Exception("Entity alredy exists");
-            }
+            Player result = await _repository.GetByIdAsync(id);
+           if (result is null) throw new Exception("Player not found");
 
             Player player = await _repository.GetByIdAsync(id);
             _repository.Update(player);
             await _repository.SaveChangesAsync();
+        }
+
+        public async Task RemoveAsync(long id)
+        {
+            Player player = await _repository.GetByIdAsync(id);
+            if (player is null) throw new Exception("player not found");
+            _repository.Remove(player);
+            await _repository.SaveChangesAsync();   
         }
     }
 }

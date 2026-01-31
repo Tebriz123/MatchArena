@@ -10,6 +10,7 @@ namespace MatchArena.Application.DTOs.Player
 {
     public class GetPlayerDto(
         long Id,
+        string Image,
         string Name,
         string Surname,
         string Description,

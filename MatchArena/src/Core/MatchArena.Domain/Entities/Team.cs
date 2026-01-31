@@ -11,7 +11,8 @@ namespace MatchArena.Domain.Entities
 
         public long CaptainId { get; set; }
         public Player Captain { get; set; }
-        public ICollection<TeamPlayer> Players { get; set; }
+        public ICollection<TeamPlayer> TeamPlayers { get; set; }
+        public string Logo { get; set; }
 
     }
 }

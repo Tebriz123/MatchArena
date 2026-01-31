@@ -21,12 +21,6 @@ namespace MatchArena.Persistence.Contexts
 
             base.OnModelCreating(modelBuilder);
         }
-
-
-
-
-
-        public DbSet<Field> Fields { get; set; }
         public DbSet<Player> MyProperPlayersty { get; set; }
 
     }

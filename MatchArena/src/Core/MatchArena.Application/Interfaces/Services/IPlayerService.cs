@@ -13,7 +13,8 @@ namespace MatchArena.Application.Interfaces.Services
         Task<IReadOnlyList<GetPlayerItemDto>> GetAllAsync(int page, int take);
         Task<GetPlayerDto> GetByIdAsync(long id);
         Task CreatePlayerAsync(PostPlayerDto playerDto);
-        Task UpdateProfileAsync(long id, PutPlayerDto playerDto);
+        Task UpdatePlayerAsync(long id, PutPlayerDto playerDto);
+        Task RemoveAsync(long id);
 
     }
 }
