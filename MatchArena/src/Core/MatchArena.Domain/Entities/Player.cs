@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace MatchArena.Domain.Entities
 {
 
-    public class PlayerProfile : BaseAccountableEntity
+    public class Player : BaseAccountableEntity
     {
         public string UserId { get; set; }
         public AppUser User { get; set; }
@@ -21,6 +21,7 @@ namespace MatchArena.Domain.Entities
         public double Rating { get; set; }
         public int PlayedMatches { get; set; }
         public ICollection<PlayerRating> RatingsReceived { get; set; }
+        public ICollection<TeamPlayer> PlayerTeams { get; set; }
     }
 
 

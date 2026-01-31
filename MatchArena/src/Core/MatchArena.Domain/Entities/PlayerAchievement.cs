@@ -13,7 +13,7 @@ namespace MatchArena.Domain.Entities
         //reletion
 
         public long PlayerProfileId { get; set; }
-        public PlayerProfile Player { get; set; }
+        public Player Player { get; set; }
 
         public long AchievementId { get; set; }
         public Achievement Achievement { get; set; }

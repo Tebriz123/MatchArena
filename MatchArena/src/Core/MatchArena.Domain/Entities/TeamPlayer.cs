@@ -11,6 +11,6 @@ namespace MatchArena.Domain.Entities
         public long TeamId { get; set; }
         public Team Team { get; set; }
         public long PlayerProfileId { get; set; }
-        public PlayerProfile PlayerProfile { get; set; }
+        public Player PlayerProfile { get; set; }
     }
 }

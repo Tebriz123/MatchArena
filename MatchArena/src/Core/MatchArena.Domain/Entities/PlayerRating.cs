@@ -14,9 +14,9 @@ namespace MatchArena.Domain.Entities
         //reletion
 
         public long FromPlayerId { get; set; }
-        public PlayerProfile FromPlayer { get; set; }
+        public Player FromPlayer { get; set; }
         public long ToPlayerId { get; set; }
-        public PlayerProfile ToPlayer { get; set; }
+        public Player ToPlayer { get; set; }
 
     }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MatchArena.Application.Interfaces.Repositories
 {
-    public interface IPlayerRepository: IRepository<PlayerProfile>
+    public interface IPlayerRepository: IRepository<Player>
     {
     }
 }

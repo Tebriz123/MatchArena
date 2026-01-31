@@ -7,9 +7,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 namespace MatchArena.Persistence.Configurations
 {
 
-    internal class PlayerProfileConfiguration : IEntityTypeConfiguration<PlayerProfile>
+    internal class PlayerProfileConfiguration : IEntityTypeConfiguration<Player>
     {
-        public void Configure(EntityTypeBuilder<PlayerProfile> builder)
+        public void Configure(EntityTypeBuilder<Player> builder)
         {
 
             builder.Property(p => p.City)

@@ -27,6 +27,7 @@ namespace MatchArena.Persistence.Contexts
 
 
         public DbSet<Field> Fields { get; set; }
+        public DbSet<Player> MyProperPlayersty { get; set; }
 
     }
 }

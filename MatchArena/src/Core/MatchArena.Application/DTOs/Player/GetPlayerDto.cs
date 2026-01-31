@@ -1,4 +1,5 @@
-﻿using MatchArena.Domain.Entities;
+﻿using MatchArena.Application.DTOs.Teams;
+using MatchArena.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,7 @@ namespace MatchArena.Application.DTOs.Player
         PlayerPosition Position,
         int Age,
         string City,
-        ICollection<Team> Teams,
+        ICollection<GetTeamInPlayerDto> TeamDtos,
         int GameCount,
         int Goal
         );

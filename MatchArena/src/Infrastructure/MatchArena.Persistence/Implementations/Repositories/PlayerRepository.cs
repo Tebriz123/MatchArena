@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace MatchArena.Persistence.Implementations.Repositories
 {
-    internal class PlayerRepository:Repository<PlayerProfile>, IPlayerRepository
+    internal class PlayerRepository:Repository<Player>, IPlayerRepository
     {
         private readonly AppDbContext context;
 

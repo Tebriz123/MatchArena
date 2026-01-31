@@ -32,3 +32,6 @@ C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\Presentation\MatchAr
 C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\Presentation\MatchArena.MVC\obj\Debug\net8.0\MatchArena.MVC.pdb
 C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\Presentation\MatchArena.MVC\obj\Debug\net8.0\MatchArena.MVC.genruntimeconfig.cache
 C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\Presentation\MatchArena.MVC\obj\Debug\net8.0\ref\MatchArena.MVC.dll
+C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\Presentation\MatchArena.MVC\bin\Debug\net8.0\RestSharp.dll
+C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\Presentation\MatchArena.MVC\obj\Debug\net8.0\MatchArena.MVC.csproj.AssemblyReference.cache
+C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\Presentation\MatchArena.MVC\obj\Debug\net8.0\MatchAre.88EDCBD9.Up2Date
