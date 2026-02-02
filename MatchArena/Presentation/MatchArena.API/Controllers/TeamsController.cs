@@ -39,7 +39,8 @@ namespace MatchArena.API.Controllers
         [HttpPut]
         public async Task<IActionResult> PutAsync(long id, [FromBody] PutTeamDto teamDto)
         {
-            await _service.UpdateTeamAsync(id, teamDto);
+            if (id < 1) return BadRequest();
+            await _service.UpdateTeamAsync(id, teamDto); 
             return NoContent();
         }
 
