@@ -1,12 +1,122 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B20FD1C8-CD9C-4C47-9638-4EDAD4A39AD0}|src\\Core\\MatchArena.Application\\MatchArena.Application.csproj|c:\\users\\necef\\onedrive\\\u0130\u015F masas\u0131\\matcharena2\\matcharena\\src\\core\\matcharena.application\\dtos\\tournaments\\puttournamentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B20FD1C8-CD9C-4C47-9638-4EDAD4A39AD0}|src\\Core\\MatchArena.Application\\MatchArena.Application.csproj|solutionrelative:src\\core\\matcharena.application\\dtos\\tournaments\\puttournamentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B20FD1C8-CD9C-4C47-9638-4EDAD4A39AD0}|src\\Core\\MatchArena.Application\\MatchArena.Application.csproj|c:\\users\\necef\\onedrive\\\u0130\u015F masas\u0131\\matcharena2\\matcharena\\src\\core\\matcharena.application\\dtos\\tournaments\\posttournamentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B20FD1C8-CD9C-4C47-9638-4EDAD4A39AD0}|src\\Core\\MatchArena.Application\\MatchArena.Application.csproj|solutionrelative:src\\core\\matcharena.application\\dtos\\tournaments\\posttournamentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B20FD1C8-CD9C-4C47-9638-4EDAD4A39AD0}|src\\Core\\MatchArena.Application\\MatchArena.Application.csproj|c:\\users\\necef\\onedrive\\\u0130\u015F masas\u0131\\matcharena2\\matcharena\\src\\core\\matcharena.application\\dtos\\tournaments\\gettournamentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B20FD1C8-CD9C-4C47-9638-4EDAD4A39AD0}|src\\Core\\MatchArena.Application\\MatchArena.Application.csproj|solutionrelative:src\\core\\matcharena.application\\dtos\\tournaments\\gettournamentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B20FD1C8-CD9C-4C47-9638-4EDAD4A39AD0}|src\\Core\\MatchArena.Application\\MatchArena.Application.csproj|c:\\users\\necef\\onedrive\\\u0130\u015F masas\u0131\\matcharena2\\matcharena\\src\\core\\matcharena.application\\dtos\\tournaments\\gettournamentitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B20FD1C8-CD9C-4C47-9638-4EDAD4A39AD0}|src\\Core\\MatchArena.Application\\MatchArena.Application.csproj|solutionrelative:src\\core\\matcharena.application\\dtos\\tournaments\\gettournamentitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BA48B8F-F9D2-47D5-9ED9-BA0B0311DA31}|src\\Core\\MatchArena.Domain\\MatchArena.Domain.csproj|c:\\users\\necef\\onedrive\\\u0130\u015F masas\u0131\\matcharena2\\matcharena\\src\\core\\matcharena.domain\\entities\\tournament.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BA48B8F-F9D2-47D5-9ED9-BA0B0311DA31}|src\\Core\\MatchArena.Domain\\MatchArena.Domain.csproj|solutionrelative:src\\core\\matcharena.domain\\entities\\tournament.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BA48B8F-F9D2-47D5-9ED9-BA0B0311DA31}|src\\Core\\MatchArena.Domain\\MatchArena.Domain.csproj|c:\\users\\necef\\onedrive\\\u0130\u015F masas\u0131\\matcharena2\\matcharena\\src\\core\\matcharena.domain\\entities\\enums\\tournamentstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BA48B8F-F9D2-47D5-9ED9-BA0B0311DA31}|src\\Core\\MatchArena.Domain\\MatchArena.Domain.csproj|solutionrelative:src\\core\\matcharena.domain\\entities\\enums\\tournamentstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PutTournamentDto.cs",
+              "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Tournaments\\PutTournamentDto.cs",
+              "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\Tournaments\\PutTournamentDto.cs",
+              "ToolTip": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Tournaments\\PutTournamentDto.cs",
+              "RelativeToolTip": "src\\Core\\MatchArena.Application\\DTOs\\Tournaments\\PutTournamentDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T17:43:11.839Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PostTournamentDto.cs",
+              "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Tournaments\\PostTournamentDto.cs",
+              "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\Tournaments\\PostTournamentDto.cs",
+              "ToolTip": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Tournaments\\PostTournamentDto.cs",
+              "RelativeToolTip": "src\\Core\\MatchArena.Application\\DTOs\\Tournaments\\PostTournamentDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T17:42:55.819Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GetTournamentItemDto.cs",
+              "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Tournaments\\GetTournamentItemDto.cs",
+              "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\Tournaments\\GetTournamentItemDto.cs",
+              "ToolTip": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Tournaments\\GetTournamentItemDto.cs",
+              "RelativeToolTip": "src\\Core\\MatchArena.Application\\DTOs\\Tournaments\\GetTournamentItemDto.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T17:42:37.575Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GetTournamentDto.cs",
+              "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Tournaments\\GetTournamentDto.cs",
+              "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\Tournaments\\GetTournamentDto.cs",
+              "ToolTip": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Tournaments\\GetTournamentDto.cs",
+              "RelativeToolTip": "src\\Core\\MatchArena.Application\\DTOs\\Tournaments\\GetTournamentDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T17:42:18.465Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TournamentStatus.cs",
+              "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Domain\\Entities\\Enums\\TournamentStatus.cs",
+              "RelativeDocumentMoniker": "src\\Core\\MatchArena.Domain\\Entities\\Enums\\TournamentStatus.cs",
+              "ToolTip": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Domain\\Entities\\Enums\\TournamentStatus.cs",
+              "RelativeToolTip": "src\\Core\\MatchArena.Domain\\Entities\\Enums\\TournamentStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T17:23:24.991Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Tournament.cs",
+              "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Domain\\Entities\\Tournament.cs",
+              "RelativeDocumentMoniker": "src\\Core\\MatchArena.Domain\\Entities\\Tournament.cs",
+              "ToolTip": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Domain\\Entities\\Tournament.cs",
+              "RelativeToolTip": "src\\Core\\MatchArena.Domain\\Entities\\Tournament.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAswCEAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T17:03:21.819Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

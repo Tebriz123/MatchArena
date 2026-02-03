@@ -57,11 +57,9 @@ namespace MatchArena.Persistence.Implementations.Services
 
         public async Task UpdateTeamAsync(long id, PutTeamDto teamDto)
         {
-            Team result = await _repository.GetByIdAsync(id);
-
-            if (result is null) throw new Exception("Team not found");
-
             Team team = await _repository.GetByIdAsync(id);
+
+            if (team is null) throw new Exception("Team not found");
 
             _repository.Update(team);
 
