@@ -1,0 +1,91 @@
+﻿<main>
+    <div class="form-container">
+        <h1 class="section-title">Komandanı Yenilə</h1>
+        <p class="section-subtitle">Komanda məlumatlarını redaktə edin</p>
+
+        <form class="create-form" id="updateTeamForm">
+            <div class="form-section">
+                <h3 class="form-section-title">Əsas Məlumatlar</h3>
+
+                <div class="form-group">
+                    <label for="teamName" class="form-label">Komanda Adı *</label>
+                    <input type="text" id="teamName" name="teamName" class="form-input" required placeholder="Məs. Qarabağ Legends">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="captainName" class="form-label">Kapitanın Adı *</label>
+                        <input type="text" id="captainName" name="captainName" class="form-input" required placeholder="Məs. Öli Kazimov">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="city" class="form-label">Şəhər *</label>
+                        <input type="text" id="city" name="city" class="form-input" required placeholder="Məs. Bakı">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="teamLogo" class="form-label">Komanda Loqosu</label>
+                    <input type="text" id="teamLogo" name="teamLogo" class="form-input" placeholder="Logo hərfi (məs. Q)" maxlength="1">
+                    <small class="form-hint">Təkli hərf və ya emoji daxil edin</small>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3 class="form-section-title">Komanda Statistikası</h3>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="currentPlayers" class="form-label">Cari Oyunçu Sayı *</label>
+                        <input type="number" id="currentPlayers" name="currentPlayers" class="form-input" required min="0" max="50" value="0">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="maxPlayers" class="form-label">Maksimum Oyunçu *</label>
+                        <input type="number" id="maxPlayers" name="maxPlayers" class="form-input" required min="1" max="50" value="15">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="wins" class="form-label">Qələbələr</label>
+                        <input type="number" id="wins" name="wins" class="form-input" min="0" value="0">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="draws" class="form-label">Bərabərliklər</label>
+                        <input type="number" id="draws" name="draws" class="form-input" min="0" value="0">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="losses" class="form-label">Məğlubiyyətlər</label>
+                        <input type="number" id="losses" name="losses" class="form-input" min="0" value="0">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3 class="form-section-title">Əlavə Məlumatlar</h3>
+
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="lookingForPlayers" name="lookingForPlayers">
+                            <span>Oyunçu axtarır</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="description" class="form-label">Təsvir</label>
+                    <textarea id="description" name="description" class="form-input" rows="4" placeholder="Komanda haqqında qısa məlumat..."></textarea>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='teams.html'">Ləğv et</button>
+                <button type="submit" class="btn btn-primary">Dəyişiklikləri Yadda Saxla</button>
+            </div>
+        </form>
+    </div>
+</main>

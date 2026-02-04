@@ -13,7 +13,8 @@ namespace MatchArena.Application.MappingProfiles
     {
         public PlayerProfile()
         {
-          
+            
+               
         }
     }
 }

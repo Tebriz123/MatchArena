@@ -1,0 +1,193 @@
+﻿<main>
+    <div class="form-container">
+        <h1 class="section-title">Meydançanı Yenilə</h1>
+        <p class="section-subtitle">Meydança məlumatlarını redaktə edin</p>
+
+        <form class="create-form" id="updateFieldForm">
+            <div class="form-section">
+                <h3 class="form-section-title">Əsas Məlumatlar</h3>
+
+                <div class="form-group">
+                    <label for="fieldName" class="form-label">Meydança Adı *</label>
+                    <input type="text" id="fieldName" name="fieldName" class="form-input" required placeholder="Məs. Olimpiya Stadionu">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="city" class="form-label">Şəhər *</label>
+                        <input type="text" id="city" name="city" class="form-input" required placeholder="Məs. Bakı">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="district" class="form-label">Rayon</label>
+                        <input type="text" id="district" name="district" class="form-input" placeholder="Məs. Nəsimi">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="address" class="form-label">Ünvan *</label>
+                    <input type="text" id="address" name="address" class="form-input" required placeholder="Tam ünvan daxil edin">
+                </div>
+
+                <div class="form-group">
+                    <label for="fieldIcon" class="form-label">Meydança İkonu</label>
+                    <input type="text" id="fieldIcon" name="fieldIcon" class="form-input" placeholder="⚽" maxlength="2">
+                    <small class="form-hint">Emoji və ya simvol daxil edin</small>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3 class="form-section-title">Meydança Xüsusiyyətləri</h3>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fieldSize" class="form-label">Ölçü *</label>
+                        <select id="fieldSize" name="fieldSize" class="form-input" required>
+                            <option value="">Ölçü seçin</option>
+                            <option value="5x5">Mini (5x5)</option>
+                            <option value="7x7">Kiçik (7x7)</option>
+                            <option value="11x11">Standart (11x11)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="surfaceType" class="form-label">Səth Növü *</label>
+                        <select id="surfaceType" name="surfaceType" class="form-input" required>
+                            <option value="">Səth seçin</option>
+                            <option value="grass">Qısa çəmən</option>
+                            <option value="artificial">Süni örtük</option>
+                            <option value="hybrid">Hibrid</option>
+                            <option value="natural">Təbii çəmən</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="lighting" class="form-label">İşıqlandırma</label>
+                        <select id="lighting" name="lighting" class="form-input">
+                            <option value="">Seçin</option>
+                            <option value="yes">Var</option>
+                            <option value="no">Yox</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="covered" class="form-label">Örtülü</label>
+                        <select id="covered" name="covered" class="form-input">
+                            <option value="">Seçin</option>
+                            <option value="yes">Bəli</option>
+                            <option value="no">Xeyr</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="capacity" class="form-label">Tutum</label>
+                        <input type="number" id="capacity" name="capacity" class="form-input" min="0" placeholder="Məs. 100">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="parkingSpaces" class="form-label">Parkinq Yerləri</label>
+                        <input type="number" id="parkingSpaces" name="parkingSpaces" class="form-input" min="0" value="0">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3 class="form-section-title">Qiymət və Əlaqə</h3>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="pricePerHour" class="form-label">Saatlıq Qiymət (AZN) *</label>
+                        <input type="number" id="pricePerHour" name="pricePerHour" class="form-input" required min="0" step="0.01" placeholder="Məs. 50.00">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ownerName" class="form-label">Sahibin Adı</label>
+                        <input type="text" id="ownerName" name="ownerName" class="form-input" placeholder="Məs. Əli Məmmədov">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="contactPhone" class="form-label">Əlaqə Telefonu *</label>
+                        <input type="tel" id="contactPhone" name="contactPhone" class="form-input" required placeholder="+994 XX XXX XX XX">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactEmail" class="form-label">E-mail</label>
+                        <input type="email" id="contactEmail" name="contactEmail" class="form-input" placeholder="ornek@email.com">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3 class="form-section-title">Əlavə İmkanlar</h3>
+
+                <div class="amenities-grid">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="amenity-changing-rooms" name="amenities" value="changing-rooms">
+                        <span>Paltar Dəyişmə Otaqları</span>
+                    </label>
+
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="amenity-showers" name="amenities" value="showers">
+                        <span>Duş</span>
+                    </label>
+
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="amenity-parking" name="amenities" value="parking">
+                        <span>Parkinq</span>
+                    </label>
+
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="amenity-cafe" name="amenities" value="cafe">
+                        <span>Kafe</span>
+                    </label>
+
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="amenity-wifi" name="amenities" value="wifi">
+                        <span>WiFi</span>
+                    </label>
+
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="amenity-lockers" name="amenities" value="lockers">
+                        <span>Şkaflar</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3 class="form-section-title">İş Saatları və Təsvir</h3>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="openingHours" class="form-label">İş Saatları</label>
+                        <input type="text" id="openingHours" name="openingHours" class="form-input" placeholder="Məs. 09:00 - 23:00">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="available" name="available" checked>
+                            <span>Meydança aktiv və əlçatandır</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="description" class="form-label">Təsvir</label>
+                    <textarea id="description" name="description" class="form-input" rows="4" placeholder="Meydança haqqında əlavə məlumat..."></textarea>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='fields.html'">Ləğv et</button>
+                <button type="submit" class="btn btn-primary">Dəyişiklikləri Yadda Saxla</button>
+            </div>
+        </form>
+    </div>
+</main>
