@@ -1,0 +1,148 @@
+﻿<main>
+    <div class="form-container">
+        <h1 class="section-title">Turniri Yenilə</h1>
+        <p class="section-subtitle">Turnir məlumatlarını redaktə edin</p>
+
+        <form class="create-form" id="updateTournamentForm">
+            <div class="form-section">
+                <h3 class="form-section-title">Əsas Məlumatlar</h3>
+
+                <div class="form-group">
+                    <label for="tournamentName" class="form-label">Turnir Adı *</label>
+                    <input type="text" id="tournamentName" name="tournamentName" class="form-input" required placeholder="Məs. Yay Çempionatı 2026">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="location" class="form-label">Məkan *</label>
+                        <input type="text" id="location" name="location" class="form-input" required placeholder="Məs. Bakı, Azərbaycan">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="organizer" class="form-label">Təşkilatçı *</label>
+                        <input type="text" id="organizer" name="organizer" class="form-input" required placeholder="Məs. MatchArena">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="tournamentIcon" class="form-label">Turnir Emojisi</label>
+                    <input type="text" id="tournamentIcon" name="tournamentIcon" class="form-input" placeholder="🏆" maxlength="2">
+                    <small class="form-hint">Emoji və ya ikonu təyin edin</small>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3 class="form-section-title">Tarix və Vaxt</h3>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="startDate" class="form-label">Başlama Tarixi *</label>
+                        <input type="date" id="startDate" name="startDate" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="endDate" class="form-label">Bitmə Tarixi *</label>
+                        <input type="date" id="endDate" name="endDate" class="form-input" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="registrationDeadline" class="form-label">Qeydiyyat Son Tarixi *</label>
+                        <input type="date" id="registrationDeadline" name="registrationDeadline" class="form-input" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3 class="form-section-title">Turnir Parametrləri</h3>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="currentTeams" class="form-label">Cari Komanda Sayı *</label>
+                        <input type="number" id="currentTeams" name="currentTeams" class="form-input" required min="0" max="100" value="0">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="maxTeams" class="form-label">Maksimum Komanda *</label>
+                        <input type="number" id="maxTeams" name="maxTeams" class="form-input" required min="2" max="100" value="16">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="format" class="form-label">Format *</label>
+                        <select id="format" name="format" class="form-input" required>
+                            <option value="">Format seçin</option>
+                            <option value="knockout">Kubok sistemi</option>
+                            <option value="league">Liqa</option>
+                            <option value="group-knockout">Qrup + Play-off</option>
+                            <option value="round-robin">Dairəvi</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="teamSize" class="form-label">Komanda Ölçüsü *</label>
+                        <select id="teamSize" name="teamSize" class="form-input" required>
+                            <option value="">Ölçü seçin</option>
+                            <option value="5">5 oyunçu</option>
+                            <option value="7">7 oyunçu</option>
+                            <option value="11">11 oyunçu</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="entryFee" class="form-label">Qeydiyyat Haqqı (AZN)</label>
+                        <input type="number" id="entryFee" name="entryFee" class="form-input" min="0" step="0.01" value="0" placeholder="Məs. 100.00">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="prizeMoney" class="form-label">Mükafat Fondu (AZN)</label>
+                        <input type="number" id="prizeMoney" name="prizeMoney" class="form-input" min="0" step="0.01" value="0" placeholder="Məs. 1000.00">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3 class="form-section-title">Status və Qaydalar</h3>
+
+                <div class="form-group">
+                    <label for="status" class="form-label">Status *</label>
+                    <select id="status" name="status" class="form-input" required>
+                        <option value="upcoming">Gələcək</option>
+                        <option value="registration">Qeydiyyat açıqdır</option>
+                        <option value="ongoing">Davam edir</option>
+                        <option value="completed">Başa çatdı</option>
+                        <option value="cancelled">Ləğv edildi</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="acceptingRegistrations" name="acceptingRegistrations" checked>
+                            <span>Qeydiyyat açıqdır</span>
+                        </label>
+                    </div>
+                </div>
+ 
+                <div class="form-group">
+                    <label for="rules" class="form-label">Qaydalar</label>
+                    <textarea id="rules" name="rules" class="form-input" rows="4" placeholder="Turnir qaydalarını daxil edin..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="description" class="form-label">Təsvir</label>
+                    <textarea id="description" name="description" class="form-input" rows="4" placeholder="Turnir haqqında əlavə məlumat..."></textarea>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='tournaments.html'">Ləğv et</button>
+                <button type="submit" class="btn btn-primary">Dəyişiklikləri Yadda Saxla</button>
+            </div>
+        </form>
+    </div>
+</main>
