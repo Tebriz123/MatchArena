@@ -11,7 +11,7 @@ namespace MatchArena.Domain.Entities
         {
             public string Name { get; set; }
             public string Surname { get; set; }
-            public Player PlayerProfile { get; set; }
+            public Player Player{ get; set; }
 
     }
 }

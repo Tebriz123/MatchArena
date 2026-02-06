@@ -17,4 +17,9 @@
     <Folder Include="wwwroot\assets\img\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Core\MatchArena.Application\MatchArena.Application.csproj" />
+    <ProjectReference Include="..\..\src\Core\MatchArena.Domain\MatchArena.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -34,7 +34,10 @@ namespace MatchArena.Persistence
 
             services.AddScoped<IAuthenticationService, AuthenticationService>();
             services.AddScoped<IAppDbContextInitializer, AppDbContextInitializer>();
-
+            services.AddScoped<IPlayerService, PlayerService>();
+            services.AddScoped<ITeamService, TeamService>();
+            services.AddScoped<IFieldService, FieldService>();
+            services.AddScoped<ITournamentService, TournamentService>();
             return services;
         }
 

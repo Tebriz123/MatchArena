@@ -13,15 +13,18 @@ namespace MatchArena.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<TeamPlayer> builder)
         {
-            builder.HasKey(tp => new { tp.TeamId, tp.PlayerProfileId });
+
+            builder.HasKey(tp => new { tp.TeamId, tp.PlayerId });
 
             builder.HasOne(tp => tp.Team)
-                   .WithMany(t => t.Players)
-                   .HasForeignKey(tp => tp.TeamId);
+                .WithMany(t => t.TeamPlayers)
+                .HasForeignKey(tp => tp.TeamId)
+                .OnDelete(DeleteBehavior.Cascade);
 
-            builder.HasOne(tp => tp.PlayerProfile)
-                   .WithMany()
-                   .HasForeignKey(tp => tp.PlayerProfileId);
+            builder.HasOne(tp => tp.Player)
+                .WithMany(p => p.PlayerTeams)
+                .HasForeignKey(tp => tp.PlayerId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

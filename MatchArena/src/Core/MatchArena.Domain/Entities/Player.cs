@@ -8,8 +8,9 @@ using System.Threading.Tasks;
 namespace MatchArena.Domain.Entities
 {
 
-    public class Player : BaseAccountableEntity
+    public class Player : BaseNameableEntity    
     {
+        public string Surname { get; set; }
         public string UserId { get; set; }
         public AppUser User { get; set; }
 

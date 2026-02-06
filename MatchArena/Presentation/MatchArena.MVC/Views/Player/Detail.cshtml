@@ -1,4 +1,7 @@
-﻿<main class="player-detail-main">
+﻿@model GetPlayerVM
+
+
+<main class="player-detail-main">
     <a href="players.html" class="back-link">← Oyunçulara qayıt</a>
 
     <div class="player-profile-card">
@@ -6,21 +9,21 @@
             <div class="player-avatar-large">N</div>
 
             <div class="player-profile-info">
-                <h1>Nihad Qasimov</h1>
+                <h1>@Model.Name @Model.Surname</h1>
                 <p>Qapiçi • 30 yaş</p>
 
                 <div class="player-stats-row">
                     <div class="stat-box stat-box-green">
                         <div class="stat-box-label">Reytinq</div>
-                        <div class="stat-box-value stat-box-value-green">⭐ 4.9</div>
+                        <div class="stat-box-value stat-box-value-green">⭐ @Model.Rating</div>
                     </div>
                     <div class="stat-box stat-box-blue">
                         <div class="stat-box-label">Oyunlar</div>
-                        <div class="stat-box-value stat-box-value-blue">312</div>
+                        <div class="stat-box-value stat-box-value-blue">@Model.GameCount</div>
                     </div>
                     <div class="stat-box stat-box-orange">
                         <div class="stat-box-label">Şəhər</div>
-                        <div class="stat-box-value stat-box-value-orange">🏠 Baki</div>
+                        <div class="stat-box-value stat-box-value-orange">🏠 @Model.City</div>
                     </div>
                 </div>
 

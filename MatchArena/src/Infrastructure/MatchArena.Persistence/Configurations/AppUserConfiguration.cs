@@ -21,9 +21,9 @@ namespace MatchArena.Persistence.Configurations
                    .IsRequired()
                    .HasMaxLength(50);
 
-            builder.HasOne(u => u.PlayerProfile)
+            builder.HasOne(u => u.Player)
               .WithOne(p => p.User)
-              .HasForeignKey<PlayerProfile>(p => p.UserId)
+              .HasForeignKey<Player>(p => p.UserId)
               .OnDelete(DeleteBehavior.Restrict);
         }
     }

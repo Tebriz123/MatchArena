@@ -1,128 +1,27 @@
-﻿<main>
-    <h1 class="section-title">Oyunçular</h1>
-    <p class="section-subtitle">Yüksək səviyəli oyunçuları tap və komandana dəvət et.</p>
+﻿@using MatchArena.Domain.Entities
 
-    <p class="players-count">8 oyunçu tapıldı</p>
+@model GetPlayerItemVM
+
+<main>
+    <h1 class="section-title">Oyunçular</h1>
 
     <div class="cards-grid">
-        <a href="player-detail.html?id=1" class="player-card">
-            <div class="card-image"><span>N</span><div class="rating">⭐ 4.9</div></div>
-            <div class="card-content">
-                <div class="team-badge">Oyunçu axtarır</div>
-                <h3 class="card-title">Nihad Qasimov</h3>
-                <div class="card-subtitle">30 yaş • 🏠 Baki</div>
-                <div class="card-stats">
-                    <div class="stat-item"><div class="stat-item-value">312</div><div class="stat-item-label">oyun</div></div>
-                    <div class="stat-item"><div class="stat-item-value">156</div><div class="stat-item-label">qol</div></div>
-                    <div class="stat-item"><div class="stat-item-value">89</div><div class="stat-item-label">asist</div></div>
+    @foreach (Player player in Model.Players)
+        {
+            <a href="player-detail.html?id=@player.Id" class="player-card">
+                <div class="card-image"><span>N</span><div class="rating">⭐ @player.Rating</div></div>
+                <div class="card-content">
+                    <div class="team-badge">Oyunçu axtarır</div>
+                    <h3 class="card-title">@player.Name</h3>
+                    <div class="card-subtitle">@player.Age yaş • 🏠 @player.City</div>
+                    <div class="card-stats">
+                        <div class="stat-item"><div class="stat-item-value">312</div><div class="stat-item-label">oyun</div></div>
+                        <div class="stat-item"><div class="stat-item-value">156</div><div class="stat-item-label">qol</div></div>
+                        <div class="stat-item"><div class="stat-item-value">89</div><div class="stat-item-label">asist</div></div>
+                    </div>
+                    <div class="card-buttons"><span class="btn-small">Profil bax</span></div>
                 </div>
-                <div class="card-buttons"><span class="btn-small">Profil bax</span></div>
-            </div>
-        </a>
-
-        <a href="player-detail.html?id=2" class="player-card">
-            <div class="card-image"><span>E</span><div class="rating">⭐ 4.8</div></div>
-            <div class="card-content">
-                <div class="team-badge">Oyunçu axtarır</div>
-                <h3 class="card-title">Elvin Hüseynov</h3>
-                <div class="card-subtitle">28 yaş • 🏠 Gəncə</div>
-                <div class="card-stats">
-                    <div class="stat-item"><div class="stat-item-value">267</div><div class="stat-item-label">oyun</div></div>
-                    <div class="stat-item"><div class="stat-item-value">12</div><div class="stat-item-label">qol</div></div>
-                    <div class="stat-item"><div class="stat-item-value">45</div><div class="stat-item-label">asist</div></div>
-                </div>
-                <div class="card-buttons"><span class="btn-small">Profil bax</span></div>
-            </div>
-        </a>
-
-        <a href="player-detail.html?id=3" class="player-card">
-            <div class="card-image"><span>T</span><div class="rating">⭐ 4.7</div></div>
-            <div class="card-content">
-                <div class="team-badge">Oyunçu axtarır</div>
-                <h3 class="card-title">Tural Mammadov</h3>
-                <div class="card-subtitle">26 yaş • 🏠 Baki</div>
-                <div class="card-stats">
-                    <div class="stat-item"><div class="stat-item-value">245</div><div class="stat-item-label">oyun</div></div>
-                    <div class="stat-item"><div class="stat-item-value">34</div><div class="stat-item-label">qol</div></div>
-                    <div class="stat-item"><div class="stat-item-value">67</div><div class="stat-item-label">asist</div></div>
-                </div>
-                <div class="card-buttons"><span class="btn-small">Profil bax</span></div>
-            </div>
-        </a>
-
-        <a href="player-detail.html?id=4" class="player-card">
-            <div class="card-image"><span>S</span><div class="rating">⭐ 4.6</div></div>
-            <div class="card-content">
-                <div class="team-badge">Oyunçu axtarır</div>
-                <h3 class="card-title">Samair Rəhimov</h3>
-                <div class="card-subtitle">24 yaş • 🏠 Sumqayıt</div>
-                <div class="card-stats">
-                    <div class="stat-item"><div class="stat-item-value">178</div><div class="stat-item-label">oyun</div></div>
-                    <div class="stat-item"><div class="stat-item-value">78</div><div class="stat-item-label">qol</div></div>
-                    <div class="stat-item"><div class="stat-item-value">34</div><div class="stat-item-label">asist</div></div>
-                </div>
-                <div class="card-buttons"><span class="btn-small">Profil bax</span></div>
-            </div>
-        </a>
-
-        <a href="player-detail.html?id=5" class="player-card">
-            <div class="card-image"><span>F</span><div class="rating">⭐ 4.5</div></div>
-            <div class="card-content">
-                <div class="team-badge">Oyunçu axtarır</div>
-                <h3 class="card-title">Fərid Məmmədov</h3>
-                <div class="card-subtitle">25 yaş • 🏠 Mingəçevir</div>
-                <div class="card-stats">
-                    <div class="stat-item"><div class="stat-item-value">156</div><div class="stat-item-label">oyun</div></div>
-                    <div class="stat-item"><div class="stat-item-value">89</div><div class="stat-item-label">qol</div></div>
-                    <div class="stat-item"><div class="stat-item-value">23</div><div class="stat-item-label">asist</div></div>
-                </div>
-                <div class="card-buttons"><span class="btn-small">Profil bax</span></div>
-            </div>
-        </a>
-
-        <a href="player-detail.html?id=6" class="player-card">
-            <div class="card-image"><span>A</span><div class="rating">⭐ 4.4</div></div>
-            <div class="card-content">
-                <div class="team-badge">Oyunçu axtarır</div>
-                <h3 class="card-title">Aydın Məmmədov</h3>
-                <div class="card-subtitle">29 yaş • 🏠 Şəmkir</div>
-                <div class="card-stats">
-                    <div class="stat-item"><div class="stat-item-value">298</div><div class="stat-item-label">oyun</div></div>
-                    <div class="stat-item"><div class="stat-item-value">5</div><div class="stat-item-label">qol</div></div>
-                    <div class="stat-item"><div class="stat-item-value">12</div><div class="stat-item-label">asist</div></div>
-                </div>
-                <div class="card-buttons"><span class="btn-small">Profil bax</span></div>
-            </div>
-        </a>
-
-        <a href="player-detail.html?id=7" class="player-card">
-            <div class="card-image"><span>R</span><div class="rating">⭐ 4.3</div></div>
-            <div class="card-content">
-                <div class="team-badge">Oyunçu axtarır</div>
-                <h3 class="card-title">Rəşad Biliyev</h3>
-                <div class="card-subtitle">32 yaş • 🏠 Lənkəran</div>
-                <div class="card-stats">
-                    <div class="stat-item"><div class="stat-item-value">412</div><div class="stat-item-label">oyun</div></div>
-                    <div class="stat-item"><div class="stat-item-value">2</div><div class="stat-item-label">qol</div></div>
-                    <div class="stat-item"><div class="stat-item-value">89</div><div class="stat-item-label">asist</div></div>
-                </div>
-                <div class="card-buttons"><span class="btn-small">Profil bax</span></div>
-            </div>
-        </a>
-
-        <a href="player-detail.html?id=8" class="player-card">
-            <div class="card-image"><span>K</span><div class="rating">⭐ 4.2</div></div>
-            <div class="card-content">
-                <div class="team-badge">Oyunçu axtarır</div>
-                <h3 class="card-title">Kenan Əliyev</h3>
-                <div class="card-subtitle">23 yaş • 🏠 Baki</div>
-                <div class="card-stats">
-                    <div class="stat-item"><div class="stat-item-value">89</div><div class="stat-item-label">oyun</div></div>
-                    <div class="stat-item"><div class="stat-item-value">23</div><div class="stat-item-label">qol</div></div>
-                    <div class="stat-item"><div class="stat-item-value">34</div><div class="stat-item-label">asist</div></div>
-                </div>
-                <div class="card-buttons"><span class="btn-small">Profil bax</span></div>
-            </div>
-        </a>
+            </a>
+        }
     </div>
 </main>
