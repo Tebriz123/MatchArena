@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MatchArena.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c2ced56db2d21ff075f0912523e8887dabfc4be1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0ff7b8b950346a0cf95d8d21b45a253a19286929")]
 [assembly: System.Reflection.AssemblyProductAttribute("MatchArena.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MatchArena.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

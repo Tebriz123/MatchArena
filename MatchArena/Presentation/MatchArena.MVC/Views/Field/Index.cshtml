@@ -1,68 +1,24 @@
-﻿<main>
+﻿@model GetFieldItemVM
+<main>
     <h1 class="section-title">Meydançalar</h1>
     <p class="section-subtitle">Ən yaxşı meydançaları tap və onlarını rezerv et.</p>
 
     <p class="fields-count">5 meydança tapıldı</p>
 
     <div class="cards-grid">
-        <a href="field-detail.html?id=1" class="field-card field-card-link">
-            <div class="card-image"><div class="rating">⭐ 4.5</div></div>
-            <div class="card-content">
-                <div class="team-badge field-price-badge">120₼/saat</div>
-                <h3 class="card-title">Mini Futbol Arena</h3>
-                <div class="card-subtitle">🏠 Baki • Nizami r., 45A</div>
-                <div class="field-info-text">📏 40 x 20 m • 🕐 08:00 - 23:00</div>
-                <div class="field-review-text">⭐ 4.5 (127 rəy)</div>
-                <div class="card-buttons"><span class="btn-small">Rezerv et →</span></div>
-            </div>
-        </a>
-
-        <a href="field-detail.html?id=2" class="field-card field-card-link">
-            <div class="card-image"><div class="rating">⭐ 4.6</div></div>
-            <div class="card-content">
-                <div class="team-badge field-price-badge">150₼/saat</div>
-                <h3 class="card-title">Futbol Kompleksi</h3>
-                <div class="card-subtitle">🏠 Baki • Heydar Aliyev pr., 123</div>
-                <div class="field-info-text">📏 50 x 30 m • 🕐 07:00 - 22:00</div>
-                <div class="field-review-text">⭐ 4.6 (95 rəy)</div>
-                <div class="card-buttons"><span class="btn-small">Rezerv et →</span></div>
-            </div>
-        </a>
-
-        <a href="field-detail.html?id=3" class="field-card field-card-link">
-            <div class="card-image"><div class="rating">⭐ 4.4</div></div>
-            <div class="card-content">
-                <div class="team-badge field-price-badge">100₼/saat</div>
-                <h3 class="card-title">Gəncə Futbol Sarayı</h3>
-                <div class="card-subtitle">🏠 Gəncə • Samədoğlu st., 56</div>
-                <div class="field-info-text">📏 40 x 20 m • 🕐 09:00 - 21:00</div>
-                <div class="field-review-text">⭐ 4.4 (78 rəy)</div>
-                <div class="card-buttons"><span class="btn-small">Rezerv et →</span></div>
-            </div>
-        </a>
-
-        <a href="field-detail.html?id=4" class="field-card field-card-link">
-            <div class="card-image"><div class="rating">⭐ 4.3</div></div>
-            <div class="card-content">
-                <div class="team-badge field-price-badge">110₼/saat</div>
-                <h3 class="card-title">Sumqayıt Futbol Merkezi</h3>
-                <div class="card-subtitle">🏠 Sumqayıt • Azərbaycan pr., 78</div>
-                <div class="field-info-text">📏 40 x 20 m • 🕐 08:00 - 23:00</div>
-                <div class="field-review-text">⭐ 4.3 (56 rəy)</div>
-                <div class="card-buttons"><span class="btn-small">Rezerv et →</span></div>
-            </div>
-        </a>
-
-        <a href="field-detail.html?id=5" class="field-card field-card-link">
-            <div class="card-image"><div class="rating">⭐ 4.2</div></div>
-            <div class="card-content">
-                <div class="team-badge field-price-badge">90₼/saat</div>
-                <h3 class="card-title">Mingəçevir Arena</h3>
-                <div class="card-subtitle">🏠 Mingəçevir • Lenin pr., 34</div>
-                <div class="field-info-text">📏 40 x 20 m • 🕐 08:00 - 22:00</div>
-                <div class="field-review-text">⭐ 4.2 (42 rəy)</div>
-                <div class="card-buttons"><span class="btn-small">Rezerv et →</span></div>
-            </div>
-        </a>
+        @foreach (Field field in Model.Fields)
+        {
+            <a href="field-detail.html?id=1" class="field-card field-card-link">
+                <div class="card-image"><img src="~/assets/img/fields/@field.Image" alt="@field.Name"><div class="rating">⭐ @field.Rating</div></div>
+                <div class="card-content">
+                    <div class="team-badge field-price-badge">@field.PricePerHour₼/saat</div>
+                    <h3 class="card-title">@field.Name</h3>
+                    <div class="card-subtitle">🏠 @field.Address</div>
+                    <div class="field-info-text">📏 40 x 20 m • 🕐 @field.StartTime - @field.EndTime</div>
+                    <div class="field-review-text">⭐ @field.Rating (127 rəy)</div>
+                    <div class="card-buttons"><span class="btn-small">Rezerv et →</span></div>
+                </div>
+            </a>
+        }
     </div>
 </main>

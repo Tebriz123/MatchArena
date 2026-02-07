@@ -1,6 +1,6 @@
 ﻿using MatchArena.Domain.Entities;
 
-namespace MatchArena.MVC.ViewModels.Players
+namespace MatchArena.MVC.ViewModels
 {
     public class PutPlayerVM(
         string Name,

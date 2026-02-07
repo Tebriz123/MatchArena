@@ -15,8 +15,6 @@ namespace MatchArena.Application.DTOs.Teams
         string Logo,
         ICollection<GetPlayerInTeamDto> Players,
         int GameCount
-
-
         );
     
 }

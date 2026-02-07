@@ -12,10 +12,12 @@ namespace MatchArena.Application.DTOs.Teams
         long id,
         string Name,
         int PlayerCount,
+        int MaxPlayer,
         string City,
         int GameCount,
         TeamPlayer Capitain,
-        string Image
+        string Image,
+        double Rating
         );
   
 }

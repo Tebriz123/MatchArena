@@ -1,10 +1,11 @@
-﻿<main class="team-detail-container">
+﻿@model GetTeamVM
+<main class="team-detail-container">
     <a href="teams.html" class="team-back-link">← Komandalar səhifəsinə qayıt</a>
 
     <div class="team-profile-card">
         <div class="team-profile-grid">
             <div class="team-logo">Q</div>
-
+            <div class="team-logo"><img src="~/assets/img/teams/@Model.Logo" alt="@Model.Name"></div>
             <div class="team-profile-info">
                 <h1>Qarabag Legends</h1>
                 <p class="team-profile-subtitle">Kapitan: Öli Kazimov • 🏠 Bakı • Qurulma: 2020</p>

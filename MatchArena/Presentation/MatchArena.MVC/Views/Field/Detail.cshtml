@@ -1,27 +1,28 @@
-﻿<main class="detail-page-container">
+﻿@model GetFieldVM
+<main class="detail-page-container">
     <a href="fields.html" class="back-link">← Meydançalara qayıt</a>
 
     <!-- Field Header -->
     <div class="detail-card detail-header">
         <div class="detail-header-grid-field">
-            <div class="detail-avatar-field">⚽</div>
+            <div class="detail-avatar-field"><img src="~/assets/img/fields/@Model.Image" alt="@Model.Name"></div>
 
             <div class="detail-info">
-                <h1 class="detail-title">Mini Futbol Arena</h1>
+                <h1 class="detail-title">@Model.Name</h1>
                 <p class="detail-location">🏠 Baki</p>
 
                 <div class="detail-stats-row">
                     <div class="detail-stat-box stat-primary">
                         <div class="stat-label">Qiymət</div>
-                        <div class="stat-value-primary">120₼/saat</div>
+                        <div class="stat-value-primary">@Model.PricePerHour₼/saat</div>
                     </div>
                     <div class="detail-stat-box stat-blue">
                         <div class="stat-label">Reytinq</div>
-                        <div class="stat-value-blue">⭐ 4.5</div>
+                        <div class="stat-value-blue">⭐ @Model.Rating</div>
                     </div>
                     <div class="detail-stat-box stat-orange">
                         <div class="stat-label">Rəylər</div>
-                        <div class="stat-value-orange">127</div>
+                        <div class="stat-value-orange">1 </div>
                     </div>
                 </div>
 
@@ -107,12 +108,12 @@
                     <button class="time-slot-available">🕐 17:00 - 18:00</button>
                     <button class="time-slot-available">🕐 18:00 - 19:00</button>
                     <button class="time-slot-available">🕐 19:00 - 20:00</button>
-                    <button class="time-slot-available">🕐 20:00 - 21:00</button>
+                    <button class="time-slot-available">🕐 20:00 - 21:00</button>  
                 </div>
             </div>
 
             <!-- Reviews -->
-            <div class="detail-card">
+            <div class="detail-card"> 
                 <h2 class="detail-card-title">Rəylər</h2>
                 <p class="reviews-summary">127 rəy (⭐ 4.5 ortalama)</p>
 

@@ -1,33 +1,34 @@
-﻿<main class="detail-main-container">
+﻿@model GetTournamentVM
+@{
+    int EmptySpace = Model.MaxTeams - Model.CurrentTeams;
+}
+<main class="detail-main-container">
     <a href="tournaments.html" class="back-link">← Turnirlərə qayıt</a>
 
     <!-- Tournament Header -->
     <div class="tournament-header-card">
         <div class="tournament-banner">
+            <img src="~/assets/img/tournaments/@Model.Icon" alt="@Model.Name">
             <div class="tournament-icon">🏆</div>
             <span class="tournament-status-badge ongoing">Davam edir</span>
         </div>
 
         <div class="tournament-header-content">
-            <h1 class="tournament-title">Yay Çempionatı 2026</h1>
-            <p class="tournament-organizer">Təşkilatçı: MatchArena • 📍 Bakı, Azərbaycan</p>
+            <h1 class="tournament-title">@Model.Name</h1>
+            <p class="tournament-organizer">📍 @Model.City</p>
 
             <div class="tournament-stats-grid">
                 <div class="tournament-stat-box">
                     <div class="stat-label">Mükafat Fondu</div>
-                    <div class="stat-value">5000₼</div>
+                    <div class="stat-value">@Model.PrizeFund</div>
                 </div>
                 <div class="tournament-stat-box">
                     <div class="stat-label">Komandalar</div>
-                    <div class="stat-value">12/16</div>
-                </div>
-                <div class="tournament-stat-box">
-                    <div class="stat-label">Format</div>
-                    <div class="stat-value">Qrup + Playoff</div>
+                    <div class="stat-value">@Model.CurrentTeams/@Model.MaxTeams</div>
                 </div>
                 <div class="tournament-stat-box">
                     <div class="stat-label">Oyun Müddəti</div>
-                    <div class="stat-value">90 dəq</div>
+                    <div class="stat-value">@Model.RegistrationDeadline dəq</div>
                 </div>
             </div>
 
@@ -36,8 +37,8 @@
                     <div class="progress-fill-large" style="width: 75%"></div>
                 </div>
                 <div class="progress-info">
-                    <span>12 komanda qeydiyyatdan keçdi</span>
-                    <span>4 yer qalıb</span>
+                    <span>@Model.CurrentTeams komanda qeydiyyatdan keçdi</span>
+                    <span>@EmptySpace yer qalıb</span>
                 </div>
             </div>
 
@@ -140,55 +141,12 @@
                     <div class="detail-card">
                         <h3 class="detail-card-title">Haqqında</h3>
                         <p class="detail-description">
-                            Yay Çempionatı 2026 - Bakının ən prestijli futbol turniri! 16 güclü komanda,
-                            15 gün gərgin rəqabət və 5000 AZN mükafat fondu ilə Azərbaycanın ən böyük
-                            yay futbol hadisəsi. Qrup mərhələsi və playoff sistemində keçiriləcək bu
-                            turnir, komandaların həm taktiki, həm də fiziki hazırlığını sınayacaq.
+                            @Model.Description
                         </p>
-                        <p class="detail-description">
-                            Turnirdə iştirak etmək üçün komandanız minimum 11, maksimum 15 oyunçudan
-                            ibarət olmalıdır. Hər komanda 3 substitut istifadə edə bilər. Oyunlar
-                            FIFA qaydalarına uyğun keçiriləcək.
-                        </p>
+                       
                     </div>
 
-                    <div class="detail-card">
-                        <h3 class="detail-card-title">Mükafatlar</h3>
-
-                        <div class="prize-list">
-                            <div class="prize-item first">
-                                <div class="prize-medal">🥇</div>
-                                <div class="prize-info">
-                                    <div class="prize-place">1-ci yer</div>
-                                    <div class="prize-amount">3000₼ + Kubok</div>
-                                </div>
-                            </div>
-
-                            <div class="prize-item second">
-                                <div class="prize-medal">🥈</div>
-                                <div class="prize-info">
-                                    <div class="prize-place">2-ci yer</div>
-                                    <div class="prize-amount">1500₼ + Medal</div>
-                                </div>
-                            </div>
-
-                            <div class="prize-item third">
-                                <div class="prize-medal">🥉</div>
-                                <div class="prize-info">
-                                    <div class="prize-place">3-cü yer</div>
-                                    <div class="prize-amount">500₼ + Medal</div>
-                                </div>
-                            </div>
-
-                            <div class="prize-item special">
-                                <div class="prize-medal">⚽</div>
-                                <div class="prize-info">
-                                    <div class="prize-place">Ən yaxşı oyunçu</div>
-                                    <div class="prize-amount">Xüsusi mükafat</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                
 
                     <div class="detail-card">
                         <h3 class="detail-card-title">Əhəmiyyətli Tarixlər</h3>
@@ -197,7 +155,7 @@
                             <div class="timeline-item completed">
                                 <div class="timeline-dot"></div>
                                 <div class="timeline-content">
-                                    <div class="timeline-date">1 May 2026</div>
+                                    <div class="timeline-date">@Model.StartTime</div>
                                     <div class="timeline-title">Qeydiyyat Başlangıcı</div>
                                 </div>
                             </div>
@@ -205,31 +163,15 @@
                             <div class="timeline-item active">
                                 <div class="timeline-dot"></div>
                                 <div class="timeline-content">
-                                    <div class="timeline-date">25 May 2026</div>
+                                    <div class="timeline-date">@Model.EndTime</div>
                                     <div class="timeline-title">Son Qeydiyyat</div>
                                 </div>
                             </div>
-
+                       
                             <div class="timeline-item">
                                 <div class="timeline-dot"></div>
                                 <div class="timeline-content">
-                                    <div class="timeline-date">28 May 2026</div>
-                                    <div class="timeline-title">Qura çəkilişi</div>
-                                </div>
-                            </div>
-
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <div class="timeline-date">1 İyun 2026</div>
-                                    <div class="timeline-title">Turnir Başlangıcı</div>
-                                </div>
-                            </div>
-
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <div class="timeline-date">15 İyun 2026</div>
+                                    <div class="timeline-date">@Model.FinalTime</div>
                                     <div class="timeline-title">Final Oyunu</div>
                                 </div>
                             </div>
@@ -242,56 +184,19 @@
         <!-- Teams Tab -->
         <div class="detail-tab-content" id="teams">
             <div class="detail-card">
-                <h3 class="detail-card-title">Qeydiyyatdan keçmiş komandalar (12)</h3>
+                <h3 class="detail-card-title">Qeydiyyatdan keçmiş komandalar (@Model.CurrentTeams)</h3>
 
                 <div class="teams-grid">
-                    <div class="team-card-small">
-                        <div class="team-avatar-small">Q</div>
-                        <div class="team-info-small">
-                            <div class="team-name-small">Qarabağ Legends</div>
-                            <div class="team-stats-small">15 oyunçu • ⭐ 4.9</div>
+                   @foreach (Team team in Model.Teams)
+                    {
+                        <div class="team-card-small">
+                            <div class="team-avatar-small"><img src="~/assets/img/teams/@team.Logo" alt="@team.Name"></div>
+                            <div class="team-info-small">
+                                <div class="team-name-small">@team.Name</div>
+                                <div class="team-stats-small">@team.PlayerCount oyunçu • ⭐ @team.Rating</div>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="team-card-small">
-                        <div class="team-avatar-small">N</div>
-                        <div class="team-info-small">
-                            <div class="team-name-small">Neftçi FC</div>
-                            <div class="team-stats-small">13 oyunçu • ⭐ 4.7</div>
-                        </div>
-                    </div>
-
-                    <div class="team-card-small">
-                        <div class="team-avatar-small">S</div>
-                        <div class="team-info-small">
-                            <div class="team-name-small">Sumqayıt Stars</div>
-                            <div class="team-stats-small">14 oyunçu • ⭐ 4.8</div>
-                        </div>
-                    </div>
-
-                    <div class="team-card-small">
-                        <div class="team-avatar-small">K</div>
-                        <div class="team-info-small">
-                            <div class="team-name-small">Keşlə United</div>
-                            <div class="team-stats-small">15 oyunçu • ⭐ 4.6</div>
-                        </div>
-                    </div>
-
-                    <div class="team-card-small">
-                        <div class="team-avatar-small">Z</div>
-                        <div class="team-info-small">
-                            <div class="team-name-small">Zirə Strikers</div>
-                            <div class="team-stats-small">12 oyunçu • ⭐ 4.5</div>
-                        </div>
-                    </div>
-
-                    <div class="team-card-small">
-                        <div class="team-avatar-small">S</div>
-                        <div class="team-info-small">
-                            <div class="team-name-small">Sabah Warriors</div>
-                            <div class="team-stats-small">13 oyunçu • ⭐ 4.4</div>
-                        </div>
-                    </div>
+                    }
                 </div>
             </div>
         </div>

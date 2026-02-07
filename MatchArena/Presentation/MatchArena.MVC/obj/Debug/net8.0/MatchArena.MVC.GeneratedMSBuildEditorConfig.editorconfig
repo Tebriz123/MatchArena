@@ -44,6 +44,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/necef/OneDrive/İş masası/MatchArena2/MatchArena/Presentation/MatchArena.MVC/Views/AppUsers/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwVXNlcnNcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/necef/OneDrive/İş masası/MatchArena2/MatchArena/Presentation/MatchArena.MVC/Views/AppUsers/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwVXNlcnNcUmVnaXN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/necef/OneDrive/İş masası/MatchArena2/MatchArena/Presentation/MatchArena.MVC/Views/Field/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmllbGRcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

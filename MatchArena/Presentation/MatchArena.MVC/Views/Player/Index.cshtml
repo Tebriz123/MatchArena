@@ -9,7 +9,7 @@
     @foreach (Player player in Model.Players)
         {
             <a href="player-detail.html?id=@player.Id" class="player-card">
-                <div class="card-image"><span>N</span><div class="rating">⭐ @player.Rating</div></div>
+                <div class="card-image"><img src="~/assets/img/players/@player.Image" alt="@player.Name @player.Surname"><div class="rating">⭐ @player.Rating</div></div>
                 <div class="card-content">
                     <div class="team-badge">Oyunçu axtarır</div>
                     <h3 class="card-title">@player.Name</h3>

@@ -11,7 +11,15 @@ namespace MatchArena.Domain.Entities
         public string Address { get; set; }
         public string City { get; set; }
         public decimal PricePerHour { get; set; }
-        public double Raiting { get; set; }
+        public DateTime StartTime { get; set; }
+        public DateTime EndTime { get; set; }
+        public string Image { get; set; }
         public ICollection<FieldImage> Images { get; set; }
+        public ICollection<DateTime> EmptySpace { get; set; }
+
+        public double AverageRating => FieldRatings != null && FieldRatings.Any() ?
+            FieldRatings.Average(r => r.Rating) : 0;
+        public int TotalRating => FieldRatings?.Count ?? 0;
+        public ICollection<FieldRating> FieldRatings { get; set; }
     }
 }

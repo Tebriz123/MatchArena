@@ -24,7 +24,7 @@ namespace MatchArena.Domain.Entities
         public string Format { get; set; } = string.Empty;
         public int GameDuration { get; set; }
         public string GameFormat { get; set; }=string.Empty;
-        public decimal Raiting { get; set; }
+        public decimal Rating { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public DateTime RegistrationDeadline { get; set; }
@@ -32,5 +32,6 @@ namespace MatchArena.Domain.Entities
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
         public ICollection<Team> Teams { get; set; } = new List<Team>();
+        public ICollection<Field> Fields { get; set; }
     }
 }

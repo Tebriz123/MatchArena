@@ -6,11 +6,11 @@
 
     <div class="player-profile-card">
         <div class="player-profile-grid">
-            <div class="player-avatar-large">N</div>
+            <div class="player-avatar-large"><img src="~/assets/img/players/@Model.Image" alt="@Model.Name @Model.Surname"></div>
 
             <div class="player-profile-info">
                 <h1>@Model.Name @Model.Surname</h1>
-                <p>Qapiçi • 30 yaş</p>
+                <p>@Model.Position • @Model.Age yaş</p>
 
                 <div class="player-stats-row">
                     <div class="stat-box stat-box-green">
@@ -43,7 +43,7 @@
 
                 <div class="detail-row">
                     <span class="detail-row-label">Komanda</span>
-                    <span class="detail-row-value">Qarabag</span>
+                    <span class="detail-row-value">@Model.TeamDtos</span>
                 </div>
 
                 <div class="detail-row">
@@ -84,21 +84,6 @@
 
         <!-- Right Column -->
         <div>
-            <div class="detail-card">
-                <h2>Fəaliyyətlər</h2>
-
-                <div class="achievements-list">
-                    <div class="achievement-item">
-                        <div class="achievement-title">On yaxşı qapıçı</div>
-                        <div class="achievement-description">2024 Fəaliyyət Mükafatı</div>
-                    </div>
-
-                    <div class="achievement-item">
-                        <div class="achievement-title">Clean sheet rekordu</div>
-                        <div class="achievement-description">Ardıcıl 8 oyun qol yemədən</div>
-                    </div>
-                </div>
-            </div>
 
             <div class="detail-card">
                 <h2>Rəylər</h2>

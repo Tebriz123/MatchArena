@@ -1,7 +1,7 @@
 ﻿using MatchArena.Application.DTOs.Teams;
 using MatchArena.Domain.Entities;
 
-namespace MatchArena.MVC.ViewModels.Players
+namespace MatchArena.MVC.ViewModels
 {
     public record GetPlayerVM(
         long Id,

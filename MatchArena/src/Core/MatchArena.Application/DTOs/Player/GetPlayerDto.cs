@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace MatchArena.Application.DTOs.Player
 {
-    public class GetPlayerDto(
+    public record GetPlayerDto(
         long Id,
         string Image,
         string Name,
         string Surname,
-        string Description,
+        string Information,
         PlayerPosition Position,
         int Age,
         string City,

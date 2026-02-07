@@ -29,5 +29,4 @@ namespace MatchArena.Persistence.Configurations
         }
     }
 }
-}
 

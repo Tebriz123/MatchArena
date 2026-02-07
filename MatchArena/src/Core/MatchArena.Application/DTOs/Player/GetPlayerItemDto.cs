@@ -9,10 +9,11 @@ namespace MatchArena.Application.DTOs.Player
 {
     public record GetPlayerItemDto(
         long Id,
-        string FullName,
+        string Name,
+        string Surname,
         int Age,
         PlayerPosition Position,
-        double Raiting,
+        double Rating,
         int GameCount,
         string Image
         ); 
