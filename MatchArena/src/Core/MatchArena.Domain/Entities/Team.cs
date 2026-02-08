@@ -8,7 +8,6 @@ namespace MatchArena.Domain.Entities
 {
     public class Team:BaseNameableEntity
     {
-
         public long CaptainId { get; set; }
         public Player Captain { get; set; }
         public ICollection<TeamPlayer> TeamPlayers { get; set; }
@@ -18,6 +17,5 @@ namespace MatchArena.Domain.Entities
         public int MaxPlayer { get; set; }
         public double Rating { get; set; }
         public int GameCount { get; set; }
-
     }
 }

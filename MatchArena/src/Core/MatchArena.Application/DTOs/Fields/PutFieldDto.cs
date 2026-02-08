@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace MatchArena.Application.DTOs.Fields
 {
     public record PutFieldDto(
-          string Name,
+        string Name,
         string City,
         string Address,
         string Image,

@@ -10,6 +10,8 @@ namespace MatchArena.Application.DTOs.Fields
         long Id,
         string Name,
         string Address,
+        int TotalRating,
+        double AverageRating,
         string City,
         decimal PricePerHour
         );

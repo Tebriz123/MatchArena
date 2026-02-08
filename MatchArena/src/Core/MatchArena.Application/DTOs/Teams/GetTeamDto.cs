@@ -13,8 +13,7 @@ namespace MatchArena.Application.DTOs.Teams
         int PlayerCount,
         string City,
         string Logo,
-        ICollection<GetPlayerInTeamDto> Players,
+        ICollection<GetPlayerInTeamDto> PlayerDtos,
         int GameCount
         );
-    
 }

@@ -9,10 +9,10 @@
     @foreach (Player player in Model.Players)
         {
             <a href="player-detail.html?id=@player.Id" class="player-card">
-                <div class="card-image"><img src="~/assets/img/players/@player.Image" alt="@player.Name @player.Surname"><div class="rating">⭐ @player.Rating</div></div>
+                <div class="card-image"><img src="~/assets/img/players/@player.Image" alt="@player.User.Name @player.User.Surname"><div class="rating">⭐ @player.Rating</div></div>
                 <div class="card-content">
                     <div class="team-badge">Oyunçu axtarır</div>
-                    <h3 class="card-title">@player.Name</h3>
+                    <h3 class="card-title">@player.User.Name</h3>
                     <div class="card-subtitle">@player.Age yaş • 🏠 @player.City</div>
                     <div class="card-stats">
                         <div class="stat-item"><div class="stat-item-value">312</div><div class="stat-item-label">oyun</div></div>
