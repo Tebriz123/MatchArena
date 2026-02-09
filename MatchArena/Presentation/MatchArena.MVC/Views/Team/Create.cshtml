@@ -1,4 +1,5 @@
 ﻿@model PostTeamVM
+
 <main>
     <div class="form-container">
         <h1 class="section-title">Yeni Komanda Yarat</h1>
@@ -9,26 +10,29 @@
                 <h3 class="form-section-title">Əsas Məlumatlar</h3>
 
                 <div class="form-group">
-                    <label for="teamName" class="form-label">Komanda Adı *</label>
-                    <input type="text" id="teamName" name="teamName" class="form-input" required placeholder="Məs. Qarabağ Legends">
+                    <label asp-for="Name" class="form-label">Name *</label>
+                    <input asp-for="Name" class="form-input" placeholder="Team Name">
+                    <span asp-validation-for="Name"></span>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="captainName" class="form-label">Kapitanın Adı *</label>
-                        <input type="text" id="captainName" name="captainName" class="form-input" required placeholder="Məs. Öli Kazimov">
+                        <label asp-for="CaptainName" class="form-label">Captain Name *</label>
+                        <input asp-for="CaptainName" class="form-input" placeholder="Captain Name">
+                        <span asp-validation-for="CaptainName"></span>
                     </div>
 
                     <div class="form-group">
-                        <label for="city" class="form-label">Şəhər *</label>
-                        <input type="text" id="city" name="city" class="form-input" required placeholder="Məs. Bakı">
+                        <label asp-for="City" class="form-label">City *</label>
+                        <input asp-for="City" class="form-input" placeholder="City">
+                        <span asp-validation-for="CaptainName"></span>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="teamLogo" class="form-label">Komanda Loqosu</label>
-                    <input type="text" id="teamLogo" name="teamLogo" class="form-input" placeholder="Logo hərfi (məs. Q)" maxlength="1">
-                    <small class="form-hint">Təkli hərf və ya emoji daxil edin</small>
+                    <label asp-for="Photo">Team Logo</label>
+                    <input asp-for="Photo" id="playerImage" class="form-input" accept="image/*">
+                    <span asp-validation-for="Photo"></span>
                 </div>
             </div>
 
@@ -37,30 +41,15 @@
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="currentPlayers" class="form-label">Cari Oyunçu Sayı *</label>
-                        <input type="number" id="currentPlayers" name="currentPlayers" class="form-input" required min="0" max="50" value="0">
+                        <label asp-for="PlayerCount" class="form-label">Cari Oyunçu Sayı *</label>
+                        <input asp-for="PlayerCount" class="form-input" >
+                        <span asp-validation-for="PlayerCount"></span>
                     </div>
 
                     <div class="form-group">
-                        <label for="maxPlayers" class="form-label">Maksimum Oyunçu *</label>
-                        <input type="number" id="maxPlayers" name="maxPlayers" class="form-input" required min="1" max="50" value="15">
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="wins" class="form-label">Qələbələr</label>
-                        <input type="number" id="wins" name="wins" class="form-input" min="0" value="0">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="draws" class="form-label">Bərabərliklər</label>
-                        <input type="number" id="draws" name="draws" class="form-input" min="0" value="0">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="losses" class="form-label">Məğlubiyyətlər</label>
-                        <input type="number" id="losses" name="losses" class="form-input" min="0" value="0">
+                        <label asp-for="MaxPlayer" class="form-label">Maksimum Oyunçu *</label>
+                        <input asp-for="MaxPlayer" class="form-input">
+                        <span asp-validation-for="MaxPlayer"></span>
                     </div>
                 </div>
             </div>
@@ -68,19 +57,12 @@
             <div class="form-section">
                 <h3 class="form-section-title">Əlavə Məlumatlar</h3>
 
-                <div class="form-group">
-                    <label class="form-label">Status</label>
-                    <div class="form-checkbox-group">
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="lookingForPlayers" id="lookingForPlayers">
-                            <span>Oyunçu axtarır</span>
-                        </label>
-                    </div>
-                </div>
+             
 
                 <div class="form-group">
-                    <label for="description" class="form-label">Təsvir</label>
-                    <textarea id="description" name="description" class="form-textarea" rows="4" placeholder="Komanda haqqında məlumat yazın..."></textarea>
+                    <label asp-for="Information" class="form-label">Information</label>
+                    <textarea asp-for="Information" class="form-textarea" rows="4" placeholder="Komanda haqqında məlumat yazın..."></textarea>
+                    <span asp-validation-for="Information"></span>
                 </div>
             </div>
 

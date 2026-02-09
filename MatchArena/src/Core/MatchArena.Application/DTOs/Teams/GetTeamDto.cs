@@ -11,6 +11,7 @@ namespace MatchArena.Application.DTOs.Teams
         long Id,
         string Name,
         int PlayerCount,
+        string CaptainName,
         string City,
         string Logo,
         ICollection<GetPlayerInTeamDto> PlayerDtos,

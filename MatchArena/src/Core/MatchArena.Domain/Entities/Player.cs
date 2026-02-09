@@ -20,6 +20,7 @@ namespace MatchArena.Domain.Entities
         public string City { get; set; }
         public int Rating { get; set; }
         public int PlayedMatches { get; set; }
+        public int Height { get; set; }
         public int GameCount { get; set; }
         public string Information { get; set; }
         public int Goal { get; set; }

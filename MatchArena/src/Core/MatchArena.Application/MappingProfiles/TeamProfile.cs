@@ -22,7 +22,9 @@ namespace MatchArena.Application.MappingProfiles
 
             CreateMap<Team, GetTeamInPlayerDto>();
 
-            CreateMap<Team, GetTeamItemDto>();
+            CreateMap<Team, GetTeamItemDto>()
+                .ForCtorParam(nameof(GetTeamItemDto.CapitainName),
+                opt=>opt.MapFrom(t=>t.Player.User.Name));
 
             CreateMap<PostTeamDto, Team>()
             .ForMember(dest => dest.Logo, opt => opt.Ignore());

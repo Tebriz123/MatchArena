@@ -8,9 +8,14 @@ using System.Threading.Tasks;
 namespace MatchArena.Application.DTOs.Teams
 {
     public record PutTeamDto(
-        string Name,
+       string Name,
         string Logo,
-        IFormFile Photo
+        string CaptainName,
+        IFormFile Photo,
+        string City,
+        int PlayerCount,
+        int MaxPlayer,
+        string Information
         );
     
 }

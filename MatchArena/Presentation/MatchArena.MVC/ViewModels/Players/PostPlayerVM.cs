@@ -2,13 +2,14 @@
 
 namespace MatchArena.MVC.ViewModels
 {
-    public class PostPlayerVM(
+    public record PostPlayerVM(
         string Name,
         string Surname,
         int Age,
+        int Height,
         string Image,
         IFormFile Photo,
-        string Description,
+        string Information,
         string City,
         PlayerPosition Position,
         PlayerLevel Level

@@ -12,9 +12,10 @@ namespace MatchArena.Application.DTOs.Player
         string Name,
         string Surname,
         int Age,
-        string Description,
+        string Information,
         string City,
          string Image,
+         int Height,
         IFormFile Photo,
         PlayerPosition Position,
         PlayerLevel Level
