@@ -1,4 +1,5 @@
-﻿<main>
+﻿@model PostTournamentVM
+<main>
     <div class="form-container">
         <h1 class="section-title">Yeni Turnir Yarat</h1>
         <p class="section-subtitle">Yeni turnir təşkil edin və idarə edin</p>
@@ -8,26 +9,25 @@
                 <h3 class="form-section-title">Əsas Məlumatlar</h3>
 
                 <div class="form-group">
-                    <label for="tournamentName" class="form-label">Turnir Adı *</label>
-                    <input type="text" id="tournamentName" name="tournamentName" class="form-input" required placeholder="Məs. Yay Çempionatı 2026">
+                    <label asp-for="Name" class="form-label">Tournament Name *</label>
+                    <input asp-for="Name" class="form-input" placeholder="Tournament Name">
+                    <span asp-validation-for="Name"></span>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="location" class="form-label">Məkan *</label>
-                        <input type="text" id="location" name="location" class="form-input" required placeholder="Məs. Bakı, Azərbaycan">
+                        <label asp-for="Address" class="form-label">Address *</label>
+                        <input asp-for="Address" class="form-input" placeholder="Addrress">
+                        <span asp-validation-for="Address"></span>
                     </div>
 
-                    <div class="form-group">
-                        <label for="organizer" class="form-label">Təşkilatçı *</label>
-                        <input type="text" id="organizer" name="organizer" class="form-input" required placeholder="Məs. MatchArena">
-                    </div>
+                  
                 </div>
 
                 <div class="form-group">
-                    <label for="tournamentImage" class="form-label">Turnir Şəkli</label>
-                    <input type="file" id="tournamentImage" name="tournamentImage" class="form-input" accept="image/*">
-                    <small class="form-hint">Turnir posterin və ya şəklini yükləyin (PNG, JPG, JPEG)</small>
+                    <label asp-for="Photo" class="form-label">Tournament Image</label>
+                    <input asp-for="Photo" class="form-input" accept="image/*">
+                    <span asp-validation-for="Photo"></span>
                 </div>
             </div>
 
@@ -36,20 +36,23 @@
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="startDate" class="form-label">Başlama Tarixi *</label>
-                        <input type="date" id="startDate" name="startDate" class="form-input" required>
+                        <label asp-for="StartTime" class="form-label">Start Time *</label>
+                        <input asp-for="StartTime" class="form-input">
+                        <span asp-validation-for="StartTime"></span>
                     </div>
 
                     <div class="form-group">
-                        <label for="endDate" class="form-label">Bitmə Tarixi *</label>
-                        <input type="date" id="endDate" name="endDate" class="form-input" required>
+                        <label asp-for="EndTime" class="form-label">End Time *</label>
+                        <input asp-for="EndTime" class="form-input">
+                        <span asp-validation-for="EndTime"></span>
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="registrationDeadline" class="form-label">Qeydiyyat Son Tarixi *</label>
-                        <input type="date" id="registrationDeadline" name="registrationDeadline" class="form-input" required>
+                        <label asp-for="RegistrationDeadline" class="form-label">Registration Deadline *</label>
+                        <input asp-for="RegistrationDeadline" class="form-input" required>
+                        <span asp-validation-for="RegistrationDeadline"></span>
                     </div>
                 </div>
             </div>
@@ -59,25 +62,29 @@
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="currentTeams" class="form-label">Cari Komanda Sayı *</label>
-                        <input type="number" id="currentTeams" name="currentTeams" class="form-input" required min="0" max="100" value="0">
+                        <label asp-for="CurrentTeams" class="form-label">Cari Komanda Sayı *</label>
+                        <input asp-for="CurrentTeams" class="form-input" >
+                        <span asp-validation-for="CurrentTeams"></span>
                     </div>
 
                     <div class="form-group">
-                        <label for="maxTeams" class="form-label">Maksimum Komanda *</label>
-                        <input type="number" id="maxTeams" name="maxTeams" class="form-input" required min="2" max="100" value="16">
+                        <label asp-for="MaxTeams" class="form-label">Max Teams *</label>
+                        <input asp-for="MaxTeams" class="form-input">
+                        <span asp-validation-for="MaxTeams"></span>
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="entryFee" class="form-label">Giriş Haqqı (₼)</label>
-                        <input type="number" id="entryFee" name="entryFee" class="form-input" min="0" step="0.01" value="0" placeholder="0">
+                        <label asp-for="EntryFee" class="form-label">Giriş Haqqı (₼)</label>
+                        <input asp-for="EntryFee" class="form-input" placeholder="0">
+                        <span asp-validation-for="EntryFee"></span>
                     </div>
 
                     <div class="form-group">
-                        <label for="prizePool" class="form-label">Mükafat Fondu (₼)</label>
-                        <input type="number" id="prizePool" name="prizePool" class="form-input" min="0" step="0.01" value="0" placeholder="0">
+                        <label asp-for="PrizeFund" class="form-label">Mükafat Fondu (₼)</label>
+                        <input asp-for="PrizeFund" class="form-input" placeholder="0">
+                        <span asp-validation-for="PrizeFund"></span>
                     </div>
                 </div>
 
@@ -92,16 +99,7 @@
                     </select>
                 </div>
 
-                <div class="form-group">
-                    <label for="matchDuration" class="form-label">Oyun Müddəti (dəqiqə) *</label>
-                    <select id="matchDuration" name="matchDuration" class="form-input" required>
-                        <option value="30">30 dəqiqə (2x15)</option>
-                        <option value="40">40 dəqiqə (2x20)</option>
-                        <option value="50">50 dəqiqə (2x25)</option>
-                        <option value="60">60 dəqiqə (2x30)</option>
-                        <option value="90" selected>90 dəqiqə (2x45)</option>
-                    </select>
-                </div>
+       
             </div>
 
             <div class="form-section">
@@ -118,8 +116,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="description" class="form-label">Təsvir</label>
-                    <textarea id="description" name="description" class="form-textarea" rows="5" placeholder="Turnir haqqında ətraflı məlumat yazın..."></textarea>
+                    <label asp-for="Description" class="form-label">Təsvir</label>
+                    <textarea asp-for="Description" class="form-textarea" rows="5" placeholder="Turnir haqqında ətraflı məlumat yazın..."></textarea>
                 </div>
 
                 <div class="form-group">

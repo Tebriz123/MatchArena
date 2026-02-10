@@ -11,6 +11,7 @@ namespace MatchArena.Domain.Entities
         public string Address { get; set; }
         public string City { get; set; }
         public decimal PricePerHour { get; set; }
+        public string FieldInformation { get; set; }
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
         public string Image { get; set; }

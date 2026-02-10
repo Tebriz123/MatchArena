@@ -9,6 +9,7 @@ namespace MatchArena.Domain.Entities
     public class FieldImage:BaseEntity
     {
         public string Image { get; set; }
+        public bool IsPrimary { get; set; }
         public Field Field { get; set; }
         public int FieldId { get; set; }
     }
