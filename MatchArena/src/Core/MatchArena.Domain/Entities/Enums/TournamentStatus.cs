@@ -4,15 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MatchArena.Domain.Entities.Enums
+namespace MatchArena.Domain.Entities
 {
     public enum TournamentStatus
     {
-        Draft = 1,
-        RegistrationOpen = 2,
-        RegistrationClosed = 3,
-        InProgress = 4,
-        Completed = 5,
-        Cancelled = 6
+        RegistrationOpen= 1,  
+        RegistrationClosed = 2, 
+        SlotsFull = 3,          
+        Cancelled = 4
     }
 }

@@ -68,10 +68,10 @@
        @foreach (Player player in Model.Players)
         {
             <div class="player-card">
-                <div class="card-image"><img src="~/assets/img/players/@player.Image" alt="@player.Name @player.Surname"><div class="rating">⭐ @player.Rating</div></div>
+                <div class="card-image"><img src="~/assets/img/players/@player.Image" alt="@player.User.Name @player.User.Surname"><div class="rating">⭐ @player.Rating</div></div>
                 <div class="card-content">
                     <div class="team-badge">@player.Position</div>
-                    <h3 class="card-title">@player.Name @player.Surname</h3>
+                    <h3 class="card-title">@player.User.Name @player.User.Surname</h3>
                     <div class="card-subtitle">@player.Age yaş • 🏠 @player.City</div>
                     <div class="card-stats"><div class="stat-item"><div class="stat-item-value">312</div><div class="stat-item-label">oyun</div></div></div>
                     <div class="card-buttons"><a href="player-detail.html?id=1" class="btn-small">Profil bax</a></div>
@@ -91,7 +91,7 @@
                 <div class="card-content">
                     <div class="team-badge">Oyunçu axtarır</div>
                     <h3 class="card-title">@team.Name</h3>
-                    <div class="card-subtitle">Kapitain: @team.Captain • 🏠 @team.City</div>
+                    <div class="card-subtitle">Kapitain: @team.Player.User.Name • 🏠 @team.City</div>
                     <div class="card-stats">
                         <div class="stat-item"><div class="stat-item-value">@team.PlayerCount/@team.MaxPlayer</div><div class="stat-item-label">qolaça</div></div>
                         <div class="stat-item"><div class="stat-item-value">@team.Rating</div><div class="stat-item-label">⭐</div></div>
@@ -113,7 +113,7 @@
        @foreach (Field field in Model.Fields)
         {
             <div class="field-card">
-                <div class="card-image"><img src="~/assets/img/fields/@field.Image" alt="@field.Name"><div class="rating">⭐ @field.Rating</div></div>
+                <div class="card-image"><img src="~/assets/img/fields/@field.Image" alt="@field.Name"><div class="rating">⭐ @field.TotalRating</div></div>
                 <div class="card-content">
                     <div class="team-badge price-badge">@field.PricePerHour₼/saat</div>
                     <h3 class="card-title">@field.Name</h3>

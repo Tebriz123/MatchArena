@@ -88,17 +88,6 @@
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="format" class="form-label">Turnir Formatı *</label>
-                    <select id="format" name="format" class="form-input" required>
-                        <option value="">Format seçin</option>
-                        <option value="knockout">Kubok (Playoff)</option>
-                        <option value="league">Liqa (Dövri)</option>
-                        <option value="group">Qrup + Playoff</option>
-                        <option value="swiss">İsveçrə sistemi</option>
-                    </select>
-                </div>
-
        
             </div>
 
@@ -108,16 +97,18 @@
                 <div class="form-group">
                     <label for="status" class="form-label">Status *</label>
                     <select id="status" name="status" class="form-input" required>
-                        <option value="registration">Qeydiyyat açıq</option>
-                        <option value="upcoming">Gözlənilir</option>
-                        <option value="ongoing">Davam edir</option>
-                        <option value="completed">Başa çatdı</option>
+                        @foreach (TournamentStatus tStatus in Enum.GetValues(typeof(TournamentStatus)))
+                            {
+                            <option value="@((int)tStatus)">@tStatus.ToString()</option>
+                            }
+                        
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label asp-for="Description" class="form-label">Təsvir</label>
                     <textarea asp-for="Description" class="form-textarea" rows="5" placeholder="Turnir haqqında ətraflı məlumat yazın..."></textarea>
+                    <span asp-validation-for="Description"></span>
                 </div>
 
                 <div class="form-group">

@@ -1,4 +1,4 @@
-﻿]using MatchArena.Domain.Entities;
+﻿using MatchArena.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;

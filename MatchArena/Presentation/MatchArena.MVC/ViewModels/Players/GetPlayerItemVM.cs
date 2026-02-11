@@ -1,4 +1,5 @@
-﻿using MatchArena.Domain.Entities;
+﻿using MatchArena.Domain;
+using MatchArena.Domain.Entities;
 
 namespace MatchArena.MVC.ViewModels
 {

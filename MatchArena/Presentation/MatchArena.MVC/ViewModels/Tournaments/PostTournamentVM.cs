@@ -1,4 +1,6 @@
-﻿namespace MatchArena.MVC.ViewModels
+﻿using MatchArena.Domain.Entities;
+
+namespace MatchArena.MVC.ViewModels
 {
     public record PostTournamentVM(
         string Name,
@@ -16,7 +18,7 @@
         decimal PrizeFund,
         string Format,
         string GameFormat,
-        string Status
+        TournamentStatus Status
         );
 
 }

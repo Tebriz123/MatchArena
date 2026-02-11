@@ -1,4 +1,4 @@
-﻿using MatchArena.Domain.Entities;
+﻿using MatchArena.Domain;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;

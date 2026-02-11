@@ -1,4 +1,4 @@
-﻿using MatchArena.Domain.Entities.Enums;
+﻿using MatchArena.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

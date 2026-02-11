@@ -1,6 +1,6 @@
 ﻿namespace MatchArena.MVC.ViewModels
 {
-    public class PutTournamentVM(
+    public record PutTournamentVM(
         string Name,
         string Description,
         String Address,

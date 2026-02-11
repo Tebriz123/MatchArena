@@ -1,5 +1,4 @@
 ﻿using MatchArena.Domain.Entities;
-using MatchArena.Domain.Entities.Enums;
 
 namespace MatchArena.MVC.ViewModels
 {

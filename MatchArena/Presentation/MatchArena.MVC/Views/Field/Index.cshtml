@@ -9,13 +9,13 @@
         @foreach (Field field in Model.Fields)
         {
             <a href="field-detail.html?id=1" class="field-card field-card-link">
-                <div class="card-image"><img src="~/assets/img/fields/@field.Image" alt="@field.Name"><div class="rating">⭐ @field.Rating</div></div>
+                <div class="card-image"><img src="~/assets/img/fields/@field.Image" alt="@field.Name"><div class="rating">⭐ @field.TotalRating</div></div>
                 <div class="card-content">
                     <div class="team-badge field-price-badge">@field.PricePerHour₼/saat</div>
                     <h3 class="card-title">@field.Name</h3>
                     <div class="card-subtitle">🏠 @field.Address</div>
                     <div class="field-info-text">📏 40 x 20 m • 🕐 @field.StartTime - @field.EndTime</div>
-                    <div class="field-review-text">⭐ @field.Rating (127 rəy)</div>
+                    <div class="field-review-text">⭐ @field.TotalRating (127 rəy)</div>
                     <div class="card-buttons"><span class="btn-small">Rezerv et →</span></div>
                 </div>
             </a>

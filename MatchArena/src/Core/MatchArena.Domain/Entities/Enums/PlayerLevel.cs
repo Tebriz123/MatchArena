@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MatchArena.Domain.Entities
+namespace MatchArena.Domain
 {
     public enum PlayerLevel
     {
