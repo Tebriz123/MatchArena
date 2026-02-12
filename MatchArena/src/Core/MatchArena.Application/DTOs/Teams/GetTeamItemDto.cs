@@ -15,8 +15,8 @@ namespace MatchArena.Application.DTOs.Teams
         int MaxPlayer,
         string City,
         int GameCount,
-        string CapitainName,
-        string Image,
+        string CaptainName,
+        string Logo,
         double Rating
         );
   

@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace MatchArena.Domain.Entities
 {
-        public class AppUser:IdentityUser
-        {
-            public string Name { get; set; }
-            public string Surname { get; set; }
-            public Player Player{ get; set; }
+    public class AppUser : IdentityUser
+    {
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        public Player Player { get; set; }
 
     }
 }

@@ -27,6 +27,7 @@ namespace MatchArena.Persistence.Contexts
         public DbSet<Tournament> Tournaments { get; set; }
         public DbSet<TeamPlayer> TeamPlayers { get; set; }
         public DbSet<FieldImage> FieldImages { get; set; }
+        public DbSet<FieldRating> FieldRatings { get; set; }
 
     }
 }

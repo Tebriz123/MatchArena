@@ -9,6 +9,7 @@ using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -35,19 +36,23 @@ namespace MatchArena.Persistence.Implementations.Services
         {
             IReadOnlyList<Team> teams = await _repository.GetAll(
                  page: page,
-               take: take
+               take: take,
+               includes: nameof(Team.Player)
                 ).ToListAsync();
             return _mapper.Map<IReadOnlyList<GetTeamItemDto>>(teams);
         }
 
         public async Task<GetTeamDto> GetByIdAsync(long id)
         {
-            Team team = await _repository.GetByIdAsync(id, "TeamPlayers.Player");
-            if (team is null) throw new Exception("Teams not found");
+            Team team = await _repository.GetByIdAsync(id, "TeamPlayers.Player", "Player");
+
+
+            if (team is null)
+                throw new Exception($"Team not found");
 
             return _mapper.Map<GetTeamDto>(team);
         }
-
+         
         public async Task CreateTeamAsync(PostTeamDto teamDto)
         {
             Team team = _mapper.Map<Team>(teamDto);
@@ -61,8 +66,9 @@ namespace MatchArena.Persistence.Implementations.Services
 
             if (team is null) throw new Exception("Team not found");
 
-            _repository.Update(team);
+            _mapper.Map(teamDto, team);
 
+            _repository.Update(team);
             await _repository.SaveChangesAsync();
         }
 

@@ -62,7 +62,9 @@ namespace MatchArena.Persistence.Implementations.Services
         public async Task UpdatePlayerAsync(long id, PutPlayerDto playerDto)
         {
             Player player = await _repository.GetByIdAsync(id);
-           if (player is null) throw new Exception("Player not found");
+            if (player is null) throw new Exception("Player not found");
+
+            _mapper.Map(playerDto, player);
 
             _repository.Update(player);
             await _repository.SaveChangesAsync();

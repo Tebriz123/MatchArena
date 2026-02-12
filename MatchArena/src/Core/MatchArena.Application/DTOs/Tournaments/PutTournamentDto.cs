@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using MatchArena.Domain.Entities;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +24,7 @@ namespace MatchArena.Application.DTOs.Tournaments
         decimal PrizeFund,
         string Format,
         string GameFormat,
-        string Status
+        TournamentStatus Status
         );
    
 }
