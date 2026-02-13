@@ -10,7 +10,8 @@ namespace MatchArena.Application.DTOs.Player
         long Id,
         string Name,
         string Surname,
-        string Image
+        string Image,
+        bool IsCaptain
         );
   
 }

@@ -13,8 +13,17 @@ namespace MatchArena.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<TeamPlayer> builder)
         {
-
             builder.HasKey(tp => new { tp.TeamId, tp.PlayerId });
+
+            builder.Property(tp => tp.IsCaptain)
+                .IsRequired()
+                .HasDefaultValue(false);
+
+            builder.Property(tp => tp.TeamId)
+                .IsRequired();
+
+            builder.Property(tp => tp.PlayerId)
+                .IsRequired();
 
             builder.HasOne(tp => tp.Team)
                 .WithMany(t => t.TeamPlayers)
@@ -24,7 +33,15 @@ namespace MatchArena.Persistence.Configurations
             builder.HasOne(tp => tp.Player)
                 .WithMany(p => p.PlayerTeams)
                 .HasForeignKey(tp => tp.PlayerId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Restrict); 
+
+            builder.HasIndex(tp => tp.TeamId);
+            builder.HasIndex(tp => tp.PlayerId);
+
+            builder.HasIndex(tp => new { tp.TeamId, tp.IsCaptain })
+                .IsUnique()
+                .HasFilter("[IsCaptain] = 1"); 
         }
+
     }
 }

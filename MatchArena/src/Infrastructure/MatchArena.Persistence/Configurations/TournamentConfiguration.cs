@@ -57,9 +57,9 @@ namespace MatchArena.Persistence.Configurations
             builder.Property(t => t.GameFormat)
                 .HasMaxLength(100);
 
-            builder.Property(t => t.Raiting)
-                .HasColumnType("decimal(3,2)")
-                .IsRequired();
+            //builder.Property(t => t.Raiting)
+            //    .HasColumnType("decimal(3,2)")
+            //    .IsRequired();
 
             builder.Property(t => t.StartDate)
                 .IsRequired();

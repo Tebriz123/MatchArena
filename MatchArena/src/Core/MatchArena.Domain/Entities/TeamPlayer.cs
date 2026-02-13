@@ -8,6 +8,7 @@ namespace MatchArena.Domain.Entities
 {
     public class TeamPlayer:BaseEntity
     {
+        public bool IsCaptain { get; set; }
         public long TeamId { get; set; }
         public Team Team { get; set; }
         public long PlayerId { get; set; }

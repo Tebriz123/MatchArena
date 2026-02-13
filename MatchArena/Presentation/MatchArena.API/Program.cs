@@ -57,10 +57,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-using(var scope = app.Services.CreateScope())
-{
-    await app.UseAppDbContextInitializer(scope);
-}
+//using(var scope = app.Services.CreateScope())
+//{
+//    await app.UseAppDbContextInitializer(scope);
+//}
 
 app.UseHttpsRedirection();
 

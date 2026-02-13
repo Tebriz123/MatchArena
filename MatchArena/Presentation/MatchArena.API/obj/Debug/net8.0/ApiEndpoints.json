@@ -56,24 +56,419 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "MatchArena.API.Controllers.WeatherForecastController",
-    "Method": "Get",
-    "RelativePath": "WeatherForecast",
+    "ContainingType": "MatchArena.API.Controllers.AccountsController",
+    "Method": "Login",
+    "RelativePath": "Accounts/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UsernameOrEmail",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Password",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MatchArena.API.Controllers.TournamentsController",
+    "Method": "GetAsync",
+    "RelativePath": "api/Tournaments",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
+    "Parameters": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[MatchArena.API.WeatherForecast, MatchArena.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "take",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
-    "EndpointName": "GetWeatherForecast"
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MatchArena.API.Controllers.TournamentsController",
+    "Method": "PostAsync",
+    "RelativePath": "api/Tournaments",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tournamentDto",
+        "Type": "MatchArena.Application.DTOs.Tournaments.PostTournamentDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MatchArena.API.Controllers.TournamentsController",
+    "Method": "PutAsync",
+    "RelativePath": "api/Tournaments",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "tournamentDto",
+        "Type": "MatchArena.Application.DTOs.Tournaments.PutTournamentDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MatchArena.API.Controllers.TournamentsController",
+    "Method": "DeleteAsync",
+    "RelativePath": "api/Tournaments",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int64",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MatchArena.API.Controllers.TournamentsController",
+    "Method": "GetAsync",
+    "RelativePath": "api/Tournaments/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int64",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MatchArena.API.Controllers.FieldsController",
+    "Method": "GetAsync",
+    "RelativePath": "Fields",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "take",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MatchArena.API.Controllers.FieldsController",
+    "Method": "PostAsync",
+    "RelativePath": "Fields",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fieldDto",
+        "Type": "MatchArena.Application.DTOs.Fields.PostFieldDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MatchArena.API.Controllers.FieldsController",
+    "Method": "PutAsync",
+    "RelativePath": "Fields",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "fieldDto",
+        "Type": "MatchArena.Application.DTOs.Fields.PutFieldDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MatchArena.API.Controllers.FieldsController",
+    "Method": "DeleteAsync",
+    "RelativePath": "Fields",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int64",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MatchArena.API.Controllers.FieldsController",
+    "Method": "GetAsync",
+    "RelativePath": "Fields/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int64",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MatchArena.API.Controllers.PlayersController",
+    "Method": "GetAsync",
+    "RelativePath": "Players",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "take",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MatchArena.API.Controllers.PlayersController",
+    "Method": "PostAsync",
+    "RelativePath": "Players",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "playerDto",
+        "Type": "MatchArena.Application.DTOs.Player.PostPlayerDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MatchArena.API.Controllers.PlayersController",
+    "Method": "PutAsync",
+    "RelativePath": "Players",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "playerDto",
+        "Type": "MatchArena.Application.DTOs.Player.PutPlayerDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MatchArena.API.Controllers.PlayersController",
+    "Method": "DeleteAsync",
+    "RelativePath": "Players",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int64",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MatchArena.API.Controllers.PlayersController",
+    "Method": "GetAsync",
+    "RelativePath": "Players/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int64",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MatchArena.API.Controllers.TeamsController",
+    "Method": "GetAsync",
+    "RelativePath": "Teams",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "take",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MatchArena.API.Controllers.TeamsController",
+    "Method": "PostAsync",
+    "RelativePath": "Teams",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Logo",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "CaptainName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Photo",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "City",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PlayerCount",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "MaxPlayer",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Information",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MatchArena.API.Controllers.TeamsController",
+    "Method": "PutAsync",
+    "RelativePath": "Teams",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "teamDto",
+        "Type": "MatchArena.Application.DTOs.Teams.PutTeamDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MatchArena.API.Controllers.TeamsController",
+    "Method": "DeleteAsync",
+    "RelativePath": "Teams",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int64",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MatchArena.API.Controllers.TeamsController",
+    "Method": "GetAsync",
+    "RelativePath": "Teams/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int64",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

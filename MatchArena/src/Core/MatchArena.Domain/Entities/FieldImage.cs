@@ -11,6 +11,6 @@ namespace MatchArena.Domain.Entities
         public string Image { get; set; }
         public bool IsPrimary { get; set; }
         public Field Field { get; set; }
-        public int FieldId { get; set; }
+        public long FieldId { get; set; }
     }
 }

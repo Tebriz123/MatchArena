@@ -26,9 +26,6 @@ namespace MatchArena.Persistence.Configurations
                 .HasColumnType("decimal(18,2)")
                 .IsRequired();
 
-            builder.Property(f => f.Raiting)
-                .IsRequired();
-
             builder.HasMany(f => f.Images)
                 .WithOne(fi => fi.Field)
                 .HasForeignKey(fi => fi.FieldId)

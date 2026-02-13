@@ -163,3 +163,8 @@ C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\Presentation\MatchAr
 C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\Presentation\MatchArena.API\bin\Debug\net8.0\MatchArena.Persistence.dll
 C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\Presentation\MatchArena.API\bin\Debug\net8.0\MatchArena.Infrastructure.pdb
 C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\Presentation\MatchArena.API\bin\Debug\net8.0\MatchArena.Persistence.pdb
+C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\Presentation\MatchArena.API\bin\Debug\net8.0\Azure.Storage.Blobs.dll
+C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\Presentation\MatchArena.API\bin\Debug\net8.0\Azure.Storage.Common.dll
+C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\Presentation\MatchArena.API\bin\Debug\net8.0\CloudinaryDotNet.dll
+C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\Presentation\MatchArena.API\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\Presentation\MatchArena.API\bin\Debug\net8.0\System.IO.Hashing.dll

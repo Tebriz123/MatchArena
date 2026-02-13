@@ -9,12 +9,9 @@ namespace MatchArena.Application.DTOs.Teams
 {
     public record PutTeamDto(
        string Name,
-        string Logo,
         string CaptainName,
         IFormFile Photo,
         string City,
-        int PlayerCount,
-        int MaxPlayer,
         string Information
         );
     

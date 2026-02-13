@@ -8,8 +8,6 @@ namespace MatchArena.Domain.Entities
 {
     public class Team:BaseNameableEntity
     {
-        public long CaptainId { get; set; }
-        public Player Player { get; set; }
         public ICollection<TeamPlayer> TeamPlayers { get; set; }
         public string Logo { get; set; }
         public string City { get; set; }

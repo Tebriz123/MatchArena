@@ -15,7 +15,6 @@ namespace MatchArena.Domain.Entities
         public int Age { get; set; }
         public PlayerPosition Position { get; set; }
         public PlayerLevel Level { get; set; }
-        public bool IsCapitain { get; set; }
         public string Image { get; set; }
         public string City { get; set; }
         public int Rating { get; set; }

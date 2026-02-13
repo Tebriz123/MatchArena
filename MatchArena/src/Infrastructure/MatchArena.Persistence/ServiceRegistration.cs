@@ -1,6 +1,8 @@
-﻿using MatchArena.Application.Interfaces.Services;
+﻿using MatchArena.Application.Interfaces.Repositories;
+using MatchArena.Application.Interfaces.Services;
 using MatchArena.Domain.Entities;
 using MatchArena.Persistence.Contexts;
+using MatchArena.Persistence.Implementations.Repositories;
 using MatchArena.Persistence.Implementations.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
@@ -29,7 +31,11 @@ namespace MatchArena.Persistence
                 opt.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(3);
             }).AddDefaultTokenProviders().AddEntityFrameworkStores<AppDbContext>();
 
-
+            
+            services.AddScoped<IPlayerRepository, PlayerRepository>();
+            services.AddScoped<ITeamRepository, TeamRepository>();
+            services.AddScoped<IFieldRepository, FieldRepository>();
+            services.AddScoped<ITournamentRepository, TournamentRepository>();
 
 
             services.AddScoped<IAuthenticationService, AuthenticationService>();
@@ -38,22 +44,24 @@ namespace MatchArena.Persistence
             services.AddScoped<ITeamService, TeamService>();
             services.AddScoped<IFieldService, FieldService>();
             services.AddScoped<ITournamentService, TournamentService>();
+            services.AddScoped<IFileService, FileService>();
+
             return services;
         }
 
 
-        public static async Task<IApplicationBuilder> UseAppDbContextInitializer(this IApplicationBuilder app,IServiceScope scope)
-        {
+        //public static async Task<IApplicationBuilder> UseAppDbContextInitializer(this IApplicationBuilder app,IServiceScope scope)
+        //{
            
-                var initializer = scope.ServiceProvider.GetRequiredService<AppDbContextInitializer>();
+        //        var initializer = scope.ServiceProvider.GetRequiredService<AppDbContextInitializer>();
 
-                await initializer.InitializeDbContext();
-                await initializer.InitializeRoleAsync();
-                await initializer.InitializeAdmin();
+        //        await initializer.InitializeDbContext();
+        //        await initializer.InitializeRoleAsync();
+        //        await initializer.InitializeAdmin();
 
-            return app;
+        //    return app;
 
-        }
+        //}
 
     }
 }

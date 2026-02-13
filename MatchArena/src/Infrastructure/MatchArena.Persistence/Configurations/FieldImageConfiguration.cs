@@ -19,7 +19,7 @@ namespace MatchArena.Persistence.Configurations
 
             builder.Property(fi => fi.FieldId)
                 .IsRequired();
- 
+
             builder.HasOne(fi => fi.Field)
                 .WithMany(f => f.Images)
                 .HasForeignKey(fi => fi.FieldId)
@@ -27,6 +27,7 @@ namespace MatchArena.Persistence.Configurations
 
             builder.HasIndex(fi => fi.FieldId);
         }
+
     }
 }
 

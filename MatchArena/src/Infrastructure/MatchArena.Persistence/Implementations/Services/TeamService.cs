@@ -20,16 +20,19 @@ namespace MatchArena.Persistence.Implementations.Services
         private readonly ITeamRepository _repository;
         private readonly IMapper _mapper;
         private readonly IPlayerRepository _playerRepository;
+        private readonly IFileService _fileService;
 
         public TeamService(
             ITeamRepository repository,
             IMapper mapper,
-            IPlayerRepository playerRepository
+            IPlayerRepository playerRepository,
+            IFileService fileService
             )
         {
             _repository = repository;
             _mapper = mapper;
             _playerRepository = playerRepository;
+            _fileService = fileService;
         }
 
         public async Task<IReadOnlyList<GetTeamItemDto>> GetAllAsync(int page, int take)
@@ -56,6 +59,7 @@ namespace MatchArena.Persistence.Implementations.Services
         public async Task CreateTeamAsync(PostTeamDto teamDto)
         {
             Team team = _mapper.Map<Team>(teamDto);
+            team.Logo = await _fileService.FileCreateAsync(teamDto.Photo);
             _repository.Add(team);
             await _repository.SaveChangesAsync();
         }

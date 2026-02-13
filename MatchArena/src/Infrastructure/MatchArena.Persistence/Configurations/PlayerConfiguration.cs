@@ -11,7 +11,7 @@ namespace MatchArena.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<Player> builder)
         {
-
+           
             builder.Property(p => p.UserId)
                 .IsRequired()
                 .HasMaxLength(450);
@@ -25,9 +25,6 @@ namespace MatchArena.Persistence.Configurations
             builder.Property(p => p.Level)
                 .IsRequired();
 
-            builder.Property(p => p.IsCapitain)
-                .IsRequired();
-
             builder.Property(p => p.Image)
                 .HasMaxLength(500);
 
@@ -35,15 +32,31 @@ namespace MatchArena.Persistence.Configurations
                 .HasMaxLength(100);
 
             builder.Property(p => p.Rating)
-                .IsRequired();
+                .IsRequired()
+                .HasDefaultValue(0);
 
             builder.Property(p => p.PlayedMatches)
                 .IsRequired()
                 .HasDefaultValue(0);
 
+            builder.Property(p => p.Height)
+                .IsRequired()
+                .HasDefaultValue(0);
+
+            builder.Property(p => p.GameCount)
+                .IsRequired()
+                .HasDefaultValue(0);
+
+            builder.Property(p => p.Goal)
+                .IsRequired()
+                .HasDefaultValue(0);
+
+            builder.Property(p => p.Information)
+                .HasMaxLength(1000);
+
             builder.HasOne(p => p.User)
-                .WithMany()
-                .HasForeignKey(p => p.UserId)
+                .WithOne(u => u.Player)
+                .HasForeignKey<Player>(p => p.UserId)
                 .OnDelete(DeleteBehavior.Restrict);
 
             builder.HasMany(p => p.PlayerTeams)
@@ -51,8 +64,9 @@ namespace MatchArena.Persistence.Configurations
                 .HasForeignKey(pt => pt.PlayerId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            builder.HasIndex(p => p.UserId);
-
+            builder.HasIndex(p => p.UserId)
+                .IsUnique();
         }
+
     }
 }

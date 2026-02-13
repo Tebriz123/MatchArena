@@ -30,7 +30,7 @@ namespace MatchArena.API.Controllers
             return Ok(await _service.GetByIdAsync(id));
         }
         [HttpPost]
-        public async Task<IActionResult> PostAsync([FromBody] PostTeamDto teamDto)
+        public async Task<IActionResult> PostAsync([FromForm] PostTeamDto teamDto)
         {
             await _service.CreateTeamAsync(teamDto);
             return Created();

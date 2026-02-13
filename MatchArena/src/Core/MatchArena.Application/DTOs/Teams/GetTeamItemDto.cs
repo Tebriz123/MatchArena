@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace MatchArena.Application.DTOs.Teams
 {
     public record GetTeamItemDto(
-        long id,
+        long Id,
         string Name,
         int PlayerCount,
         int MaxPlayer,
