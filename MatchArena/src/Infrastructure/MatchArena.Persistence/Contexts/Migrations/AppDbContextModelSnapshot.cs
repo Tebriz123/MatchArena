@@ -126,8 +126,8 @@ namespace MatchArena.Persistence.Contexts.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("EndTime")
-                        .HasColumnType("datetime2");
+                    b.Property<TimeOnly>("EndTime")
+                        .HasColumnType("time");
 
                     b.Property<string>("FieldInformation")
                         .IsRequired()
@@ -147,8 +147,8 @@ namespace MatchArena.Persistence.Contexts.Migrations
                     b.Property<decimal>("PricePerHour")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<DateTime>("StartTime")
-                        .HasColumnType("datetime2");
+                    b.Property<TimeOnly>("StartTime")
+                        .HasColumnType("time");
 
                     b.Property<long?>("TournamentId")
                         .HasColumnType("bigint");
@@ -251,13 +251,19 @@ namespace MatchArena.Persistence.Contexts.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("GameCount")
-                        .HasColumnType("int");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(0);
 
                     b.Property<int>("Goal")
-                        .HasColumnType("int");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(0);
 
                     b.Property<int>("Height")
-                        .HasColumnType("int");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(0);
 
                     b.Property<string>("Image")
                         .IsRequired()
@@ -266,10 +272,8 @@ namespace MatchArena.Persistence.Contexts.Migrations
 
                     b.Property<string>("Information")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsCapitain")
-                        .HasColumnType("bit");
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -286,7 +290,9 @@ namespace MatchArena.Persistence.Contexts.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("Rating")
-                        .HasColumnType("int");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(0);
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -312,12 +318,10 @@ namespace MatchArena.Persistence.Contexts.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
-                    b.Property<long>("CaptainId")
-                        .HasColumnType("bigint");
-
                     b.Property<string>("City")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -327,11 +331,14 @@ namespace MatchArena.Persistence.Contexts.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("GameCount")
-                        .HasColumnType("int");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(0);
 
                     b.Property<string>("Information")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -342,29 +349,29 @@ namespace MatchArena.Persistence.Contexts.Migrations
                         .HasColumnType("nvarchar(500)");
 
                     b.Property<int>("MaxPlayer")
-                        .HasColumnType("int");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(25);
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<int>("PlayerCount")
-                        .HasColumnType("int");
-
-                    b.Property<long>("PlayerId")
-                        .HasColumnType("bigint");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(0);
 
                     b.Property<double>("Rating")
-                        .HasColumnType("float");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("float")
+                        .HasDefaultValue(0.0);
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CaptainId");
-
-                    b.HasIndex("PlayerId");
 
                     b.ToTable("Teams");
                 });
@@ -380,12 +387,23 @@ namespace MatchArena.Persistence.Contexts.Migrations
                     b.Property<long>("Id")
                         .HasColumnType("bigint");
 
+                    b.Property<bool>("IsCaptain")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
                     b.HasKey("TeamId", "PlayerId");
 
                     b.HasIndex("PlayerId");
+
+                    b.HasIndex("TeamId");
+
+                    b.HasIndex("TeamId", "IsCaptain")
+                        .IsUnique()
+                        .HasFilter("[IsCaptain] = 1");
 
                     b.ToTable("TeamPlayers");
                 });
@@ -683,29 +701,18 @@ namespace MatchArena.Persistence.Contexts.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("MatchArena.Domain.Entities.Team", b =>
-                {
-                    b.HasOne("MatchArena.Domain.Entities.Player", "Player")
-                        .WithMany()
-                        .HasForeignKey("PlayerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Player");
-                });
-
             modelBuilder.Entity("MatchArena.Domain.Entities.TeamPlayer", b =>
                 {
                     b.HasOne("MatchArena.Domain.Entities.Player", "Player")
                         .WithMany("PlayerTeams")
                         .HasForeignKey("PlayerId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("MatchArena.Domain.Entities.Team", "Team")
                         .WithMany("TeamPlayers")
                         .HasForeignKey("TeamId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Player");

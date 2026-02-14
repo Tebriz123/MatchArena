@@ -26,6 +26,7 @@ namespace MatchArena.Persistence.Configurations
                 .OnDelete(DeleteBehavior.Cascade);
 
             builder.HasIndex(fi => fi.FieldId);
+           
         }
 
     }

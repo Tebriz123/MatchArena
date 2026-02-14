@@ -40,14 +40,14 @@ namespace MatchArena.Persistence.Implementations.Services
             IReadOnlyList<Team> teams = await _repository.GetAll(
                  page: page,
                take: take,
-               includes: nameof(Team.Player)
+               includes:"TeamPlayers.Player.User"
                 ).ToListAsync();
             return _mapper.Map<IReadOnlyList<GetTeamItemDto>>(teams);
         }
 
         public async Task<GetTeamDto> GetByIdAsync(long id)
         {
-            Team team = await _repository.GetByIdAsync(id, "TeamPlayers.Player", "Player");
+            Team team = await _repository.GetByIdAsync(id, "TeamPlayers.Player", "TeamPlayers.Player.User");
 
 
             if (team is null)
@@ -56,11 +56,20 @@ namespace MatchArena.Persistence.Implementations.Services
             return _mapper.Map<GetTeamDto>(team);
         }
          
-        public async Task CreateTeamAsync(PostTeamDto teamDto)
+        public async Task CreateTeamAsync(PostTeamDto teamDto, string userId)
         {
             Team team = _mapper.Map<Team>(teamDto);
             team.Logo = await _fileService.FileCreateAsync(teamDto.Photo);
+
+            Player captain = _playerRepository.GetAll(p => p.UserId == userId).FirstOrDefault() 
+                ?? throw new Exception("You are not a player");
+            team.TeamPlayers.Add(new TeamPlayer()
+            {
+                PlayerId = captain.Id,
+                IsCaptain = true
+            });
             _repository.Add(team);
+
             await _repository.SaveChangesAsync();
         }
 

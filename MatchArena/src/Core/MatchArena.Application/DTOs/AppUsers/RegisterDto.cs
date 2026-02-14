@@ -11,10 +11,6 @@ namespace MatchArena.Application.DTOs.AppUsers
     public record RegisterDto(
         string Name,
         string Surname,
-        PlayerPosition Position,
-        PlayerLevel Level,
-        Gender Gender,
-        string City,
         string Email,
         string Username,
         string Password

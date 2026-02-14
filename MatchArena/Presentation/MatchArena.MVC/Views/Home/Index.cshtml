@@ -84,7 +84,7 @@
     <p class="section-subtitle">Ən populyar komandaların bir siyahısı.</p>
 
     <div class="cards-grid">
-       @foreach (Team team in Model.Teams)
+       @* @foreach (Team team in Model.Teams)
         {
             <div class="team-card">
                 <div class="card-image"><img src="~/assets/img/teams/@team.Logo" alt="@team.Name"></div>
@@ -103,7 +103,7 @@
                     </div>
                 </div>
             </div>
-        }
+        } *@
     </div>
 
     <h2 class="section-title">Meydança rezervasiyası</h2>
@@ -120,10 +120,10 @@
                     <div class="card-subtitle">🏠 @field.City</div>
                     <div class="available-hours">🕐 Boş saatlar: 5 saat</div>
                     <div class="time-slots time-slots-container">
-                        @foreach (DateTime date in field.EmptySpace)
+                        @* @foreach (DateTime date in field.EmptySpace)
                         {
                             <button class="time-slot">@date</button>
-                        }
+                        } *@
                         
                     </div>
                     <div class="card-buttons"><a href="field-detail.html?id=1" class="btn-small">Rezerv et →</a></div>

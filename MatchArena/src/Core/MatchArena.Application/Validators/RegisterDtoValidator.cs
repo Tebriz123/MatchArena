@@ -28,14 +28,7 @@ namespace MatchArena.Application.Validators
                .MaximumLength(50)
                     .WithMessage("Surname must be less than 50 characters")
                 .Matches(@"^[A-Za-z]*$");
-            RuleFor(r=>r.City)
-                .NotEmpty()
-                    .WithMessage("City is required")
-                .MinimumLength(3)
-                    .WithMessage("City must be more than 2 characters")
-                .MaximumLength(50)
-                    .WithMessage("City must be less than 50 characters")
-                .Matches(@"^[A-Za-z]*$");
+          
             RuleFor(r => r.Email)
                .NotEmpty()
                     .WithMessage("Email is required")

@@ -1,7 +1,9 @@
 ﻿using MatchArena.Application.DTOs.Player;
 using MatchArena.Application.Interfaces.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace MatchArena.API.Controllers
 {
@@ -28,13 +30,18 @@ namespace MatchArena.API.Controllers
             return Ok(await _service.GetByIdAsync(id));
         }
         [HttpPost]
-        public async Task<IActionResult> PostAsync([FromBody] PostPlayerDto playerDto)
+        [Authorize]
+        public async Task<IActionResult> PostAsync([FromForm] PostPlayerDto playerDto)
         {
-            await _service.CreatePlayerAsync(playerDto);
+            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (string.IsNullOrEmpty(userId))
+                return Unauthorized("User is not authenticated");
+
+            await _service.CreatePlayerAsync(playerDto, userId); 
             return Created();
         }
         [HttpPut]
-        public async Task<IActionResult> PutAsync(long id, [FromBody] PutPlayerDto playerDto)
+        public async Task<IActionResult> PutAsync(long id, [FromForm] PutPlayerDto playerDto)
         {
             if(id<1) return BadRequest();
             await _service.UpdatePlayerAsync(id, playerDto);

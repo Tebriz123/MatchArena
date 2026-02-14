@@ -31,13 +31,13 @@ namespace MatchArena.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> PostAsync([FromBody] PostFieldDto fieldDto)
+        public async Task<IActionResult> PostAsync([FromForm] PostFieldDto fieldDto)
         {
             await _service.CreateFieldAsync(fieldDto);
             return Created();
         }
         [HttpPut]
-        public async Task<IActionResult> PutAsync(long id, [FromBody] PutFieldDto fieldDto)
+        public async Task<IActionResult> PutAsync(long id, [FromForm] PutFieldDto fieldDto)
         {
             if (id < 1) return BadRequest();
             await _service.UpdateFieldAsync(id, fieldDto);

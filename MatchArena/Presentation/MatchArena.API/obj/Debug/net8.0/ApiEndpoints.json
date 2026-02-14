@@ -18,26 +18,6 @@
         "IsRequired": false
       },
       {
-        "Name": "Position",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Level",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Gender",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "City",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
         "Name": "Email",
         "Type": "System.String",
         "IsRequired": false
@@ -196,9 +176,49 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "fieldDto",
-        "Type": "MatchArena.Application.DTOs.Fields.PostFieldDto",
-        "IsRequired": true
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "City",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Address",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PrimaryPhoto",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "AdditionalPhotos",
+        "Type": "System.Collections.Generic.ICollection\u00601[[Microsoft.AspNetCore.Http.IFormFile, Microsoft.AspNetCore.Http.Features, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "PricePerHour",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "StartTime",
+        "Type": "System.TimeOnly",
+        "IsRequired": false
+      },
+      {
+        "Name": "EndTime",
+        "Type": "System.TimeOnly",
+        "IsRequired": false
+      },
+      {
+        "Name": "FieldInformation",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -217,9 +237,49 @@
         "IsRequired": false
       },
       {
-        "Name": "fieldDto",
-        "Type": "MatchArena.Application.DTOs.Fields.PutFieldDto",
-        "IsRequired": true
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "City",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Address",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PrimaryPhoto",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "AdditionalPhotos",
+        "Type": "System.Collections.Generic.ICollection\u00601[[Microsoft.AspNetCore.Http.IFormFile, Microsoft.AspNetCore.Http.Features, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "PricePerHour",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "StartTime",
+        "Type": "System.TimeOnly",
+        "IsRequired": false
+      },
+      {
+        "Name": "EndTime",
+        "Type": "System.TimeOnly",
+        "IsRequired": false
+      },
+      {
+        "Name": "FieldInformation",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -286,9 +346,49 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "playerDto",
-        "Type": "MatchArena.Application.DTOs.Player.PostPlayerDto",
-        "IsRequired": true
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Surname",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Age",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Height",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Photo",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "Information",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "City",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Position",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Level",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -307,9 +407,49 @@
         "IsRequired": false
       },
       {
-        "Name": "playerDto",
-        "Type": "MatchArena.Application.DTOs.Player.PutPlayerDto",
-        "IsRequired": true
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Surname",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Age",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Information",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "City",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Height",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Photo",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "Position",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Level",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -381,16 +521,6 @@
         "IsRequired": false
       },
       {
-        "Name": "Logo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "CaptainName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
         "Name": "Photo",
         "Type": "Microsoft.AspNetCore.Http.IFormFile",
         "IsRequired": false
@@ -398,11 +528,6 @@
       {
         "Name": "City",
         "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "PlayerCount",
-        "Type": "System.Int32",
         "IsRequired": false
       },
       {

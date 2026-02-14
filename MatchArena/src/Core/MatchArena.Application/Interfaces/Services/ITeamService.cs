@@ -11,7 +11,7 @@ namespace MatchArena.Application.Interfaces.Services
     {
         Task<IReadOnlyList<GetTeamItemDto>> GetAllAsync(int page, int take);
         Task<GetTeamDto> GetByIdAsync(long id);
-        Task CreateTeamAsync(PostTeamDto teamDto);
+        Task CreateTeamAsync(PostTeamDto teamDto, string userId);
         Task UpdateTeamAsync(long id, PutTeamDto teamDto);
         Task RemoveAsync(long id);
     }

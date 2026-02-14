@@ -8,14 +8,15 @@ namespace MatchArena.Application.DTOs.Fields
 {
     public record GetFieldDto(
         long Id,
+        string Name,
         string City,
         int TotalRating,
         double AverageRating,
         string Address,
         decimal PricePerHour,
-        DateTime StartDate,
-        DateTime EndDate,
-        ICollection<DateTime> EmptySpace
+        TimeOnly StartDate,
+        TimeOnly EndDate,
+        ICollection<TimeOnly> EmptySpace
         );
    
 }

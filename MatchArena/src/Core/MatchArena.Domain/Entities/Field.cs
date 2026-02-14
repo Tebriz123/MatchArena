@@ -12,15 +12,15 @@ namespace MatchArena.Domain.Entities
         public string City { get; set; }
         public decimal PricePerHour { get; set; }
         public string FieldInformation { get; set; }
-        public DateTime StartTime { get; set; }
-        public DateTime EndTime { get; set; }
+        public TimeOnly StartTime { get; set; }
+        public TimeOnly EndTime { get; set; }
         public string Image { get; set; }
         public ICollection<FieldImage> Images { get; set; }
-        public ICollection<DateTime> EmptySpace { get; set; }
+        public ICollection<TimeOnly> EmptySpace { get; set; } = new List<TimeOnly>();
 
         public double AverageRating => FieldRatings != null && FieldRatings.Any() ?
             FieldRatings.Average(r => r.Rating) : 0;
         public int TotalRating => FieldRatings?.Count ?? 0;
-        public ICollection<FieldRating> FieldRatings { get; set; }
+        public ICollection<FieldRating> FieldRatings { get; set; } = new List<FieldRating>();
     }
 }

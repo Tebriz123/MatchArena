@@ -1,7 +1,9 @@
 ﻿using MatchArena.Application.DTOs.Teams;
 using MatchArena.Application.Interfaces.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace MatchArena.API.Controllers
 {
@@ -10,10 +12,12 @@ namespace MatchArena.API.Controllers
     public class TeamsController : ControllerBase
     {
         private readonly ITeamService _service;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public TeamsController(ITeamService service)
+        public TeamsController(ITeamService service, IHttpContextAccessor httpContextAccessor)
         {
             _service = service;
+            _httpContextAccessor = httpContextAccessor;
         }
 
 
@@ -29,10 +33,18 @@ namespace MatchArena.API.Controllers
             if (id < 1) return BadRequest();
             return Ok(await _service.GetByIdAsync(id));
         }
+
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> PostAsync([FromForm] PostTeamDto teamDto)
         {
-            await _service.CreateTeamAsync(teamDto);
+            var userId = _httpContextAccessor.HttpContext?
+                .User?
+                .FindFirst(ClaimTypes.NameIdentifier)?
+                .Value
+                ?? throw new Exception("User's Id is in the wrong format!");
+
+            await _service.CreateTeamAsync(teamDto, userId);
             return Created();
         }
 

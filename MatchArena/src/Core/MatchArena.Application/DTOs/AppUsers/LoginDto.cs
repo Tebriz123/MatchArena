@@ -1,4 +1,4 @@
-﻿using MatchArena.Domain.Entities;
+﻿ using MatchArena.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MatchArena.Application.DTOs.AppUsers
 {
-    public record LoginDto(
+     public record LoginDto(
         string UsernameOrEmail,
         string Password
         );

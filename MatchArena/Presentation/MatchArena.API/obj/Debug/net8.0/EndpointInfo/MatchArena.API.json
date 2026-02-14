@@ -22,18 +22,6 @@
                   "Surname": {
                     "type": "string"
                   },
-                  "Position": {
-                    "$ref": "#/components/schemas/PlayerPosition"
-                  },
-                  "Level": {
-                    "$ref": "#/components/schemas/PlayerLevel"
-                  },
-                  "Gender": {
-                    "$ref": "#/components/schemas/Gender"
-                  },
-                  "City": {
-                    "type": "string"
-                  },
                   "Email": {
                     "type": "string"
                   },
@@ -50,18 +38,6 @@
                   "style": "form"
                 },
                 "Surname": {
-                  "style": "form"
-                },
-                "Position": {
-                  "style": "form"
-                },
-                "Level": {
-                  "style": "form"
-                },
-                "Gender": {
-                  "style": "form"
-                },
-                "City": {
                   "style": "form"
                 },
                 "Email": {
@@ -158,19 +134,75 @@
         ],
         "requestBody": {
           "content": {
-            "application/json": {
+            "multipart/form-data": {
               "schema": {
-                "$ref": "#/components/schemas/PostFieldDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PostFieldDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/PostFieldDto"
+                "type": "object",
+                "properties": {
+                  "Name": {
+                    "type": "string"
+                  },
+                  "City": {
+                    "type": "string"
+                  },
+                  "Address": {
+                    "type": "string"
+                  },
+                  "PrimaryPhoto": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "AdditionalPhotos": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "binary"
+                    }
+                  },
+                  "PricePerHour": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "StartTime": {
+                    "type": "string",
+                    "format": "time"
+                  },
+                  "EndTime": {
+                    "type": "string",
+                    "format": "time"
+                  },
+                  "FieldInformation": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "Name": {
+                  "style": "form"
+                },
+                "City": {
+                  "style": "form"
+                },
+                "Address": {
+                  "style": "form"
+                },
+                "PrimaryPhoto": {
+                  "style": "form"
+                },
+                "AdditionalPhotos": {
+                  "style": "form"
+                },
+                "PricePerHour": {
+                  "style": "form"
+                },
+                "StartTime": {
+                  "style": "form"
+                },
+                "EndTime": {
+                  "style": "form"
+                },
+                "FieldInformation": {
+                  "style": "form"
+                }
               }
             }
           }
@@ -197,19 +229,75 @@
         ],
         "requestBody": {
           "content": {
-            "application/json": {
+            "multipart/form-data": {
               "schema": {
-                "$ref": "#/components/schemas/PutFieldDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PutFieldDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/PutFieldDto"
+                "type": "object",
+                "properties": {
+                  "Name": {
+                    "type": "string"
+                  },
+                  "City": {
+                    "type": "string"
+                  },
+                  "Address": {
+                    "type": "string"
+                  },
+                  "PrimaryPhoto": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "AdditionalPhotos": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "binary"
+                    }
+                  },
+                  "PricePerHour": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "StartTime": {
+                    "type": "string",
+                    "format": "time"
+                  },
+                  "EndTime": {
+                    "type": "string",
+                    "format": "time"
+                  },
+                  "FieldInformation": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "Name": {
+                  "style": "form"
+                },
+                "City": {
+                  "style": "form"
+                },
+                "Address": {
+                  "style": "form"
+                },
+                "PrimaryPhoto": {
+                  "style": "form"
+                },
+                "AdditionalPhotos": {
+                  "style": "form"
+                },
+                "PricePerHour": {
+                  "style": "form"
+                },
+                "StartTime": {
+                  "style": "form"
+                },
+                "EndTime": {
+                  "style": "form"
+                },
+                "FieldInformation": {
+                  "style": "form"
+                }
               }
             }
           }
@@ -301,19 +389,70 @@
         ],
         "requestBody": {
           "content": {
-            "application/json": {
+            "multipart/form-data": {
               "schema": {
-                "$ref": "#/components/schemas/PostPlayerDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PostPlayerDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/PostPlayerDto"
+                "type": "object",
+                "properties": {
+                  "Name": {
+                    "type": "string"
+                  },
+                  "Surname": {
+                    "type": "string"
+                  },
+                  "Age": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Height": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Photo": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "Information": {
+                    "type": "string"
+                  },
+                  "City": {
+                    "type": "string"
+                  },
+                  "Position": {
+                    "$ref": "#/components/schemas/PlayerPosition"
+                  },
+                  "Level": {
+                    "$ref": "#/components/schemas/PlayerLevel"
+                  }
+                }
+              },
+              "encoding": {
+                "Name": {
+                  "style": "form"
+                },
+                "Surname": {
+                  "style": "form"
+                },
+                "Age": {
+                  "style": "form"
+                },
+                "Height": {
+                  "style": "form"
+                },
+                "Photo": {
+                  "style": "form"
+                },
+                "Information": {
+                  "style": "form"
+                },
+                "City": {
+                  "style": "form"
+                },
+                "Position": {
+                  "style": "form"
+                },
+                "Level": {
+                  "style": "form"
+                }
               }
             }
           }
@@ -340,19 +479,70 @@
         ],
         "requestBody": {
           "content": {
-            "application/json": {
+            "multipart/form-data": {
               "schema": {
-                "$ref": "#/components/schemas/PutPlayerDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PutPlayerDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/PutPlayerDto"
+                "type": "object",
+                "properties": {
+                  "Name": {
+                    "type": "string"
+                  },
+                  "Surname": {
+                    "type": "string"
+                  },
+                  "Age": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Information": {
+                    "type": "string"
+                  },
+                  "City": {
+                    "type": "string"
+                  },
+                  "Height": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Photo": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "Position": {
+                    "$ref": "#/components/schemas/PlayerPosition"
+                  },
+                  "Level": {
+                    "$ref": "#/components/schemas/PlayerLevel"
+                  }
+                }
+              },
+              "encoding": {
+                "Name": {
+                  "style": "form"
+                },
+                "Surname": {
+                  "style": "form"
+                },
+                "Age": {
+                  "style": "form"
+                },
+                "Information": {
+                  "style": "form"
+                },
+                "City": {
+                  "style": "form"
+                },
+                "Height": {
+                  "style": "form"
+                },
+                "Photo": {
+                  "style": "form"
+                },
+                "Position": {
+                  "style": "form"
+                },
+                "Level": {
+                  "style": "form"
+                }
               }
             }
           }
@@ -451,22 +641,12 @@
                   "Name": {
                     "type": "string"
                   },
-                  "Logo": {
-                    "type": "string"
-                  },
-                  "CaptainName": {
-                    "type": "string"
-                  },
                   "Photo": {
                     "type": "string",
                     "format": "binary"
                   },
                   "City": {
                     "type": "string"
-                  },
-                  "PlayerCount": {
-                    "type": "integer",
-                    "format": "int32"
                   },
                   "MaxPlayer": {
                     "type": "integer",
@@ -481,19 +661,10 @@
                 "Name": {
                   "style": "form"
                 },
-                "Logo": {
-                  "style": "form"
-                },
-                "CaptainName": {
-                  "style": "form"
-                },
                 "Photo": {
                   "style": "form"
                 },
                 "City": {
-                  "style": "form"
-                },
-                "PlayerCount": {
                   "style": "form"
                 },
                 "MaxPlayer": {
@@ -741,130 +912,23 @@
   },
   "components": {
     "schemas": {
-      "Gender": {
-        "enum": [
-          1,
-          2,
-          3
-        ],
-        "type": "integer",
-        "format": "int32"
-      },
       "PlayerLevel": {
         "enum": [
-          1,
-          2,
-          3,
-          4
+          "Beginner",
+          "Amateur",
+          "SemiPro",
+          "Professional"
         ],
-        "type": "integer",
-        "format": "int32"
+        "type": "string"
       },
       "PlayerPosition": {
         "enum": [
-          1,
-          2,
-          3,
-          4
+          "GoalKeeper",
+          "Defender",
+          "Midfielder",
+          "Froward"
         ],
-        "type": "integer",
-        "format": "int32"
-      },
-      "PostFieldDto": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "city": {
-            "type": "string",
-            "nullable": true
-          },
-          "address": {
-            "type": "string",
-            "nullable": true
-          },
-          "image": {
-            "type": "string",
-            "nullable": true
-          },
-          "primaryPhoto": {
-            "type": "string",
-            "format": "binary",
-            "nullable": true
-          },
-          "additionalPhotos": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "binary"
-            },
-            "nullable": true
-          },
-          "pricePerHour": {
-            "type": "number",
-            "format": "double"
-          },
-          "startTime": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "endTime": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "fieldInformation": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "PostPlayerDto": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "surname": {
-            "type": "string",
-            "nullable": true
-          },
-          "age": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "image": {
-            "type": "string",
-            "nullable": true
-          },
-          "height": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "photo": {
-            "type": "string",
-            "format": "binary",
-            "nullable": true
-          },
-          "information": {
-            "type": "string",
-            "nullable": true
-          },
-          "city": {
-            "type": "string",
-            "nullable": true
-          },
-          "position": {
-            "$ref": "#/components/schemas/PlayerPosition"
-          },
-          "level": {
-            "$ref": "#/components/schemas/PlayerLevel"
-          }
-        },
-        "additionalProperties": false
+        "type": "string"
       },
       "PostTournamentDto": {
         "type": "object",
@@ -936,110 +1000,10 @@
         },
         "additionalProperties": false
       },
-      "PutFieldDto": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "city": {
-            "type": "string",
-            "nullable": true
-          },
-          "address": {
-            "type": "string",
-            "nullable": true
-          },
-          "image": {
-            "type": "string",
-            "nullable": true
-          },
-          "primaryPhoto": {
-            "type": "string",
-            "format": "binary",
-            "nullable": true
-          },
-          "additionalPhotos": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "binary"
-            },
-            "nullable": true
-          },
-          "pricePerHour": {
-            "type": "number",
-            "format": "double"
-          },
-          "startTime": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "endTime": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "fieldInformation": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "PutPlayerDto": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "surname": {
-            "type": "string",
-            "nullable": true
-          },
-          "age": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "information": {
-            "type": "string",
-            "nullable": true
-          },
-          "city": {
-            "type": "string",
-            "nullable": true
-          },
-          "image": {
-            "type": "string",
-            "nullable": true
-          },
-          "height": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "photo": {
-            "type": "string",
-            "format": "binary",
-            "nullable": true
-          },
-          "position": {
-            "$ref": "#/components/schemas/PlayerPosition"
-          },
-          "level": {
-            "$ref": "#/components/schemas/PlayerLevel"
-          }
-        },
-        "additionalProperties": false
-      },
       "PutTeamDto": {
         "type": "object",
         "properties": {
           "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "logo": {
             "type": "string",
             "nullable": true
           },
@@ -1055,14 +1019,6 @@
           "city": {
             "type": "string",
             "nullable": true
-          },
-          "playerCount": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "maxPlayer": {
-            "type": "integer",
-            "format": "int32"
           },
           "information": {
             "type": "string",

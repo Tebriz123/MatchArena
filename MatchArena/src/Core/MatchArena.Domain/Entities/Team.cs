@@ -8,7 +8,7 @@ namespace MatchArena.Domain.Entities
 {
     public class Team:BaseNameableEntity
     {
-        public ICollection<TeamPlayer> TeamPlayers { get; set; }
+        public ICollection<TeamPlayer> TeamPlayers { get; set; } = new List<TeamPlayer>();
         public string Logo { get; set; }
         public string City { get; set; }
         public int PlayerCount { get; set; }

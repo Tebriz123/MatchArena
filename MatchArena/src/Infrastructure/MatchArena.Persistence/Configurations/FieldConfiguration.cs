@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace MatchArena.Persistence.Configurations
@@ -30,6 +31,15 @@ namespace MatchArena.Persistence.Configurations
                 .WithOne(fi => fi.Field)
                 .HasForeignKey(fi => fi.FieldId)
                 .OnDelete(DeleteBehavior.Cascade);
+            builder.Property(f => f.EmptySpace)
+         .HasConversion(
+             v => JsonSerializer.Serialize(v.Select(t => t.ToString("HH:mm")).ToList(), (JsonSerializerOptions)null),
+             v => JsonSerializer.Deserialize<List<string>>(v, (JsonSerializerOptions)null)
+                 .Select(s => TimeOnly.Parse(s))
+                 .ToList()
+         )
+         .HasColumnType("nvarchar(max)");
+
         }
     }
 }

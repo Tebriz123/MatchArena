@@ -11,12 +11,11 @@ namespace MatchArena.Application.DTOs.Fields
         string Name,
         string City,
         string Address,
-        string Image,
         IFormFile PrimaryPhoto,
         ICollection<IFormFile> AdditionalPhotos,
         decimal PricePerHour,
-        DateTime StartTime,
-        DateTime EndTime,
+        TimeOnly StartTime,
+        TimeOnly EndTime,
         string FieldInformation
         );
 

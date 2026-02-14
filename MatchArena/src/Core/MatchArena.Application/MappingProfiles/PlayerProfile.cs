@@ -38,12 +38,6 @@ namespace MatchArena.Application.MappingProfiles
                 .ForMember(dest => dest.Image, opt => opt.Ignore()) 
                 .ForMember(dest => dest.User, opt => opt.Ignore()); 
 
-            CreateMap<Player, GetPlayerInTeamDto>()
-                .ForCtorParam(nameof(GetPlayerInTeamDto.Name),
-                    opt => opt.MapFrom(p => p.User.Name))
-                .ForCtorParam(nameof(GetPlayerInTeamDto.Surname),
-                    opt => opt.MapFrom(p => p.User.Surname));
-
             CreateMap<Team, GetTeamInPlayerDto>();
         }
     }
