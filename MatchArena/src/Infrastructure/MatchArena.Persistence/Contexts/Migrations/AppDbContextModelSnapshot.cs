@@ -281,6 +281,10 @@ namespace MatchArena.Persistence.Contexts.Migrations
                     b.Property<int>("Level")
                         .HasColumnType("int");
 
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("PlayedMatches")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
@@ -293,6 +297,10 @@ namespace MatchArena.Persistence.Contexts.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasDefaultValue(0);
+
+                    b.Property<string>("Surname")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -381,7 +389,7 @@ namespace MatchArena.Persistence.Contexts.Migrations
                     b.Property<long>("TeamId")
                         .HasColumnType("bigint");
 
-                    b.Property<long>("PlayerId")
+                    b.Property<long?>("PlayerId")
                         .HasColumnType("bigint");
 
                     b.Property<long>("Id")
@@ -477,9 +485,6 @@ namespace MatchArena.Persistence.Contexts.Migrations
                         .HasColumnType("nvarchar(200)");
 
                     b.Property<decimal>("PrizeFund")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<decimal>("Rating")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<DateTime>("RegistrationDeadline")

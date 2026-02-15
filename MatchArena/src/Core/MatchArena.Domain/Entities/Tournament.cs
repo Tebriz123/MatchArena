@@ -14,9 +14,7 @@ namespace MatchArena.Domain.Entities
         public string Description { get; set; }
         public string City { get; set; }
         public string Address { get; set; }
-        public string Logo { get; set; }
-
-        //Tournament Parameters
+        public string Logo { get; set; } 
         public int MaxTeams { get; set; }
         public int CurrentTeams { get; set; }
         public decimal EntryFee { get; set; }
@@ -24,7 +22,6 @@ namespace MatchArena.Domain.Entities
         public string Format { get; set; } = string.Empty;
         public int GameDuration { get; set; }
         public string GameFormat { get; set; }=string.Empty;
-        public decimal Rating { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public DateTime RegistrationDeadline { get; set; }

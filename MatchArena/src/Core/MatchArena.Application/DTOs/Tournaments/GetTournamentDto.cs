@@ -11,15 +11,14 @@ namespace MatchArena.Application.DTOs.Tournaments
         string Name,
         string City,
         string Address,
-        string Icon,
+        string Logo,
         decimal PrizeFund,
         int CurrentTeams,
         int MaxTeams,
         string Format,
         string GameFormat,
-        double Rting,
-        DateTime StartTime,
-        DateTime EndTime,
+        DateTime StartDate,
+        DateTime EndDate,
         DateTime RegistrationDeadline  
         );
     

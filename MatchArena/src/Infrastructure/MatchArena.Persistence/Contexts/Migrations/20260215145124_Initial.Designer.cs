@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MatchArena.Persistence.Contexts.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260214111453_UpdatePlayerTable")]
-    partial class UpdatePlayerTable
+    [Migration("20260215145124_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -129,8 +129,8 @@ namespace MatchArena.Persistence.Contexts.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("EndTime")
-                        .HasColumnType("datetime2");
+                    b.Property<TimeOnly>("EndTime")
+                        .HasColumnType("time");
 
                     b.Property<string>("FieldInformation")
                         .IsRequired()
@@ -150,8 +150,8 @@ namespace MatchArena.Persistence.Contexts.Migrations
                     b.Property<decimal>("PricePerHour")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<DateTime>("StartTime")
-                        .HasColumnType("datetime2");
+                    b.Property<TimeOnly>("StartTime")
+                        .HasColumnType("time");
 
                     b.Property<long?>("TournamentId")
                         .HasColumnType("bigint");
@@ -284,6 +284,10 @@ namespace MatchArena.Persistence.Contexts.Migrations
                     b.Property<int>("Level")
                         .HasColumnType("int");
 
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("PlayedMatches")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
@@ -296,6 +300,10 @@ namespace MatchArena.Persistence.Contexts.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasDefaultValue(0);
+
+                    b.Property<string>("Surname")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -384,7 +392,7 @@ namespace MatchArena.Persistence.Contexts.Migrations
                     b.Property<long>("TeamId")
                         .HasColumnType("bigint");
 
-                    b.Property<long>("PlayerId")
+                    b.Property<long?>("PlayerId")
                         .HasColumnType("bigint");
 
                     b.Property<long>("Id")

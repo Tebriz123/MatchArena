@@ -8,17 +8,16 @@ using System.Threading.Tasks;
 namespace MatchArena.Application.DTOs.Tournaments
 {
     public record GetTournamentItemDto(
-        long id,
+        long Id,
         string Name,
         string City,
-        string Icon,
-        DateTime StartTime,
-        DateTime EndTime,
-        int CurrrentTeams,
+        string Logo,
+        DateTime StartDate,
+        DateTime EndDate,
+        int CurrentTeams,
         int MaxTeams,
         TournamentStatus Status,
-        decimal PrizeFund,
-        double Rating
+        decimal PrizeFund
         );
 
 }

@@ -12,6 +12,8 @@ namespace MatchArena.Domain.Entities
     {
         public string UserId { get; set; }
         public AppUser User { get; set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
         public int Age { get; set; }
         public PlayerPosition Position { get; set; }
         public PlayerLevel Level { get; set; }

@@ -53,6 +53,30 @@ namespace MatchArena.Persistence.Contexts.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Teams",
+                columns: table => new
+                {
+                    Id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Logo = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    City = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    PlayerCount = table.Column<int>(type: "int", nullable: false, defaultValue: 0),
+                    MaxPlayer = table.Column<int>(type: "int", nullable: false, defaultValue: 25),
+                    Rating = table.Column<double>(type: "float", nullable: false, defaultValue: 0.0),
+                    GameCount = table.Column<int>(type: "int", nullable: false, defaultValue: 0),
+                    Information = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Teams", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Tournaments",
                 columns: table => new
                 {
@@ -197,18 +221,19 @@ namespace MatchArena.Persistence.Contexts.Migrations
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserId = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Surname = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Age = table.Column<int>(type: "int", nullable: false),
                     Position = table.Column<int>(type: "int", nullable: false),
                     Level = table.Column<int>(type: "int", nullable: false),
-                    IsCapitain = table.Column<bool>(type: "bit", nullable: false),
                     Image = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
                     City = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Rating = table.Column<int>(type: "int", nullable: false),
+                    Rating = table.Column<int>(type: "int", nullable: false, defaultValue: 0),
                     PlayedMatches = table.Column<int>(type: "int", nullable: false, defaultValue: 0),
-                    Height = table.Column<int>(type: "int", nullable: false),
-                    GameCount = table.Column<int>(type: "int", nullable: false),
-                    Information = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Goal = table.Column<int>(type: "int", nullable: false),
+                    Height = table.Column<int>(type: "int", nullable: false, defaultValue: 0),
+                    GameCount = table.Column<int>(type: "int", nullable: false, defaultValue: 0),
+                    Information = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
+                    Goal = table.Column<int>(type: "int", nullable: false, defaultValue: 0),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -235,8 +260,8 @@ namespace MatchArena.Persistence.Contexts.Migrations
                     City = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     PricePerHour = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     FieldInformation = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    StartTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    EndTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    StartTime = table.Column<TimeOnly>(type: "time", nullable: false),
+                    EndTime = table.Column<TimeOnly>(type: "time", nullable: false),
                     Image = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     EmptySpace = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     TournamentId = table.Column<long>(type: "bigint", nullable: true),
@@ -257,33 +282,52 @@ namespace MatchArena.Persistence.Contexts.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Teams",
+                name: "TournamentTeams",
                 columns: table => new
                 {
-                    Id = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    CaptainId = table.Column<long>(type: "bigint", nullable: false),
-                    PlayerId = table.Column<long>(type: "bigint", nullable: false),
-                    Logo = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
-                    City = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PlayerCount = table.Column<int>(type: "int", nullable: false),
-                    MaxPlayer = table.Column<int>(type: "int", nullable: false),
-                    Rating = table.Column<double>(type: "float", nullable: false),
-                    GameCount = table.Column<int>(type: "int", nullable: false),
-                    Information = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    TeamsId = table.Column<long>(type: "bigint", nullable: false),
+                    TournamentId = table.Column<long>(type: "bigint", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Teams", x => x.Id);
+                    table.PrimaryKey("PK_TournamentTeams", x => new { x.TeamsId, x.TournamentId });
                     table.ForeignKey(
-                        name: "FK_Teams_Players_PlayerId",
+                        name: "FK_TournamentTeams_Teams_TeamsId",
+                        column: x => x.TeamsId,
+                        principalTable: "Teams",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_TournamentTeams_Tournaments_TournamentId",
+                        column: x => x.TournamentId,
+                        principalTable: "Tournaments",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "TeamPlayers",
+                columns: table => new
+                {
+                    TeamId = table.Column<long>(type: "bigint", nullable: false),
+                    PlayerId = table.Column<long>(type: "bigint", nullable: false),
+                    IsCaptain = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
+                    Id = table.Column<long>(type: "bigint", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TeamPlayers", x => new { x.TeamId, x.PlayerId });
+                    table.ForeignKey(
+                        name: "FK_TeamPlayers_Players_PlayerId",
                         column: x => x.PlayerId,
                         principalTable: "Players",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_TeamPlayers_Teams_TeamId",
+                        column: x => x.TeamId,
+                        principalTable: "Teams",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -336,56 +380,6 @@ namespace MatchArena.Persistence.Contexts.Migrations
                         name: "FK_FieldRatings_Players_PlayerId",
                         column: x => x.PlayerId,
                         principalTable: "Players",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "TeamPlayers",
-                columns: table => new
-                {
-                    TeamId = table.Column<long>(type: "bigint", nullable: false),
-                    PlayerId = table.Column<long>(type: "bigint", nullable: false),
-                    Id = table.Column<long>(type: "bigint", nullable: false),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_TeamPlayers", x => new { x.TeamId, x.PlayerId });
-                    table.ForeignKey(
-                        name: "FK_TeamPlayers_Players_PlayerId",
-                        column: x => x.PlayerId,
-                        principalTable: "Players",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_TeamPlayers_Teams_TeamId",
-                        column: x => x.TeamId,
-                        principalTable: "Teams",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "TournamentTeams",
-                columns: table => new
-                {
-                    TeamsId = table.Column<long>(type: "bigint", nullable: false),
-                    TournamentId = table.Column<long>(type: "bigint", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_TournamentTeams", x => new { x.TeamsId, x.TournamentId });
-                    table.ForeignKey(
-                        name: "FK_TournamentTeams_Teams_TeamsId",
-                        column: x => x.TeamsId,
-                        principalTable: "Teams",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_TournamentTeams_Tournaments_TournamentId",
-                        column: x => x.TournamentId,
-                        principalTable: "Tournaments",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -461,14 +455,16 @@ namespace MatchArena.Persistence.Contexts.Migrations
                 column: "PlayerId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Teams_CaptainId",
-                table: "Teams",
-                column: "CaptainId");
+                name: "IX_TeamPlayers_TeamId",
+                table: "TeamPlayers",
+                column: "TeamId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Teams_PlayerId",
-                table: "Teams",
-                column: "PlayerId");
+                name: "IX_TeamPlayers_TeamId_IsCaptain",
+                table: "TeamPlayers",
+                columns: new[] { "TeamId", "IsCaptain" },
+                unique: true,
+                filter: "[IsCaptain] = 1");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Tournaments_StartDate",
@@ -523,13 +519,13 @@ namespace MatchArena.Persistence.Contexts.Migrations
                 name: "Fields");
 
             migrationBuilder.DropTable(
+                name: "Players");
+
+            migrationBuilder.DropTable(
                 name: "Teams");
 
             migrationBuilder.DropTable(
                 name: "Tournaments");
-
-            migrationBuilder.DropTable(
-                name: "Players");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
