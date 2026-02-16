@@ -12,41 +12,50 @@ using System.Threading.Tasks;
 
 namespace MatchArena.Persistence.Implementations.Services
 {
-    internal class TournamentService:ITournamentService
+    internal class TournamentService : ITournamentService
     {
         private readonly ITournamentRepository _repository;
         private readonly IMapper _mapper;
+        private readonly IFileService _fileService;
 
         public TournamentService(
             ITournamentRepository repository,
-            IMapper mapper
-            
-            )
+            IMapper mapper,
+            IFileService fileService
+        )
         {
             _repository = repository;
             _mapper = mapper;
+            _fileService = fileService;
         }
-        public async Task<IReadOnlyList<GetTournamentItemDto>> GetAllAsync(int page,int take)
+
+        public async Task<IReadOnlyList<GetTournamentItemDto>> GetAllAsync(int page, int take)
         {
             IReadOnlyList<Tournament> tournaments = await _repository.GetAll(
                 page: page,
                 take: take
-                ).ToListAsync();
+            ).ToListAsync();
             return _mapper.Map<IReadOnlyList<GetTournamentItemDto>>(tournaments);
         }
+
         public async Task<GetTournamentDto> GetByIdAsync(long id)
         {
             Tournament tournament = await _repository.GetByIdAsync(id);
-
             if (tournament is null) throw new Exception("Tournament not found");
-
             return _mapper.Map<GetTournamentDto>(tournament);
-
         }
 
         public async Task CreateTournamentAsync(PostTournamentDto tournamentDto)
         {
             Tournament tournament = _mapper.Map<Tournament>(tournamentDto);
+
+            if (tournamentDto.Photo is not null)
+            {
+                tournament.Logo = await _fileService.FileCreateAsync(tournamentDto.Photo);
+            }
+
+            tournament.CreatedAt = DateTime.UtcNow;
+            tournament.UpdatedAt = DateTime.UtcNow;
 
             _repository.Add(tournament);
             await _repository.SaveChangesAsync();
@@ -55,8 +64,27 @@ namespace MatchArena.Persistence.Implementations.Services
         public async Task UpdateTournamentAsync(long id, PutTournamentDto tournamentDto)
         {
             Tournament tournament = await _repository.GetByIdAsync(id);
-
             if (tournament is null) throw new Exception("Tournament not found");
+
+            string? oldLogo = tournament.Logo;
+
+            _mapper.Map(tournamentDto, tournament);
+
+            if (tournamentDto.Photo is not null)
+            {
+                tournament.Logo = await _fileService.FileCreateAsync(tournamentDto.Photo);
+
+                if (!string.IsNullOrEmpty(oldLogo))
+                {
+                    await _fileService.FileDeleteAsync(oldLogo);
+                }
+            }
+            else
+            {
+                tournament.Logo = oldLogo;
+            }
+
+            tournament.UpdatedAt = DateTime.UtcNow;
 
             _repository.Update(tournament);
             await _repository.SaveChangesAsync();
@@ -65,13 +93,15 @@ namespace MatchArena.Persistence.Implementations.Services
         public async Task RemoveAsync(long id)
         {
             Tournament tournament = await _repository.GetByIdAsync(id);
-
             if (tournament is null) throw new Exception("Tournament not found");
 
-            _repository.Remove(tournament);
+            if (!string.IsNullOrEmpty(tournament.Logo))
+            {
+                await _fileService.FileDeleteAsync(tournament.Logo);
+            }
 
+            _repository.Remove(tournament);
             await _repository.SaveChangesAsync();
         }
-
     }
 }

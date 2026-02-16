@@ -44,7 +44,10 @@ namespace MatchArena.Persistence
             services.AddScoped<ITeamService, TeamService>();
             services.AddScoped<IFieldService, FieldService>();
             services.AddScoped<ITournamentService, TournamentService>();
-            services.AddScoped<IFileService, FileService>();
+            services.AddScoped<IProductService, ProductService>();
+            //services.AddScoped<ICategoryService, CategoryService>();
+            //services.AddScoped<IColorService, ColorService>();
+            //services.AddScoped<ISizeService, SizeService>();
 
             return services;
         }

@@ -14,10 +14,27 @@ namespace MatchArena.Application.MappingProfiles
     {
         public TournamentProfile()
         {
-            CreateMap<Tournament, GetTournamentItemDto>();
             CreateMap<Tournament, GetTournamentDto>();
-            CreateMap<PostTournamentDto, Tournament>();
-            CreateMap<PutTournamentDto, Tournament>();
+
+            CreateMap<Tournament, GetTournamentItemDto>();
+
+            CreateMap<PostTournamentDto, Tournament>()
+                .ForMember(dest => dest.Logo, opt => opt.Ignore()) 
+                .ForMember(dest => dest.Id, opt => opt.Ignore())
+                .ForMember(dest => dest.GameDuration, opt => opt.Ignore())
+                .ForMember(dest => dest.CreatedAt, opt => opt.Ignore())
+                .ForMember(dest => dest.UpdatedAt, opt => opt.Ignore())
+                .ForMember(dest => dest.Teams, opt => opt.Ignore())
+                .ForMember(dest => dest.Fields, opt => opt.Ignore());
+
+            CreateMap<PutTournamentDto, Tournament>()
+                .ForMember(dest => dest.Logo, opt => opt.Ignore()) 
+                .ForMember(dest => dest.Id, opt => opt.Ignore())
+                .ForMember(dest => dest.GameDuration, opt => opt.Ignore())
+                .ForMember(dest => dest.CreatedAt, opt => opt.Ignore())
+                .ForMember(dest => dest.UpdatedAt, opt => opt.Ignore())
+                .ForMember(dest => dest.Teams, opt => opt.Ignore())
+                .ForMember(dest => dest.Fields, opt => opt.Ignore());
         }
     }
 }

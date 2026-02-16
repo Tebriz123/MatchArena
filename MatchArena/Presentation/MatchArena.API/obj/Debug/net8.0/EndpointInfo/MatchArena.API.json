@@ -803,19 +803,104 @@
         ],
         "requestBody": {
           "content": {
-            "application/json": {
+            "multipart/form-data": {
               "schema": {
-                "$ref": "#/components/schemas/PostTournamentDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PostTournamentDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/PostTournamentDto"
+                "type": "object",
+                "properties": {
+                  "Name": {
+                    "type": "string"
+                  },
+                  "Description": {
+                    "type": "string"
+                  },
+                  "Address": {
+                    "type": "string"
+                  },
+                  "City": {
+                    "type": "string"
+                  },
+                  "Photo": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "StartDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "EndDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "RegistrationDeadline": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "MaxTeams": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "EntryFee": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "PrizeFund": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "Format": {
+                    "type": "string"
+                  },
+                  "GameFormat": {
+                    "type": "string"
+                  },
+                  "Status": {
+                    "$ref": "#/components/schemas/TournamentStatus"
+                  }
+                }
+              },
+              "encoding": {
+                "Name": {
+                  "style": "form"
+                },
+                "Description": {
+                  "style": "form"
+                },
+                "Address": {
+                  "style": "form"
+                },
+                "City": {
+                  "style": "form"
+                },
+                "Photo": {
+                  "style": "form"
+                },
+                "StartDate": {
+                  "style": "form"
+                },
+                "EndDate": {
+                  "style": "form"
+                },
+                "RegistrationDeadline": {
+                  "style": "form"
+                },
+                "MaxTeams": {
+                  "style": "form"
+                },
+                "EntryFee": {
+                  "style": "form"
+                },
+                "PrizeFund": {
+                  "style": "form"
+                },
+                "Format": {
+                  "style": "form"
+                },
+                "GameFormat": {
+                  "style": "form"
+                },
+                "Status": {
+                  "style": "form"
+                }
               }
             }
           }
@@ -842,19 +927,111 @@
         ],
         "requestBody": {
           "content": {
-            "application/json": {
+            "multipart/form-data": {
               "schema": {
-                "$ref": "#/components/schemas/PutTournamentDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PutTournamentDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/PutTournamentDto"
+                "type": "object",
+                "properties": {
+                  "Name": {
+                    "type": "string"
+                  },
+                  "Description": {
+                    "type": "string"
+                  },
+                  "Address": {
+                    "type": "string"
+                  },
+                  "City": {
+                    "type": "string"
+                  },
+                  "Photo": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "StartDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "EndDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "RegistrationDeadline": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "MaxTeams": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "CurrentTeams": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "EntryFee": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "PrizeFund": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "Format": {
+                    "type": "string"
+                  },
+                  "GameFormat": {
+                    "type": "string"
+                  },
+                  "Status": {
+                    "$ref": "#/components/schemas/TournamentStatus"
+                  }
+                }
+              },
+              "encoding": {
+                "Name": {
+                  "style": "form"
+                },
+                "Description": {
+                  "style": "form"
+                },
+                "Address": {
+                  "style": "form"
+                },
+                "City": {
+                  "style": "form"
+                },
+                "Photo": {
+                  "style": "form"
+                },
+                "StartDate": {
+                  "style": "form"
+                },
+                "EndDate": {
+                  "style": "form"
+                },
+                "RegistrationDeadline": {
+                  "style": "form"
+                },
+                "MaxTeams": {
+                  "style": "form"
+                },
+                "CurrentTeams": {
+                  "style": "form"
+                },
+                "EntryFee": {
+                  "style": "form"
+                },
+                "PrizeFund": {
+                  "style": "form"
+                },
+                "Format": {
+                  "style": "form"
+                },
+                "GameFormat": {
+                  "style": "form"
+                },
+                "Status": {
+                  "style": "form"
+                }
               }
             }
           }
@@ -930,72 +1107,6 @@
         ],
         "type": "string"
       },
-      "PostTournamentDto": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "description": {
-            "type": "string",
-            "nullable": true
-          },
-          "address": {
-            "type": "string",
-            "nullable": true
-          },
-          "city": {
-            "type": "string",
-            "nullable": true
-          },
-          "photo": {
-            "type": "string",
-            "format": "binary",
-            "nullable": true
-          },
-          "startTime": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "endTime": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "registrationDeadline": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "maxTeams": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "currentTeams": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "entryFee": {
-            "type": "number",
-            "format": "double"
-          },
-          "prizeFund": {
-            "type": "number",
-            "format": "double"
-          },
-          "format": {
-            "type": "string",
-            "nullable": true
-          },
-          "gameFormat": {
-            "type": "string",
-            "nullable": true
-          },
-          "status": {
-            "$ref": "#/components/schemas/TournamentStatus"
-          }
-        },
-        "additionalProperties": false
-      },
       "PutTeamDto": {
         "type": "object",
         "properties": {
@@ -1023,81 +1134,14 @@
         },
         "additionalProperties": false
       },
-      "PutTournamentDto": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "description": {
-            "type": "string",
-            "nullable": true
-          },
-          "address": {
-            "type": "string",
-            "nullable": true
-          },
-          "city": {
-            "type": "string",
-            "nullable": true
-          },
-          "photo": {
-            "type": "string",
-            "format": "binary",
-            "nullable": true
-          },
-          "startTime": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "endTime": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "registrationDeadline": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "maxTeams": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "currentTeams": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "entryFee": {
-            "type": "number",
-            "format": "double"
-          },
-          "prizeFund": {
-            "type": "number",
-            "format": "double"
-          },
-          "format": {
-            "type": "string",
-            "nullable": true
-          },
-          "gameFormat": {
-            "type": "string",
-            "nullable": true
-          },
-          "status": {
-            "$ref": "#/components/schemas/TournamentStatus"
-          }
-        },
-        "additionalProperties": false
-      },
       "TournamentStatus": {
         "enum": [
-          1,
-          2,
-          3,
-          4
+          "RegistrationOpen",
+          "RegistrationClosed",
+          "SlotsFull",
+          "Cancelled"
         ],
-        "type": "integer",
-        "format": "int32"
+        "type": "string"
       }
     },
     "securitySchemes": {

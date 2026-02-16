@@ -18,7 +18,6 @@ namespace MatchArena.Application.DTOs.Tournaments
         DateTime EndDate,
         DateTime RegistrationDeadline,
         int MaxTeams,
-        int CurrentTeams,
         decimal EntryFee,
         decimal PrizeFund,
         string Format,

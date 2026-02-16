@@ -24,12 +24,12 @@ namespace MatchArena.API.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAsync(long id)
         {
-            if (id > 0) return BadRequest();
+            if (id < 0) return BadRequest();
 
             return Ok(await _service.GetByIdAsync(id));
         }
         [HttpPost]
-        public async Task<IActionResult> PostAsync([FromBody] PostTournamentDto tournamentDto)
+        public async Task<IActionResult> PostAsync([FromForm] PostTournamentDto tournamentDto)
         {
             await _service.CreateTournamentAsync(tournamentDto);
 
@@ -37,9 +37,9 @@ namespace MatchArena.API.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> PutAsync(long id, [FromBody]  PutTournamentDto tournamentDto)
+        public async Task<IActionResult> PutAsync(long id, [FromForm]  PutTournamentDto tournamentDto)
         {
-            if (id > 0) return BadRequest();
+            if (id < 0) return BadRequest();
             await _service.UpdateTournamentAsync(id, tournamentDto);
 
             return NoContent();
@@ -48,7 +48,7 @@ namespace MatchArena.API.Controllers
         [HttpDelete]
         public async Task<IActionResult> DeleteAsync(long id)
         {
-            if (id > 0) return BadRequest();
+            if (id < 0) return BadRequest();
 
             await _service.RemoveAsync(id);
             return NoContent();
