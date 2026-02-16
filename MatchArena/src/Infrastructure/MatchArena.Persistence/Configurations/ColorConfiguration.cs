@@ -1,6 +1,5 @@
 ﻿using MatchArena.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,18 +8,17 @@ using System.Threading.Tasks;
 
 namespace MatchArena.Persistence.Configurations
 {
-    internal class CategoryConfiguration : IEntityTypeConfiguration<Category>
+    internal class ColorConfiguration : IEntityTypeConfiguration<Color>
     {
-        public void Configure(EntityTypeBuilder<Category> builder)
+        public void Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<Color> builder)
         {
             builder
                .Property(c => c.Name)
                .IsRequired()
-               .HasColumnType("varchar(150)");
-
+               .HasColumnType("varchar(50)");
             builder
                 .HasIndex(c => c.Name)
-                .IsUnique();
+                    .IsUnique();
         }
     }
 }

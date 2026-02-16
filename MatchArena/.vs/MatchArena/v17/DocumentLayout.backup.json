@@ -3,6 +3,38 @@
   "WorkspaceRootPath": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{CEAC5AAD-DB81-4C60-9919-768CC77B3D36}|src\\Infrastructure\\MatchArena.Persistence\\MatchArena.Persistence.csproj|c:\\users\\necef\\onedrive\\\u0130\u015F masas\u0131\\matcharena2\\matcharena\\src\\infrastructure\\matcharena.persistence\\configurations\\categorycofiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEAC5AAD-DB81-4C60-9919-768CC77B3D36}|src\\Infrastructure\\MatchArena.Persistence\\MatchArena.Persistence.csproj|solutionrelative:src\\infrastructure\\matcharena.persistence\\configurations\\categorycofiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B20FD1C8-CD9C-4C47-9638-4EDAD4A39AD0}|src\\Core\\MatchArena.Application\\MatchArena.Application.csproj|c:\\users\\necef\\onedrive\\\u0130\u015F masas\u0131\\matcharena2\\matcharena\\src\\core\\matcharena.application\\validators\\putcategorydtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B20FD1C8-CD9C-4C47-9638-4EDAD4A39AD0}|src\\Core\\MatchArena.Application\\MatchArena.Application.csproj|solutionrelative:src\\core\\matcharena.application\\validators\\putcategorydtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B20FD1C8-CD9C-4C47-9638-4EDAD4A39AD0}|src\\Core\\MatchArena.Application\\MatchArena.Application.csproj|c:\\users\\necef\\onedrive\\\u0130\u015F masas\u0131\\matcharena2\\matcharena\\src\\core\\matcharena.application\\validators\\postcategorydtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B20FD1C8-CD9C-4C47-9638-4EDAD4A39AD0}|src\\Core\\MatchArena.Application\\MatchArena.Application.csproj|solutionrelative:src\\core\\matcharena.application\\validators\\postcategorydtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B20FD1C8-CD9C-4C47-9638-4EDAD4A39AD0}|src\\Core\\MatchArena.Application\\MatchArena.Application.csproj|c:\\users\\necef\\onedrive\\\u0130\u015F masas\u0131\\matcharena2\\matcharena\\src\\core\\matcharena.application\\mappingprofiles\\categoryprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B20FD1C8-CD9C-4C47-9638-4EDAD4A39AD0}|src\\Core\\MatchArena.Application\\MatchArena.Application.csproj|solutionrelative:src\\core\\matcharena.application\\mappingprofiles\\categoryprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{529EC2E4-7AA3-4584-8F1B-4C751C01132E}|Presentation\\MatchArena.API\\MatchArena.API.csproj|c:\\users\\necef\\onedrive\\\u0130\u015F masas\u0131\\matcharena2\\matcharena\\presentation\\matcharena.api\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{529EC2E4-7AA3-4584-8F1B-4C751C01132E}|Presentation\\MatchArena.API\\MatchArena.API.csproj|solutionrelative:presentation\\matcharena.api\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B20FD1C8-CD9C-4C47-9638-4EDAD4A39AD0}|src\\Core\\MatchArena.Application\\MatchArena.Application.csproj|c:\\users\\necef\\onedrive\\\u0130\u015F masas\u0131\\matcharena2\\matcharena\\src\\core\\matcharena.application\\interfaces\\services\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B20FD1C8-CD9C-4C47-9638-4EDAD4A39AD0}|src\\Core\\MatchArena.Application\\MatchArena.Application.csproj|solutionrelative:src\\core\\matcharena.application\\interfaces\\services\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B20FD1C8-CD9C-4C47-9638-4EDAD4A39AD0}|src\\Core\\MatchArena.Application\\MatchArena.Application.csproj|c:\\users\\necef\\onedrive\\\u0130\u015F masas\u0131\\matcharena2\\matcharena\\src\\core\\matcharena.application\\interfaces\\services\\icolorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B20FD1C8-CD9C-4C47-9638-4EDAD4A39AD0}|src\\Core\\MatchArena.Application\\MatchArena.Application.csproj|solutionrelative:src\\core\\matcharena.application\\interfaces\\services\\icolorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEAC5AAD-DB81-4C60-9919-768CC77B3D36}|src\\Infrastructure\\MatchArena.Persistence\\MatchArena.Persistence.csproj|c:\\users\\necef\\onedrive\\\u0130\u015F masas\u0131\\matcharena2\\matcharena\\src\\infrastructure\\matcharena.persistence\\implementations\\services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEAC5AAD-DB81-4C60-9919-768CC77B3D36}|src\\Infrastructure\\MatchArena.Persistence\\MatchArena.Persistence.csproj|solutionrelative:src\\infrastructure\\matcharena.persistence\\implementations\\services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{529EC2E4-7AA3-4584-8F1B-4C751C01132E}|Presentation\\MatchArena.API\\MatchArena.API.csproj|c:\\users\\necef\\onedrive\\\u0130\u015F masas\u0131\\matcharena2\\matcharena\\presentation\\matcharena.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{529EC2E4-7AA3-4584-8F1B-4C751C01132E}|Presentation\\MatchArena.API\\MatchArena.API.csproj|solutionrelative:presentation\\matcharena.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -13,10 +45,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{B20FD1C8-CD9C-4C47-9638-4EDAD4A39AD0}|src\\Core\\MatchArena.Application\\MatchArena.Application.csproj|c:\\users\\necef\\onedrive\\\u0130\u015F masas\u0131\\matcharena2\\matcharena\\src\\core\\matcharena.application\\mappingprofiles\\productprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B20FD1C8-CD9C-4C47-9638-4EDAD4A39AD0}|src\\Core\\MatchArena.Application\\MatchArena.Application.csproj|solutionrelative:src\\core\\matcharena.application\\mappingprofiles\\productprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CEAC5AAD-DB81-4C60-9919-768CC77B3D36}|src\\Infrastructure\\MatchArena.Persistence\\MatchArena.Persistence.csproj|c:\\users\\necef\\onedrive\\\u0130\u015F masas\u0131\\matcharena2\\matcharena\\src\\infrastructure\\matcharena.persistence\\implementations\\services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CEAC5AAD-DB81-4C60-9919-768CC77B3D36}|src\\Infrastructure\\MatchArena.Persistence\\MatchArena.Persistence.csproj|solutionrelative:src\\infrastructure\\matcharena.persistence\\implementations\\services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CEAC5AAD-DB81-4C60-9919-768CC77B3D36}|src\\Infrastructure\\MatchArena.Persistence\\MatchArena.Persistence.csproj|c:\\users\\necef\\onedrive\\\u0130\u015F masas\u0131\\matcharena2\\matcharena\\src\\infrastructure\\matcharena.persistence\\configurations\\productconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -199,16 +227,8 @@
       "RelativeMoniker": "D:0:0:{B20FD1C8-CD9C-4C47-9638-4EDAD4A39AD0}|src\\Core\\MatchArena.Application\\MatchArena.Application.csproj|solutionrelative:src\\core\\matcharena.application\\dtos\\fields\\getfielddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B20FD1C8-CD9C-4C47-9638-4EDAD4A39AD0}|src\\Core\\MatchArena.Application\\MatchArena.Application.csproj|c:\\users\\necef\\onedrive\\\u0130\u015F masas\u0131\\matcharena2\\matcharena\\src\\core\\matcharena.application\\interfaces\\services\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B20FD1C8-CD9C-4C47-9638-4EDAD4A39AD0}|src\\Core\\MatchArena.Application\\MatchArena.Application.csproj|solutionrelative:src\\core\\matcharena.application\\interfaces\\services\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B20FD1C8-CD9C-4C47-9638-4EDAD4A39AD0}|src\\Core\\MatchArena.Application\\MatchArena.Application.csproj|c:\\users\\necef\\onedrive\\\u0130\u015F masas\u0131\\matcharena2\\matcharena\\src\\core\\matcharena.application\\interfaces\\services\\isizeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B20FD1C8-CD9C-4C47-9638-4EDAD4A39AD0}|src\\Core\\MatchArena.Application\\MatchArena.Application.csproj|solutionrelative:src\\core\\matcharena.application\\interfaces\\services\\isizeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B20FD1C8-CD9C-4C47-9638-4EDAD4A39AD0}|src\\Core\\MatchArena.Application\\MatchArena.Application.csproj|c:\\users\\necef\\onedrive\\\u0130\u015F masas\u0131\\matcharena2\\matcharena\\src\\core\\matcharena.application\\interfaces\\services\\icolorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B20FD1C8-CD9C-4C47-9638-4EDAD4A39AD0}|src\\Core\\MatchArena.Application\\MatchArena.Application.csproj|solutionrelative:src\\core\\matcharena.application\\interfaces\\services\\icolorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CEAC5AAD-DB81-4C60-9919-768CC77B3D36}|src\\Infrastructure\\MatchArena.Persistence\\MatchArena.Persistence.csproj|c:\\users\\necef\\onedrive\\\u0130\u015F masas\u0131\\matcharena2\\matcharena\\src\\infrastructure\\matcharena.persistence\\implementations\\repositories\\sizerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -606,47 +626,89 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PutCategoryDtoValidator.cs",
+              "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\Validators\\PutCategoryDtoValidator.cs",
+              "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\Validators\\PutCategoryDtoValidator.cs",
+              "ToolTip": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\Validators\\PutCategoryDtoValidator.cs",
+              "RelativeToolTip": "src\\Core\\MatchArena.Application\\Validators\\PutCategoryDtoValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-16T19:26:13.703Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PostCategoryDtoValidator.cs",
+              "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\Validators\\PostCategoryDtoValidator.cs",
+              "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\Validators\\PostCategoryDtoValidator.cs",
+              "ToolTip": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\Validators\\PostCategoryDtoValidator.cs",
+              "RelativeToolTip": "src\\Core\\MatchArena.Application\\Validators\\PostCategoryDtoValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-16T19:25:57.676Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "CategoryProfile.cs",
+              "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\MappingProfiles\\CategoryProfile.cs",
+              "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\MappingProfiles\\CategoryProfile.cs",
+              "ToolTip": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\MappingProfiles\\CategoryProfile.cs",
+              "RelativeToolTip": "src\\Core\\MatchArena.Application\\MappingProfiles\\CategoryProfile.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-16T19:25:15.365Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CategoryCofiguration.cs",
+              "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Infrastructure\\MatchArena.Persistence\\Configurations\\CategoryCofiguration.cs",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\MatchArena.Persistence\\Configurations\\CategoryCofiguration.cs",
+              "ToolTip": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Infrastructure\\MatchArena.Persistence\\Configurations\\CategoryCofiguration.cs",
+              "RelativeToolTip": "src\\Infrastructure\\MatchArena.Persistence\\Configurations\\CategoryCofiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-16T19:24:29.91Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CategoriesController.cs",
+              "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.API\\Controllers\\CategoriesController.cs",
+              "RelativeDocumentMoniker": "Presentation\\MatchArena.API\\Controllers\\CategoriesController.cs",
+              "ToolTip": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.API\\Controllers\\CategoriesController.cs",
+              "RelativeToolTip": "Presentation\\MatchArena.API\\Controllers\\CategoriesController.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAqwBIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-16T19:20:06.016Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "CategoryService.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Services\\CategoryService.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Services\\CategoryService.cs",
               "ToolTip": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Services\\CategoryService.cs",
               "RelativeToolTip": "src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Services\\CategoryService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAkwFQAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T19:07:13.204Z"
+              "WhenOpened": "2026-02-16T19:07:13.204Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ProductConfiguration.cs",
-              "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Infrastructure\\MatchArena.Persistence\\Configurations\\ProductConfiguration.cs",
-              "RelativeDocumentMoniker": "src\\Infrastructure\\MatchArena.Persistence\\Configurations\\ProductConfiguration.cs",
-              "ToolTip": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Infrastructure\\MatchArena.Persistence\\Configurations\\ProductConfiguration.cs",
-              "RelativeToolTip": "src\\Infrastructure\\MatchArena.Persistence\\Configurations\\ProductConfiguration.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAqwBsAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T19:04:39.881Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "PutProductDtoValidator.cs",
-              "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\Validators\\PutProductDtoValidator.cs",
-              "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\Validators\\PutProductDtoValidator.cs",
-              "ToolTip": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\Validators\\PutProductDtoValidator.cs",
-              "RelativeToolTip": "src\\Core\\MatchArena.Application\\Validators\\PutProductDtoValidator.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAACMAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T19:01:16.107Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 10,
               "Title": "ProductProfile.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\MappingProfiles\\ProductProfile.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\MappingProfiles\\ProductProfile.cs",
@@ -658,7 +720,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 9,
               "Title": "ServiceRegistration.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Infrastructure\\MatchArena.Persistence\\ServiceRegistration.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\MatchArena.Persistence\\ServiceRegistration.cs",
@@ -670,20 +732,70 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
+              "Title": "ICategoryService.cs",
+              "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\Interfaces\\Services\\ICategoryService.cs",
+              "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\Interfaces\\Services\\ICategoryService.cs",
+              "ToolTip": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\Interfaces\\Services\\ICategoryService.cs",
+              "RelativeToolTip": "src\\Core\\MatchArena.Application\\Interfaces\\Services\\ICategoryService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-16T17:58:18.376Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IColorService.cs",
+              "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\Interfaces\\Services\\IColorService.cs",
+              "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\Interfaces\\Services\\IColorService.cs",
+              "ToolTip": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\Interfaces\\Services\\IColorService.cs",
+              "RelativeToolTip": "src\\Core\\MatchArena.Application\\Interfaces\\Services\\IColorService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-16T17:58:35.578Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "PutProductDtoValidator.cs",
+              "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\Validators\\PutProductDtoValidator.cs",
+              "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\Validators\\PutProductDtoValidator.cs",
+              "ToolTip": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\Validators\\PutProductDtoValidator.cs",
+              "RelativeToolTip": "src\\Core\\MatchArena.Application\\Validators\\PutProductDtoValidator.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACMAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-16T19:01:16.107Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ProductConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Infrastructure\\MatchArena.Persistence\\Configurations\\ProductConfiguration.cs",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\MatchArena.Persistence\\Configurations\\ProductConfiguration.cs",
+              "ToolTip": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Infrastructure\\MatchArena.Persistence\\Configurations\\ProductConfiguration.cs",
+              "RelativeToolTip": "src\\Infrastructure\\MatchArena.Persistence\\Configurations\\ProductConfiguration.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAqwBsAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-16T19:04:39.881Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.API\\appsettings.json",
               "RelativeDocumentMoniker": "Presentation\\MatchArena.API\\appsettings.json",
               "ToolTip": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.API\\appsettings.json",
               "RelativeToolTip": "Presentation\\MatchArena.API\\appsettings.json",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAABAAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2026-02-13T13:52:11.33Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 13,
               "Title": "PostProductDtoValidator.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\Validators\\PostProductDtoValidator.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\Validators\\PostProductDtoValidator.cs",
@@ -695,7 +807,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 14,
               "Title": "SizeService.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Services\\SizeService.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Services\\SizeService.cs",
@@ -707,7 +819,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 15,
               "Title": "ColorService.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Services\\ColorService.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Services\\ColorService.cs",
@@ -719,7 +831,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 18,
               "Title": "ProductService.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Services\\ProductService.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Services\\ProductService.cs",
@@ -731,7 +843,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 17,
               "Title": "PlayerService.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Services\\PlayerService.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Services\\PlayerService.cs",
@@ -743,7 +855,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 19,
               "Title": "TeamService.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Services\\TeamService.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Services\\TeamService.cs",
@@ -755,7 +867,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 16,
               "Title": "ProductsController.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.API\\Controllers\\ProductsController.cs",
               "RelativeDocumentMoniker": "Presentation\\MatchArena.API\\Controllers\\ProductsController.cs",
@@ -767,7 +879,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 20,
               "Title": "StripeService.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Services\\StripeService.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Services\\StripeService.cs",
@@ -779,7 +891,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 21,
               "Title": "FieldService.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Services\\FieldService.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Services\\FieldService.cs",
@@ -791,7 +903,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 22,
               "Title": "FileService.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Services\\FileService.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Services\\FileService.cs",
@@ -803,7 +915,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 23,
               "Title": "IProductService.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\Interfaces\\Services\\IProductService.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\Interfaces\\Services\\IProductService.cs",
@@ -815,7 +927,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 25,
               "Title": "ICategoryRepository.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\Interfaces\\Repositories\\ICategoryRepository.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\Interfaces\\Repositories\\ICategoryRepository.cs",
@@ -827,7 +939,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 26,
               "Title": "IProductRepository.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\Interfaces\\Repositories\\IProductRepository.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\Interfaces\\Repositories\\IProductRepository.cs",
@@ -839,7 +951,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 27,
               "Title": "ISizeRepository.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\Interfaces\\Repositories\\ISizeRepository.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\Interfaces\\Repositories\\ISizeRepository.cs",
@@ -851,7 +963,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 24,
               "Title": "CategoryRepository.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Repositories\\CategoryRepository.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Repositories\\CategoryRepository.cs",
@@ -863,7 +975,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 28,
               "Title": "IColorRepository.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\Interfaces\\Repositories\\IColorRepository.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\Interfaces\\Repositories\\IColorRepository.cs",
@@ -875,7 +987,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 29,
               "Title": "PutCategoryDto.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Categories\\PutCategoryDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\Categories\\PutCategoryDto.cs",
@@ -887,7 +999,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 30,
               "Title": "PostCategoryDto.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Categories\\PostCategoryDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\Categories\\PostCategoryDto.cs",
@@ -899,7 +1011,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 31,
               "Title": "GetCategoryItemDto.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Categories\\GetCategoryItemDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\Categories\\GetCategoryItemDto.cs",
@@ -911,7 +1023,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 32,
               "Title": "GetCategoryInProductDto.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Categories\\GetCategoryInProductDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\Categories\\GetCategoryInProductDto.cs",
@@ -923,7 +1035,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 33,
               "Title": "GetCategoryDto.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Categories\\GetCategoryDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\Categories\\GetCategoryDto.cs",
@@ -935,7 +1047,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 34,
               "Title": "PutProductDto.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Products\\PutProductDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\Products\\PutProductDto.cs",
@@ -947,7 +1059,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 35,
               "Title": "PostProductDto.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Products\\PostProductDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\Products\\PostProductDto.cs",
@@ -959,7 +1071,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 36,
               "Title": "GetProductItemDto.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Products\\GetProductItemDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\Products\\GetProductItemDto.cs",
@@ -971,7 +1083,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 37,
               "Title": "GetProductInCategoryDto.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Products\\GetProductInCategoryDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\Products\\GetProductInCategoryDto.cs",
@@ -983,7 +1095,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 38,
               "Title": "GetProductDto.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Products\\GetProductDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\Products\\GetProductDto.cs",
@@ -995,7 +1107,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 39,
               "Title": "PutSizeDto.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Sizes\\PutSizeDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\Sizes\\PutSizeDto.cs",
@@ -1007,7 +1119,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 40,
               "Title": "PostSizeDto.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Sizes\\PostSizeDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\Sizes\\PostSizeDto.cs",
@@ -1019,7 +1131,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 41,
               "Title": "GetSizeItemDto.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Sizes\\GetSizeItemDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\Sizes\\GetSizeItemDto.cs",
@@ -1031,7 +1143,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 42,
               "Title": "GetSizeInProductDto.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Sizes\\GetSizeInProductDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\Sizes\\GetSizeInProductDto.cs",
@@ -1043,7 +1155,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 43,
               "Title": "GetSizeDto.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Sizes\\GetSizeDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\Sizes\\GetSizeDto.cs",
@@ -1055,7 +1167,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 44,
               "Title": "PutPlayerDto.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Player\\PutPlayerDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\Player\\PutPlayerDto.cs",
@@ -1067,7 +1179,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 45,
               "Title": "PostPlayerDto.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Player\\PostPlayerDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\Player\\PostPlayerDto.cs",
@@ -1079,7 +1191,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 46,
               "Title": "GetPlayerItemDto.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Player\\GetPlayerItemDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\Player\\GetPlayerItemDto.cs",
@@ -1091,7 +1203,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 47,
               "Title": "GetPlayerInTeamDto.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Player\\GetPlayerInTeamDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\Player\\GetPlayerInTeamDto.cs",
@@ -1103,7 +1215,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 48,
               "Title": "GetPlayerDto.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Player\\GetPlayerDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\Player\\GetPlayerDto.cs",
@@ -1115,7 +1227,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 49,
               "Title": "PutColorDto.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Colors\\PutColorDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\Colors\\PutColorDto.cs",
@@ -1127,7 +1239,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 50,
               "Title": "GetColorInProductDto.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Colors\\GetColorInProductDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\Colors\\GetColorInProductDto.cs",
@@ -1139,7 +1251,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 51,
               "Title": "GetColorDto.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Colors\\GetColorDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\Colors\\GetColorDto.cs",
@@ -1151,7 +1263,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 52,
               "Title": "PostColorDto.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Colors\\PostColorDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\Colors\\PostColorDto.cs",
@@ -1163,7 +1275,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 53,
               "Title": "GetColorItemDto.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Colors\\GetColorItemDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\Colors\\GetColorItemDto.cs",
@@ -1175,7 +1287,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 54,
               "Title": "LoginDto.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\AppUsers\\LoginDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\AppUsers\\LoginDto.cs",
@@ -1187,7 +1299,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 56,
               "Title": "ISizeService.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\Interfaces\\Services\\ISizeService.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\Interfaces\\Services\\ISizeService.cs",
@@ -1199,19 +1311,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
-              "Title": "ICategoryService.cs",
-              "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\Interfaces\\Services\\ICategoryService.cs",
-              "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\Interfaces\\Services\\ICategoryService.cs",
-              "ToolTip": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\Interfaces\\Services\\ICategoryService.cs",
-              "RelativeToolTip": "src\\Core\\MatchArena.Application\\Interfaces\\Services\\ICategoryService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T17:58:18.376Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 55,
               "Title": "GetFieldDto.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Fields\\GetFieldDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\Fields\\GetFieldDto.cs",
@@ -1223,19 +1323,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
-              "Title": "IColorService.cs",
-              "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\Interfaces\\Services\\IColorService.cs",
-              "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\Interfaces\\Services\\IColorService.cs",
-              "ToolTip": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\Interfaces\\Services\\IColorService.cs",
-              "RelativeToolTip": "src\\Core\\MatchArena.Application\\Interfaces\\Services\\IColorService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T17:58:35.578Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 57,
               "Title": "SizeRepository.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Repositories\\SizeRepository.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Repositories\\SizeRepository.cs",
@@ -1247,7 +1335,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 58,
               "Title": "ColorRepository.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Repositories\\ColorRepository.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Repositories\\ColorRepository.cs",
@@ -1259,7 +1347,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 62,
               "Title": "ProductRepository.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Repositories\\ProductRepository.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Repositories\\ProductRepository.cs",
@@ -1271,7 +1359,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 59,
               "Title": "Color.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Domain\\Entities\\Color.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Domain\\Entities\\Color.cs",
@@ -1283,7 +1371,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 65,
               "Title": "ProductSize.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Domain\\Entities\\ProductSize.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Domain\\Entities\\ProductSize.cs",
@@ -1295,7 +1383,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 60,
               "Title": "Size.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Domain\\Entities\\Size.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Domain\\Entities\\Size.cs",
@@ -1307,7 +1395,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 61,
               "Title": "Category.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Domain\\Entities\\Category.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Domain\\Entities\\Category.cs",
@@ -1319,7 +1407,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 66,
               "Title": "ProductColor.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Domain\\Entities\\ProductColor.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Domain\\Entities\\ProductColor.cs",
@@ -1331,7 +1419,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 64,
               "Title": "Product.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Domain\\Entities\\Product.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Domain\\Entities\\Product.cs",
@@ -1343,7 +1431,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 63,
               "Title": "TeamRepository.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Repositories\\TeamRepository.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Repositories\\TeamRepository.cs",
@@ -1355,7 +1443,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 68,
               "Title": "Payment.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Domain\\Entities\\Payment.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Domain\\Entities\\Payment.cs",
@@ -1367,7 +1455,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 69,
               "Title": "IStripeService.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\Interfaces\\Services\\IStripeService.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\Interfaces\\Services\\IStripeService.cs",
@@ -1379,7 +1467,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 70,
               "Title": "StripeSetting.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Domain\\Settings\\Stripes\\StripeSetting.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Domain\\Settings\\Stripes\\StripeSetting.cs",
@@ -1391,7 +1479,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 67,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.API\\Program.cs",
               "RelativeDocumentMoniker": "Presentation\\MatchArena.API\\Program.cs",
@@ -1403,7 +1491,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 71,
               "Title": "TournamentsController.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.API\\Controllers\\TournamentsController.cs",
               "RelativeDocumentMoniker": "Presentation\\MatchArena.API\\Controllers\\TournamentsController.cs",
@@ -1415,7 +1503,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 68,
+              "DocumentIndex": 73,
               "Title": "PutTournamentDto.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Tournaments\\PutTournamentDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\Tournaments\\PutTournamentDto.cs",
@@ -1427,7 +1515,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 72,
               "Title": "CloudinaryOptionsDto.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Photos\\CloudinaryOptionsDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\Photos\\CloudinaryOptionsDto.cs",
@@ -1439,7 +1527,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 69,
+              "DocumentIndex": 74,
               "Title": "PostTournamentDto.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Tournaments\\PostTournamentDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\Tournaments\\PostTournamentDto.cs",
@@ -1451,7 +1539,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 70,
+              "DocumentIndex": 75,
               "Title": "TournamentStatus.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Domain\\Entities\\Enums\\TournamentStatus.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Domain\\Entities\\Enums\\TournamentStatus.cs",
@@ -1463,7 +1551,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 71,
+              "DocumentIndex": 76,
               "Title": "PlayerPosition.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Domain\\Entities\\Enums\\PlayerPosition.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Domain\\Entities\\Enums\\PlayerPosition.cs",
@@ -1475,7 +1563,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 72,
+              "DocumentIndex": 77,
               "Title": "UserRole.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Domain\\Entities\\Enums\\UserRole.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Domain\\Entities\\Enums\\UserRole.cs",
@@ -1487,7 +1575,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 73,
+              "DocumentIndex": 78,
               "Title": "TournamentService.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Services\\TournamentService.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Services\\TournamentService.cs",
@@ -1499,7 +1587,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 74,
+              "DocumentIndex": 79,
               "Title": "TournamentProfile.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\MappingProfiles\\TournamentProfile.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\MappingProfiles\\TournamentProfile.cs",
@@ -1511,7 +1599,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 75,
+              "DocumentIndex": 80,
               "Title": "TeamPlayer.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Domain\\Entities\\TeamPlayer.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Domain\\Entities\\TeamPlayer.cs",
@@ -1523,7 +1611,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 76,
+              "DocumentIndex": 81,
               "Title": "Tournament.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Domain\\Entities\\Tournament.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Domain\\Entities\\Tournament.cs",
@@ -1535,7 +1623,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 77,
+              "DocumentIndex": 82,
               "Title": "GetTournamentItemDto.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Tournaments\\GetTournamentItemDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\Tournaments\\GetTournamentItemDto.cs",
@@ -1547,7 +1635,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 78,
+              "DocumentIndex": 83,
               "Title": "GetTournamentDto.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Tournaments\\GetTournamentDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\Tournaments\\GetTournamentDto.cs",
@@ -1559,7 +1647,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 79,
+              "DocumentIndex": 84,
               "Title": "AppUser.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Domain\\Entities\\AppUser.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Domain\\Entities\\AppUser.cs",
@@ -1571,7 +1659,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 147,
+              "DocumentIndex": 152,
               "Title": "20260215155256_DeleteRatingInTournament.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Infrastructure\\MatchArena.Persistence\\Contexts\\Migrations\\20260215155256_DeleteRatingInTournament.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\MatchArena.Persistence\\Contexts\\Migrations\\20260215155256_DeleteRatingInTournament.cs",
@@ -1583,7 +1671,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 80,
+              "DocumentIndex": 85,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.MVC\\Views\\Tournament\\Index.cshtml",
               "RelativeDocumentMoniker": "Presentation\\MatchArena.MVC\\Views\\Tournament\\Index.cshtml",
@@ -1595,7 +1683,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 82,
+              "DocumentIndex": 87,
               "Title": "TeamProfile.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\MappingProfiles\\TeamProfile.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\MappingProfiles\\TeamProfile.cs",
@@ -1607,7 +1695,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 81,
+              "DocumentIndex": 86,
               "Title": "IPlayerService.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\Interfaces\\Services\\IPlayerService.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\Interfaces\\Services\\IPlayerService.cs",
@@ -1619,7 +1707,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 83,
+              "DocumentIndex": 88,
               "Title": "GetTeamItemDto.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Teams\\GetTeamItemDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\Teams\\GetTeamItemDto.cs",
@@ -1631,7 +1719,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 84,
+              "DocumentIndex": 89,
               "Title": "PutTeamDto.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Teams\\PutTeamDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\Teams\\PutTeamDto.cs",
@@ -1643,7 +1731,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 85,
+              "DocumentIndex": 90,
               "Title": "PostTeamDto.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Teams\\PostTeamDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\Teams\\PostTeamDto.cs",
@@ -1655,7 +1743,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 86,
+              "DocumentIndex": 91,
               "Title": "GetTeamInPlayerDto.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Teams\\GetTeamInPlayerDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\Teams\\GetTeamInPlayerDto.cs",
@@ -1667,7 +1755,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 87,
+              "DocumentIndex": 92,
               "Title": "GetTeamDto.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Teams\\GetTeamDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\Teams\\GetTeamDto.cs",
@@ -1679,7 +1767,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 88,
+              "DocumentIndex": 93,
               "Title": "Team.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Domain\\Entities\\Team.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Domain\\Entities\\Team.cs",
@@ -1691,7 +1779,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 89,
+              "DocumentIndex": 94,
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Domain\\Entities\\Player.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Domain\\Entities\\Player.cs",
@@ -1703,7 +1791,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 148,
+              "DocumentIndex": 153,
               "Title": "20260215145124_Initial.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Infrastructure\\MatchArena.Persistence\\Contexts\\Migrations\\20260215145124_Initial.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\MatchArena.Persistence\\Contexts\\Migrations\\20260215145124_Initial.cs",
@@ -1715,7 +1803,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 90,
+              "DocumentIndex": 95,
               "Title": "20260215142308_AddNameAndSurnameInPlayerTable.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Infrastructure\\MatchArena.Persistence\\Contexts\\Migrations\\20260215142308_AddNameAndSurnameInPlayerTable.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\MatchArena.Persistence\\Contexts\\Migrations\\20260215142308_AddNameAndSurnameInPlayerTable.cs",
@@ -1727,7 +1815,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 91,
+              "DocumentIndex": 96,
               "Title": "Field.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Domain\\Entities\\Field.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Domain\\Entities\\Field.cs",
@@ -1739,7 +1827,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 92,
+              "DocumentIndex": 97,
               "Title": "FieldImage.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Domain\\Entities\\FieldImage.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Domain\\Entities\\FieldImage.cs",
@@ -1751,7 +1839,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 93,
+              "DocumentIndex": 98,
               "Title": "PostFieldDto.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Fields\\PostFieldDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\Fields\\PostFieldDto.cs",
@@ -1763,7 +1851,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 94,
+              "DocumentIndex": 99,
               "Title": "PlayerProfile.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\MappingProfiles\\PlayerProfile.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\MappingProfiles\\PlayerProfile.cs",
@@ -1775,7 +1863,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 95,
+              "DocumentIndex": 100,
               "Title": "TeamsController.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.API\\Controllers\\TeamsController.cs",
               "RelativeDocumentMoniker": "Presentation\\MatchArena.API\\Controllers\\TeamsController.cs",
@@ -1787,7 +1875,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 100,
+              "DocumentIndex": 105,
               "Title": "TeamConfiguration.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Infrastructure\\MatchArena.Persistence\\Configurations\\TeamConfiguration.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\MatchArena.Persistence\\Configurations\\TeamConfiguration.cs",
@@ -1799,7 +1887,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 99,
+              "DocumentIndex": 104,
               "Title": "TeamPlayerConfiguration.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Infrastructure\\MatchArena.Persistence\\Configurations\\TeamPlayerConfiguration.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\MatchArena.Persistence\\Configurations\\TeamPlayerConfiguration.cs",
@@ -1811,7 +1899,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 96,
+              "DocumentIndex": 101,
               "Title": "FieldProfile.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\MappingProfiles\\FieldProfile.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\MappingProfiles\\FieldProfile.cs",
@@ -1823,7 +1911,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 98,
+              "DocumentIndex": 103,
               "Title": "TournamentConfiguration.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Infrastructure\\MatchArena.Persistence\\Configurations\\TournamentConfiguration.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\MatchArena.Persistence\\Configurations\\TournamentConfiguration.cs",
@@ -1835,7 +1923,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 97,
+              "DocumentIndex": 102,
               "Title": "AppDbContextInitializer.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Infrastructure\\MatchArena.Persistence\\Contexts\\AppDbContextInitializer.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\MatchArena.Persistence\\Contexts\\AppDbContextInitializer.cs",
@@ -1847,7 +1935,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 102,
+              "DocumentIndex": 107,
               "Title": "FieldConfiguration.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Infrastructure\\MatchArena.Persistence\\Configurations\\FieldConfiguration.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\MatchArena.Persistence\\Configurations\\FieldConfiguration.cs",
@@ -1859,7 +1947,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 101,
+              "DocumentIndex": 106,
               "Title": "GetFieldItemDto.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Fields\\GetFieldItemDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\Fields\\GetFieldItemDto.cs",
@@ -1871,7 +1959,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 103,
+              "DocumentIndex": 108,
               "Title": "FieldImageConfiguration.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Infrastructure\\MatchArena.Persistence\\Configurations\\FieldImageConfiguration.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\MatchArena.Persistence\\Configurations\\FieldImageConfiguration.cs",
@@ -1883,7 +1971,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 104,
+              "DocumentIndex": 109,
               "Title": "PutFieldDto.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\Fields\\PutFieldDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\Fields\\PutFieldDto.cs",
@@ -1895,7 +1983,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 105,
+              "DocumentIndex": 110,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.MVC\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Presentation\\MatchArena.MVC\\Views\\Home\\Index.cshtml",
@@ -1907,7 +1995,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 106,
+              "DocumentIndex": 111,
               "Title": "FieldsController.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.API\\Controllers\\FieldsController.cs",
               "RelativeDocumentMoniker": "Presentation\\MatchArena.API\\Controllers\\FieldsController.cs",
@@ -1919,7 +2007,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 107,
+              "DocumentIndex": 112,
               "Title": "PlayerLevel.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Domain\\Entities\\Enums\\PlayerLevel.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Domain\\Entities\\Enums\\PlayerLevel.cs",
@@ -1931,7 +2019,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 108,
+              "DocumentIndex": 113,
               "Title": "MatchStatus.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Domain\\Entities\\Enums\\MatchStatus.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Domain\\Entities\\Enums\\MatchStatus.cs",
@@ -1943,7 +2031,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 109,
+              "DocumentIndex": 114,
               "Title": "PlayersController.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.API\\Controllers\\PlayersController.cs",
               "RelativeDocumentMoniker": "Presentation\\MatchArena.API\\Controllers\\PlayersController.cs",
@@ -1955,7 +2043,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 110,
+              "DocumentIndex": 115,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.MVC\\Views\\Team\\Index.cshtml",
               "RelativeDocumentMoniker": "Presentation\\MatchArena.MVC\\Views\\Team\\Index.cshtml",
@@ -1967,7 +2055,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 111,
+              "DocumentIndex": 116,
               "Title": "RegisterDtoValidator.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\Validators\\RegisterDtoValidator.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\Validators\\RegisterDtoValidator.cs",
@@ -1979,7 +2067,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 112,
+              "DocumentIndex": 117,
               "Title": "RegisterDto.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\DTOs\\AppUsers\\RegisterDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\DTOs\\AppUsers\\RegisterDto.cs",
@@ -1991,7 +2079,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 113,
+              "DocumentIndex": 118,
               "Title": "Gender.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Domain\\Entities\\Enums\\Gender.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Domain\\Entities\\Enums\\Gender.cs",
@@ -2003,7 +2091,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 114,
+              "DocumentIndex": 119,
               "Title": "ITeamService.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\Interfaces\\Services\\ITeamService.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\Interfaces\\Services\\ITeamService.cs",
@@ -2015,7 +2103,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 115,
+              "DocumentIndex": 120,
               "Title": "PlayerConfiguration.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Infrastructure\\MatchArena.Persistence\\Configurations\\PlayerConfiguration.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\MatchArena.Persistence\\Configurations\\PlayerConfiguration.cs",
@@ -2027,7 +2115,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 116,
+              "DocumentIndex": 121,
               "Title": "20260213141850_Initial.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Infrastructure\\MatchArena.Persistence\\Contexts\\Migrations\\20260213141850_Initial.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\MatchArena.Persistence\\Contexts\\Migrations\\20260213141850_Initial.cs",
@@ -2039,7 +2127,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 119,
+              "DocumentIndex": 124,
               "Title": "IFileService.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Application\\Interfaces\\Services\\IFileService.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Application\\Interfaces\\Services\\IFileService.cs",
@@ -2051,7 +2139,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 117,
+              "DocumentIndex": 122,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Infrastructure\\MatchArena.Persistence\\Contexts\\AppDbContext.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\MatchArena.Persistence\\Contexts\\AppDbContext.cs",
@@ -2063,7 +2151,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 120,
+              "DocumentIndex": 125,
               "Title": "TokenService.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Infrastructure\\MatchArena.Infrastructure\\Implementations\\Services\\TokenService.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\MatchArena.Infrastructure\\Implementations\\Services\\TokenService.cs",
@@ -2075,7 +2163,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 118,
+              "DocumentIndex": 123,
               "Title": "Update.cshtml",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.MVC\\Views\\Tournament\\Update.cshtml",
               "RelativeDocumentMoniker": "Presentation\\MatchArena.MVC\\Views\\Tournament\\Update.cshtml",
@@ -2087,7 +2175,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 122,
+              "DocumentIndex": 127,
               "Title": "Update.cshtml",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.MVC\\Views\\Team\\Update.cshtml",
               "RelativeDocumentMoniker": "Presentation\\MatchArena.MVC\\Views\\Team\\Update.cshtml",
@@ -2099,7 +2187,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 121,
+              "DocumentIndex": 126,
               "Title": "FieldRating.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Core\\MatchArena.Domain\\Entities\\FieldRating.cs",
               "RelativeDocumentMoniker": "src\\Core\\MatchArena.Domain\\Entities\\FieldRating.cs",
@@ -2111,7 +2199,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 123,
+              "DocumentIndex": 128,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.MVC\\Views\\Field\\Index.cshtml",
               "RelativeDocumentMoniker": "Presentation\\MatchArena.MVC\\Views\\Field\\Index.cshtml",
@@ -2123,7 +2211,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 124,
+              "DocumentIndex": 129,
               "Title": "PutTournamentVM.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.MVC\\ViewModels\\Tournaments\\PutTournamentVM.cs",
               "RelativeDocumentMoniker": "Presentation\\MatchArena.MVC\\ViewModels\\Tournaments\\PutTournamentVM.cs",
@@ -2135,7 +2223,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 126,
+              "DocumentIndex": 131,
               "Title": "PutFieldVM.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.MVC\\ViewModels\\Fields\\PutFieldVM.cs",
               "RelativeDocumentMoniker": "Presentation\\MatchArena.MVC\\ViewModels\\Fields\\PutFieldVM.cs",
@@ -2147,7 +2235,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 127,
+              "DocumentIndex": 132,
               "Title": "GetTournamentItemVM.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.MVC\\ViewModels\\Tournaments\\GetTournamentItemVM.cs",
               "RelativeDocumentMoniker": "Presentation\\MatchArena.MVC\\ViewModels\\Tournaments\\GetTournamentItemVM.cs",
@@ -2159,7 +2247,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 125,
+              "DocumentIndex": 130,
               "Title": "PostTournamentVM.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.MVC\\ViewModels\\Tournaments\\PostTournamentVM.cs",
               "RelativeDocumentMoniker": "Presentation\\MatchArena.MVC\\ViewModels\\Tournaments\\PostTournamentVM.cs",
@@ -2171,7 +2259,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 129,
+              "DocumentIndex": 134,
               "Title": "PostPlayerVM.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.MVC\\ViewModels\\Players\\PostPlayerVM.cs",
               "RelativeDocumentMoniker": "Presentation\\MatchArena.MVC\\ViewModels\\Players\\PostPlayerVM.cs",
@@ -2183,7 +2271,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 130,
+              "DocumentIndex": 135,
               "Title": "GetPlayerVM.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.MVC\\ViewModels\\Players\\GetPlayerVM.cs",
               "RelativeDocumentMoniker": "Presentation\\MatchArena.MVC\\ViewModels\\Players\\GetPlayerVM.cs",
@@ -2195,7 +2283,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 132,
+              "DocumentIndex": 137,
               "Title": "RegisterVM.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.MVC\\ViewModels\\AppUsers\\RegisterVM.cs",
               "RelativeDocumentMoniker": "Presentation\\MatchArena.MVC\\ViewModels\\AppUsers\\RegisterVM.cs",
@@ -2207,7 +2295,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 131,
+              "DocumentIndex": 136,
               "Title": "GetPlayerItemVM.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.MVC\\ViewModels\\Players\\GetPlayerItemVM.cs",
               "RelativeDocumentMoniker": "Presentation\\MatchArena.MVC\\ViewModels\\Players\\GetPlayerItemVM.cs",
@@ -2219,7 +2307,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 128,
+              "DocumentIndex": 133,
               "Title": "PutPlayerVM.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.MVC\\ViewModels\\Players\\PutPlayerVM.cs",
               "RelativeDocumentMoniker": "Presentation\\MatchArena.MVC\\ViewModels\\Players\\PutPlayerVM.cs",
@@ -2231,7 +2319,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 134,
+              "DocumentIndex": 139,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.MVC\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "Presentation\\MatchArena.MVC\\Views\\_ViewImports.cshtml",
@@ -2243,7 +2331,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 133,
+              "DocumentIndex": 138,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.MVC\\Views\\Player\\Create.cshtml",
               "RelativeDocumentMoniker": "Presentation\\MatchArena.MVC\\Views\\Player\\Create.cshtml",
@@ -2255,7 +2343,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 135,
+              "DocumentIndex": 140,
               "Title": "GetTeamItemVM.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.MVC\\ViewModels\\Teams\\GetTeamItemVM.cs",
               "RelativeDocumentMoniker": "Presentation\\MatchArena.MVC\\ViewModels\\Teams\\GetTeamItemVM.cs",
@@ -2267,7 +2355,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 136,
+              "DocumentIndex": 141,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.MVC\\Views\\Tournament\\Create.cshtml",
               "RelativeDocumentMoniker": "Presentation\\MatchArena.MVC\\Views\\Tournament\\Create.cshtml",
@@ -2279,7 +2367,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 137,
+              "DocumentIndex": 142,
               "Title": "Update.cshtml",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.MVC\\Views\\Player\\Update.cshtml",
               "RelativeDocumentMoniker": "Presentation\\MatchArena.MVC\\Views\\Player\\Update.cshtml",
@@ -2291,7 +2379,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 138,
+              "DocumentIndex": 143,
               "Title": "Update.cshtml",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.MVC\\Views\\Field\\Update.cshtml",
               "RelativeDocumentMoniker": "Presentation\\MatchArena.MVC\\Views\\Field\\Update.cshtml",
@@ -2303,7 +2391,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 141,
+              "DocumentIndex": 146,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.MVC\\Views\\Team\\Create.cshtml",
               "RelativeDocumentMoniker": "Presentation\\MatchArena.MVC\\Views\\Team\\Create.cshtml",
@@ -2315,7 +2403,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 140,
+              "DocumentIndex": 145,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.MVC\\Views\\Field\\Create.cshtml",
               "RelativeDocumentMoniker": "Presentation\\MatchArena.MVC\\Views\\Field\\Create.cshtml",
@@ -2327,7 +2415,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 139,
+              "DocumentIndex": 144,
               "Title": "PostFieldVM.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.MVC\\ViewModels\\Fields\\PostFieldVM.cs",
               "RelativeDocumentMoniker": "Presentation\\MatchArena.MVC\\ViewModels\\Fields\\PostFieldVM.cs",
@@ -2339,7 +2427,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 142,
+              "DocumentIndex": 147,
               "Title": "PutTeamVM.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.MVC\\ViewModels\\Teams\\PutTeamVM.cs",
               "RelativeDocumentMoniker": "Presentation\\MatchArena.MVC\\ViewModels\\Teams\\PutTeamVM.cs",
@@ -2351,7 +2439,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 143,
+              "DocumentIndex": 148,
               "Title": "PostTeamVM.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.MVC\\ViewModels\\Teams\\PostTeamVM.cs",
               "RelativeDocumentMoniker": "Presentation\\MatchArena.MVC\\ViewModels\\Teams\\PostTeamVM.cs",
@@ -2363,7 +2451,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 144,
+              "DocumentIndex": 149,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.MVC\\Views\\Player\\Index.cshtml",
               "RelativeDocumentMoniker": "Presentation\\MatchArena.MVC\\Views\\Player\\Index.cshtml",
@@ -2375,7 +2463,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 145,
+              "DocumentIndex": 150,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.MVC\\Areas\\Admin\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Presentation\\MatchArena.MVC\\Areas\\Admin\\Views\\Home\\Index.cshtml",
@@ -2387,7 +2475,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 146,
+              "DocumentIndex": 151,
               "Title": "AdminVM.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.MVC\\Areas\\Admin\\ViewModels\\AdminVM.cs",
               "RelativeDocumentMoniker": "Presentation\\MatchArena.MVC\\Areas\\Admin\\ViewModels\\AdminVM.cs",
