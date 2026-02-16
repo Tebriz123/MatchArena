@@ -618,8 +618,7 @@
               "RelativeToolTip": "src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Services\\CategoryService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T19:07:13.204Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T19:07:13.204Z"
             },
             {
               "$type": "Document",
@@ -631,8 +630,7 @@
               "RelativeToolTip": "src\\Infrastructure\\MatchArena.Persistence\\Configurations\\ProductConfiguration.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAqwBsAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T19:04:39.881Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T19:04:39.881Z"
             },
             {
               "$type": "Document",
@@ -644,8 +642,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\Validators\\PutProductDtoValidator.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAACMAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T19:01:16.107Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T19:01:16.107Z"
             },
             {
               "$type": "Document",
@@ -657,8 +654,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\MappingProfiles\\ProductProfile.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAC4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T18:46:48.675Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T18:46:48.675Z"
             },
             {
               "$type": "Document",
@@ -670,8 +666,7 @@
               "RelativeToolTip": "src\\Infrastructure\\MatchArena.Persistence\\ServiceRegistration.cs",
               "ViewState": "AgIAACAAAAAAAAAAAAAAwC8AAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-13T14:01:36.918Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-13T14:01:36.918Z"
             },
             {
               "$type": "Document",
@@ -679,9 +674,9 @@
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.API\\appsettings.json",
               "RelativeDocumentMoniker": "Presentation\\MatchArena.API\\appsettings.json",
-              "ToolTip": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.API\\appsettings.json*",
-              "RelativeToolTip": "Presentation\\MatchArena.API\\appsettings.json*",
-              "ViewState": "AgIAABAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.API\\appsettings.json",
+              "RelativeToolTip": "Presentation\\MatchArena.API\\appsettings.json",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2026-02-13T13:52:11.33Z",
               "EditorCaption": ""
@@ -696,8 +691,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\Validators\\PostProductDtoValidator.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAuwCIAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T19:00:45.74Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T19:00:45.74Z"
             },
             {
               "$type": "Document",
@@ -709,8 +703,7 @@
               "RelativeToolTip": "src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Services\\SizeService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T18:46:03.357Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T18:46:03.357Z"
             },
             {
               "$type": "Document",
@@ -722,8 +715,7 @@
               "RelativeToolTip": "src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Services\\ColorService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T18:45:04.091Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T18:45:04.091Z"
             },
             {
               "$type": "Document",
@@ -735,8 +727,7 @@
               "RelativeToolTip": "src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Services\\ProductService.cs",
               "ViewState": "AgIAAFUAAAAAAAAAAAAAwIcAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T17:56:36.105Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T17:56:36.105Z"
             },
             {
               "$type": "Document",
@@ -748,8 +739,7 @@
               "RelativeToolTip": "src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Services\\PlayerService.cs",
               "ViewState": "AgIAAFsAAAAAAAAAAAAuwGYAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-12T10:03:51.62Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-12T10:03:51.62Z"
             },
             {
               "$type": "Document",
@@ -761,8 +751,7 @@
               "RelativeToolTip": "src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Services\\TeamService.cs",
               "ViewState": "AgIAAEUAAAAAAAAAAAAAAE0AAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-12T10:29:58.367Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-12T10:29:58.367Z"
             },
             {
               "$type": "Document",
@@ -774,8 +763,7 @@
               "RelativeToolTip": "Presentation\\MatchArena.API\\Controllers\\ProductsController.cs",
               "ViewState": "AgIAABoAAAAAAAAAAAAgwDAAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T18:31:10.569Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T18:31:10.569Z"
             },
             {
               "$type": "Document",
@@ -787,8 +775,7 @@
               "RelativeToolTip": "src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Services\\StripeService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAWwLUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T11:57:36.553Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T11:57:36.553Z"
             },
             {
               "$type": "Document",
@@ -800,8 +787,7 @@
               "RelativeToolTip": "src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Services\\FieldService.cs",
               "ViewState": "AgIAALAAAAAAAAAAAAAIwHgAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-14T12:19:59.567Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-14T12:19:59.567Z"
             },
             {
               "$type": "Document",
@@ -813,8 +799,7 @@
               "RelativeToolTip": "src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Services\\FileService.cs",
               "ViewState": "AgIAADAAAAAAAAAAAAAuwBMAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-11T19:34:45.96Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-11T19:34:45.96Z"
             },
             {
               "$type": "Document",
@@ -826,8 +811,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\Interfaces\\Services\\IProductService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwA4AAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T17:58:03.933Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T17:58:03.933Z"
             },
             {
               "$type": "Document",
@@ -839,8 +823,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\Interfaces\\Repositories\\ICategoryRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T17:13:09.347Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T17:13:09.347Z"
             },
             {
               "$type": "Document",
@@ -852,8 +835,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\Interfaces\\Repositories\\IProductRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T17:05:59.938Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T17:05:59.938Z"
             },
             {
               "$type": "Document",
@@ -865,8 +847,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\Interfaces\\Repositories\\ISizeRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T17:46:46.418Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T17:46:46.418Z"
             },
             {
               "$type": "Document",
@@ -878,8 +859,7 @@
               "RelativeToolTip": "src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Repositories\\CategoryRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwBAAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T17:13:46.477Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T17:13:46.477Z"
             },
             {
               "$type": "Document",
@@ -891,8 +871,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\Interfaces\\Repositories\\IColorRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T17:53:09.839Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T17:53:09.839Z"
             },
             {
               "$type": "Document",
@@ -904,8 +883,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\DTOs\\Categories\\PutCategoryDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T18:24:23.353Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T18:24:23.353Z"
             },
             {
               "$type": "Document",
@@ -917,8 +895,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\DTOs\\Categories\\PostCategoryDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T18:24:17.298Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T18:24:17.298Z"
             },
             {
               "$type": "Document",
@@ -930,8 +907,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\DTOs\\Categories\\GetCategoryItemDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T18:24:10.585Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T18:24:10.585Z"
             },
             {
               "$type": "Document",
@@ -943,8 +919,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\DTOs\\Categories\\GetCategoryInProductDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T18:24:02.724Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T18:24:02.724Z"
             },
             {
               "$type": "Document",
@@ -956,8 +931,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\DTOs\\Categories\\GetCategoryDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T18:23:43.085Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T18:23:43.085Z"
             },
             {
               "$type": "Document",
@@ -969,8 +943,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\DTOs\\Products\\PutProductDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T18:21:54.476Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T18:21:54.476Z"
             },
             {
               "$type": "Document",
@@ -982,8 +955,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\DTOs\\Products\\PostProductDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T18:21:44.025Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T18:21:44.025Z"
             },
             {
               "$type": "Document",
@@ -995,8 +967,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\DTOs\\Products\\GetProductItemDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T18:21:38.344Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T18:21:38.344Z"
             },
             {
               "$type": "Document",
@@ -1008,8 +979,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\DTOs\\Products\\GetProductInCategoryDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T18:20:49.417Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T18:20:49.417Z"
             },
             {
               "$type": "Document",
@@ -1021,8 +991,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\DTOs\\Products\\GetProductDto.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAxwAIAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T18:17:43.716Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T18:17:43.716Z"
             },
             {
               "$type": "Document",
@@ -1034,8 +1003,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\DTOs\\Sizes\\PutSizeDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T18:22:26.331Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T18:22:26.331Z"
             },
             {
               "$type": "Document",
@@ -1047,8 +1015,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\DTOs\\Sizes\\PostSizeDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T18:22:17.989Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T18:22:17.989Z"
             },
             {
               "$type": "Document",
@@ -1060,8 +1027,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\DTOs\\Sizes\\GetSizeItemDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T18:22:13.219Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T18:22:13.219Z"
             },
             {
               "$type": "Document",
@@ -1073,8 +1039,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\DTOs\\Sizes\\GetSizeInProductDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T18:22:09.292Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T18:22:09.292Z"
             },
             {
               "$type": "Document",
@@ -1086,8 +1051,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\DTOs\\Sizes\\GetSizeDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T18:22:04.686Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T18:22:04.686Z"
             },
             {
               "$type": "Document",
@@ -1099,8 +1063,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\DTOs\\Player\\PutPlayerDto.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T12:17:38.492Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-09T12:17:38.492Z"
             },
             {
               "$type": "Document",
@@ -1112,8 +1075,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\DTOs\\Player\\PostPlayerDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-07T15:42:15.429Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-07T15:42:15.429Z"
             },
             {
               "$type": "Document",
@@ -1125,8 +1087,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\DTOs\\Player\\GetPlayerItemDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-07T15:40:14.956Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-07T15:40:14.956Z"
             },
             {
               "$type": "Document",
@@ -1138,8 +1099,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\DTOs\\Player\\GetPlayerInTeamDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-13T16:20:44.876Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-13T16:20:44.876Z"
             },
             {
               "$type": "Document",
@@ -1151,8 +1111,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\DTOs\\Player\\GetPlayerDto.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAABcAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-07T15:21:32.987Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-07T15:21:32.987Z"
             },
             {
               "$type": "Document",
@@ -1164,8 +1123,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\DTOs\\Colors\\PutColorDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T18:23:31.558Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T18:23:31.558Z"
             },
             {
               "$type": "Document",
@@ -1177,8 +1135,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\DTOs\\Colors\\GetColorInProductDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T18:22:40.969Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T18:22:40.969Z"
             },
             {
               "$type": "Document",
@@ -1190,8 +1147,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\DTOs\\Colors\\GetColorDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T18:22:36.264Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T18:22:36.264Z"
             },
             {
               "$type": "Document",
@@ -1203,8 +1159,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\DTOs\\Colors\\PostColorDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T18:22:51.919Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T18:22:51.919Z"
             },
             {
               "$type": "Document",
@@ -1216,8 +1171,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\DTOs\\Colors\\GetColorItemDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T18:22:45.974Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T18:22:45.974Z"
             },
             {
               "$type": "Document",
@@ -1229,8 +1183,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\DTOs\\AppUsers\\LoginDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-14T13:56:17.427Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-14T13:56:17.427Z"
             },
             {
               "$type": "Document",
@@ -1242,8 +1195,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\Interfaces\\Services\\ISizeService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T18:01:38.558Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T18:01:38.558Z"
             },
             {
               "$type": "Document",
@@ -1255,8 +1207,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\Interfaces\\Services\\ICategoryService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T17:58:18.376Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T17:58:18.376Z"
             },
             {
               "$type": "Document",
@@ -1268,8 +1219,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\DTOs\\Fields\\GetFieldDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-08T12:29:20.918Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-08T12:29:20.918Z"
             },
             {
               "$type": "Document",
@@ -1281,8 +1231,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\Interfaces\\Services\\IColorService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T17:58:35.578Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T17:58:35.578Z"
             },
             {
               "$type": "Document",
@@ -1294,8 +1243,7 @@
               "RelativeToolTip": "src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Repositories\\SizeRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T17:55:29.503Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T17:55:29.503Z"
             },
             {
               "$type": "Document",
@@ -1307,8 +1255,7 @@
               "RelativeToolTip": "src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Repositories\\ColorRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T17:53:50.941Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T17:53:50.941Z"
             },
             {
               "$type": "Document",
@@ -1320,8 +1267,7 @@
               "RelativeToolTip": "src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Repositories\\ProductRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwA4AAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T17:04:36.452Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T17:04:36.452Z"
             },
             {
               "$type": "Document",
@@ -1333,8 +1279,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Domain\\Entities\\Color.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T16:58:09.872Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T16:58:09.872Z"
             },
             {
               "$type": "Document",
@@ -1346,8 +1291,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Domain\\Entities\\ProductSize.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T17:01:10.846Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T17:01:10.846Z"
             },
             {
               "$type": "Document",
@@ -1359,8 +1303,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Domain\\Entities\\Size.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T17:00:47.557Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T17:00:47.557Z"
             },
             {
               "$type": "Document",
@@ -1372,8 +1315,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Domain\\Entities\\Category.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T16:55:03.315Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T16:55:03.315Z"
             },
             {
               "$type": "Document",
@@ -1385,8 +1327,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Domain\\Entities\\ProductColor.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T16:59:02.353Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T16:59:02.353Z"
             },
             {
               "$type": "Document",
@@ -1398,8 +1339,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Domain\\Entities\\Product.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T16:54:51.388Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T16:54:51.388Z"
             },
             {
               "$type": "Document",
@@ -1411,8 +1351,7 @@
               "RelativeToolTip": "src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Repositories\\TeamRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-14T13:47:51.79Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-14T13:47:51.79Z"
             },
             {
               "$type": "Document",
@@ -1424,8 +1363,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Domain\\Entities\\Payment.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T12:07:32.291Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T12:07:32.291Z"
             },
             {
               "$type": "Document",
@@ -1437,8 +1375,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\Interfaces\\Services\\IStripeService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T11:57:57.618Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T11:57:57.618Z"
             },
             {
               "$type": "Document",
@@ -1450,8 +1387,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Domain\\Settings\\Stripes\\StripeSetting.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T11:55:50.829Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T11:55:50.829Z"
             },
             {
               "$type": "Document",
@@ -1463,8 +1399,7 @@
               "RelativeToolTip": "Presentation\\MatchArena.API\\Program.cs",
               "ViewState": "AgIAAEIAAAAAAAAAAAAAABQAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-13T14:40:34.024Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-13T14:40:34.024Z"
             },
             {
               "$type": "Document",
@@ -1476,8 +1411,7 @@
               "RelativeToolTip": "Presentation\\MatchArena.API\\Controllers\\TournamentsController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T08:58:09.174Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T08:58:09.174Z"
             },
             {
               "$type": "Document",
@@ -1489,8 +1423,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\DTOs\\Tournaments\\PutTournamentDto.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-11T18:35:01.701Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-11T18:35:01.701Z"
             },
             {
               "$type": "Document",
@@ -1502,8 +1435,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\DTOs\\Photos\\CloudinaryOptionsDto.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAAwAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-13T13:44:08.968Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-13T13:44:08.968Z"
             },
             {
               "$type": "Document",
@@ -1515,8 +1447,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\DTOs\\Tournaments\\PostTournamentDto.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAABkAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-11T17:25:24.19Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-11T17:25:24.19Z"
             },
             {
               "$type": "Document",
@@ -1528,8 +1459,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Domain\\Entities\\Enums\\TournamentStatus.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-11T17:19:15.772Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-11T17:19:15.772Z"
             },
             {
               "$type": "Document",
@@ -1541,8 +1471,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Domain\\Entities\\Enums\\PlayerPosition.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-11T17:30:36.378Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-11T17:30:36.378Z"
             },
             {
               "$type": "Document",
@@ -1554,8 +1483,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Domain\\Entities\\Enums\\UserRole.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-11T17:30:49.846Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-11T17:30:49.846Z"
             },
             {
               "$type": "Document",
@@ -1567,8 +1495,7 @@
               "RelativeToolTip": "src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Services\\TournamentService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAGkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-12T13:16:47.576Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-12T13:16:47.576Z"
             },
             {
               "$type": "Document",
@@ -1580,8 +1507,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\MappingProfiles\\TournamentProfile.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAAAB4AAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-08T13:21:32.931Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-08T13:21:32.931Z"
             },
             {
               "$type": "Document",
@@ -1593,8 +1519,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Domain\\Entities\\TeamPlayer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwA8AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-13T16:00:55.24Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-13T16:00:55.24Z"
             },
             {
               "$type": "Document",
@@ -1606,8 +1531,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Domain\\Entities\\Tournament.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAAIwBAAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-11T17:31:46.272Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-11T17:31:46.272Z"
             },
             {
               "$type": "Document",
@@ -1619,8 +1543,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\DTOs\\Tournaments\\GetTournamentItemDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-11T17:40:29.128Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-11T17:40:29.128Z"
             },
             {
               "$type": "Document",
@@ -1632,8 +1555,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\DTOs\\Tournaments\\GetTournamentDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-15T15:27:37.199Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-15T15:27:37.199Z"
             },
             {
               "$type": "Document",
