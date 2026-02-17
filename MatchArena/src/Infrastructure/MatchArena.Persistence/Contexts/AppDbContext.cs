@@ -28,6 +28,12 @@ namespace MatchArena.Persistence.Contexts
         public DbSet<TeamPlayer> TeamPlayers { get; set; }
         public DbSet<FieldImage> FieldImages { get; set; }
         public DbSet<FieldRating> FieldRatings { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Color> Colors { get; set; }
+        public DbSet<ProductColor> ProductColors { get; set; }
+        public DbSet<Size> Sizes { get; set; }
+        public DbSet<ProductSize> ProductSizes { get; set; }
 
     }
 }

@@ -9,6 +9,7 @@ namespace MatchArena.Application.DTOs.Products
     public record GetProductItemDto(
         long Id,
         string Name,
+        string Image,
         decimal Price,
         string CategoryName
         );

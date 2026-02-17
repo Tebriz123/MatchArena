@@ -56,7 +56,7 @@ namespace MatchArena.Persistence.Implementations.Services
         public async Task CreateFieldAsync(PostFieldDto fieldDto)
         {
             if (fieldDto is null)
-                throw new ArgumentNullException(nameof(fieldDto));
+                throw new Exception(nameof(fieldDto));
 
             string primaryImageUrl = string.Empty;
             if (fieldDto.PrimaryPhoto is not null)

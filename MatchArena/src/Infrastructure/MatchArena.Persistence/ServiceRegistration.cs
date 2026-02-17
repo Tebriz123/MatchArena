@@ -31,11 +31,16 @@ namespace MatchArena.Persistence
                 opt.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(3);
             }).AddDefaultTokenProviders().AddEntityFrameworkStores<AppDbContext>();
 
-            
+
+
             services.AddScoped<IPlayerRepository, PlayerRepository>();
             services.AddScoped<ITeamRepository, TeamRepository>();
             services.AddScoped<IFieldRepository, FieldRepository>();
             services.AddScoped<ITournamentRepository, TournamentRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<IColorRepository, ColorRepository>();
+            services.AddScoped<ISizeRepository, SizeRepository>();
 
 
             services.AddScoped<IAuthenticationService, AuthenticationService>();
@@ -45,9 +50,10 @@ namespace MatchArena.Persistence
             services.AddScoped<IFieldService, FieldService>();
             services.AddScoped<ITournamentService, TournamentService>();
             services.AddScoped<IProductService, ProductService>();
-            //services.AddScoped<ICategoryService, CategoryService>();
-            //services.AddScoped<IColorService, ColorService>();
-            //services.AddScoped<ISizeService, SizeService>();
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IColorService, ColorService>();
+            services.AddScoped<ISizeService, SizeService>();
+            services.AddScoped<IFileService, FileService>();
 
             return services;
         }

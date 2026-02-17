@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,9 +11,10 @@ namespace MatchArena.Application.DTOs.Products
         string Name,
         decimal Price,
         string SKU,
+        IFormFile PrimaryPhoto,
+        ICollection<IFormFile> AdditionalPhotos,
         string Description,
         long CategoryId,
-        ICollection<long> TagIds,
         ICollection<long> SizeIds,
         ICollection<long> ColorIds
         );

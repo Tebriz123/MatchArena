@@ -14,6 +14,7 @@ namespace MatchArena.Application.DTOs.Products
         string Name,
         decimal Price,
         string SKU,
+        string Image,
         string Description,
         GetCategoryInProductDto CategoryDto,
         ICollection<GetColorInProductDto> ColorDtos,

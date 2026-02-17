@@ -1,13 +1,15 @@
 using MatchArena.Application;
 using MatchArena.Infrastructure;
 using MatchArena.Persistence;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using System;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
 
-
+ 
 builder.Services.AddControllers();
 
 //builder.Services.Configure<StripeSettings>(
@@ -50,8 +52,6 @@ builder.Services
     .AddInfrastructureServices(builder.Configuration);
 
 
-
-
 var app = builder.Build();
 
 
@@ -62,7 +62,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-//using(var scope = app.Services.CreateScope())
+//using (var scope = app.Services.CreateScope())
 //{
 //    await app.UseAppDbContextInitializer(scope);
 //}
