@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using MatchArena.Application.DTOs.Categories;
 using MatchArena.Application.DTOs.Colors;
 using MatchArena.Application.DTOs.Products;
 using MatchArena.Application.DTOs.Sizes;
@@ -20,22 +21,10 @@ namespace MatchArena.Application.MappingProfiles
                 .ForCtorParam(nameof(GetProductItemDto.CategoryName),
                 opt => opt.MapFrom(p => p.Category.Name));
 
-            CreateMap<Product, GetProductDto>()
-                .ForCtorParam(nameof(GetProductDto.CategoryDto),
-                opt => opt.MapFrom(p => p.Category))
-
-                .ForCtorParam(nameof(GetProductDto.ColorDtos),
-                 opt => opt.MapFrom(p => p.ProductColors
-                     .Select(pc => new GetColorInProductDto(pc.Color.Id, pc.Color.Name))
-                      .ToList()))
-
-                .ForCtorParam(nameof(GetProductDto.SizeDtos),
-                opt => opt.MapFrom(p => p.ProductSizes
-                .Select(ps => new GetSizeInProductDto(ps.Size.Id, ps.Size.Name))
-                .ToList()));
+            CreateMap<Product, GetProductDto>().ReverseMap();
 
             CreateMap<PostProductDto, Product>()
-               
+              
                  .ForMember(
                 p => p.ProductColors,
                 opt => opt.MapFrom(pDto => pDto.ColorIds

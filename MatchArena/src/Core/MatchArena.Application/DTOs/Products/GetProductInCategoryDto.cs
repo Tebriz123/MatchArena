@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace MatchArena.Application.DTOs.Products
 {
     public record GetProductInCategoryDto(
-        long id,
+        long Id,
         string Name,
         decimal Price
         );

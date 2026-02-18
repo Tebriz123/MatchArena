@@ -22,8 +22,8 @@ namespace MatchArena.Application.MappingProfiles
                 .ForCtorParam(nameof(GetCategoryDto.ProductDtos)
                 , opt => opt.MapFrom(c => c.Products));
 
-            CreateMap<Category, GetCategoryInProductDto>();
-            CreateMap<PostCategoryDto, Category>();
+            CreateMap<Category, GetCategoryInProductDto>().ReverseMap();
+            CreateMap<PostCategoryDto, Category>().ReverseMap();
 
             CreateMap<PutCategoryDto, Category>();
         }

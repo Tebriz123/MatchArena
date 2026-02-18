@@ -1,6 +1,7 @@
 ﻿using MatchArena.Application.Interfaces.Repositories;
 using MatchArena.Application.Interfaces.Services;
 using MatchArena.Domain.Entities;
+using MatchArena.Domain.Settings.Stripes;
 using MatchArena.Persistence.Contexts;
 using MatchArena.Persistence.Implementations.Repositories;
 using MatchArena.Persistence.Implementations.Services;
@@ -32,7 +33,6 @@ namespace MatchArena.Persistence
             }).AddDefaultTokenProviders().AddEntityFrameworkStores<AppDbContext>();
 
 
-
             services.AddScoped<IPlayerRepository, PlayerRepository>();
             services.AddScoped<ITeamRepository, TeamRepository>();
             services.AddScoped<IFieldRepository, FieldRepository>();
@@ -41,6 +41,7 @@ namespace MatchArena.Persistence
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IColorRepository, ColorRepository>();
             services.AddScoped<ISizeRepository, SizeRepository>();
+            services.AddScoped<IPaymentRepository, PaymentRepository>();
 
 
             services.AddScoped<IAuthenticationService, AuthenticationService>();
@@ -54,6 +55,7 @@ namespace MatchArena.Persistence
             services.AddScoped<IColorService, ColorService>();
             services.AddScoped<ISizeService, SizeService>();
             services.AddScoped<IFileService, FileService>();
+            services.AddScoped<IPaymentService, PaymentService>();
 
             return services;
         }

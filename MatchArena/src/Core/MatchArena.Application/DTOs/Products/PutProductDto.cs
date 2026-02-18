@@ -11,7 +11,6 @@ namespace MatchArena.Application.DTOs.Products
         string Name,
         decimal Price,
         string Description,
-        string SKU,
         long CategoryId,
         IFormFile PrimaryPhoto,
         ICollection<IFormFile> AdditionalPhotos,

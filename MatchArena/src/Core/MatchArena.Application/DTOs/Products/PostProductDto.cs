@@ -10,7 +10,6 @@ namespace MatchArena.Application.DTOs.Products
     public record PostProductDto(
         string Name,
         decimal Price,
-        string SKU,
         IFormFile PrimaryPhoto,
         ICollection<IFormFile> AdditionalPhotos,
         string Description,

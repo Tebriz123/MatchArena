@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "AZ90wkNsTy8=",
+  "dgSpecHash": "9m7asEDVUxQ=",
   "success": true,
   "projectFilePath": "C:\\Users\\necef\\OneDrive\\İş masası\\MatchArena2\\MatchArena\\Presentation\\MatchArena.MVC\\MatchArena.MVC.csproj",
   "expectedPackageFiles": [
@@ -115,6 +115,7 @@
     "C:\\Users\\necef\\.nuget\\packages\\nuget.protocol\\6.11.0\\nuget.protocol.6.11.0.nupkg.sha512",
     "C:\\Users\\necef\\.nuget\\packages\\nuget.versioning\\6.11.0\\nuget.versioning.6.11.0.nupkg.sha512",
     "C:\\Users\\necef\\.nuget\\packages\\restsharp\\113.1.0\\restsharp.113.1.0.nupkg.sha512",
+    "C:\\Users\\necef\\.nuget\\packages\\stripe.net\\50.3.0\\stripe.net.50.3.0.nupkg.sha512",
     "C:\\Users\\necef\\.nuget\\packages\\system.codedom\\5.0.0\\system.codedom.5.0.0.nupkg.sha512",
     "C:\\Users\\necef\\.nuget\\packages\\system.collections.immutable\\8.0.0\\system.collections.immutable.8.0.0.nupkg.sha512",
     "C:\\Users\\necef\\.nuget\\packages\\system.composition\\7.0.0\\system.composition.7.0.0.nupkg.sha512",

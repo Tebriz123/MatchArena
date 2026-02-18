@@ -1861,6 +1861,23 @@
           }
         }
       },
+      "Stripe.net/50.3.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "System.Configuration.ConfigurationManager": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/Stripe.net.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Stripe.net.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.CodeDom/5.0.0": {
         "type": "package",
         "compile": {
@@ -2223,7 +2240,8 @@
           "FluentValidation": "12.1.1",
           "FluentValidation.AspNetCore": "11.3.1",
           "FluentValidation.DependencyInjectionExtensions": "12.1.1",
-          "MatchArena.Domain": "1.0.0"
+          "MatchArena.Domain": "1.0.0",
+          "Stripe.net": "50.3.0"
         },
         "compile": {
           "bin/placeholder/MatchArena.Application.dll": {}
@@ -5507,6 +5525,34 @@
         "restsharp.113.1.0.nupkg.sha512",
         "restsharp.nuspec",
         "restsharp.png"
+      ]
+    },
+    "Stripe.net/50.3.0": {
+      "sha512": "pdx7D+1PX2v78oI0nN9AlVTWACkRJtDPKA4yXdRa1cJV7N5k02UhdwSa6ASX6cpSqL3+3H1YfmP9Jyh7EcJMnA==",
+      "type": "package",
+      "path": "stripe.net/50.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "README.md",
+        "icon.png",
+        "lib/net462/Stripe.net.dll",
+        "lib/net462/Stripe.net.xml",
+        "lib/net5.0/Stripe.net.dll",
+        "lib/net5.0/Stripe.net.xml",
+        "lib/net6.0/Stripe.net.dll",
+        "lib/net6.0/Stripe.net.xml",
+        "lib/net7.0/Stripe.net.dll",
+        "lib/net7.0/Stripe.net.xml",
+        "lib/net8.0/Stripe.net.dll",
+        "lib/net8.0/Stripe.net.xml",
+        "lib/net9.0/Stripe.net.dll",
+        "lib/net9.0/Stripe.net.xml",
+        "lib/netstandard2.0/Stripe.net.dll",
+        "lib/netstandard2.0/Stripe.net.xml",
+        "stripe.net.50.3.0.nupkg.sha512",
+        "stripe.net.nuspec"
       ]
     },
     "System.CodeDom/5.0.0": {

@@ -21,6 +21,9 @@ namespace MatchArena.Persistence.Contexts
 
             base.OnModelCreating(modelBuilder);
         }
+        
+
+
         public DbSet<Player> Players { get; set; }
         public DbSet<Team> Teams { get; set; }
         public DbSet<Field> Fields { get; set; }
@@ -34,6 +37,7 @@ namespace MatchArena.Persistence.Contexts
         public DbSet<ProductColor> ProductColors { get; set; }
         public DbSet<Size> Sizes { get; set; }
         public DbSet<ProductSize> ProductSizes { get; set; }
+        public DbSet<Payment> Payments { get; set; }
 
     }
 }

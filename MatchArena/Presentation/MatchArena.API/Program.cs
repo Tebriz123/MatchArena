@@ -1,8 +1,12 @@
+using AutoMapper;
 using MatchArena.Application;
+using MatchArena.Domain.Entities;
+using MatchArena.Domain.Settings.Stripes;
 using MatchArena.Infrastructure;
 using MatchArena.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using Stripe;
 using System;
 
 
@@ -12,9 +16,9 @@ var builder = WebApplication.CreateBuilder(args);
  
 builder.Services.AddControllers();
 
-//builder.Services.Configure<StripeSettings>(
-//    builder.Configuration.GetSection("Stripe")
-//);
+builder.Services.Configure<StripeSetting>(
+    builder.Configuration.GetSection("Stripe")
+);
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -74,5 +78,8 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+
+var mapper = app.Services.GetRequiredService<IMapper>();
+//mapper.ConfigurationProvider.AssertConfigurationIsValid();
 
 app.Run();

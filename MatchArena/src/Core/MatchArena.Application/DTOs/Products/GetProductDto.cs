@@ -19,7 +19,6 @@ namespace MatchArena.Application.DTOs.Products
         GetCategoryInProductDto CategoryDto,
         ICollection<GetColorInProductDto> ColorDtos,
         ICollection<GetSizeInProductDto> SizeDtos
-
         );
     
 }
