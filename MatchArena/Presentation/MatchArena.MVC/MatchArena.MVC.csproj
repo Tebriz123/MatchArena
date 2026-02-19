@@ -12,9 +12,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="wwwroot\assets\img\" />
+    <Folder Include="wwwroot\assets\img\fields\" />
+    <Folder Include="wwwroot\assets\img\players\" />
+    <Folder Include="wwwroot\assets\img\teams\" />
+    <Folder Include="wwwroot\assets\img\tournaments\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -3,16 +3,15 @@
 namespace MatchArena.MVC.ViewModels
 {
     public record PutPlayerVM(
-        string Name,
-        string Surname,
-        int Age,
-        string Information,
+       string Name,
+       string Surname,
+       int Age,
+       string Information,
+       string City,
         int Height,
-        string City,
-         string Image,
-        IFormFile Photo,
-        PlayerPosition Position,
-        PlayerLevel Level
-        );
+       IFormFile Photo,
+       PlayerPosition Position,
+       PlayerLevel Level
+       );
 
 }

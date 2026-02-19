@@ -34,9 +34,9 @@ namespace MatchArena.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromForm] PostSizeDto sizeDto)
+        public async Task<IActionResult> Create([FromForm] string Name)
         {
-            await _service.CreateAsync(sizeDto);
+            await _service.CreateAsync(new PostSizeDto(Name));
 
             return Created();
 

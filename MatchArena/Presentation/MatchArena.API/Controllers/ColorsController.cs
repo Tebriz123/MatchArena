@@ -34,9 +34,9 @@ namespace MatchArena.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromForm] PostColorDto colorDto)
+        public async Task<IActionResult> Create([FromForm] string Name)
         {
-            await _service.CreateAsync(colorDto);
+            await _service.CreateAsync(new PostColorDto(Name));
 
             return Created();
 

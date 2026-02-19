@@ -1,24 +1,30 @@
-﻿@model GetTeamItemVM
+﻿@* @model GetTeamItemVM
 <main>
-    <h1 class="section-title">Komandalar</h1>
-    <p class="section-subtitle">Ən yaxşı futbol komandalarını tap və qoşul.</p>
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <div>
+            <h1 class="section-title">Komandalar</h1>
+            <p class="section-subtitle">Ən yaxşı futbol komandalarını tap və qoşul.</p>
+        </div>
+        <a href="create-team.html" class="btn btn-primary" id="createTeamBtn" style="display: none; white-space: nowrap;">
+            👥 Komanda Yarat
+        </a>
+    </div>
 
     <p style="color: var(--text-muted); margin-bottom: 2rem;">8 komanda tapıldı</p>
 
     <div class="cards-grid">
-      
         @foreach (Team team in Model.Teams)
         {
             <a href="team-detail.html" class="team-card">
-                <div class="card-image"><img src="~/assets/img/teams/@team.Logo" alt="@team.Name"></div>
+                <div class="card-image"><img src="assets/img/WhatsApp Şəkil 2025-06-02 saat 15.17.05_c54a2834.jpg" alt="Qarabag Legends"></div>
                 <div class="card-content">
-                    <div class="team-badge">Oyunçu axtarır</div>
-                    <h3 class="card-title">@team.Name</h3>
-                    <div class="card-subtitle">Kapitain: @team • 🏠 @team.City</div>
+                    <div class="team-badge">👥 KOMANDA</div>
+                    <h3 class="card-title">Qarabag Legends</h3>
+                    <div class="card-subtitle">Kapitain: Öli Kazimov • 🏠 Baki</div>
                     <div class="card-stats">
-                        <div class="stat-item"><div class="stat-item-value">@team.PlayerCount/@team.MaxPlayer</div><div class="stat-item-label">qolaça</div></div>
-                        <div class="stat-item"><div class="stat-item-value">@team.Rating</div><div class="stat-item-label">⭐</div></div>
-                        <div class="stat-item"><div class="stat-item-value">@team.GameCount</div><div class="stat-item-label">oyun</div></div>
+                        <div class="stat-item"><div class="stat-item-value">15/15</div><div class="stat-item-label">qolaça</div></div>
+                        <div class="stat-item"><div class="stat-item-value">4.9</div><div class="stat-item-label">⭐</div></div>
+                        <div class="stat-item"><div class="stat-item-value">67</div><div class="stat-item-label">oyun</div></div>
                     </div>
                     <div class="card-buttons">
                         <span class="btn-small">Profil bax</span>
@@ -26,8 +32,6 @@
                     </div>
                 </div>
             </a>
-
         }
-
     </div>
-</main>
+</main> *@

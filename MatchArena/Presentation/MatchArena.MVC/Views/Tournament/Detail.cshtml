@@ -1,4 +1,4 @@
-﻿@model GetTournamentVM
+﻿@* @model GetTournamentVM
 @{
     int EmptySpace = Model.MaxTeams - Model.CurrentTeams;
 }
@@ -8,27 +8,31 @@
     <!-- Tournament Header -->
     <div class="tournament-header-card">
         <div class="tournament-banner">
-            <img src="~/assets/img/tournaments/@Model.Icon" alt="@Model.Name">
+            <img src="assets/img/WhatsApp Şəkil 2025-06-02 saat 15.17.05_c54a2834.jpg" alt="Yay Çempionatı 2026">
             <div class="tournament-icon">🏆</div>
             <span class="tournament-status-badge ongoing">Davam edir</span>
         </div>
 
         <div class="tournament-header-content">
-            <h1 class="tournament-title">@Model.Name</h1>
-            <p class="tournament-organizer">📍 @Model.City</p>
+            <h1 class="tournament-title">Yay Çempionatı 2026</h1>
+            <p class="tournament-organizer">Təşkilatçı: MatchArena • 📍 Bakı, Azərbaycan</p>
 
             <div class="tournament-stats-grid">
                 <div class="tournament-stat-box">
                     <div class="stat-label">Mükafat Fondu</div>
-                    <div class="stat-value">@Model.PrizeFund</div>
+                    <div class="stat-value">5000₼</div>
                 </div>
                 <div class="tournament-stat-box">
                     <div class="stat-label">Komandalar</div>
-                    <div class="stat-value">@Model.CurrentTeams/@Model.MaxTeams</div>
+                    <div class="stat-value">12/16</div>
+                </div>
+                <div class="tournament-stat-box">
+                    <div class="stat-label">Format</div>
+                    <div class="stat-value">Qrup + Playoff</div>
                 </div>
                 <div class="tournament-stat-box">
                     <div class="stat-label">Oyun Müddəti</div>
-                    <div class="stat-value">@Model.RegistrationDeadline dəq</div>
+                    <div class="stat-value">90 dəq</div>
                 </div>
             </div>
 
@@ -37,8 +41,8 @@
                     <div class="progress-fill-large" style="width: 75%"></div>
                 </div>
                 <div class="progress-info">
-                    <span>@Model.CurrentTeams komanda qeydiyyatdan keçdi</span>
-                    <span>@EmptySpace yer qalıb</span>
+                    <span>12 komanda qeydiyyatdan keçdi</span>
+                    <span>4 yer qalıb</span>
                 </div>
             </div>
 
@@ -141,12 +145,55 @@
                     <div class="detail-card">
                         <h3 class="detail-card-title">Haqqında</h3>
                         <p class="detail-description">
-                            @Model.Description
+                            Yay Çempionatı 2026 - Bakının ən prestijli futbol turniri! 16 güclü komanda,
+                            15 gün gərgin rəqabət və 5000 AZN mükafat fondu ilə Azərbaycanın ən böyük
+                            yay futbol hadisəsi. Qrup mərhələsi və playoff sistemində keçiriləcək bu
+                            turnir, komandaların həm taktiki, həm də fiziki hazırlığını sınayacaq.
                         </p>
-                       
+                        <p class="detail-description">
+                            Turnirdə iştirak etmək üçün komandanız minimum 11, maksimum 15 oyunçudan
+                            ibarət olmalıdır. Hər komanda 3 substitut istifadə edə bilər. Oyunlar
+                            FIFA qaydalarına uyğun keçiriləcək.
+                        </p>
                     </div>
 
-                
+                    <div class="detail-card">
+                        <h3 class="detail-card-title">Mükafatlar</h3>
+
+                        <div class="prize-list">
+                            <div class="prize-item first">
+                                <div class="prize-medal">🥇</div>
+                                <div class="prize-info">
+                                    <div class="prize-place">1-ci yer</div>
+                                    <div class="prize-amount">3000₼ + Kubok</div>
+                                </div>
+                            </div>
+
+                            <div class="prize-item second">
+                                <div class="prize-medal">🥈</div>
+                                <div class="prize-info">
+                                    <div class="prize-place">2-ci yer</div>
+                                    <div class="prize-amount">1500₼ + Medal</div>
+                                </div>
+                            </div>
+
+                            <div class="prize-item third">
+                                <div class="prize-medal">🥉</div>
+                                <div class="prize-info">
+                                    <div class="prize-place">3-cü yer</div>
+                                    <div class="prize-amount">500₼ + Medal</div>
+                                </div>
+                            </div>
+
+                            <div class="prize-item special">
+                                <div class="prize-medal">⚽</div>
+                                <div class="prize-info">
+                                    <div class="prize-place">Ən yaxşı oyunçu</div>
+                                    <div class="prize-amount">Xüsusi mükafat</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="detail-card">
                         <h3 class="detail-card-title">Əhəmiyyətli Tarixlər</h3>
@@ -155,7 +202,7 @@
                             <div class="timeline-item completed">
                                 <div class="timeline-dot"></div>
                                 <div class="timeline-content">
-                                    <div class="timeline-date">@Model.StartTime</div>
+                                    <div class="timeline-date">1 May 2026</div>
                                     <div class="timeline-title">Qeydiyyat Başlangıcı</div>
                                 </div>
                             </div>
@@ -163,15 +210,31 @@
                             <div class="timeline-item active">
                                 <div class="timeline-dot"></div>
                                 <div class="timeline-content">
-                                    <div class="timeline-date">@Model.EndTime</div>
+                                    <div class="timeline-date">25 May 2026</div>
                                     <div class="timeline-title">Son Qeydiyyat</div>
                                 </div>
                             </div>
-                       
+
                             <div class="timeline-item">
                                 <div class="timeline-dot"></div>
                                 <div class="timeline-content">
-                                    <div class="timeline-date">@Model.FinalTime</div>
+                                    <div class="timeline-date">28 May 2026</div>
+                                    <div class="timeline-title">Qura çəkilişi</div>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-date">1 İyun 2026</div>
+                                    <div class="timeline-title">Turnir Başlangıcı</div>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-date">15 İyun 2026</div>
                                     <div class="timeline-title">Final Oyunu</div>
                                 </div>
                             </div>
@@ -184,19 +247,56 @@
         <!-- Teams Tab -->
         <div class="detail-tab-content" id="teams">
             <div class="detail-card">
-                <h3 class="detail-card-title">Qeydiyyatdan keçmiş komandalar (@Model.CurrentTeams)</h3>
+                <h3 class="detail-card-title">Qeydiyyatdan keçmiş komandalar (12)</h3>
 
                 <div class="teams-grid">
-                   @foreach (Team team in Model.Teams)
-                    {
-                        <div class="team-card-small">
-                            <div class="team-avatar-small"><img src="~/assets/img/teams/@team.Logo" alt="@team.Name"></div>
-                            <div class="team-info-small">
-                                <div class="team-name-small">@team.Name</div>
-                                <div class="team-stats-small">@team.PlayerCount oyunçu • ⭐ @team.Rating</div>
-                            </div>
+                    <div class="team-card-small">
+                        <div class="team-avatar-small"><img src="assets/img/WhatsApp Şəkil 2025-06-02 saat 15.17.05_c54a2834.jpg" alt="Qarabağ Legends"></div>
+                        <div class="team-info-small">
+                            <div class="team-name-small">Qarabağ Legends</div>
+                            <div class="team-stats-small">15 oyunçu • ⭐ 4.9</div>
                         </div>
-                    }
+                    </div>
+
+                    <div class="team-card-small">
+                        <div class="team-avatar-small"><img src="assets/img/WhatsApp Şəkil 2025-06-02 saat 15.17.05_c54a2834.jpg" alt="Neftçi FC"></div>
+                        <div class="team-info-small">
+                            <div class="team-name-small">Neftçi FC</div>
+                            <div class="team-stats-small">13 oyunçu • ⭐ 4.7</div>
+                        </div>
+                    </div>
+
+                    <div class="team-card-small">
+                        <div class="team-avatar-small"><img src="assets/img/WhatsApp Şəkil 2025-06-02 saat 15.17.05_c54a2834.jpg" alt="Sumqayıt Stars"></div>
+                        <div class="team-info-small">
+                            <div class="team-name-small">Sumqayıt Stars</div>
+                            <div class="team-stats-small">14 oyunçu • ⭐ 4.8</div>
+                        </div>
+                    </div>
+
+                    <div class="team-card-small">
+                        <div class="team-avatar-small"><img src="assets/img/WhatsApp Şəkil 2025-06-02 saat 15.17.05_c54a2834.jpg" alt="Keşlə United"></div>
+                        <div class="team-info-small">
+                            <div class="team-name-small">Keşlə United</div>
+                            <div class="team-stats-small">15 oyunçu • ⭐ 4.6</div>
+                        </div>
+                    </div>
+
+                    <div class="team-card-small">
+                        <div class="team-avatar-small"><img src="assets/img/WhatsApp Şəkil 2025-06-02 saat 15.17.05_c54a2834.jpg" alt="Zirə Strikers"></div>
+                        <div class="team-info-small">
+                            <div class="team-name-small">Zirə Strikers</div>
+                            <div class="team-stats-small">12 oyunçu • ⭐ 4.5</div>
+                        </div>
+                    </div>
+
+                    <div class="team-card-small">
+                        <div class="team-avatar-small"><img src="assets/img/WhatsApp Şəkil 2025-06-02 saat 15.17.05_c54a2834.jpg" alt="Sabah Warriors"></div>
+                        <div class="team-info-small">
+                            <div class="team-name-small">Sabah Warriors</div>
+                            <div class="team-stats-small">13 oyunçu • ⭐ 4.4</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -212,11 +312,11 @@
                         <div class="match-teams">
                             <div class="match-team">
                                 <span class="match-team-name">Qarabağ Legends</span>
-                                <span class="match-team-logo">Q</span>
+                                <span class="match-team-logo"><img src="assets/img/WhatsApp Şəkil 2025-06-02 saat 15.17.05_c54a2834.jpg" alt="Q"></span>
                             </div>
                             <div class="match-vs">VS</div>
                             <div class="match-team">
-                                <span class="match-team-logo">N</span>
+                                <span class="match-team-logo"><img src="assets/img/WhatsApp Şəkil 2025-06-02 saat 15.17.05_c54a2834.jpg" alt="N"></span>
                                 <span class="match-team-name">Neftçi FC</span>
                             </div>
                         </div>
@@ -228,11 +328,11 @@
                         <div class="match-teams">
                             <div class="match-team">
                                 <span class="match-team-name">Sumqayıt Stars</span>
-                                <span class="match-team-logo">S</span>
+                                <span class="match-team-logo"><img src="assets/img/WhatsApp Şəkil 2025-06-02 saat 15.17.05_c54a2834.jpg" alt="S"></span>
                             </div>
                             <div class="match-vs">VS</div>
                             <div class="match-team">
-                                <span class="match-team-logo">K</span>
+                                <span class="match-team-logo"><img src="assets/img/WhatsApp Şəkil 2025-06-02 saat 15.17.05_c54a2834.jpg" alt="K"></span>
                                 <span class="match-team-name">Keşlə United</span>
                             </div>
                         </div>
@@ -244,13 +344,13 @@
                         <div class="match-teams">
                             <div class="match-team">
                                 <span class="match-team-name">Zirə Strikers</span>
-                                <span class="match-team-logo">Z</span>
+                                <span class="match-team-logo"><img src="assets/img/WhatsApp Şəkil 2025-06-02 saat 15.17.05_c54a2834.jpg" alt="Z"></span>
                             </div>
                             <div class="match-score">
                                 <span class="score-value">2 - 1</span>
                             </div>
                             <div class="match-team">
-                                <span class="match-team-logo">S</span>
+                                <span class="match-team-logo"><img src="assets/img/WhatsApp Şəkil 2025-06-02 saat 15.17.05_c54a2834.jpg" alt="S"></span>
                                 <span class="match-team-name">Sabah Warriors</span>
                             </div>
                         </div>
@@ -284,7 +384,7 @@
                                 <td>1</td>
                                 <td>
                                     <div class="standing-team">
-                                        <span class="standing-logo">Q</span>
+                                        <span class="standing-logo"><img src="assets/img/WhatsApp Şəkil 2025-06-02 saat 15.17.05_c54a2834.jpg" alt="Q"></span>
                                         <span>Qarabağ Legends</span>
                                     </div>
                                 </td>
@@ -299,7 +399,7 @@
                                 <td>2</td>
                                 <td>
                                     <div class="standing-team">
-                                        <span class="standing-logo">N</span>
+                                        <span class="standing-logo"><img src="assets/img/WhatsApp Şəkil 2025-06-02 saat 15.17.05_c54a2834.jpg" alt="N"></span>
                                         <span>Neftçi FC</span>
                                     </div>
                                 </td>
@@ -314,7 +414,7 @@
                                 <td>3</td>
                                 <td>
                                     <div class="standing-team">
-                                        <span class="standing-logo">S</span>
+                                        <span class="standing-logo"><img src="assets/img/WhatsApp Şəkil 2025-06-02 saat 15.17.05_c54a2834.jpg" alt="S"></span>
                                         <span>Sumqayıt Stars</span>
                                     </div>
                                 </td>
@@ -329,7 +429,7 @@
                                 <td>4</td>
                                 <td>
                                     <div class="standing-team">
-                                        <span class="standing-logo">K</span>
+                                        <span class="standing-logo"><img src="assets/img/WhatsApp Şəkil 2025-06-02 saat 15.17.05_c54a2834.jpg" alt="K"></span>
                                         <span>Keşlə United</span>
                                     </div>
                                 </td>
@@ -417,4 +517,4 @@
             </div>
         </div>
     </div>
-</main>
+</main> *@

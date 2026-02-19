@@ -1,19 +1,27 @@
-﻿@using MatchArena.Domain.Entities
-
-@model GetPlayerItemVM
+﻿@* @model GetPlayerItemDto
 
 <main>
-    <h1 class="section-title">Oyunçular</h1>
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <div>
+            <h1 class="section-title">Oyunçular</h1>
+            <p class="section-subtitle">Yüksək səviyəli oyunçuları tap və komandana dəvət et.</p>
+        </div>
+        <a href="create-player.html" class="btn btn-primary" id="createPlayerBtn" style="display: none; white-space: nowrap;">
+            ⚽ Oyunçu Profili Yarat
+        </a>
+    </div>
+
+    <p class="players-count">8 oyunçu tapıldı</p>
 
     <div class="cards-grid">
-    @foreach (Player player in Model.Players)
+       @foreach (Player player in Model.Players)
         {
-            <a href="player-detail.html?id=@player.Id" class="player-card">
-                <div class="card-image"><img src="~/assets/img/players/@player.Image" alt="@player.User.Name @player.User.Surname"><div class="rating">⭐ @player.Rating</div></div>
+            <a href="player-detail.html?id=1" class="player-card">
+                <div class="card-image"><img src="assets/img/WhatsApp Şəkil 2025-06-02 saat 15.17.05_c54a2834.jpg" alt="Nihad Qasimov"><div class="rating">⭐ 4.9</div></div>
                 <div class="card-content">
-                    <div class="team-badge">Oyunçu axtarır</div>
-                    <h3 class="card-title">@player.User.Name</h3>
-                    <div class="card-subtitle">@player.Age yaş • 🏠 @player.City</div>
+                    <div class="team-badge">⚽ OYUNÇU</div>
+                    <h3 class="card-title">Nihad Qasimov</h3>
+                    <div class="card-subtitle">30 yaş • 🏠 Baki</div>
                     <div class="card-stats">
                         <div class="stat-item"><div class="stat-item-value">312</div><div class="stat-item-label">oyun</div></div>
                         <div class="stat-item"><div class="stat-item-value">156</div><div class="stat-item-label">qol</div></div>
@@ -24,4 +32,4 @@
             </a>
         }
     </div>
-</main>
+</main> *@

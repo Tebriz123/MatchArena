@@ -311,8 +311,11 @@ namespace MatchArena.Persistence.Contexts.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<Guid>("RelatedEntityId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<long?>("RelatedEntityId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("RelatedProductId")
+                        .HasColumnType("bigint");
 
                     b.Property<int>("Status")
                         .HasColumnType("int");

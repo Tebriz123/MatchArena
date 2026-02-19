@@ -1,10 +1,8 @@
 ﻿using MatchArena.Application.Interfaces.Repositories;
-using MatchArena.Application.Interfaces.Repositories.Generic;
 using MatchArena.Application.Interfaces.Services;
 using MatchArena.Domain.Entities;
 using MatchArena.Domain.Entities.Enums;
 using MatchArena.Domain.Settings.Stripes;
-using MatchArena.Persistence.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Stripe;
@@ -16,166 +14,165 @@ namespace MatchArena.Persistence.Implementations.Services
     {
         private readonly StripeSetting _stripeSetting;
         private readonly IPaymentRepository _paymentRepository;
+        private readonly IProductRepository _productRepository;
+        private readonly IFieldRepository _fieldRepository;
+        private readonly ITournamentRepository _tournamentRepository;
 
         public PaymentService(
             IOptions<StripeSetting> stripeOptions,
-            IPaymentRepository paymentRepository)
+            IPaymentRepository paymentRepository,
+            IProductRepository productRepository,
+            IFieldRepository fieldRepository,
+            ITournamentRepository tournamentRepository)
         {
             _stripeSetting = stripeOptions.Value;
             _paymentRepository = paymentRepository;
+            _productRepository = productRepository;
+            _fieldRepository = fieldRepository;
+            _tournamentRepository = tournamentRepository;
 
             StripeConfiguration.ApiKey = _stripeSetting.SecretKey;
         }
 
-        public async Task<Payment> CreatePaymentAsync(string userId, PaymentType type, Guid entityId, decimal amount, string currency = "azn")
+        public async Task<(Payment payment, string sessionUrl)> InitiatePaymentAsync(string userId, PaymentType type, long sourceId)
         {
-            var newPayment = new Payment
-            {
-                UserId = userId,
-                Amount = amount,
-                Currency = currency,
-                Type = type,
-                RelatedEntityId = entityId,
-                Status = PaymentStatus.Pending
-            };
-
-            _paymentRepository.Add(newPayment);
-            await _paymentRepository.SaveChangesAsync();
-            return newPayment;
-        }
-
-        public async Task<Payment> InitiateFieldReservationPaymentAsync(string userId, Guid reservationId, decimal fieldPrice)
-        {
-            return await CreatePaymentAsync(userId, PaymentType.Field, reservationId, fieldPrice);
-        }
-
-        public async Task<Payment> InitiateTournamentPaymentAsync(string userId, Guid tournamentId, decimal entryFee, bool isTeamCaptain)
-        {
-            if (!isTeamCaptain)
-                throw new UnauthorizedAccessException("Turnir ödənişini yalnız komanda kapitanı edə bilər.");
+            decimal amount = await ResolveAmountAsync(type, sourceId);
 
             var existingPayment = await _paymentRepository.GetAll(
                 func: p => p.UserId == userId &&
-                           p.Type == PaymentType.Tournament &&
-                           p.RelatedEntityId == tournamentId &&
-                           p.Status != PaymentStatus.Failed
+                           p.Type == type &&
+                           p.RelatedEntityId == sourceId &&
+                           p.Status == PaymentStatus.Pending
             ).FirstOrDefaultAsync();
 
+            Payment payment;
             if (existingPayment != null)
-                return existingPayment;
-
-            return await CreatePaymentAsync(userId, PaymentType.Tournament, tournamentId, entryFee);
-        }
-
-        public async Task<Payment> InitiateProductPaymentAsync(string userId, Guid productId, decimal productPrice)
-        {
-            return await CreatePaymentAsync(userId, PaymentType.Product, productId, productPrice);
-        }
-
-        public async Task<Session> CreateCheckoutSessionAsync(long paymentId, string successUrl, string cancelUrl)
-        {
-            var targetPayment = await _paymentRepository.GetByIdAsync(paymentId);
-            if (targetPayment == null)
-                throw new Exception("Ödəniş tapılmadı.");
-
-            if (targetPayment.Status == PaymentStatus.Confirmed)
-                throw new Exception("Bu ödəniş artıq tamamlanıb.");
+            {
+                payment = existingPayment;
+            }
+            else
+            {
+                payment = new Payment
+                {
+                    UserId = userId,
+                    Amount = amount,
+                    Currency = "azn",
+                    Type = type,
+                    RelatedEntityId = sourceId,
+                    Status = PaymentStatus.Pending
+                };
+                _paymentRepository.Add(payment);
+                await _paymentRepository.SaveChangesAsync();
+            }
 
             var sessionOptions = new SessionCreateOptions
             {
                 PaymentMethodTypes = new List<string> { "card" },
                 Mode = "payment",
                 LineItems = new List<SessionLineItemOptions>
-            {
-                new SessionLineItemOptions
                 {
-                    PriceData = new SessionLineItemPriceDataOptions
+                    new SessionLineItemOptions
                     {
-                        UnitAmount = (long)(targetPayment.Amount * 100),
-                        Currency = targetPayment.Currency.ToLower(),
-                        ProductData = new SessionLineItemPriceDataProductDataOptions
+                        PriceData = new SessionLineItemPriceDataOptions
                         {
-                            Name = ResolvePaymentLabel(targetPayment.Type)
-                        }
-                    },
-                    Quantity = 1,
-                }
-            },
-                SuccessUrl = successUrl,
-                CancelUrl = cancelUrl,
+                            UnitAmount = (long)(payment.Amount * 100),
+                            Currency = payment.Currency.ToLower(),
+                            ProductData = new SessionLineItemPriceDataProductDataOptions
+                            {
+                                Name = ResolvePaymentLabel(type)
+                            }
+                        },
+                        Quantity = 1,
+                    }
+                },
+                SuccessUrl = $"{_stripeSetting.SuccessUrl}?paymentId={payment.Id}",
+                CancelUrl = _stripeSetting.CancelUrl,
                 Metadata = new Dictionary<string, string>
-            {
-                { "paymentId", paymentId.ToString() }
-            }
+                {
+                    { "paymentId", payment.Id.ToString() }
+                }
             };
 
             var stripeSessionService = new SessionService();
             var stripeSession = stripeSessionService.Create(sessionOptions);
 
-            targetPayment.StripeSessionId = stripeSession.Id;
-            _paymentRepository.Update(targetPayment);
+            payment.StripeSessionId = stripeSession.Id;
+            _paymentRepository.Update(payment);
             await _paymentRepository.SaveChangesAsync();
 
-            return stripeSession;
-        }
-
-        public async Task<Payment?> GetPaymentAsync(long paymentId)
-        {
-            return await _paymentRepository.GetByIdAsync(paymentId);
-        }
-
-        public bool CheckStripeSessionPaid(string sessionId)
-        {
-            if (string.IsNullOrEmpty(sessionId))
-                return false;
-
-            var stripeSessionService = new SessionService();
-            var stripeSession = stripeSessionService.Get(sessionId);
-
-            return stripeSession.PaymentStatus == "paid";
-        }
-
-        public async Task ConfirmPaymentAsync(Payment targetPayment)
-        {
-            if (targetPayment == null) return;
-            if (targetPayment.Status == PaymentStatus.Confirmed) return;
-
-            targetPayment.Status = PaymentStatus.Confirmed;
-            _paymentRepository.Update(targetPayment);
-            await _paymentRepository.SaveChangesAsync();
+            return (payment, stripeSession.Url);
         }
 
         public async Task<bool> ValidateAndApproveAsync(long paymentId)
         {
-            var targetPayment = await GetPaymentAsync(paymentId);
-            if (targetPayment == null) return false;
+            var payment = await _paymentRepository.GetByIdAsync(paymentId);
+            if (payment == null) return false;
 
-            bool isPaid = CheckStripeSessionPaid(targetPayment.StripeSessionId);
-            if (isPaid)
-            {
-                await ConfirmPaymentAsync(targetPayment);
-                return true;
-            }
+            if (string.IsNullOrEmpty(payment.StripeSessionId)) return false;
 
-            return false;
+            var stripeSessionService = new SessionService();
+            var stripeSession = stripeSessionService.Get(payment.StripeSessionId);
+
+            if (stripeSession.PaymentStatus != "paid") return false;
+
+            payment.Status = PaymentStatus.Confirmed;
+            _paymentRepository.Update(payment);
+            await _paymentRepository.SaveChangesAsync();
+
+            await GrantOwnershipAsync(payment);
+
+            return true;
         }
+
+        private async Task GrantOwnershipAsync(Payment payment)
+        {
+            switch (payment.Type)
+            {
+                case PaymentType.Product:
+                    break;
+                case PaymentType.Tournament:
+                    break;
+                case PaymentType.Field:
+                    break;
+            }
+        }
+
+        private async Task<decimal> ResolveAmountAsync(PaymentType type, long sourceId)
+        {
+            switch (type)
+            {
+                case PaymentType.Product:
+                    var product = await _productRepository.GetByIdAsync(sourceId);
+                    if (product == null) throw new Exception("Məhsul tapılmadı.");
+                    return product.Price;
+
+                case PaymentType.Field:
+                    var field = await _fieldRepository.GetByIdAsync(sourceId);
+                    if (field == null) throw new Exception("Meydança tapılmadı.");
+                    return field.PricePerHour;
+
+                case PaymentType.Tournament:
+                    var tournament = await _tournamentRepository.GetByIdAsync(sourceId);
+                    if (tournament == null) throw new Exception("Turnir tapılmadı.");
+                    return tournament.EntryFee;
+
+                default:
+                    throw new Exception("Naməlum ödəniş növü.");
+            }
+        }
+
+        public async Task<Payment?> GetPaymentAsync(long paymentId)
+            => await _paymentRepository.GetByIdAsync(paymentId);
 
         public async Task<List<Payment>> GetAllPaymentsAsync()
-        {
-            return await _paymentRepository.GetAll(
-                sort: p => p.Id,
-                isDesc: true
-            ).ToListAsync();
-        }
+            => await _paymentRepository.GetAll(sort: p => p.Id, isDesc: true).ToListAsync();
 
         public async Task<List<Payment>> GetUserPaymentsAsync(string userId)
-        {
-            return await _paymentRepository.GetAll(
+            => await _paymentRepository.GetAll(
                 func: p => p.UserId == userId,
                 sort: p => p.Id,
                 isDesc: true
             ).ToListAsync();
-        }
 
         private string ResolvePaymentLabel(PaymentType type) => type switch
         {

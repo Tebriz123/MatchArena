@@ -3,16 +3,16 @@ using MatchArena.Domain.Entities;
 
 namespace MatchArena.MVC.ViewModels
 {
-    public record GetPlayerItemVM(
+    public record GetPlayerItemDto(
         long Id,
-        string FullName,
+        string Name,
+        string Surname,
         int Age,
         PlayerPosition Position,
-        double Raiting,
+        double Rating,
         int GameCount,
         string Image,
         ICollection<Player> Players
         );
-
 
 }

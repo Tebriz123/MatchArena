@@ -1,11 +1,11 @@
 ﻿@model HomeVM
 <main>
     <div class="hero">
-        <p class="intro-text">✨ Ərazinizdəki ən yaxşı platformasına xoş gəldiniz</p>
+        <p class="intro-text">✨ Ərazinizdəki ən yaxşı futbol platformasına xoş gəldiniz</p>
         <h1>Futbol sevginizi <span class="hero-green">birlikdə yaşayın</span></h1>
         <p class="hero-subtitle">Oyunçular tapın, komanda qurun, meydançalar rezerv edin və turnirlərdə yarışın. Bütün futbol ehtiyaclarınız üçün tam həll.</p>
         <div class="hero-buttons">
-            <a href="players.html" class="btn btn-primary">Başla edin</a>
+            <a href="players.html" class="btn btn-primary">Başlayın</a>
             <a href="tournaments.html" class="btn btn-secondary">Turnirləri kəşf edin</a>
         </div>
     </div>
@@ -65,18 +65,19 @@
     <p class="section-subtitle">Platform üzərində ən yaxşı oyunçuları görmək üçün klikləyin.</p>
 
     <div class="cards-grid">
-       @foreach (Player player in Model.Players)
+        @foreach (Player player in Model.Players)
         {
             <div class="player-card">
-                <div class="card-image"><img src="~/assets/img/players/@player.Image" alt="@player.User.Name @player.User.Surname"><div class="rating">⭐ @player.Rating</div></div>
+                <div class="card-image"><img src="~/assets/img/@player.Image" alt="Nihad Qasimov"><div class="rating">⭐ 4.9</div></div>
                 <div class="card-content">
-                    <div class="team-badge">@player.Position</div>
-                    <h3 class="card-title">@player.User.Name @player.User.Surname</h3>
+                    <div class="team-badge">Qapiçi</div>
+                    <h3 class="card-title">@player.Name @player.Surname</h3>
                     <div class="card-subtitle">@player.Age yaş • 🏠 @player.City</div>
-                    <div class="card-stats"><div class="stat-item"><div class="stat-item-value">312</div><div class="stat-item-label">oyun</div></div></div>
+                    <div class="card-stats"><div class="stat-item"><div class="stat-item-value">@player.GameCount</div><div class="stat-item-label">oyun</div></div></div>
                     <div class="card-buttons"><a href="player-detail.html?id=1" class="btn-small">Profil bax</a></div>
                 </div>
             </div>
+
         }
     </div>
 
@@ -84,17 +85,16 @@
     <p class="section-subtitle">Ən populyar komandaların bir siyahısı.</p>
 
     <div class="cards-grid">
-       @* @foreach (Team team in Model.Teams)
+      @foreach (Team team in Model.Teams)
         {
             <div class="team-card">
-                <div class="card-image"><img src="~/assets/img/teams/@team.Logo" alt="@team.Name"></div>
+                <div class="card-image"><img src="~/assets/img/@team.Logo" alt="@team.Name"></div>
                 <div class="card-content">
-                    <div class="team-badge">Oyunçu axtarır</div>
                     <h3 class="card-title">@team.Name</h3>
-                    <div class="card-subtitle">Kapitain: @team.Player.User.Name • 🏠 @team.City</div>
+                    <div class="card-subtitle">Kapitain: Öli Kazimov • 🏠 Baki</div>
                     <div class="card-stats">
-                        <div class="stat-item"><div class="stat-item-value">@team.PlayerCount/@team.MaxPlayer</div><div class="stat-item-label">qolaça</div></div>
-                        <div class="stat-item"><div class="stat-item-value">@team.Rating</div><div class="stat-item-label">⭐</div></div>
+                        <div class="stat-item"><div class="stat-item-value">15/15</div><div class="stat-item-label">qolaça</div></div>
+                        <div class="stat-item"><div class="stat-item-value">4.9</div><div class="stat-item-label">⭐</div></div>
                         <div class="stat-item"><div class="stat-item-value">67</div><div class="stat-item-label">qolaça</div></div>
                     </div>
                     <div class="card-buttons">
@@ -103,28 +103,27 @@
                     </div>
                 </div>
             </div>
-        } *@
+        }
+
     </div>
 
     <h2 class="section-title">Meydança rezervasiyası</h2>
     <p class="section-subtitle">Ən populyar futbol meydançaları siyahıda.</p>
 
     <div class="cards-grid">
-       @foreach (Field field in Model.Fields)
+      @foreach (Team team in Model.Teams)
         {
             <div class="field-card">
-                <div class="card-image"><img src="~/assets/img/fields/@field.Image" alt="@field.Name"><div class="rating">⭐ @field.TotalRating</div></div>
+                <div class="card-image"><img src="~/assets/img/WhatsApp Şəkil 2025-06-02 saat 15.17.05_c54a2834.jpg" alt="Mini Futbol Arena"><div class="rating">⭐ 4.5</div></div>
                 <div class="card-content">
-                    <div class="team-badge price-badge">@field.PricePerHour₼/saat</div>
-                    <h3 class="card-title">@field.Name</h3>
-                    <div class="card-subtitle">🏠 @field.City</div>
+                    <div class="team-badge price-badge">120₼/saat</div>
+                    <h3 class="card-title">Mini Futbol Arena</h3>
+                    <div class="card-subtitle">🏠 Baki</div>
                     <div class="available-hours">🕐 Boş saatlar: 5 saat</div>
                     <div class="time-slots time-slots-container">
-                        @* @foreach (DateTime date in field.EmptySpace)
-                        {
-                            <button class="time-slot">@date</button>
-                        } *@
-                        
+                        <button class="time-slot">16:00</button>
+                        <button class="time-slot">17:00</button>
+                        <button class="time-slot">18:00</button>
                     </div>
                     <div class="card-buttons"><a href="field-detail.html?id=1" class="btn-small">Rezerv et →</a></div>
                 </div>
@@ -139,17 +138,17 @@
        @foreach (Tournament tournament in Model.Tournaments)
         {
             <div class="tournament-card">
-                <div class="card-image"><img src="~/assets/img/tournaments/@tournament.Logo" alt="@tournament.Name"><span class="status-badge-position">Devam edir</span></div>
+                <div class="card-image"><img src="~/assets/img/WhatsApp Şəkil 2025-06-02 saat 15.17.05_c54a2834.jpg" alt="Baki Şəhər Kuboku 2024"><span class="status-badge-position">Devam edir</span></div>
                 <div class="card-content">
-                    <div class="prize-badge">⭐ @tournament.PrizeFund AZN</div>
-                    <h3 class="card-title">@tournament.Name</h3>
+                    <div class="prize-badge">⭐ 5000 AZN</div>
+                    <h3 class="card-title">Baki Şəhər Kuboku 2024</h3>
                     <div class="tournament-details">
-                        <div class="tournament-detail-item">📅 @tournament.EndDate</div>
-                        <div class="tournament-detail-item">📍 </div>
-                        <div class="tournament-detail-item">👥 @tournament.CurrentTeams/@tournament.MaxTeams komanda</div>
+                        <div class="tournament-detail-item">📅 15 Yanvar 2024</div>
+                        <div class="tournament-detail-item">📍 Arena Football Center</div>
+                        <div class="tournament-detail-item">👥 8/12 komanda</div>
                     </div>
                     <div class="progress-bar"><div class="progress-fill" data-width="66.67"></div></div>
-                    <div class="progress-text">@tournament.CurrentTeams/@tournament.MaxTeams komanda</div>
+                    <div class="progress-text">8/12 komanda</div>
                     <div class="card-buttons"><a href="#" class="btn-small">Qoşul →</a></div>
                 </div>
             </div>

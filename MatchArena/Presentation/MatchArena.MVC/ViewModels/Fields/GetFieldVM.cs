@@ -2,15 +2,15 @@
 {
     public record GetFieldVM(
         long Id,
-        string Name,    
+        string Name,
         string City,
-        double Rating,
+        int TotalRating,
+        double AverageRating,
         string Address,
         decimal PricePerHour,
-        string Image,
-        DateTime StartDate,
-        DateTime EndDate,
-        ICollection<DateTime> EmptyTime
+        TimeOnly StartDate,
+        TimeOnly EndDate,
+        ICollection<TimeOnly> EmptySpace
         );
 
 }

@@ -628,96 +628,27 @@
         }
       }
     },
-    "/Payments/field/{reservationId}": {
+    "/Payments/{type}/{sourceId}": {
       "post": {
         "tags": [
           "Payments"
         ],
         "parameters": [
           {
-            "name": "reservationId",
+            "name": "type",
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "$ref": "#/components/schemas/PaymentType"
             }
           },
           {
-            "name": "fieldPrice",
-            "in": "query",
-            "schema": {
-              "type": "number",
-              "format": "double"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/Payments/tournament/{tournamentId}": {
-      "post": {
-        "tags": [
-          "Payments"
-        ],
-        "parameters": [
-          {
-            "name": "tournamentId",
+            "name": "sourceId",
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          {
-            "name": "entryFee",
-            "in": "query",
-            "schema": {
-              "type": "number",
-              "format": "double"
-            }
-          },
-          {
-            "name": "isTeamCaptain",
-            "in": "query",
-            "schema": {
-              "type": "boolean"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/Payments/product/{productId}": {
-      "post": {
-        "tags": [
-          "Payments"
-        ],
-        "parameters": [
-          {
-            "name": "productId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          {
-            "name": "productPrice",
-            "in": "query",
-            "schema": {
-              "type": "number",
-              "format": "double"
+              "type": "integer",
+              "format": "int64"
             }
           }
         ],
@@ -1891,6 +1822,15 @@
   },
   "components": {
     "schemas": {
+      "PaymentType": {
+        "enum": [
+          1,
+          2,
+          3
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
       "PlayerLevel": {
         "enum": [
           "Beginner",

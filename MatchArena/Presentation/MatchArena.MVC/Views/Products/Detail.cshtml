@@ -1,0 +1,100 @@
+﻿@* <main class="product-detail-page">
+    <div class="page-container">
+        <a href="products.html" class="back-link">← Geri</a>
+
+        <div class="product-detail-container">
+            <!-- Left: Product Images -->
+            <div class="product-gallery">
+                <div class="gallery-thumbnails" id="thumbnails"></div>
+                <div class="gallery-main">
+                    <img id="mainImage" src="" alt="Product">
+                </div>
+            </div>
+
+            <!-- Right: Product Info -->
+            <div class="product-details">
+                <div class="detail-category" id="productCategory"></div>
+
+                <h1 class="detail-title" id="productTitle"></h1>
+
+                <div class="detail-brand" id="productBrand"></div>
+
+                <div class="detail-rating">
+                    <span class="detail-stars" id="productStars"></span>
+                    <span id="ratingCount"></span>
+                </div>
+
+                <div class="detail-price">
+                    <span class="price-current" id="currentPrice"></span>
+                    <span class="price-old" id="oldPrice"></span>
+                </div>
+
+                <div class="detail-stock" id="stockCount"></div>
+
+                <div class="detail-description">
+                    <h3>Təsvir</h3>
+                    <p id="productDescription"></p>
+                </div>
+
+                <div class="detail-size">
+                    <h3>Ölçü seçin</h3>
+                    <div class="size-options" id="sizeOptions"></div>
+                </div>
+
+                <div class="detail-quantity">
+                    <h3>Miqdar</h3>
+                    <div class="quantity-controls">
+                        <button class="qty-btn" onclick="decreaseQty()">-</button>
+                        <input type="number" id="quantity" value="1" min="1" max="10" readonly>
+                        <button class="qty-btn" onclick="increaseQty()">+</button>
+                    </div>
+                </div>
+
+                <div class="detail-buttons">
+                    <button class="btn-large btn-primary" onclick="addToCart()">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+                        </svg>
+                        Səbətə əlavə et
+                    </button>
+                    <button class="btn-large btn-secondary" onclick="buyNow()">Dərhal al</button>
+                </div>
+
+                <div class="detail-features">
+                    <h3>Xüsusiyyətlər</h3>
+                    <ul id="featuresList"></ul>
+                </div>
+
+                <div class="detail-shipping">
+                    <div class="shipping-box">
+                        <span class="ship-icon">🚚</span>
+                        <div class="ship-text">
+                            <strong>Pulsuz çatdırılma</strong>
+                            <p>100₼-dən yuxarı sifarişlər üçün</p>
+                        </div>
+                    </div>
+                    <div class="shipping-box">
+                        <span class="ship-icon">↩️</span>
+                        <div class="ship-text">
+                            <strong>14 gün ərzində qaytarma</strong>
+                            <p>Şərtsiz pul qaytarma</p>
+                        </div>
+                    </div>
+                    <div class="shipping-box">
+                        <span class="ship-icon">✓</span>
+                        <div class="ship-text">
+                            <strong>Orijinal məhsul</strong>
+                            <p>Rəsmi zəmanət</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Products Section -->
+        <section class="related-products-section">
+            <h2>Oxşar məhsullar</h2>
+            <div class="products-grid-modern" id="relatedProducts"></div>
+        </section>
+    </div>
+</main> *@

@@ -1,22 +1,22 @@
 ﻿using MatchArena.Application.DTOs.Teams;
 using MatchArena.Domain;
+using MatchArena.MVC.ViewModels.Teams;
 
 namespace MatchArena.MVC.ViewModels
 {
     public record GetPlayerVM(
-        long Id,
-        string Image,
-        string Name,
-        string Surname,
-        string Information,
-        PlayerPosition Position,
-        int Height,
-        double Rating,
-        int Age,
-        string City,
-        ICollection<GetTeamInPlayerDto> TeamDtos,
-        int GameCount,
-        int Goal
-        );
-     
+         long Id,
+         string Image,
+         string Name,
+         string Surname,
+         int Height,
+         string Information,
+         PlayerPosition Position,
+         int Age,
+         string City,
+         ICollection<GetTeamInPlayerVM> TeamVM,
+         int GameCount,
+         int Goal
+         );
+
 }

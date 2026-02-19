@@ -27,6 +27,10 @@ namespace MatchArena.MVC
             app.UseAuthorization();
 
             app.MapControllerRoute(
+               "default",
+               "{area:exists}/{controller=home}/{action=index}/{id?}");
+
+            app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
 

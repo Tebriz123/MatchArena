@@ -1,7 +1,6 @@
 ﻿using MatchArena.Application.Interfaces.Services;
 using MatchArena.Domain.Entities.Enums;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
@@ -9,6 +8,7 @@ namespace MatchArena.API.Controllers
 {
     [Route("[controller]")]
     [ApiController]
+    [Authorize]
     public class PaymentsController : ControllerBase
     {
         private readonly IPaymentService _paymentService;
@@ -18,46 +18,16 @@ namespace MatchArena.API.Controllers
             _paymentService = paymentService;
         }
 
-        [HttpPost("field/{reservationId}")]
-        public async Task<IActionResult> PayForField(Guid reservationId, [FromQuery] decimal fieldPrice)
+        [HttpPost("{type}/{sourceId}")]
+        public async Task<IActionResult> InitiatePayment(PaymentType type, long sourceId)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var payment = await _paymentService.InitiateFieldReservationPaymentAsync(userId, reservationId, fieldPrice);
-            var session = await _paymentService.CreateCheckoutSessionAsync(
-                payment.Id,
-                $"{Request.Scheme}://{Request.Host}/api/payment/success?paymentId={payment.Id}",
-                $"{Request.Scheme}://{Request.Host}/api/payment/cancel"
-            );
-            return Ok(new { sessionUrl = session.Url });
-        }
-
-        [HttpPost("tournament/{tournamentId}")]
-        public async Task<IActionResult> PayForTournament(Guid tournamentId, [FromQuery] decimal entryFee, [FromQuery] bool isTeamCaptain)
-        {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var payment = await _paymentService.InitiateTournamentPaymentAsync(userId, tournamentId, entryFee, isTeamCaptain);
-            var session = await _paymentService.CreateCheckoutSessionAsync(
-                payment.Id,
-                $"{Request.Scheme}://{Request.Host}/api/payment/success?paymentId={payment.Id}",
-                $"{Request.Scheme}://{Request.Host}/api/payment/cancel"
-            );
-            return Ok(new { sessionUrl = session.Url });
-        }
-
-        [HttpPost("product/{productId}")]
-        public async Task<IActionResult> PayForProduct(Guid productId, [FromQuery] decimal productPrice)
-        {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var payment = await _paymentService.InitiateProductPaymentAsync(userId, productId, productPrice);
-            var session = await _paymentService.CreateCheckoutSessionAsync(
-                payment.Id,
-                $"{Request.Scheme}://{Request.Host}/api/payment/success?paymentId={payment.Id}",
-                $"{Request.Scheme}://{Request.Host}/api/payment/cancel"
-            );
-            return Ok(new { sessionUrl = session.Url });
+            var (payment, sessionUrl) = await _paymentService.InitiatePaymentAsync(userId, type, sourceId);
+            return Ok(new { paymentId = payment.Id, sessionUrl });
         }
 
         [HttpGet("success")]
+        [AllowAnonymous]
         public async Task<IActionResult> PaymentSuccess([FromQuery] long paymentId)
         {
             var result = await _paymentService.ValidateAndApproveAsync(paymentId);
@@ -68,6 +38,7 @@ namespace MatchArena.API.Controllers
         }
 
         [HttpGet("cancel")]
+        [AllowAnonymous]
         public IActionResult PaymentCancel()
         {
             return Ok("Ödəniş ləğv edildi.");

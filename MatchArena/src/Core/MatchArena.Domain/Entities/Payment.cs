@@ -11,7 +11,8 @@ namespace MatchArena.Domain.Entities
     {
         public string UserId { get; set; } = default!;
         public PaymentType Type { get; set; }
-        public Guid RelatedEntityId { get; set; }
+        public long? RelatedEntityId { get; set; }
+        public long? RelatedProductId { get; set; }
         public decimal Amount { get; set; }
         public string Currency { get; set; } = "azn";
         public PaymentStatus Status { get; set; } = PaymentStatus.Pending;

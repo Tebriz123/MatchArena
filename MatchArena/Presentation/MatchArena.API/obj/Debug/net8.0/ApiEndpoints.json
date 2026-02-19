@@ -649,6 +649,27 @@
   },
   {
     "ContainingType": "MatchArena.API.Controllers.PaymentsController",
+    "Method": "InitiatePayment",
+    "RelativePath": "Payments/{type}/{sourceId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "type",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "sourceId",
+        "Type": "System.Int64",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MatchArena.API.Controllers.PaymentsController",
     "Method": "GetAllPayments",
     "RelativePath": "Payments/all",
     "HttpMethod": "GET",
@@ -669,54 +690,12 @@
   },
   {
     "ContainingType": "MatchArena.API.Controllers.PaymentsController",
-    "Method": "PayForField",
-    "RelativePath": "Payments/field/{reservationId}",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "reservationId",
-        "Type": "System.Guid",
-        "IsRequired": true
-      },
-      {
-        "Name": "fieldPrice",
-        "Type": "System.Decimal",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "MatchArena.API.Controllers.PaymentsController",
     "Method": "GetMyPayments",
     "RelativePath": "Payments/my",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "MatchArena.API.Controllers.PaymentsController",
-    "Method": "PayForProduct",
-    "RelativePath": "Payments/product/{productId}",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "productId",
-        "Type": "System.Guid",
-        "IsRequired": true
-      },
-      {
-        "Name": "productPrice",
-        "Type": "System.Decimal",
-        "IsRequired": false
-      }
-    ],
     "ReturnTypes": []
   },
   {
@@ -730,32 +709,6 @@
       {
         "Name": "paymentId",
         "Type": "System.Int64",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "MatchArena.API.Controllers.PaymentsController",
-    "Method": "PayForTournament",
-    "RelativePath": "Payments/tournament/{tournamentId}",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "tournamentId",
-        "Type": "System.Guid",
-        "IsRequired": true
-      },
-      {
-        "Name": "entryFee",
-        "Type": "System.Decimal",
-        "IsRequired": false
-      },
-      {
-        "Name": "isTeamCaptain",
-        "Type": "System.Boolean",
         "IsRequired": false
       }
     ],

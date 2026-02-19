@@ -3,13 +3,17 @@
 namespace MatchArena.MVC.ViewModels
 {
     public record GetTeamVM(
-        long Id,
-        string Name,
-        int PlayerCount,
-        string City,
-        string Logo,
-        ICollection<GetPlayerInTeamDto> Players,
-        int GameCount
-        );
+          long Id,
+          string Name,
+          int PlayerCount,
+          string CaptainName,
+          string City,
+          string Logo,
+          ICollection<GetPlayerInTeamDto> PlayerDtos,
+          int GameCount,
+          int MaxPlayer,
+          double Rating,
+          string Information
+          );
 
 }
