@@ -4,6 +4,7 @@
         long Id,
         string Name,
         string City,
+        string Information,
         int TotalRating,
         double AverageRating,
         string Address,

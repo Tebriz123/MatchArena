@@ -1499,7 +1499,7 @@
         }
       }
     },
-    "/api/Tournaments": {
+    "/Tournaments": {
       "get": {
         "tags": [
           "Tournaments"
@@ -1796,7 +1796,7 @@
         }
       }
     },
-    "/api/Tournaments/{id}": {
+    "/Tournaments/{id}": {
       "get": {
         "tags": [
           "Tournaments"

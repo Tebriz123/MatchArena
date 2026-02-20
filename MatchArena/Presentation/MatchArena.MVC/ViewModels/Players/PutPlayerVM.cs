@@ -9,6 +9,7 @@ namespace MatchArena.MVC.ViewModels
        string Information,
        string City,
         int Height,
+        string Image,
        IFormFile Photo,
        PlayerPosition Position,
        PlayerLevel Level

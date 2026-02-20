@@ -1,4 +1,13 @@
-﻿@* <main class="products-page">
+﻿
+@model List<GetProductItemVM>
+
+ 
+    @foreach (var product in Model)
+{
+    <h2>@product.Id,@product.Name,@product.Price,@product.CategoryName</h2>
+}
+  
+@* <main class="products-page">
     <div class="page-container">
         <!-- Page Title -->
         <div class="page-header">
@@ -90,5 +99,5 @@
             <p>Axtarış meyarlarınızı dəyişdirin</p>
         </div>
     </div>
-</main>
- *@
+</main> *@
+

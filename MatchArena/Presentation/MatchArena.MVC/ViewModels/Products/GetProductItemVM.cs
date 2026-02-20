@@ -8,7 +8,7 @@ namespace MatchArena.MVC.ViewModels.Products
        string Image,
        decimal Price,
        string CategoryName,
-       ICollection<Player> Players
+       ICollection<Product> Products
        );
 
 }

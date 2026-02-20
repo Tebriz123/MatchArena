@@ -1,4 +1,4 @@
-using AutoMapper;
+﻿using AutoMapper;
 using MatchArena.Application;
 using MatchArena.Domain.Entities;
 using MatchArena.Domain.Settings.Stripes;
@@ -12,16 +12,29 @@ using System;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
- 
-builder.Services.AddControllers();
-
 builder.Services.Configure<StripeSetting>(
     builder.Configuration.GetSection("Stripe")
 );
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+
+
+
+builder = WebApplication.CreateBuilder(args);
+
+// Lazımi servis qeydiyyatları
+builder.Services.AddControllers();
+builder.Services.AddAuthentication(); // Əgər authentication istifadə edirsənsə
+builder.Services.AddAuthorization();  // Authorization üçün mütləq lazımdır
+
+
+
+
+
+
+
+
 builder.Services.AddSwaggerGen(opt =>
 {
     opt.SwaggerDoc("v1", new OpenApiInfo { Title = "MyAPI", Version = "v1" });
@@ -74,6 +87,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthentication();
+
 
 app.UseAuthorization();
 

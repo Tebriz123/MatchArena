@@ -1,5 +1,7 @@
 using MatchArena.Domain.Entities;
 using MatchArena.MVC.Models;
+using MatchArena.MVC.Services.Interfaces;
+using MatchArena.MVC.ViewModels;
 using MatchArena.MVC.ViewModels.Category;
 using Microsoft.AspNetCore.Mvc;
 using RestSharp;
@@ -9,22 +11,33 @@ namespace MatchArena.MVC.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly RestClient _client;
+        private readonly IPlayerClientService _playerClient;
+        private readonly ITeamClientService _teamClient;
+        private readonly IFieldClientService _fieldClient;
+        private readonly ITournamentClientService _tournamentClient;
 
-        public HomeController()
+        public HomeController(
+            IPlayerClientService playerClient,
+            ITeamClientService teamClient,
+            IFieldClientService fieldClient,
+            ITournamentClientService tournamentClient)
         {
-            _client = new RestClient("https://localhost:7246/");
+            _playerClient = playerClient;
+            _teamClient = teamClient;
+            _fieldClient = fieldClient;
+            _tournamentClient = tournamentClient;
         }
+
         public async Task<IActionResult> Index()
         {
-            RestRequest request = new RestRequest("Categories",Method.Get);
+            var vm = new HomeVM(
+       await _playerClient.GetAllAsync(),
+       await _teamClient.GetAllAsync(),
+       await _fieldClient.GetAllAsync(),
+       await _tournamentClient.GetAllAsync()
+       );
 
-            var response = await _client.ExecuteAsync<List<GetCategoryItemVM>>(request);
-            
-            
-
-            return View(response.Data);
+            return View(vm);
         }
-            
     }
 }

@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MatchArena.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class TournamentsController : ControllerBase
     {

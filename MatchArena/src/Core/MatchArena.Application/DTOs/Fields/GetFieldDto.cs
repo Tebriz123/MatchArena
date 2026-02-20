@@ -11,6 +11,7 @@ namespace MatchArena.Application.DTOs.Fields
         string Name,
         string City,
         int TotalRating,
+        string Information,
         double AverageRating,
         string Address,
         decimal PricePerHour,

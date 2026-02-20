@@ -1,3 +1,6 @@
+using MatchArena.MVC.Services.Implementations;
+using MatchArena.MVC.Services.Interfaces;
+
 namespace MatchArena.MVC
 {
     public class Program
@@ -8,6 +11,21 @@ namespace MatchArena.MVC
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddHttpClient("MatchArenaClient", config =>
+            {
+                config.BaseAddress = new Uri("https://localhost:7246/");
+                config.DefaultRequestHeaders.Add("accept","application/json"); 
+            });
+
+            builder.Services.AddScoped<IProductClientService, ProductClientService>();
+            builder.Services.AddScoped<IPlayerClientService, PlayerClientService>(); 
+            builder.Services.AddScoped<IFieldClientService, FieldClientService>();
+            builder.Services.AddScoped<ITeamClientService, TeamClientService>();
+            builder.Services.AddScoped<ITournamentClientService, TournamentClientService>();
+            builder.Services.AddScoped<ICategoryClientService, CategoryClientService>();
+            builder.Services.AddScoped<IColorClientService, ColorClientService>();
+            builder.Services.AddScoped<ISizeClientService, SizeClientService>();
 
             var app = builder.Build();
 
@@ -27,12 +45,14 @@ namespace MatchArena.MVC
             app.UseAuthorization();
 
             app.MapControllerRoute(
+                name: "default",
+                pattern: "{controller=Home}/{action=Index}/{id?}");
+
+
+            app.MapControllerRoute(
                "default",
                "{area:exists}/{controller=home}/{action=index}/{id?}");
 
-            app.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
 
             app.Run();
         }

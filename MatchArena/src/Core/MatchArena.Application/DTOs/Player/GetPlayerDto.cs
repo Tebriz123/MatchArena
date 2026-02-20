@@ -16,6 +16,7 @@ namespace MatchArena.Application.DTOs.Player
         int Height,
         string Information,
         PlayerPosition Position,
+        PlayerLevel Level,
         int Age,
         string City,
         ICollection<GetTeamInPlayerDto> TeamDtos,

@@ -1,6 +1,6 @@
 ﻿namespace MatchArena.MVC.ViewModels.Products
 {
-    public record PutProductDto(
+    public record PutProductVM(
          string Name,
          decimal Price,
          string Description,

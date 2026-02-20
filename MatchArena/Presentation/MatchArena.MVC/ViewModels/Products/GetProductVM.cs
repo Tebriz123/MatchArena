@@ -8,7 +8,6 @@ namespace MatchArena.MVC.ViewModels.Products
         long Id,
         string Name,
         decimal Price,
-        string SKU,
         string Image,
         string Description,
         GetCategoryInProductDto CategoryDto,

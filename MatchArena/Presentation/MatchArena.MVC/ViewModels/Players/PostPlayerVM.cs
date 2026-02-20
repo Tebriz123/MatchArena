@@ -7,6 +7,7 @@ namespace MatchArena.MVC.ViewModels
        string Surname,
        int Age,
        int Height,
+       string Image,
        IFormFile Photo,
        string Information,
        string City,

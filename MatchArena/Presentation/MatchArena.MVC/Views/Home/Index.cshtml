@@ -65,19 +65,28 @@
     <p class="section-subtitle">Platform üzərində ən yaxşı oyunçuları görmək üçün klikləyin.</p>
 
     <div class="cards-grid">
-        @foreach (Player player in Model.Players)
+        @foreach (GetPlayerItemVM playerVM in Model.Players)
         {
             <div class="player-card">
-                <div class="card-image"><img src="~/assets/img/@player.Image" alt="Nihad Qasimov"><div class="rating">⭐ 4.9</div></div>
+                <div class="card-image">
+                    <img src="@playerVM.Image" alt="@playerVM.Name @playerVM.Surname">
+                    <div class="rating">⭐ 4.9</div>
+                </div>
                 <div class="card-content">
-                    <div class="team-badge">Qapiçi</div>
-                    <h3 class="card-title">@player.Name @player.Surname</h3>
-                    <div class="card-subtitle">@player.Age yaş • 🏠 @player.City</div>
-                    <div class="card-stats"><div class="stat-item"><div class="stat-item-value">@player.GameCount</div><div class="stat-item-label">oyun</div></div></div>
-                    <div class="card-buttons"><a href="player-detail.html?id=1" class="btn-small">Profil bax</a></div>
+                    <div class="team-badge">@playerVM.Position</div>
+                    <h3 class="card-title">@playerVM.Name @playerVM.Surname</h3>
+                    <div class="card-subtitle">@playerVM.Age yaş • 🏠 @playerVM.City</div>
+                    <div class="card-stats">
+                        <div class="stat-item">
+                            <div class="stat-item-value">@playerVM.GameCount</div>
+                            <div class="stat-item-label">oyun</div>
+                        </div>
+                    </div>
+                    <div class="card-buttons">
+                        <a asp-controller="Player" asp-action="Detail" asp-route-id="@playerVM.Id" class="btn-small">Profil bax</a>
+                    </div>
                 </div>
             </div>
-
         }
     </div>
 
@@ -85,10 +94,10 @@
     <p class="section-subtitle">Ən populyar komandaların bir siyahısı.</p>
 
     <div class="cards-grid">
-      @foreach (Team team in Model.Teams)
+      @foreach (GetTeamItemVM team in Model.Teams)
         {
             <div class="team-card">
-                <div class="card-image"><img src="~/assets/img/@team.Logo" alt="@team.Name"></div>
+                <div class="card-image"><img src="@team.Logo" alt="@team.Name"></div>
                 <div class="card-content">
                     <h3 class="card-title">@team.Name</h3>
                     <div class="card-subtitle">Kapitain: Öli Kazimov • 🏠 Baki</div>
@@ -111,19 +120,20 @@
     <p class="section-subtitle">Ən populyar futbol meydançaları siyahıda.</p>
 
     <div class="cards-grid">
-      @foreach (Team team in Model.Teams)
+      @foreach (GetFieldItemVM field in Model.Fields)
         {
             <div class="field-card">
-                <div class="card-image"><img src="~/assets/img/WhatsApp Şəkil 2025-06-02 saat 15.17.05_c54a2834.jpg" alt="Mini Futbol Arena"><div class="rating">⭐ 4.5</div></div>
+                <div class="card-image"><img src="@field.Image" alt="Mini Futbol Arena"><div class="rating">⭐ 4.5</div></div>
                 <div class="card-content">
-                    <div class="team-badge price-badge">120₼/saat</div>
-                    <h3 class="card-title">Mini Futbol Arena</h3>
-                    <div class="card-subtitle">🏠 Baki</div>
-                    <div class="available-hours">🕐 Boş saatlar: 5 saat</div>
+                    <div class="team-badge price-badge">@field.PricePerHour₼/saat</div>
+                    <h3 class="card-title">@field.Name</h3>
+                    <div class="card-subtitle">🏠 @field.City</div>
                     <div class="time-slots time-slots-container">
-                        <button class="time-slot">16:00</button>
-                        <button class="time-slot">17:00</button>
-                        <button class="time-slot">18:00</button>
+                      @foreach (var time in field.EmptySpace)
+                        {
+                            <button class="time-slot">@time</button>
+                        }
+                      
                     </div>
                     <div class="card-buttons"><a href="field-detail.html?id=1" class="btn-small">Rezerv et →</a></div>
                 </div>
@@ -135,20 +145,18 @@
     <p class="section-subtitle">Gələcək və cari turnirləri kəşf edin.</p>
 
     <div class="cards-grid">
-       @foreach (Tournament tournament in Model.Tournaments)
+       @foreach (GetTournamentItemVM tournament in Model.Tournaments)
         {
             <div class="tournament-card">
-                <div class="card-image"><img src="~/assets/img/WhatsApp Şəkil 2025-06-02 saat 15.17.05_c54a2834.jpg" alt="Baki Şəhər Kuboku 2024"><span class="status-badge-position">Devam edir</span></div>
+                <div class="card-image"><img src="@tournament.Logo" alt="@tournament.Name"><span class="status-badge-position">Devam edir</span></div>
                 <div class="card-content">
-                    <div class="prize-badge">⭐ 5000 AZN</div>
-                    <h3 class="card-title">Baki Şəhər Kuboku 2024</h3>
+                    <div class="prize-badge">⭐@tournament.PrizeFund AZN</div>
+                    <h3 class="card-title">@tournament.Name</h3>
                     <div class="tournament-details">
-                        <div class="tournament-detail-item">📅 15 Yanvar 2024</div>
-                        <div class="tournament-detail-item">📍 Arena Football Center</div>
-                        <div class="tournament-detail-item">👥 8/12 komanda</div>
+                        <div class="tournament-detail-item">📅 @tournament.StartTime</div>
                     </div>
                     <div class="progress-bar"><div class="progress-fill" data-width="66.67"></div></div>
-                    <div class="progress-text">8/12 komanda</div>
+                    <div class="progress-text">@tournament.CurrentTeams/@tournament.MaxTeams komanda</div>
                     <div class="card-buttons"><a href="#" class="btn-small">Qoşul →</a></div>
                 </div>
             </div>

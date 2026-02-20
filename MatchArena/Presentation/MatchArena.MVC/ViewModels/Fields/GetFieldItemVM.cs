@@ -7,10 +7,11 @@ namespace MatchArena.MVC.ViewModels
         string Name,
         string Address,
         int TotalRating,
+        string Image,
         double AverageRating,
         string City,
-        decimal PricePerHour,
-        ICollection<Field> Fields
-        );
+        decimal PricePerHour, 
+        ICollection<TimeOnly> EmptySpace
+		);
 
 }

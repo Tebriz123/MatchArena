@@ -12,6 +12,7 @@ namespace MatchArena.Application.DTOs.Player
         string Name,
         string Surname,
         int Age,
+        string City,
         PlayerPosition Position,
         double Rating,
         int GameCount,

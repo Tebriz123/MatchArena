@@ -4,7 +4,6 @@ wwwroot\assets\css\style.css
 wwwroot\assets\css\team-detail.css
 wwwroot\assets\img\products\README.md
 wwwroot\assets\img\WhatsApp Şəkil 2025-06-02 saat 15.17.05_c54a2834.jpg
-wwwroot\assets\js\admin-panel.js
 wwwroot\assets\js\api-config.js
 wwwroot\assets\js\app.js
 wwwroot\assets\js\auth.js
