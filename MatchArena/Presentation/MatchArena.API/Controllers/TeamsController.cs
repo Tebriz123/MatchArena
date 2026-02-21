@@ -48,6 +48,22 @@ namespace MatchArena.API.Controllers
             return Created();
         }
 
+        [Authorize]
+        [HttpPost("{teamId}/join")]
+        public async Task<IActionResult> JoinTeamAsync(long teamId)
+        {
+            if (teamId < 1) return BadRequest();
+
+            var userId = _httpContextAccessor.HttpContext?
+                .User?
+                .FindFirst(ClaimTypes.NameIdentifier)?
+                .Value
+                ?? throw new Exception("User Id tapılmadı!");
+
+            await _service.AddPlayerToTeamAsync(teamId, userId);
+            return Ok();
+        }
+
         [HttpPut]
         public async Task<IActionResult> PutAsync(long id, [FromBody] PutTeamDto teamDto)
         {

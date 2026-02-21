@@ -533,6 +533,47 @@ namespace MatchArena.Persistence.Contexts.Migrations
                     b.ToTable("ProductSizes");
                 });
 
+            modelBuilder.Entity("MatchArena.Domain.Entities.Reservation", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<long>("FieldId")
+                        .HasColumnType("bigint");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<long?>("PaymentId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("ReservedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<TimeOnly>("ReservedTime")
+                        .HasColumnType("time");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FieldId");
+
+                    b.HasIndex("PaymentId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Reservations");
+                });
+
             modelBuilder.Entity("MatchArena.Domain.Entities.Size", b =>
                 {
                     b.Property<long>("Id")
@@ -756,6 +797,49 @@ namespace MatchArena.Persistence.Contexts.Migrations
                     b.HasIndex("Status");
 
                     b.ToTable("Tournaments");
+                });
+
+            modelBuilder.Entity("MatchArena.Domain.Entities.TournamentRegistration", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("CaptainId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("CaptainUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<long?>("PaymentId")
+                        .HasColumnType("bigint");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<long>("TeamId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("TournamentId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CaptainId");
+
+                    b.HasIndex("PaymentId");
+
+                    b.HasIndex("TeamId");
+
+                    b.HasIndex("TournamentId");
+
+                    b.ToTable("TournamentRegistrations");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -1012,6 +1096,31 @@ namespace MatchArena.Persistence.Contexts.Migrations
                     b.Navigation("Size");
                 });
 
+            modelBuilder.Entity("MatchArena.Domain.Entities.Reservation", b =>
+                {
+                    b.HasOne("MatchArena.Domain.Entities.Field", "Field")
+                        .WithMany("Reservations")
+                        .HasForeignKey("FieldId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MatchArena.Domain.Entities.Payment", "Payment")
+                        .WithMany()
+                        .HasForeignKey("PaymentId");
+
+                    b.HasOne("MatchArena.Domain.Entities.AppUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Field");
+
+                    b.Navigation("Payment");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("MatchArena.Domain.Entities.TeamPlayer", b =>
                 {
                     b.HasOne("MatchArena.Domain.Entities.Player", "Player")
@@ -1029,6 +1138,37 @@ namespace MatchArena.Persistence.Contexts.Migrations
                     b.Navigation("Player");
 
                     b.Navigation("Team");
+                });
+
+            modelBuilder.Entity("MatchArena.Domain.Entities.TournamentRegistration", b =>
+                {
+                    b.HasOne("MatchArena.Domain.Entities.AppUser", "Captain")
+                        .WithMany()
+                        .HasForeignKey("CaptainId");
+
+                    b.HasOne("MatchArena.Domain.Entities.Payment", "Payment")
+                        .WithMany()
+                        .HasForeignKey("PaymentId");
+
+                    b.HasOne("MatchArena.Domain.Entities.Team", "Team")
+                        .WithMany()
+                        .HasForeignKey("TeamId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MatchArena.Domain.Entities.Tournament", "Tournament")
+                        .WithMany("Registrations")
+                        .HasForeignKey("TournamentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Captain");
+
+                    b.Navigation("Payment");
+
+                    b.Navigation("Team");
+
+                    b.Navigation("Tournament");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -1118,6 +1258,8 @@ namespace MatchArena.Persistence.Contexts.Migrations
                     b.Navigation("FieldRatings");
 
                     b.Navigation("Images");
+
+                    b.Navigation("Reservations");
                 });
 
             modelBuilder.Entity("MatchArena.Domain.Entities.Player", b =>
@@ -1147,6 +1289,8 @@ namespace MatchArena.Persistence.Contexts.Migrations
             modelBuilder.Entity("MatchArena.Domain.Entities.Tournament", b =>
                 {
                     b.Navigation("Fields");
+
+                    b.Navigation("Registrations");
                 });
 #pragma warning restore 612, 618
         }

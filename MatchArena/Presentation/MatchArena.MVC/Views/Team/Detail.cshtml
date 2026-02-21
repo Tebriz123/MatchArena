@@ -1,19 +1,19 @@
-﻿@* @model GetTeamVM
+﻿@model GetTeamVM
 <main class="team-detail-container">
     <a href="teams.html" class="team-back-link">← Komandalar səhifəsinə qayıt</a>
 
     <div class="team-profile-card">
         <div class="team-profile-grid">
-            <div class="team-logo"><img src="~/assets/img/WhatsApp Şəkil 2025-06-02 saat 15.17.05_c54a2834.jpg" alt="Qarabag Legends"></div>
+            <div class="team-logo"><img src="@Model.Logo" alt="@Model.Name"></div>
 
             <div class="team-profile-info">
-                <h1>Qarabag Legends</h1>
-                <p class="team-profile-subtitle">Kapitan: Öli Kazimov • 🏠 Bakı • Qurulma: 2020</p>
+                <h1>@Model.Name</h1>
+                <p class="team-profile-subtitle">Kapitan: @Model.CaptainName • 🏠 @Model.City </p>
 
                 <div class="team-stats-cards">
                     <div class="stat-card stat-card-members">
                         <div class="stat-card-label">Oyunçular</div>
-                        <div class="stat-card-value stat-card-value-members">15/15</div>
+                        <div class="stat-card-value stat-card-value-members">@Model.PlayerCount/@Model.MaxPlayer</div>
                     </div>
                     <div class="stat-card stat-card-rating">
                         <div class="stat-card-label">Reytinq</div>
@@ -21,7 +21,7 @@
                     </div>
                     <div class="stat-card stat-card-games">
                         <div class="stat-card-label">Oyunlar</div>
-                        <div class="stat-card-value stat-card-value-games">67</div>
+                        <div class="stat-card-value stat-card-value-games">@Model.GameCount</div>
                     </div>
                 </div>
 
@@ -42,28 +42,19 @@
 
                 <div class="team-info-row">
                     <span class="team-info-label">Kapitan</span>
-                    <span class="team-info-value">Öli Kazimov</span>
+                    <span class="team-info-value">@Model.CaptainName</span>
                 </div>
 
                 <div class="team-info-row">
                     <span class="team-info-label">Şəhər</span>
-                    <span class="team-info-value">Bakı</span>
+                    <span class="team-info-value">@Model.City</span>
                 </div>
 
                 <div class="team-info-row">
                     <span class="team-info-label">Üzv Sayı</span>
-                    <span class="team-info-value">15</span>
+                    <span class="team-info-value">@Model.PlayerCount</span>
                 </div>
 
-                <div class="team-info-row">
-                    <span class="team-info-label">Qurulduğu il</span>
-                    <span class="team-info-value">2020</span>
-                </div>
-
-                <div class="team-info-row">
-                    <span class="team-info-label">Status</span>
-                    <span class="team-info-value">Aktiv</span>
-                </div>
             </div>
 
             <div class="team-stats-card">
@@ -109,188 +100,22 @@
         <!-- Right Column -->
         <div>
             <div class="team-players-card">
-                <h2>Komanda Oyunçuları (15)</h2>
+                <h2>Komanda Oyunçuları (@Model.PlayerCount)</h2>
 
                 <div class="team-players-list">
-                    <a href="player-detail.html" class="player-card player-card-0">
-                        <div class="player-info">
-                            <div class="player-name">Öli Kazimov</div>
-                            <div class="player-details">Qapıçı • 32 yaş</div>
-                        </div>
-                        <div class="player-stats">
-                            <div class="player-rating player-rating-0">⭐ 4.9</div>
-                            <div class="player-games">67 oyun</div>
-                        </div>
-                        <div class="player-arrow">→</div>
-                    </a>
-
-                    <a href="player-detail.html" class="player-card player-card-1">
-                        <div class="player-info">
-                            <div class="player-name">Nihad Qasimov</div>
-                            <div class="player-details">Müdafi • 30 yaş</div>
-                        </div>
-                        <div class="player-stats">
-                            <div class="player-rating player-rating-1">⭐ 4.8</div>
-                            <div class="player-games">65 oyun</div>
-                        </div>
-                        <div class="player-arrow">→</div>
-                    </a>
-
-                    <a href="player-detail.html" class="player-card player-card-2">
-                        <div class="player-info">
-                            <div class="player-name">Elvin Hüseynov</div>
-                            <div class="player-details">Müdafi • 28 yaş</div>
-                        </div>
-                        <div class="player-stats">
-                            <div class="player-rating player-rating-2">⭐ 4.7</div>
-                            <div class="player-games">62 oyun</div>
-                        </div>
-                        <div class="player-arrow">→</div>
-                    </a>
-
-                    <a href="player-detail.html" class="player-card player-card-3">
-                        <div class="player-info">
-                            <div class="player-name">Tural Məmmədov</div>
-                            <div class="player-details">Orta sahə • 26 yaş</div>
-                        </div>
-                        <div class="player-stats">
-                            <div class="player-rating player-rating-3">⭐ 4.8</div>
-                            <div class="player-games">64 oyun</div>
-                        </div>
-                        <div class="player-arrow">→</div>
-                    </a>
-
-                    <a href="player-detail.html" class="player-card player-card-4">
-                        <div class="player-info">
-                            <div class="player-name">Rəşad Əliyev</div>
-                            <div class="player-details">Orta sahə • 25 yaş</div>
-                        </div>
-                        <div class="player-stats">
-                            <div class="player-rating player-rating-4">⭐ 4.6</div>
-                            <div class="player-games">58 oyun</div>
-                        </div>
-                        <div class="player-arrow">→</div>
-                    </a>
-
-                    <a href="player-detail.html" class="player-card player-card-0">
-                        <div class="player-info">
-                            <div class="player-name">Fərid Məmmədov</div>
-                            <div class="player-details">Hücumçu • 24 yaş</div>
-                        </div>
-                        <div class="player-stats">
-                            <div class="player-rating player-rating-0">⭐ 4.9</div>
-                            <div class="player-games">67 oyun</div>
-                        </div>
-                        <div class="player-arrow">→</div>
-                    </a>
-
-                    <a href="player-detail.html" class="player-card player-card-1">
-                        <div class="player-info">
-                            <div class="player-name">Samir Rəhimov</div>
-                            <div class="player-details">Hücumçu • 23 yaş</div>
-                        </div>
-                        <div class="player-stats">
-                            <div class="player-rating player-rating-1">⭐ 4.7</div>
-                            <div class="player-games">61 oyun</div>
-                        </div>
-                        <div class="player-arrow">→</div>
-                    </a>
-
-                    <a href="player-detail.html" class="player-card player-card-2">
-                        <div class="player-info">
-                            <div class="player-name">Aydın Məmmədov</div>
-                            <div class="player-details">Müdafi • 29 yaş</div>
-                        </div>
-                        <div class="player-stats">
-                            <div class="player-rating player-rating-2">⭐ 4.5</div>
-                            <div class="player-games">55 oyun</div>
-                        </div>
-                        <div class="player-arrow">→</div>
-                    </a>
-
-                    <a href="player-detail.html" class="player-card player-card-3">
-                        <div class="player-info">
-                            <div class="player-name">Kamran Həsənov</div>
-                            <div class="player-details">Orta sahə • 27 yaş</div>
-                        </div>
-                        <div class="player-stats">
-                            <div class="player-rating player-rating-3">⭐ 4.6</div>
-                            <div class="player-games">59 oyun</div>
-                        </div>
-                        <div class="player-arrow">→</div>
-                    </a>
-
-                    <a href="player-detail.html" class="player-card player-card-4">
-                        <div class="player-info">
-                            <div class="player-name">Orxan İsmayılov</div>
-                            <div class="player-details">Hücumçu • 22 yaş</div>
-                        </div>
-                        <div class="player-stats">
-                            <div class="player-rating player-rating-4">⭐ 4.4</div>
-                            <div class="player-games">52 oyun</div>
-                        </div>
-                        <div class="player-arrow">→</div>
-                    </a>
-
-                    <a href="player-detail.html" class="player-card player-card-0">
-                        <div class="player-info">
-                            <div class="player-name">Elnur Abbasov</div>
-                            <div class="player-details">Müdafi • 31 yaş</div>
-                        </div>
-                        <div class="player-stats">
-                            <div class="player-rating player-rating-0">⭐ 4.7</div>
-                            <div class="player-games">63 oyun</div>
-                        </div>
-                        <div class="player-arrow">→</div>
-                    </a>
-
-                    <a href="player-detail.html" class="player-card player-card-1">
-                        <div class="player-info">
-                            <div class="player-name">Cavid Məmmədli</div>
-                            <div class="player-details">Orta sahə • 26 yaş</div>
-                        </div>
-                        <div class="player-stats">
-                            <div class="player-rating player-rating-1">⭐ 4.5</div>
-                            <div class="player-games">56 oyun</div>
-                        </div>
-                        <div class="player-arrow">→</div>
-                    </a>
-
-                    <a href="player-detail.html" class="player-card player-card-2">
-                        <div class="player-info">
-                            <div class="player-name">Ramin Quliyev</div>
-                            <div class="player-details">Hücumçu • 24 yaş</div>
-                        </div>
-                        <div class="player-stats">
-                            <div class="player-rating player-rating-2">⭐ 4.6</div>
-                            <div class="player-games">60 oyun</div>
-                        </div>
-                        <div class="player-arrow">→</div>
-                    </a>
-
-                    <a href="player-detail.html" class="player-card player-card-3">
-                        <div class="player-info">
-                            <div class="player-name">Vüqar Məmmədov</div>
-                            <div class="player-details">Müdafi • 28 yaş</div>
-                        </div>
-                        <div class="player-stats">
-                            <div class="player-rating player-rating-3">⭐ 4.4</div>
-                            <div class="player-games">54 oyun</div>
-                        </div>
-                        <div class="player-arrow">→</div>
-                    </a>
-
-                    <a href="player-detail.html" class="player-card player-card-4">
-                        <div class="player-info">
-                            <div class="player-name">Ələkbər Əliyev</div>
-                            <div class="player-details">Qapıçı • 29 yaş</div>
-                        </div>
-                        <div class="player-stats">
-                            <div class="player-rating player-rating-4">⭐ 4.3</div>
-                            <div class="player-games">45 oyun</div>
-                        </div>
-                        <div class="player-arrow">→</div>
-                    </a>
+                    @foreach (var player in Model.PlayerDtos)
+                    {
+                        <a href="player-detail.html" class="player-card player-card-0">
+                            <div class="player-info">
+                                <div class="player-name">@player.Name @player.Surname</div>
+                                <div class="player-details">@player.Position • @player.Age yaş</div>
+                            </div>
+                            <div class="player-stats">
+                                <div class="player-rating player-rating-0">⭐ 4.9</div>
+                            </div>
+                            <div class="player-arrow">→</div>
+                        </a>
+                    }
                 </div>
             </div>
 
@@ -335,4 +160,4 @@
         </div>
     </div>
 </main>
- *@
+

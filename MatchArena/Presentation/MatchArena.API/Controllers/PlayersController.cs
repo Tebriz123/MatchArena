@@ -37,7 +37,11 @@ namespace MatchArena.API.Controllers
             if (string.IsNullOrEmpty(userId))
                 return Unauthorized("User is not authenticated");
 
-            await _service.CreatePlayerAsync(playerDto, userId); 
+            bool exists = await _service.PlayerExistsAsync(userId);
+            if (exists)
+                return Conflict("Bu istifadəçinin artıq profili mövcuddur.");
+
+            await _service.CreatePlayerAsync(playerDto, userId);
             return Created();
         }
         [HttpPut]

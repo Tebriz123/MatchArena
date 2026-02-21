@@ -10,9 +10,12 @@ namespace MatchArena.Domain.Entities
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum TournamentStatus
     {
-        RegistrationOpen= 1,  
-        RegistrationClosed = 2, 
-        SlotsFull = 3,          
-        Cancelled = 4
+        Upcoming = 1,            
+        RegistrationOpen = 2,    
+        RegistrationClosed = 3,  
+        SlotsFull = 4,           
+        Ongoing = 5,            
+        Finished = 6,             
+        Cancelled = 7
     }
 }

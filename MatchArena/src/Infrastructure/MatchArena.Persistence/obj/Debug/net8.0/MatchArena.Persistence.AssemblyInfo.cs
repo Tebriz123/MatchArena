@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MatchArena.Persistence")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6beae6baf1a1441664bd11ee392a45718c7d722a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3f90a97bc3e576c01304f54c4dea50f7b67dcdac")]
 [assembly: System.Reflection.AssemblyProductAttribute("MatchArena.Persistence")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MatchArena.Persistence")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

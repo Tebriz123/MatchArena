@@ -1,4 +1,4 @@
-﻿@* @model GetPlayerItemDto
+﻿@model List<GetPlayerItemVM>
 
 <main>
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
@@ -14,22 +14,39 @@
     <p class="players-count">8 oyunçu tapıldı</p>
 
     <div class="cards-grid">
-       @foreach (Player player in Model.Players)
+       @foreach (GetPlayerItemVM player in Model)
         {
-            <a href="player-detail.html?id=1" class="player-card">
-                <div class="card-image"><img src="assets/img/WhatsApp Şəkil 2025-06-02 saat 15.17.05_c54a2834.jpg" alt="Nihad Qasimov"><div class="rating">⭐ 4.9</div></div>
+            <a asp-action="Detail" class="player-card">
+                <div class="card-image" ><img src="@player.Image" alt="@player.Name @player.Surname"><div class="rating">⭐ 4.9</div></div>
                 <div class="card-content">
-                    <div class="team-badge">⚽ OYUNÇU</div>
-                    <h3 class="card-title">Nihad Qasimov</h3>
-                    <div class="card-subtitle">30 yaş • 🏠 Baki</div>
+                    <div class="team-badge">⚽ @player.Position</div>
+                    <h3 class="card-title">@player.Name @player.Surname</h3>
+                    <div class="card-subtitle">@player.Age yaş • 🏠 @player.City</div>
                     <div class="card-stats">
-                        <div class="stat-item"><div class="stat-item-value">312</div><div class="stat-item-label">oyun</div></div>
-                        <div class="stat-item"><div class="stat-item-value">156</div><div class="stat-item-label">qol</div></div>
-                        <div class="stat-item"><div class="stat-item-value">89</div><div class="stat-item-label">asist</div></div>
+                        <div class="stat-item"><div class="stat-item-value">@player.GameCount</div><div class="stat-item-label">oyun</div>
+                        </div>
                     </div>
                     <div class="card-buttons"><span class="btn-small">Profil bax</span></div>
                 </div>
             </a>
+            @* <a asp-action="Detail" asp-route-id="@player.Id" class="player-card">
+                <div class="card-image"><img src="@player.Image" alt="@player.Name"></div>
+                <div class="card-content">
+                    <div class="player-badge">👥 KOMANDA</div>
+                    <h3 class="card-title">@player.Name</h3>
+                    <div class="card-subtitle">Kapitain: @player.Name • 🏠 @player.City</div>
+                    <div class="card-stats">
+                        <div class="stat-item"><div class="stat-item-value">@player.Age/@player.Age</div><div class="stat-item-label">qolaça</div></div>
+                        <div class="stat-item"><div class="stat-item-value">4.9</div><div class="stat-item-label">⭐</div></div>
+                        <div class="stat-item"><div class="stat-item-value">@player.GameCount</div><div class="stat-item-label">oyun</div></div>
+                    </div>
+                    <div class="card-buttons">
+                        <span class="btn-small">Profil bax</span>
+                        <button class="btn-small btn-small-secondary">Qoşul</button>
+                    </div>
+                </div>
+            </a> *@
         }
     </div>
-</main> *@
+</main>
+

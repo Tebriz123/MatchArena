@@ -1,4 +1,4 @@
-﻿@* @model GetFieldItemVM
+﻿@model List<GetFieldItemVM>
 <main>
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
         <div>
@@ -13,23 +13,23 @@
     <p class="fields-count">5 meydança tapıldı</p>
 
     <div class="cards-grid">
-      @foreach (Field field in Model.Fields)
+      @foreach (GetFieldItemVM field in Model)
         {
-            <a href="field-detail.html?id=1" class="field-card field-card-link">
+            <a asp-action="Detail" asp-route-id="@field.Id" class="field-card field-card-link">
                 <div class="card-image">
-                    <img src="assets/img/WhatsApp Şəkil 2025-06-02 saat 15.17.05_c54a2834.jpg" alt="Mini Futbol Arena">
+                    <img src="@field.Image" alt="Mini Futbol Arena">
                     <div class="rating">⭐ 4.5</div>
-                    <div class="field-price-badge">120₼/saat</div>
+                    <div class="field-price-badge">@field.PricePerHour₼/saat</div>
                 </div>
                 <div class="card-content">
                     <div class="team-badge">🏀 MEYDANCA</div>
-                    <h3 class="card-title">Mini Futbol Arena</h3>
-                    <div class="card-subtitle">🏠 Baki • Nizami r., 45A</div>
-                    <div class="field-info-text">📏 40 x 20 m • 🕐 08:00 - 23:00</div>
+                    <h3 class="card-title">@field.Name</h3>
+                    <div class="card-subtitle">🏠 @field.City • @field.Address</div>
+                    <div class="field-info-text">🕐 @field.StartTime - @field.EndTime</div>
                     <div class="field-review-text">⭐ 4.5 (127 rəy)</div>
                     <div class="card-buttons"><span class="btn-small">Rezerv et →</span></div>
                 </div>
             </a>
         }
     </div>
-</main> *@
+</main>

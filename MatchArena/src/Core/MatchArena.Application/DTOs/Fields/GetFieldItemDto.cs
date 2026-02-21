@@ -14,6 +14,8 @@ namespace MatchArena.Application.DTOs.Fields
         string Image,
         double AverageRating,
         string City,
+        TimeOnly StartTime,
+        TimeOnly EndTime,
         decimal PricePerHour,
         ICollection<TimeOnly> EmptySpace
         );

@@ -15,6 +15,6 @@ namespace MatchArena.Application.Interfaces.Services
         Task CreatePlayerAsync(PostPlayerDto playerDto, string userId);
         Task UpdatePlayerAsync(long id, PutPlayerDto playerDto);
         Task RemoveAsync(long id);
-
+        Task<bool> PlayerExistsAsync(string userId);
     }
 }

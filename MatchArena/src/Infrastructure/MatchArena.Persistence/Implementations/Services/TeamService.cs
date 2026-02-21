@@ -85,6 +85,33 @@ namespace MatchArena.Persistence.Implementations.Services
             await _repository.SaveChangesAsync();
         }
 
+        public async Task AddPlayerToTeamAsync(long teamId, string userId)
+        {
+            Team team = await _repository.GetByIdAsync(teamId, "TeamPlayers");
+            if (team is null) throw new Exception("Team is not found");
+
+            if (team.PlayerCount >= team.MaxPlayer)
+                throw new Exception("Team is Full");
+
+            Player player = _playerRepository.GetAll(p => p.UserId == userId).FirstOrDefault()
+                ?? throw new Exception("You are not player");
+
+            bool alreadyInTeam = team.TeamPlayers.Any(tp => tp.PlayerId == player.Id);
+            if (alreadyInTeam)
+                throw new Exception("You are already on this team.");
+
+            team.TeamPlayers.Add(new TeamPlayer()
+            {
+                PlayerId = player.Id,
+                IsCaptain = false
+            });
+
+            team.PlayerCount++; 
+
+            _repository.Update(team);
+            await _repository.SaveChangesAsync();
+        }
+
         public async Task RemoveAsync(long id)
         {
             Team team = await _repository.GetByIdAsync(id);

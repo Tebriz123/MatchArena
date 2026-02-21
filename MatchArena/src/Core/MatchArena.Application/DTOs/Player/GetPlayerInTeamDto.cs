@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MatchArena.Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,8 @@ namespace MatchArena.Application.DTOs.Player
         long Id,
         string Name,
         string Surname,
+        int Age,
+        PlayerPosition Position,
         string Image,
         bool IsCaptain
         );

@@ -1,4 +1,5 @@
 ﻿using MatchArena.Application.DTOs.Tournaments;
+using MatchArena.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,7 @@ namespace MatchArena.Application.Interfaces.Services
         Task CreateTournamentAsync(PostTournamentDto tournamentDto);
         Task UpdateTournamentAsync(long id, PutTournamentDto tournamentDto);
         Task RemoveAsync(long id);
+        Task UpdateStatusAsync(long id, TournamentStatus status);
 
     }
 }

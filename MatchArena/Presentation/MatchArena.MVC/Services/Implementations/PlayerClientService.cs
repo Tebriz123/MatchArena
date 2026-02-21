@@ -26,26 +26,31 @@ namespace MatchArena.MVC.Services.Implementations
         public async Task<bool> CreateAsync(PostPlayerVM playerVM)
         {
             using var content = new MultipartFormDataContent();
-
-            content.Add(new StringContent(playerVM.Name), "Name");
-            content.Add(new StringContent(playerVM.Surname), "Surname");
+            content.Add(new StringContent(playerVM.Name ?? ""), "Name");
+            content.Add(new StringContent(playerVM.Surname ?? ""), "Surname");
             content.Add(new StringContent(playerVM.Age.ToString()), "Age");
             content.Add(new StringContent(playerVM.Height.ToString()), "Height");
-            content.Add(new StringContent(playerVM.Image), "Image");
-            content.Add(new StringContent(playerVM.Information), "Information");
-            content.Add(new StringContent(playerVM.City), "City");
+            content.Add(new StringContent(playerVM.Image ?? ""), "Image");
+            content.Add(new StringContent(playerVM.Information ?? ""), "Information");
+            content.Add(new StringContent(playerVM.City ?? ""), "City");
             content.Add(new StringContent(playerVM.Position.ToString()), "Position");
             content.Add(new StringContent(playerVM.Level.ToString()), "Level");
 
-            var stream = playerVM.Photo.OpenReadStream();
-            var fileContent = new StreamContent(stream);
-            fileContent.Headers.ContentType = new MediaTypeHeaderValue(playerVM.Photo.ContentType);
-            content.Add(fileContent, "Photo", playerVM.Photo.FileName);
+            if (playerVM.Photo != null)
+            {
+                var stream = playerVM.Photo.OpenReadStream();
+                var fileContent = new StreamContent(stream);
+                fileContent.Headers.ContentType = new MediaTypeHeaderValue(playerVM.Photo.ContentType);
+                content.Add(fileContent, "Photo", playerVM.Photo.FileName);
+            }
 
             var response = await _httpClient.PostAsync("Players", content);
+
+            if (response.StatusCode == System.Net.HttpStatusCode.Conflict)
+                return false;
+
             return response.IsSuccessStatusCode;
         }
-
         public async Task<bool> UpdateAsync(long id, PutPlayerVM playerVM)
         {
             using var content = new MultipartFormDataContent();

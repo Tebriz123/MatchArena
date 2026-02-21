@@ -12,6 +12,5 @@ namespace MatchArena.Domain.Entities.Enums
         Paid = 2,
         Confirmed = 3,
         Failed = 4
-
     }
 }

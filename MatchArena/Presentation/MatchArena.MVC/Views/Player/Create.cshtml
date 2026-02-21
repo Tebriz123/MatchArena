@@ -1,29 +1,33 @@
-﻿@* 
-@model PostPlayerVM
+﻿@model PostPlayerVM
 <main>
     <div class="form-container">
         <h1 class="section-title">Yeni Oyunçu Yarat</h1>
         <p class="section-subtitle">Yeni futbol oyunçusu yaradın və profil məlumatlarını daxil edin</p>
 
-        <form class="create-form" id="createPlayerForm">
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <form method="post" enctype="multipart/form-data" class="create-form" id="createPlayerForm">
             <div class="form-section">
                 <h3 class="form-section-title">Şəxsi Məlumatlar</h3>
 
                 <div class="form-group">
                     <label asp-for="Photo">Profil Şəkli</label>
-                    <input asp-for="Photo" id="playerImage" class="form-input" accept="image/*">
-                    <span asp-validation-for="Photo" ></span>
+                    <input asp-for="Photo" type="file" id="playerImage" class="form-input" accept="image/*">
+                    <span asp-validation-for="Photo"></span>
                 </div>
+
+                <input asp-for="Image" type="hidden" value="" />
 
                 <div class="form-group">
                     <label asp-for="Name">Name</label>
                     <input asp-for="Name" class="form-input" placeholder="Name">
                     <span asp-validation-for="Name"></span>
                 </div>
+
                 <div class="form-group">
                     <label asp-for="Surname">Surname</label>
                     <input asp-for="Surname" class="form-input" placeholder="Surname">
-                    <span asp-validation-for="Name"></span>
+                    <span asp-validation-for="Surname"></span>
                 </div>
 
                 <div class="form-row">
@@ -44,17 +48,8 @@
                     <div class="form-group">
                         <label asp-for="City">City *</label>
                         <input asp-for="City" class="form-input" placeholder="City">
+                        <span asp-validation-for="City"></span>
                     </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="email" class="form-label">E-mail</label>
-                    <input type="email" id="email" name="email" class="form-input" placeholder="ornek@email.com">
-                </div>
-
-                <div class="form-group">
-                    <label for="phone" class="form-label">Telefon</label>
-                    <input type="tel" id="phone" name="phone" class="form-input" placeholder="+994 XX XXX XX XX">
                 </div>
             </div>
 
@@ -66,26 +61,27 @@
                         <label asp-for="Position" class="form-label">Position *</label>
                         <select asp-for="Position" class="form-input">
                             @foreach (PlayerPosition position in Enum.GetValues(typeof(PlayerPosition)))
-                                {
+                            {
                                 <option value="@((int)position)">@position.ToString()</option>
-                                }
+                            }
                         </select>
+                        <span asp-validation-for="Position"></span>
                     </div>
 
                     <div class="form-group">
-                        <label for="preferredFoot" class="form-label">Üstünlük Verdiyi Ayaq</label>
-                        <select id="preferredFoot" name="preferredFoot" class="form-input">
+                        <label asp-for="Level" class="form-label">Üstünlük Verdiyi Ayaq</label>
+                        <select asp-for="Level" class="form-input">
                             @foreach (PlayerLevel level in Enum.GetValues(typeof(PlayerLevel)))
-                                                {
+                            {
                                 <option value="@((int)level)">@level.ToString()</option>
-                                }
+                            }
                         </select>
+                        <span asp-validation-for="Level"></span>
                     </div>
                 </div>
             </div>
 
             <div class="form-section">
-
                 <div class="form-group">
                     <label asp-for="Information" class="form-label">Information</label>
                     <textarea asp-for="Information" class="form-textarea" rows="4" placeholder="About You..."></textarea>
@@ -94,7 +90,7 @@
             </div>
 
             <div class="form-actions">
-                <button type="button" class="btn-secondary" onclick="window.location.href='players.html'">
+                <button type="button" class="btn-secondary" onclick="window.location.href='@Url.Action("Index", "Player")'">
                     İmtina
                 </button>
                 <button type="submit" class="btn-primary">
@@ -103,4 +99,4 @@
             </div>
         </form>
     </div>
-</main> *@
+</main>

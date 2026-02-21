@@ -1187,6 +1187,87 @@
         }
       }
     },
+    "/Reservations": {
+      "post": {
+        "tags": [
+          "Reservations"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "FieldId": {
+                    "type": "integer",
+                    "format": "int64"
+                  },
+                  "ReservedTime": {
+                    "type": "string",
+                    "format": "time"
+                  },
+                  "ReservedDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  }
+                }
+              },
+              "encoding": {
+                "FieldId": {
+                  "style": "form"
+                },
+                "ReservedTime": {
+                  "style": "form"
+                },
+                "ReservedDate": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Reservations/my": {
+      "get": {
+        "tags": [
+          "Reservations"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Reservations/{id}": {
+      "delete": {
+        "tags": [
+          "Reservations"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/Sizes": {
       "get": {
         "tags": [
@@ -1499,6 +1580,114 @@
         }
       }
     },
+    "/Teams/{teamId}/join": {
+      "post": {
+        "tags": [
+          "Teams"
+        ],
+        "parameters": [
+          {
+            "name": "teamId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/TournamentRegistrations": {
+      "post": {
+        "tags": [
+          "TournamentRegistrations"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "TournamentId": {
+                    "type": "integer",
+                    "format": "int64"
+                  },
+                  "TeamId": {
+                    "type": "integer",
+                    "format": "int64"
+                  }
+                }
+              },
+              "encoding": {
+                "TournamentId": {
+                  "style": "form"
+                },
+                "TeamId": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/TournamentRegistrations/{tournamentId}/teams": {
+      "get": {
+        "tags": [
+          "TournamentRegistrations"
+        ],
+        "parameters": [
+          {
+            "name": "tournamentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/TournamentRegistrations/{id}": {
+      "delete": {
+        "tags": [
+          "TournamentRegistrations"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/Tournaments": {
       "get": {
         "tags": [
@@ -1643,6 +1832,29 @@
             "description": "OK"
           }
         }
+      }
+    },
+    "/Tournaments/{id}": {
+      "get": {
+        "tags": [
+          "Tournaments"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       },
       "put": {
         "tags": [
@@ -1651,7 +1863,8 @@
         "parameters": [
           {
             "name": "id",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int64"
@@ -1782,7 +1995,8 @@
         "parameters": [
           {
             "name": "id",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int64"
@@ -1796,8 +2010,8 @@
         }
       }
     },
-    "/Tournaments/{id}": {
-      "get": {
+    "/Tournaments/{id}/status": {
+      "patch": {
         "tags": [
           "Tournaments"
         ],
@@ -1809,6 +2023,13 @@
             "schema": {
               "type": "integer",
               "format": "int64"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/TournamentStatus"
             }
           }
         ],
@@ -1824,12 +2045,11 @@
     "schemas": {
       "PaymentType": {
         "enum": [
-          1,
-          2,
-          3
+          "Product",
+          "Tournament",
+          "Field"
         ],
-        "type": "integer",
-        "format": "int32"
+        "type": "string"
       },
       "PlayerLevel": {
         "enum": [
@@ -1929,9 +2149,12 @@
       },
       "TournamentStatus": {
         "enum": [
+          "Upcoming",
           "RegistrationOpen",
           "RegistrationClosed",
           "SlotsFull",
+          "Ongoing",
+          "Finished",
           "Cancelled"
         ],
         "type": "string"

@@ -1,4 +1,4 @@
-﻿@* @model GetPlayerVM
+﻿@model GetPlayerVM
 
 
 <main class="player-detail-main">
@@ -6,11 +6,11 @@
 
     <div class="player-profile-card">
         <div class="player-profile-grid">
-            <div class="player-avatar-large"><img src="assets/img/WhatsApp Şəkil 2025-06-02 saat 15.17.05_c54a2834.jpg" alt="Nihad Qasimov"></div>
+            <div class="player-avatar-large"><img src="@Model.Image" alt="@Model.Name @Model.Surname"></div>
 
             <div class="player-profile-info">
-                <h1>Nihad Qasimov</h1>
-                <p>Qapiçi • 30 yaş</p>
+                <h1>@Model.Name @Model.Surname</h1>
+                <p>@Model.Position • @Model.Age yaş</p>
 
                 <div class="player-stats-row">
                     <div class="stat-box stat-box-green">
@@ -19,11 +19,11 @@
                     </div>
                     <div class="stat-box stat-box-blue">
                         <div class="stat-box-label">Oyunlar</div>
-                        <div class="stat-box-value stat-box-value-blue">312</div>
+                        <div class="stat-box-value stat-box-value-blue">@Model.GameCount</div>
                     </div>
                     <div class="stat-box stat-box-orange">
                         <div class="stat-box-label">Şəhər</div>
-                        <div class="stat-box-value stat-box-value-orange">🏠 Baki</div>
+                        <div class="stat-box-value stat-box-value-orange">🏠 @Model.City</div>
                     </div>
                 </div>
 
@@ -48,17 +48,17 @@
 
                 <div class="detail-row">
                     <span class="detail-row-label">Vəzifə</span>
-                    <span class="detail-row-value">Qapiçi</span>
+                    <span class="detail-row-value">@Model.Position</span>
                 </div>
 
                 <div class="detail-row">
                     <span class="detail-row-label">Yaş</span>
-                    <span class="detail-row-value">30</span>
+                    <span class="detail-row-value">@Model.Age</span>
                 </div>
 
                 <div class="detail-row">
                     <span class="detail-row-label">Şəhər</span>
-                    <span class="detail-row-value">Baki</span>
+                    <span class="detail-row-value">@Model.City</span>
                 </div>
             </div>
 
@@ -67,38 +67,18 @@
 
                 <div class="detail-row">
                     <span class="detail-row-label">Oyunlar</span>
-                    <span class="detail-row-value-large">312</span>
+                    <span class="detail-row-value-large">@Model.GameCount</span>
                 </div>
 
                 <div class="detail-row">
                     <span class="detail-row-label">Qollar</span>
-                    <span class="detail-row-value-large">156</span>
-                </div>
-
-                <div class="detail-row">
-                    <span class="detail-row-label">Köməkçiliklər</span>
-                    <span class="detail-row-value-large">89</span>
+                    <span class="detail-row-value-large">@Model.Goal</span>
                 </div>
             </div>
         </div>
 
         <!-- Right Column -->
         <div>
-            <div class="detail-card">
-                <h2>Fəaliyyətlər</h2>
-
-                <div class="achievements-list">
-                    <div class="achievement-item">
-                        <div class="achievement-title">On yaxşı qapıçı</div>
-                        <div class="achievement-description">2024 Fəaliyyət Mükafatı</div>
-                    </div>
-
-                    <div class="achievement-item">
-                        <div class="achievement-title">Clean sheet rekordu</div>
-                        <div class="achievement-description">Ardıcıl 8 oyun qol yemədən</div>
-                    </div>
-                </div>
-            </div>
 
             <div class="detail-card">
                 <h2>Rəylər</h2>
@@ -134,4 +114,4 @@
         </div>
     </div>
 </main>
- *@
+

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MatchArena.Domain.Entities.Enums
 {
-   
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum PaymentType
     {
         Product = 1,

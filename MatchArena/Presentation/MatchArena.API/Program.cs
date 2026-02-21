@@ -1,39 +1,17 @@
-﻿using AutoMapper;
-using MatchArena.Application;
-using MatchArena.Domain.Entities;
+﻿using MatchArena.Application;
 using MatchArena.Domain.Settings.Stripes;
 using MatchArena.Infrastructure;
 using MatchArena.Persistence;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
-using Stripe;
-using System;
-
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.Configure<StripeSetting>(
-    builder.Configuration.GetSection("Stripe")
-);
+    builder.Configuration.GetSection("Stripe"));
 
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-
-
-
-builder = WebApplication.CreateBuilder(args);
-
-// Lazımi servis qeydiyyatları
 builder.Services.AddControllers();
-builder.Services.AddAuthentication(); // Əgər authentication istifadə edirsənsə
-builder.Services.AddAuthorization();  // Authorization üçün mütləq lazımdır
-
-
-
-
-
-
-
+builder.Services.AddAuthentication();
+builder.Services.AddAuthorization();
 
 builder.Services.AddSwaggerGen(opt =>
 {
@@ -47,7 +25,6 @@ builder.Services.AddSwaggerGen(opt =>
         BearerFormat = "JWT",
         Scheme = "bearer"
     });
-
     opt.AddSecurityRequirement(new OpenApiSecurityRequirement
     {
         {
@@ -55,45 +32,31 @@ builder.Services.AddSwaggerGen(opt =>
             {
                 Reference = new OpenApiReference
                 {
-                    Type=ReferenceType.SecurityScheme,
-                    Id="Bearer"
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
                 }
             },
             new string[]{}
         }
     });
 });
+
 builder.Services
     .AddAppilicationServices()
     .AddPersistenceServices(builder.Configuration)
     .AddInfrastructureServices(builder.Configuration);
 
-
 var app = builder.Build();
-
-
-
 
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-//using (var scope = app.Services.CreateScope())
-//{
-//    await app.UseAppDbContextInitializer(scope);
-//}
 
 app.UseHttpsRedirection();
-
 app.UseAuthentication();
-
-
 app.UseAuthorization();
-
 app.MapControllers();
-
-var mapper = app.Services.GetRequiredService<IMapper>();
-//mapper.ConfigurationProvider.AssertConfigurationIsValid();
 
 app.Run();

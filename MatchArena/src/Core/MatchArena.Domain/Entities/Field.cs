@@ -16,6 +16,7 @@ namespace MatchArena.Domain.Entities
         public TimeOnly EndTime { get; set; }
         public string Image { get; set; }
         public ICollection<FieldImage> Images { get; set; }
+        public ICollection<Reservation> Reservations { get; set; } = new List<Reservation>();
         public ICollection<TimeOnly> EmptySpace { get; set; } = new List<TimeOnly>();
 
         public double AverageRating => FieldRatings != null && FieldRatings.Any() ?

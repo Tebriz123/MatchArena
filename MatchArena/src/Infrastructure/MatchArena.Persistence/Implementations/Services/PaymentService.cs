@@ -3,6 +3,7 @@ using MatchArena.Application.Interfaces.Services;
 using MatchArena.Domain.Entities;
 using MatchArena.Domain.Entities.Enums;
 using MatchArena.Domain.Settings.Stripes;
+using MatchArena.Persistence.Implementations.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Stripe;
@@ -17,20 +18,26 @@ namespace MatchArena.Persistence.Implementations.Services
         private readonly IProductRepository _productRepository;
         private readonly IFieldRepository _fieldRepository;
         private readonly ITournamentRepository _tournamentRepository;
+        private readonly IReservationRepository _reservationRepository;
+        private readonly ITournamentRegistrationRepository _tournamentRegistrationRepository;
 
         public PaymentService(
             IOptions<StripeSetting> stripeOptions,
             IPaymentRepository paymentRepository,
             IProductRepository productRepository,
             IFieldRepository fieldRepository,
-            ITournamentRepository tournamentRepository)
+            ITournamentRepository tournamentRepository,
+            IReservationRepository reservationRepository,
+            ITournamentRegistrationRepository tournamentRegistrationRepository
+            )
         {
             _stripeSetting = stripeOptions.Value;
             _paymentRepository = paymentRepository;
             _productRepository = productRepository;
             _fieldRepository = fieldRepository;
             _tournamentRepository = tournamentRepository;
-
+            _reservationRepository = reservationRepository;
+            _tournamentRegistrationRepository = tournamentRegistrationRepository;
             StripeConfiguration.ApiKey = _stripeSetting.SecretKey;
         }
 
@@ -131,8 +138,40 @@ namespace MatchArena.Persistence.Implementations.Services
                 case PaymentType.Product:
                     break;
                 case PaymentType.Tournament:
+                    var registration = _tournamentRegistrationRepository.GetAll(
+        r => r.PaymentId == payment.Id
+    ).FirstOrDefault();
+
+                    if (registration is null) break;
+
+                    Tournament tournament = await _tournamentRepository.GetByIdAsync(registration.TournamentId);
+                    if (tournament is null) break;
+
+                    tournament.CurrentTeams++;
+                    registration.Status = RegistrationStatus.Confirmed;
+                    _tournamentRegistrationRepository.Update(registration);
+                    _tournamentRepository.Update(tournament);
+                    await _tournamentRegistrationRepository.SaveChangesAsync();
                     break;
                 case PaymentType.Field:
+                    var reservation = _reservationRepository.GetAll(
+              r => r.PaymentId == payment.Id
+          ).FirstOrDefault();
+
+                    if (reservation is null) break;
+
+                    Field field = await _fieldRepository.GetByIdAsync(reservation.FieldId);
+                    if (field is null) break;
+
+                    var slot = field.EmptySpace.FirstOrDefault(t => t == reservation.ReservedTime);
+                    if (slot != default)
+                        field.EmptySpace.Remove(slot);
+
+                    reservation.Status = ReservationStatus.Confirmed;
+
+                    _reservationRepository.Update(reservation);
+                    _fieldRepository.Update(field);
+                    await _reservationRepository.SaveChangesAsync();
                     break;
             }
         }

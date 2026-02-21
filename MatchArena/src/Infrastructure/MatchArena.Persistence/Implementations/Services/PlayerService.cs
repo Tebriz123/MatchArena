@@ -111,5 +111,9 @@ namespace MatchArena.Persistence.Implementations.Services
             _repository.Remove(player);
             await _repository.SaveChangesAsync();
         }
+        public async Task<bool> PlayerExistsAsync(string userId)
+        {
+            return await _repository.AnyAsync(p => p.UserId == userId);
+        }
     }
 }

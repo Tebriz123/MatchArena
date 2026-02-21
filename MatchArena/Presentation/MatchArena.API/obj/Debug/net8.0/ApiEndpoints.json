@@ -785,6 +785,58 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "MatchArena.API.Controllers.ReservationsController",
+    "Method": "PostAsync",
+    "RelativePath": "Reservations",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "FieldId",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "ReservedTime",
+        "Type": "System.TimeOnly",
+        "IsRequired": false
+      },
+      {
+        "Name": "ReservedDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MatchArena.API.Controllers.ReservationsController",
+    "Method": "CancelAsync",
+    "RelativePath": "Reservations/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int64",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MatchArena.API.Controllers.ReservationsController",
+    "Method": "GetMyReservationsAsync",
+    "RelativePath": "Reservations/my",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MatchArena.API.Controllers.SizesController",
     "Method": "Get",
     "RelativePath": "Sizes",
@@ -985,6 +1037,75 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "MatchArena.API.Controllers.TeamsController",
+    "Method": "JoinTeamAsync",
+    "RelativePath": "Teams/{teamId}/join",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "teamId",
+        "Type": "System.Int64",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MatchArena.API.Controllers.TournamentRegistrationsController",
+    "Method": "RegisterAsync",
+    "RelativePath": "TournamentRegistrations",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "TournamentId",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "TeamId",
+        "Type": "System.Int64",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MatchArena.API.Controllers.TournamentRegistrationsController",
+    "Method": "CancelAsync",
+    "RelativePath": "TournamentRegistrations/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int64",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MatchArena.API.Controllers.TournamentRegistrationsController",
+    "Method": "GetTeamsAsync",
+    "RelativePath": "TournamentRegistrations/{tournamentId}/teams",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tournamentId",
+        "Type": "System.Int64",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MatchArena.API.Controllers.TournamentsController",
     "Method": "GetAsync",
     "RelativePath": "Tournaments",
@@ -1088,8 +1209,24 @@
   },
   {
     "ContainingType": "MatchArena.API.Controllers.TournamentsController",
+    "Method": "GetAsync",
+    "RelativePath": "Tournaments/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int64",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MatchArena.API.Controllers.TournamentsController",
     "Method": "PutAsync",
-    "RelativePath": "Tournaments",
+    "RelativePath": "Tournaments/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -1097,7 +1234,7 @@
       {
         "Name": "id",
         "Type": "System.Int64",
-        "IsRequired": false
+        "IsRequired": true
       },
       {
         "Name": "Name",
@@ -1180,7 +1317,7 @@
   {
     "ContainingType": "MatchArena.API.Controllers.TournamentsController",
     "Method": "DeleteAsync",
-    "RelativePath": "Tournaments",
+    "RelativePath": "Tournaments/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -1188,16 +1325,16 @@
       {
         "Name": "id",
         "Type": "System.Int64",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
     "ContainingType": "MatchArena.API.Controllers.TournamentsController",
-    "Method": "GetAsync",
-    "RelativePath": "Tournaments/{id}",
-    "HttpMethod": "GET",
+    "Method": "UpdateStatusAsync",
+    "RelativePath": "Tournaments/{id}/status",
+    "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -1205,6 +1342,11 @@
         "Name": "id",
         "Type": "System.Int64",
         "IsRequired": true
+      },
+      {
+        "Name": "status",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

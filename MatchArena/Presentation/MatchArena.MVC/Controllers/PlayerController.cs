@@ -34,14 +34,21 @@ namespace MatchArena.MVC.Controllers
         {
             if (!ModelState.IsValid) return View(vm);
 
-            var result = await _playerClient.CreateAsync(vm);
-            if (!result)
+            try
             {
-                ModelState.AddModelError("", "Xəta baş verdi, yenidən cəhd edin.");
+                var result = await _playerClient.CreateAsync(vm);
+                if (!result)
+                {
+                    ModelState.AddModelError("", "Artıq profiliniz mövcuddur.");
+                    return View(vm);
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", $"Xəta: {ex.Message}");
                 return View(vm);
             }
-
-            return RedirectToAction(nameof(Index));
         }
 
         public async Task<IActionResult> Update(long id)

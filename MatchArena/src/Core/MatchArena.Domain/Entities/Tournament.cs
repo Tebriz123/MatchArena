@@ -30,5 +30,6 @@ namespace MatchArena.Domain.Entities
         public DateTime UpdatedAt { get; set; }
         public ICollection<Team> Teams { get; set; } = new List<Team>();
         public ICollection<Field> Fields { get; set; }
+        public ICollection<TournamentRegistration> Registrations { get; set; } = new List<TournamentRegistration>();
     }
 }

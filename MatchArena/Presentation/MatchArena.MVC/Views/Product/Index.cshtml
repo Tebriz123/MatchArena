@@ -1,13 +1,6 @@
 ﻿
 @model List<GetProductItemVM>
-
- 
-    @foreach (var product in Model)
-{
-    <h2>@product.Id,@product.Name,@product.Price,@product.CategoryName</h2>
-}
-  
-@* <main class="products-page">
+<main class="products-page">
     <div class="page-container">
         <!-- Page Title -->
         <div class="page-header">
@@ -59,36 +52,36 @@
         <div id="productsGrid" class="products-grid-modern">
 
             <!-- Product 1: Professional Match Football -->
-            <div class="product-card-modern" onclick="goToProduct(1)"
-                 data-id="1" data-category="balls" data-categoryname="⚽ toplar"
-                 data-price="89.99" data-name="Professional Match Football"
-                 data-brand="nike" data-rating="4.8" data-reviews="124">
-                <div class="product-img-box">
-                    <img src="assets/img/WhatsApp Şəkil 2025-06-02 saat 15.17.05_c54a2834.jpg" alt="Professional Match Football" onerror="this.src='assets/img/placeholder.jpg'">
-                    <span class="product-label label-new">YENİ</span>
-                    <span class="product-label label-discount">-25%</span>
-                </div>
-                <div class="product-info-box">
-                    <div class="product-cat">⚽ Toplar</div>
-                    <h3 class="product-title">Professional Match Football</h3>
-                    <div class="product-meta">Nike</div>
-                    <div class="product-rate">
-                        <span class="rate-stars">★★★★☆</span>
-                        <span class="rate-num">4.8 (124)</span>
-                    </div>
-                    <div class="product-bottom">
-                        <div class="product-pricing">
-                            <span class="price-main">89.99₼</span>
-                            <span class="price-cross">119.99₼</span>
+          @foreach (GetProductItemVM product in Model)
+            {
+               <a asp-action="Detail" asp-route-id="@product.Id">
+                    <div class="product-card-modern" onclick="goToProduct(1)"
+                         data-id="1" data-category="balls" data-categoryname="⚽ @product.CategoryName"
+                         data-price="@product.Price" data-name="Professional Match Football"
+                         data-brand="nike" data-rating="4.8" data-reviews="124">
+                        <div class="product-img-box">
+                            <img src="@product.Image" alt="@product.Name">
                         </div>
-                        <button class="product-add-btn" onclick="event.stopPropagation(); addToCart(1)">
-                            <svg width="18" height="18" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" />
-                            </svg>
-                        </button>
+                        <div class="product-info-box">
+                            <div class="product-cat">⚽ @product.CategoryName</div>
+                            <h3 class="product-title">@product.Name</h3>
+                            <div class="product-rate">
+                                <span class="rate-num">4.8 (124)</span>
+                            </div>
+                            <div class="product-bottom">
+                                <div class="product-pricing">
+                                    <span class="price-main">@product.Price₼</span>
+                                </div>
+                                <button class="product-add-btn" onclick="event.stopPropagation(); addToCart(1)">
+                                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
+               </a>
+            }
 
         </div>
 
@@ -99,5 +92,5 @@
             <p>Axtarış meyarlarınızı dəyişdirin</p>
         </div>
     </div>
-</main> *@
+</main>
 

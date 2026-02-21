@@ -1,5 +1,7 @@
 ﻿using MatchArena.Application.DTOs.Tournaments;
 using MatchArena.Application.Interfaces.Services;
+using MatchArena.Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,8 +17,9 @@ namespace MatchArena.API.Controllers
         {
             _service = service;
         }
+
         [HttpGet]
-        public async Task<IActionResult> GetAsync(int page= 0,int take = 0)
+        public async Task<IActionResult> GetAsync(int page = 0, int take = 0)
         {
             return Ok(await _service.GetAllAsync(page, take));
         }
@@ -24,32 +27,37 @@ namespace MatchArena.API.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAsync(long id)
         {
-            if (id < 0) return BadRequest();
-
+            if (id < 1) return BadRequest();
             return Ok(await _service.GetByIdAsync(id));
         }
+
         [HttpPost]
         public async Task<IActionResult> PostAsync([FromForm] PostTournamentDto tournamentDto)
         {
             await _service.CreateTournamentAsync(tournamentDto);
-
             return Created();
         }
 
-        [HttpPut]
-        public async Task<IActionResult> PutAsync(long id, [FromForm]  PutTournamentDto tournamentDto)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutAsync(long id, [FromForm] PutTournamentDto tournamentDto)
         {
-            if (id < 0) return BadRequest();
+            if (id < 1) return BadRequest();
             await _service.UpdateTournamentAsync(id, tournamentDto);
-
             return NoContent();
         }
 
-        [HttpDelete]
+        [HttpPatch("{id}/status")]
+        public async Task<IActionResult> UpdateStatusAsync(long id, [FromQuery] TournamentStatus status)
+        {
+            if (id < 1) return BadRequest();
+            await _service.UpdateStatusAsync(id, status);
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAsync(long id)
         {
-            if (id < 0) return BadRequest();
-
+            if (id < 1) return BadRequest();
             await _service.RemoveAsync(id);
             return NoContent();
         }

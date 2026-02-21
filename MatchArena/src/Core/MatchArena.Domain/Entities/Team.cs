@@ -11,7 +11,7 @@ namespace MatchArena.Domain.Entities
         public ICollection<TeamPlayer> TeamPlayers { get; set; } = new List<TeamPlayer>();
         public string Logo { get; set; }
         public string City { get; set; }
-        public int PlayerCount { get; set; }
+        public int PlayerCount { get; set; } = 1;
         public int MaxPlayer { get; set; }
         public double Rating { get; set; }
         public int GameCount { get; set; }

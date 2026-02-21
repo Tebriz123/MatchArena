@@ -11,6 +11,8 @@ namespace MatchArena.MVC.ViewModels
         double AverageRating,
         string City,
         decimal PricePerHour, 
+        TimeOnly StartTime,
+        TimeOnly EndTime,
         ICollection<TimeOnly> EmptySpace
 		);
 

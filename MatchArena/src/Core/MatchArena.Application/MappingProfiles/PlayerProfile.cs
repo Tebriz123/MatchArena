@@ -21,14 +21,12 @@ namespace MatchArena.Application.MappingProfiles
                     opt => opt.MapFrom(p => p.User.Surname));
 
             CreateMap<Player, GetPlayerDto>()
-                .ForCtorParam(nameof(GetPlayerDto.Name),
-                    opt => opt.MapFrom(p => p.User.Name))
-                .ForCtorParam(nameof(GetPlayerDto.Surname),
-                    opt => opt.MapFrom(p => p.User.Surname))
-                .ForCtorParam(nameof(GetPlayerDto.TeamDtos),
-                    opt => opt.MapFrom(p => p.PlayerTeams
-                        .Select(pt => new GetTeamInPlayerDto(pt.Team.Id, pt.Team.Name, pt.Team.Logo))
-                        .ToList()));
+      .ForCtorParam(nameof(GetPlayerDto.Name),
+          opt => opt.MapFrom(p => p.Name))       
+      .ForCtorParam(nameof(GetPlayerDto.Surname),
+          opt => opt.MapFrom(p => p.Surname))   
+      .ForCtorParam("TeamDtos",
+          opt => opt.MapFrom(src => src.PlayerTeams));
 
             CreateMap<PostPlayerDto, Player>()
                 .ForMember(dest => dest.Image, opt => opt.Ignore()) 
@@ -36,9 +34,12 @@ namespace MatchArena.Application.MappingProfiles
 
             CreateMap<PutPlayerDto, Player>()
                 .ForMember(dest => dest.Image, opt => opt.Ignore()) 
-                .ForMember(dest => dest.User, opt => opt.Ignore()); 
+                .ForMember(dest => dest.User, opt => opt.Ignore());
 
-            CreateMap<Team, GetTeamInPlayerDto>();
+            CreateMap<TeamPlayer, GetTeamInPlayerDto>()
+    .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Team.Id))
+    .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Team.Name))
+    .ForMember(dest => dest.Logo, opt => opt.MapFrom(src => src.Team.Logo));
         }
     }
 }
