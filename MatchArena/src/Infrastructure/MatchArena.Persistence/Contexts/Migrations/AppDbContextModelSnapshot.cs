@@ -673,6 +673,38 @@ namespace MatchArena.Persistence.Contexts.Migrations
                     b.ToTable("Teams");
                 });
 
+            modelBuilder.Entity("MatchArena.Domain.Entities.TeamInvite", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<long>("PlayerId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("SentAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<long>("TeamId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PlayerId");
+
+                    b.HasIndex("TeamId");
+
+                    b.ToTable("TeamInvites");
+                });
+
             modelBuilder.Entity("MatchArena.Domain.Entities.TeamPlayer", b =>
                 {
                     b.Property<long>("TeamId")
@@ -1119,6 +1151,25 @@ namespace MatchArena.Persistence.Contexts.Migrations
                     b.Navigation("Payment");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("MatchArena.Domain.Entities.TeamInvite", b =>
+                {
+                    b.HasOne("MatchArena.Domain.Entities.Player", "Player")
+                        .WithMany()
+                        .HasForeignKey("PlayerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MatchArena.Domain.Entities.Team", "Team")
+                        .WithMany()
+                        .HasForeignKey("TeamId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Player");
+
+                    b.Navigation("Team");
                 });
 
             modelBuilder.Entity("MatchArena.Domain.Entities.TeamPlayer", b =>

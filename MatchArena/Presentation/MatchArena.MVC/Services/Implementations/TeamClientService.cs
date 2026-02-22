@@ -8,9 +8,12 @@ namespace MatchArena.MVC.Services.Implementations
     public class TeamClientService:ITeamClientService
     {
         private readonly HttpClient _httpClient;
-        public TeamClientService(IHttpClientFactory clientFactory)
+        private readonly IHttpContextAccessor _httpContextAccessor;
+
+        public TeamClientService(IHttpClientFactory clientFactory, IHttpContextAccessor httpContextAccessor)
         {
             _httpClient = clientFactory.CreateClient("MatchArenaClient");
+            _httpContextAccessor = httpContextAccessor;
         }
 
         public async Task<List<GetTeamItemVM>?> GetAllAsync()
@@ -59,6 +62,39 @@ namespace MatchArena.MVC.Services.Implementations
             }
 
             var response = await _httpClient.PutAsync($"Teams/{id}", content);
+            return response.IsSuccessStatusCode;
+
+
+
+        }
+
+        public async Task<bool> SendInviteAsync(long teamId, long playerId)
+        {
+            var token = _httpContextAccessor.HttpContext?.Request.Cookies["token"];
+            _httpClient.DefaultRequestHeaders.Authorization =
+                new AuthenticationHeaderValue("Bearer", token);
+
+            var response = await _httpClient.PostAsync($"Teams/{teamId}/invite/{playerId}", null);
+            return response.IsSuccessStatusCode;
+        }
+
+        public async Task<bool> AcceptInviteAsync(long inviteId)
+        {
+            var token = _httpContextAccessor.HttpContext?.Request.Cookies["token"];
+            _httpClient.DefaultRequestHeaders.Authorization =
+                new AuthenticationHeaderValue("Bearer", token);
+
+            var response = await _httpClient.PostAsync($"Teams/invites/{inviteId}/accept", null);
+            return response.IsSuccessStatusCode;
+        }
+
+        public async Task<bool> RejectInviteAsync(long inviteId)
+        {
+            var token = _httpContextAccessor.HttpContext?.Request.Cookies["token"];
+            _httpClient.DefaultRequestHeaders.Authorization =
+                new AuthenticationHeaderValue("Bearer", token);
+
+            var response = await _httpClient.PostAsync($"Teams/invites/{inviteId}/reject", null);
             return response.IsSuccessStatusCode;
         }
     }

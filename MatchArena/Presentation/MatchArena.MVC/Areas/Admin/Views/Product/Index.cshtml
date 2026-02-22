@@ -1,0 +1,55 @@
+﻿@model List<GetProductVM>
+@{
+    int count = 0;
+}
+
+<div class="admin-tab-content" id="products">
+    <div class="admin-panel-header">
+        <h3>Məhsulları İdarə Et</h3>
+        <div class="admin-panel-actions">
+            <input type="text" class="search-input" placeholder="Məhsul axtar..." onkeyup="filterTable('productsTable', this.value)">
+            <button asp-controller="Product" asp-action="Create" class="btn btn-primary" onclick="showCreateProductModal()">+ Məhsul Əlavə Et</button>
+        </div>
+    </div>
+    <div class="admin-table-container">
+        <table class="admin-table" id="productsTable">
+            <thead>
+                <tr>
+                    <th>Number</th>
+                    <th>Product Name</th>
+                    <th>Category Name</th>
+                    <th>Price</th>
+                    <th>Product Count</th>
+                    <th>Operations</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (GetProductVM productVM in Model)
+                {
+                    count++;
+                    <tr>
+                        <td class="py-1">
+                            @count
+                        </td>
+                        <td>
+                            <div class="table-user">
+                                <img src="@productVM.Image" alt="@productVM.Name" class="table-avatar">
+                                <span>@productVM.Name</span>
+                            </div>
+                        </td>
+                        <td><span class="badge badge-info">@productVM.CategoryDto.Name</span></td>
+                        <td>@productVM.Price ₼</td>
+                        <td>@productVM.Products.Count</td>
+                        <td>
+                            <div class="table-actions">
+                                <a asp-controller="Product" asp-action="Detail" asp-route-id="@productVM.Id" class="btn-icon" title="Bax" onclick="viewProduct('P001')">👁️</a>
+                                <a asp-controller="Product" asp-action="Update" asp-route-id="@productVM.Id" class="btn-icon" title="Redaktə" onclick="editProduct('P001')">✏️</a>
+                                <a class="btn-icon danger" title="Sil" onclick="deleteProduct('P001')">🗑️</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

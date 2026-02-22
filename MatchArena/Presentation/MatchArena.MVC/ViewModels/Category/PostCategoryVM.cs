@@ -1,4 +1,7 @@
 ﻿namespace MatchArena.MVC.ViewModels.Category
 {
-    public record PostCategoryVM(string Name);
+    public class PostCategoryVM
+    {
+        public string Name { get; set; }
+    }
 }

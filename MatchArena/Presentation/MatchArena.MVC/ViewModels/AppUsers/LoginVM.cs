@@ -1,8 +1,10 @@
 ﻿namespace MatchArena.MVC.ViewModels
 {
-    public record LoginVm(
-         string UsernameOrEmail,
-        string Password
-        );
+    public class LoginVM {
+        public string UsernameOrEmail { get; set; }
+        public string Password { get; set; }
+
+    }
+        
     
 }

@@ -44,6 +44,8 @@ namespace MatchArena.Persistence
             services.AddScoped<IPaymentRepository, PaymentRepository>();
             services.AddScoped<IReservationRepository, ReservationRepository>();
             services.AddScoped<ITournamentRegistrationRepository, TournamentRegistrationRepository>();
+            services.AddScoped<IInviteRepository, InviteRepository>();
+
 
 
             services.AddScoped<IAuthenticationService, AuthenticationService>();

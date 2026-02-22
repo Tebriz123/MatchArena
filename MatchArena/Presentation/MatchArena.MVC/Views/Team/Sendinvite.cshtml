@@ -1,0 +1,15 @@
+﻿
+@model List<GetPlayerItemVM>
+
+@foreach (var player in Model)
+{
+    <div class="player-card">
+        <p>@player.Name @player.Surname</p>
+
+        <form asp-action="SendInvite" asp-controller="Team" method="post">
+            <input type="hidden" name="playerId" value="@player.Id" />
+            <input type="hidden" name="teamId" value="???" />
+            <button type="submit" class="btn btn-primary">Dəvət Göndər</button>
+        </form>
+    </div>
+}

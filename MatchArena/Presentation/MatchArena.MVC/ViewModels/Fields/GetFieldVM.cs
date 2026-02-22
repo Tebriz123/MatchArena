@@ -7,11 +7,13 @@
         string Information,
         int TotalRating,
         double AverageRating,
+        string PrimayPhoto,
+        string AdditionalPhoto,
         string Address,
         decimal PricePerHour,
         TimeOnly StartDate,
         TimeOnly EndDate,
         ICollection<TimeOnly> EmptySpace
-        );
+        ); 
 
 }

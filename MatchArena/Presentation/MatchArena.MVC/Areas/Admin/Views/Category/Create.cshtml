@@ -1,0 +1,26 @@
+﻿@model PostCategoryVM
+
+<main>
+    <div class="form-container">
+        <h1 class="section-title">Yeni Kateqoriya Yarat</h1>
+        <p class="section-subtitle">Məhsul kateqoriyası əlavə edin</p>
+
+        <form method="post" class="create-form" id="createColorForm">
+            <div class="form-section">
+                <h3 class="form-section-title">Əsas Məlumatlar</h3>
+
+                <div class="form-group">
+                    <label asp-for="Name" class="form-label">Category Name</label>
+                    <input asp-for="Name" class="form-input" required placeholder="Category Name">
+                    <span asp-validation-for="Name"></span>
+                </div>
+
+            </div>
+
+            <div class="form-actions">
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='admin-panel.html'">Ləğv et</button>
+                <button type="submit" class="btn btn-primary">Kateqoriya Yarat</button>
+            </div>
+        </form>
+    </div>
+</main>

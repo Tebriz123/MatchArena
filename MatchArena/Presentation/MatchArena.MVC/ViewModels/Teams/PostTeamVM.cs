@@ -1,10 +1,13 @@
 ﻿namespace MatchArena.MVC.ViewModels
 {
-    public record PostTeamVM(
-         string Name,
-         IFormFile Photo,
-         string City,
-         int MaxPlayer,
-         string Information
-         );
+    public class PostTeamVM
+    {
+        public string Name { get; set; }
+        public IFormFile? Photo { get; set; }
+        public string City { get; set; }
+        public int MaxPlayer { get; set; }
+        public string Information { get; set; }
+
+    }
+
 }

@@ -1,4 +1,4 @@
-using MatchArena.MVC.Services.Implementations;
+﻿using MatchArena.MVC.Services.Implementations;
 using MatchArena.MVC.Services.Interfaces;
 
 namespace MatchArena.MVC
@@ -17,6 +17,7 @@ namespace MatchArena.MVC
                 config.BaseAddress = new Uri("https://localhost:7246/");
                 config.DefaultRequestHeaders.Add("accept","application/json"); 
             });
+            builder.Services.AddHttpContextAccessor();
 
             builder.Services.AddScoped<IProductClientService, ProductClientService>();
             builder.Services.AddScoped<IPlayerClientService, PlayerClientService>(); 
@@ -26,6 +27,7 @@ namespace MatchArena.MVC
             builder.Services.AddScoped<ICategoryClientService, CategoryClientService>();
             builder.Services.AddScoped<IColorClientService, ColorClientService>();
             builder.Services.AddScoped<ISizeClientService, SizeClientService>();
+            builder.Services.AddScoped<IAccountClientService, AccountClientService>();
 
             var app = builder.Build();
 
@@ -44,15 +46,17 @@ namespace MatchArena.MVC
 
             app.UseAuthorization();
 
-            app.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
-
 
             app.MapControllerRoute(
-               "default",
-               "{area:exists}/{controller=home}/{action=index}/{id?}");
+            name: "areas",
+            pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
 
+
+            app.MapControllerRoute(
+                 name: "default",
+                 pattern: "{controller=Home}/{action=Index}/{id?}");
+
+        
 
             app.Run();
         }

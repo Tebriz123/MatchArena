@@ -75,7 +75,6 @@ namespace MatchArena.Persistence.Implementations.Services
 
             category = _mapper.Map(categoryDto, category);
 
-            //category.Name = categoryDto.Name;
 
 
             _repository.Update(category);

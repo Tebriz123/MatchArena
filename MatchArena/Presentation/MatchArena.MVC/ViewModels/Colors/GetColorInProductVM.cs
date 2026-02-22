@@ -1,7 +1,9 @@
 ﻿namespace MatchArena.MVC.ViewModels.Colors
 {
-    public record GetColorInProductVM(
-       long Id,
-       string Name
-       );
+    public class GetColorInProductVM
+    {
+        public long Id { get; set; }
+        public string Name { get; set; }
+
+    }
 }

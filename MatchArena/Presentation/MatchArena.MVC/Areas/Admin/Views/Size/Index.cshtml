@@ -1,0 +1,43 @@
+﻿
+@model List<GetSizeItemVM>
+@{
+    int count = 0;
+}
+
+<div class="admin-tab-content" id="sizes">
+    <div class="admin-panel-header">
+        <h3>Ölçüləri İdarə Et</h3>
+        <div class="admin-panel-actions">
+            <input type="text" class="search-input" placeholder="Ölçü axtar..." onkeyup="filterTable('sizesTable', this.value)">
+            <button class="btn btn-primary" onclick="showCreateSizeModal()">+ Ölçü Əlavə Et</button>
+        </div>
+    </div>
+    <div class="admin-table-container">
+        <table class="admin-table" id="sizesTable">
+            <thead>
+                <tr>
+                    <th>Number</th>
+                    <th>Size Name</th>
+                    <th>Product Count</th>
+                </tr>
+            </thead>
+            <tbody>
+              @foreach (GetSizeItemVM sizeVM in Model)
+                {
+                    count++;
+                        <tr>
+                            <td class="py-1">
+                                @count
+                            </td>
+                            <td>@sizeVM.Name</td>
+                            <td>@sizeVM.Products.Count</td>
+                            <div class="table-actions">
+                                <button class="btn-icon" title="Redaktə" onclick="editSize('S001')">✏️</button>
+                                <button class="btn-icon danger" title="Sil" onclick="deleteSize('S001')">🗑️</button>
+                            </div>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

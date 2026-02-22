@@ -1,0 +1,55 @@
+﻿@model List<GetTeamVM>
+@{
+    int count = 0;
+}
+<div class="admin-tab-content" id="teams">
+    <div class="admin-panel-header">
+        <h3>Komandaları İdarə Et</h3>
+        <div class="admin-panel-actions">
+            <input type="text" class="search-input" placeholder="Komanda axtar..." onkeyup="filterTable('teamsTable', this.value)">
+            <a asp-controller="Team" asp-action="Create" href="create-team.html" class="btn btn-primary">+ Komanda Əlavə Et</a>
+        </div>
+    </div>
+    <div class="admin-table-container">
+        <table class="admin-table" id="teamsTable">
+            <thead>
+                <tr>
+                    <th>Number</th>
+                    <th>Team Name</th>
+                    <th>Captain Name</th>
+                    <th>City</th>
+                    <th>Player Count</th>
+                    <th>Operations</th>
+                </tr>
+            </thead>
+            <tbody>
+               @foreach (GetTeamVM teamVM in Model)
+                {
+                    count++;
+                    <tr>
+                        <td class="py-1">
+                            @count
+                        </td>
+                        <td>
+                            <div class="table-user">
+                                <img src="@teamVM.Logo." alt="@teamVM.Name" class="table-avatar">
+                                <span>@teamVM.Name</span>
+                            </div>
+                        </td>
+                        <td>@teamVM.CaptainName</td>
+                        <td>@teamVM.City</td>
+                        <td>@teamVM.PlayerCount/@teamVM.MaxPlayer</td>
+                        <td>
+                            <div class="table-actions">
+                                <a asp-controller="Team" asp-action="Detail" asp-route-id="@teamVM.Id" class="btn-icon" title="Bax" onclick="viewTeam(501)">👁️</a>
+                                <a asp-controller="Team" asp-action="Update" asp-route-id="@teamVM.Id" class="btn-icon" title="Redaktə" onclick="editTeam(501)">✏️</a>
+                                <a class="btn-icon danger" title="Sil" onclick="deleteTeam(501)">🗑️</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            
+            </tbody>
+        </table>
+    </div>
+</div>

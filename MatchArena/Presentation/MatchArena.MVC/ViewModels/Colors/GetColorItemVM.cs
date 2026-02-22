@@ -1,7 +1,12 @@
-﻿namespace MatchArena.MVC.ViewModels.Colors
+﻿using MatchArena.Domain.Entities;
+
+namespace MatchArena.MVC.ViewModels.Colors
 {
-    public record GetColorItemVM(
-       long Id,
-       string Name
-       );
+    public class GetColorItemVM
+    {
+        public long Id { get; set; }
+        public string Name { get; set; }
+        public List<Product> Products { get; set; }
+
+    }
 }

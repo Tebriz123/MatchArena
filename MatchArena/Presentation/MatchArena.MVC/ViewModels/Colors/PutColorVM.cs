@@ -1,4 +1,7 @@
 ﻿namespace MatchArena.MVC.ViewModels.Colors
 {
-    public record PutColorVM(string Name);
+    public class PutColorVM
+    {
+        public string Name { get; set; }
+    }
 }

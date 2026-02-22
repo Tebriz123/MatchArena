@@ -15,14 +15,14 @@ namespace MatchArena.API.Controllers
         {
             _service = service;
         }
-        [HttpPost]
-        public async Task<IActionResult> Register([FromForm] RegisterDto registerDto)
+        [HttpPost("register")]
+        public async Task<IActionResult> Register([FromBody] RegisterDto registerDto)
         {
            await _service.RegisterAsync(registerDto);
             return Created();
         }
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromForm] LoginDto loginDto)
+        public async Task<IActionResult> Login([FromBody] LoginDto loginDto)
         {
             
             return Ok(await _service.LoginAsync(loginDto));

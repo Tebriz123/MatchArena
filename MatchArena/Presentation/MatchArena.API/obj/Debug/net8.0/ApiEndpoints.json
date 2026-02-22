@@ -1,42 +1,6 @@
 [
   {
     "ContainingType": "MatchArena.API.Controllers.AccountsController",
-    "Method": "Register",
-    "RelativePath": "Accounts",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Name",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Surname",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Email",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Username",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Password",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "MatchArena.API.Controllers.AccountsController",
     "Method": "Login",
     "RelativePath": "Accounts/login",
     "HttpMethod": "POST",
@@ -44,14 +8,25 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "UsernameOrEmail",
-        "Type": "System.String",
-        "IsRequired": false
-      },
+        "Name": "loginDto",
+        "Type": "MatchArena.Application.DTOs.AppUsers.LoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MatchArena.API.Controllers.AccountsController",
+    "Method": "Register",
+    "RelativePath": "Accounts/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
       {
-        "Name": "Password",
-        "Type": "System.String",
-        "IsRequired": false
+        "Name": "registerDto",
+        "Type": "MatchArena.Application.DTOs.AppUsers.RegisterDto",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -1038,6 +1013,27 @@
   },
   {
     "ContainingType": "MatchArena.API.Controllers.TeamsController",
+    "Method": "SendInvite",
+    "RelativePath": "Teams/{teamId}/invite/{playerId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "teamId",
+        "Type": "System.Int64",
+        "IsRequired": true
+      },
+      {
+        "Name": "playerId",
+        "Type": "System.Int64",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MatchArena.API.Controllers.TeamsController",
     "Method": "JoinTeamAsync",
     "RelativePath": "Teams/{teamId}/join",
     "HttpMethod": "POST",
@@ -1046,6 +1042,22 @@
     "Parameters": [
       {
         "Name": "teamId",
+        "Type": "System.Int64",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MatchArena.API.Controllers.TeamsController",
+    "Method": "RemovePlayer",
+    "RelativePath": "Teams/players/{playerId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "playerId",
         "Type": "System.Int64",
         "IsRequired": true
       }

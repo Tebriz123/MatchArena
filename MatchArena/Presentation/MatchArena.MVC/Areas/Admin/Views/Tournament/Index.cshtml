@@ -1,0 +1,59 @@
+﻿@model List<GetTournamentVM>
+@{
+    int count = 0;
+}
+
+<div class="admin-tab-content" id="tournaments">
+    <div class="admin-panel-header">
+        <h3>Turnirləri İdarə Et</h3>
+        <div class="admin-panel-actions">
+            <input type="text" class="search-input" placeholder="Turnir axtar..." onkeyup="filterTable('tournamentsTable', this.value)">
+            <a href="create-tournament.html" class="btn btn-primary">+ Turnir Əlavə Et</a>
+        </div>
+    </div>
+    <div class="admin-table-container">
+        <table class="admin-table" id="tournamentsTable">
+            <thead>
+                <tr>
+                    <th>Number</th>
+                    <th>Tournament Name</th>
+                    <th>City</th>
+                    <th>Start Time</th>
+                    <th>Teams</th>
+                    <th>Price</th>
+                    <th>Status</th>
+                    <th>Operations</th>
+                </tr>
+            </thead>
+            <tbody>
+              @foreach (GetTournamentVM tournamentVM in Model)
+                {
+                    count++;
+                    <tr>
+                        <td class="py-1">
+                            @count
+                        </td>
+                        <td>
+                            <div class="table-user">
+                                <img src="@tournamentVM.Logo" alt="@tournamentVM.Name" class="table-avatar">
+                                <span>@tournamentVM.Name</span>
+                            </div>
+                        </td>
+                        <td>@tournamentVM.City</td>
+                        <td>@tournamentVM.RegistrationDeadline</td>
+                        <td>@tournamentVM.CurrentTeams/@tournamentVM.MaxTeams</td>
+                        <td>@tournamentVM.PrizeFund₼</td>
+                        <td><span class="badge badge-info">@tournamentVM.Status</span></td>
+                        <td>
+                            <div class="table-actions">
+                                <a asp-controller="Tournament" asp-action="Detail" asp-route-id="@tournamentVM.Id" class="btn-icon" title="Bax" onclick="viewTournament(301)">👁️</a>
+                                <a asp-controller="Tournament" asp-action="Update" asp-route-id="@tournamentVM.Id class=" btn-icon" title="Redaktə" onclick="editTournament(301)">✏️</a>
+                                <a class="btn-icon danger" title="Sil" onclick="deleteTournament(301)">🗑️</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

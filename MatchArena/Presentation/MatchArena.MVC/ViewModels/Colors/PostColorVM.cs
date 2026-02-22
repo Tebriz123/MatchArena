@@ -1,4 +1,9 @@
 ﻿namespace MatchArena.MVC.ViewModels.Colors
 {
-    public record PostColorVM(string Name);
+    public class PostColorVM
+    {
+        public string Name { get; set; }
+
+    }
+
 }

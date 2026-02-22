@@ -1,0 +1,61 @@
+﻿@model List<GetPlayerVM>
+@{
+    int count = 0;
+}
+
+<div class="admin-tab-content" id="players">
+    <div class="admin-panel-header">
+        <h3>Oyunçuları İdarə Et</h3>
+        <div class="admin-panel-actions">
+            <input type="text" class="search-input" placeholder="Oyunçu axtar..." onkeyup="filterTable('playersTable', this.value)">
+            <a asp-controller="Player" asp-action="Create" class="btn btn-primary" onclick="showCreatePlayerModal()">+ Oyunçu Əlavə Et</a>
+        </div>
+    </div>
+    <div class="admin-table-container">
+        <table class="admin-table" id="playersTable">
+            <thead>
+                <tr>
+                    <th>Number</th>
+                    <th>Full Name</th>
+                    <th>Age</th>
+                    <th>Positon</th>
+                    <th>Level</th>
+                    <th>Team</th>
+                    <th>Rating</th>
+                    <th>Operations</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (GetPlayerVM playerVM in Model)
+                {
+                    count++;
+                    <tr>
+                        <td class="py-1">
+                            @count
+                        </td>
+                        <td>
+                            <div class="table-user">
+                                <img src="@playerVM.Image" alt="@playerVM.Name @playerVM.Surname" class="table-avatar">
+                                <span>@playerVM.Name @playerVM.Surname</span>
+                            </div>
+                        </td>
+                        <td>@playerVM.Age</td>
+                        <td><span class="badge badge-info">@playerVM.Position</span></td>
+                        <td><span class="badge badge-info">@playerVM.Level</span></td>
+                        <td>@playerVM.TeamVM</td>
+                        <td>⭐ 4.8</td>
+
+                        <td>
+                            <div class="table-actions">
+                                <a asp-controller="Player" asp-action="Detail" asp-route-id="@playerVM.Id" class="btn-icon" title="Bax" onclick="viewPlayer(1247)">👁️</a>
+                                <a asp-controller="Player" asp-action="Update" asp-route-id="@playerVM.Id" class="btn-icon" title="Redaktə" onclick="editPlayer(1247)">✏️</a>
+                                <a class="btn-icon danger" title="Sil" onclick="deletePlayer(1247)">🗑️</a>
+                            </div>
+                        </td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -32,6 +32,11 @@ namespace MatchArena.MVC.Controllers
         public async Task<IActionResult> Create(PostTeamVM vm)
         {
             if (!ModelState.IsValid) return View(vm);
+            if (vm.Photo == null)
+            {
+                ModelState.AddModelError("Photo", "Şəkil seçin.");
+                return View(vm);
+            }
 
             var result = await _teamClient.CreateAsync(vm);
             if (!result)
@@ -72,6 +77,40 @@ namespace MatchArena.MVC.Controllers
             }
 
             return RedirectToAction(nameof(Index));
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> SendInvite(long teamId, long playerId)
+        {
+            var result = await _teamClient.SendInviteAsync(teamId, playerId);
+            if (!result)
+            {
+                TempData["Error"] = "Dəvət göndərilə bilmədi.";
+            }
+            else
+            {
+                TempData["Success"] = "Dəvət göndərildi.";
+            }
+            return RedirectToAction(nameof(Detail), new { id = teamId });
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AcceptInvite(long inviteId)
+        {
+            var result = await _teamClient.AcceptInviteAsync(inviteId);
+            if (!result) TempData["Error"] = "Dəvət qəbul edilə bilmədi.";
+            else TempData["Success"] = "Dəvəti qəbul etdiniz.";
+            return RedirectToAction("Index", "Home");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> RejectInvite(long inviteId)
+        {
+            var result = await _teamClient.RejectInviteAsync(inviteId);
+            if (!result) TempData["Error"] = "Dəvət rədd edilə bilmədi.";
+            else TempData["Success"] = "Dəvəti rədd etdiniz.";
+            return RedirectToAction("Index", "Home");
         }
     }
 }

@@ -28,7 +28,10 @@
                 </div>
 
                 <div class="player-action-buttons">
-                    <button class="btn-invite">Komandaya Dəvət Et</button>
+                    <form asp-action="SendInvite" asp-controller="Team" method="post" style="display:inline;">
+                        <input type="hidden" name="playerId" value="@Model.Id" />
+                        <button type="submit" class="btn-invite">Komandaya Dəvət Et</button>
+                    </form>
                     <button class="btn-message">Mesaj Göndər</button>
                 </div>
             </div>

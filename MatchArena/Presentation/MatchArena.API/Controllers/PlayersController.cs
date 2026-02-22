@@ -30,7 +30,6 @@ namespace MatchArena.API.Controllers
             return Ok(await _service.GetByIdAsync(id));
         }
         [HttpPost]
-        [Authorize]
         public async Task<IActionResult> PostAsync([FromForm] PostPlayerDto playerDto)
         {
             string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);

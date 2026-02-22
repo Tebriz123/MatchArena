@@ -1,0 +1,50 @@
+﻿@model List<GetCategoryItemVM>
+@{
+    int count = 0;
+}
+
+
+
+<div class="admin-tab-content" id="categories">
+    <div class="admin-panel-header">
+        <h3>Kateqoriyaları İdarə Et</h3>
+        <div class="admin-panel-actions">
+            <input type="text" class="search-input" placeholder="Kateqoriya axtar..." onkeyup="filterTable('categoriesTable', this.value)">
+            <button class="btn btn-primary" onclick="showCreateCategoryModal()">+ Kateqoriya Əlavə Et</button>
+        </div>
+    </div>
+    <div class="admin-table-container">
+        <table class="admin-table" id="categoriesTable">
+            <thead>
+                <tr>
+                    <th>Number</th>
+                    <th>Category Name</th>
+                    <th>Product Count</th>
+                    <th>Əməliyyatlar</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (GetCategoryItemVM categoryVM in Model)
+                {
+                    count++;
+                    <tr>
+                        <td class="py-1">
+                            @count
+                        </td>
+                <td>@categoryVM.Name</td>
+                <td>@categoryVM.ProductCount</td>
+                <td>05.01.2026</td>
+                <td>
+                    <div class="table-actions">
+                        <button class="btn-icon" title="Bax" onclick="viewCategory('C001')">👁️</button>
+                        <button class="btn-icon" title="Redaktə" onclick="editCategory('C001')">✏️</button>
+                        <button class="btn-icon danger" title="Sil" onclick="deleteCategory('C001')">🗑️</button>
+                    </div>
+                </td>
+                </tr>
+            }
+
+            </tbody>
+        </table>
+    </div>
+</div>

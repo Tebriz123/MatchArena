@@ -30,7 +30,6 @@ namespace MatchArena.MVC.Services.Implementations
             content.Add(new StringContent(playerVM.Surname ?? ""), "Surname");
             content.Add(new StringContent(playerVM.Age.ToString()), "Age");
             content.Add(new StringContent(playerVM.Height.ToString()), "Height");
-            content.Add(new StringContent(playerVM.Image ?? ""), "Image");
             content.Add(new StringContent(playerVM.Information ?? ""), "Information");
             content.Add(new StringContent(playerVM.City ?? ""), "City");
             content.Add(new StringContent(playerVM.Position.ToString()), "Position");

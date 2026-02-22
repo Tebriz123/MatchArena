@@ -1,0 +1,27 @@
+﻿
+@model PostColorVM
+
+<main>
+    <div class="form-container">
+        <h1 class="section-title">Yeni Rəng Yarat</h1>
+        <p class="section-subtitle">Məhsul rəngi əlavə edin</p>
+
+        <form method="post" class="create-form" id="createColorForm">
+            <div class="form-section">
+                <h3 class="form-section-title">Əsas Məlumatlar</h3>
+
+                <div class="form-group">
+                    <label asp-for="Name" class="form-label">Color Name</label>
+                    <input asp-for="Name" class="form-input" required placeholder="Məs. Qara, Ağ, Qırmızı">
+                    <span asp-validation-for="Name"></span>
+                </div>
+
+            </div>
+
+            <div class="form-actions">
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='admin-panel.html'">Ləğv et</button>
+                <button type="submit" class="btn btn-primary">Rəngi Yenilə</button>
+            </div>
+        </form>
+    </div>
+</main>

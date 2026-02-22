@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,14 +7,18 @@
     <title>MatchArena - Football Platform</title>
     <link rel="stylesheet" href="~/assets/css/style.css">
     <link rel="stylesheet" href="~/assets/css/payment-styles.css">
-    <link rel="stylesheet" href="~/assets/css/team-detail.css ">
+    <link rel="stylesheet" href="~/assets/css/team-detail.css">
     <link rel="stylesheet" href="~/assets/css/inline-styles.css">
 </head>
 <body>
-    <!-- Navigation -->
+    @{
+        var invites = ViewBag.Invites as List<GetInviteVM> ?? new List<GetInviteVM>();
+        int inviteCount = invites.Count;
+    }
+
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-logo"> 
+            <div class="nav-logo">
                 <a asp-controller="Home" asp-action="Index">
                     <svg class="logo-icon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="16" cy="16" r="16" fill="#22C55E" />
@@ -35,14 +40,59 @@
                     <span class="cart-badge" id="cartBadgeNav">0</span>
                 </a>
                 <button class="theme-toggle">🌐</button>
-                <button class="notification-btn">🔔</button>
-                <a href="login.html" class="user-name">Daxil ol</a>
-                <a href="register.html" class="login-btn">Qeydiyyat</a>
+
+                @if (User.Identity?.IsAuthenticated == true)
+                {
+                    <div class="notification-wrapper" style="position:relative;">
+                        <button class="notification-btn" onclick="toggleNotifications()">
+                            🔔
+                            @if (inviteCount > 0)
+                            {
+                                <span class="cart-badge">@inviteCount</span>
+                            }
+                        </button>
+                        <div id="notificationDropdown" style="display:none; position:absolute; right:0; background:#1a1a2e; border:1px solid #333; border-radius:8px; width:300px; z-index:999; padding:10px;">
+                            @if (inviteCount > 0)
+                            {
+                                foreach (var invite in invites)
+                                {
+                                    <div style="padding:10px; border-bottom:1px solid #333;">
+                                        <p>@invite.TeamName komandası sizi dəvət edir</p>
+                                        <form asp-action="AcceptInvite" asp-controller="Team" method="post" style="display:inline;">
+                                            <input type="hidden" name="inviteId" value="@invite.Id" />
+                                            <button type="submit" class="btn btn-success">Qəbul et</button>
+                                        </form>
+                                        <form asp-action="RejectInvite" asp-controller="Team" method="post" style="display:inline;">
+                                            <input type="hidden" name="inviteId" value="@invite.Id" />
+                                            <button type="submit" class="btn btn-danger">Rədd et</button>
+                                        </form>
+                                    </div>
+                                }
+                            }
+                            else
+                            {
+                                <p style="padding:10px;">Dəvət yoxdur</p>
+                            }
+                        </div>
+                    </div>
+
+                    <div class="dropdown" style="position:relative;">
+                        <button class="user-btn" id="settingButton">👤 @User.Identity.Name</button>
+                        <ul class="dropdown-menu" aria-labelledby="settingButton">
+                            <li><a class="dropdown-item" asp-controller="Account" asp-action="Logout">Log Out</a></li>
+                        </ul>
+                    </div>
+                }
+                else
+                {
+                    <a asp-controller="Account" asp-action="Login" class="nav-link">Daxil ol</a>
+                    <a asp-controller="Account" asp-action="Register" class="login-btn btn btn-primary">Qeydiyyat</a>
+                }
             </div>
         </div>
     </nav>
 
-            @RenderBody()
+    @RenderBody()
 
     <footer class="footer">
         <div class="footer-container">
@@ -65,17 +115,17 @@
             <div class="footer-section">
                 <h4>Platform</h4>
                 <ul>
-                    <li><a href="players.html">Oyunçular</a></li>
-                    <li><a href="teams.html">Komandalar</a></li>
-                    <li><a href="fields.html">Meydançalar</a></li>
-                    <li><a href="tournaments.html">Turnirler</a></li>
+                    <li><a asp-controller="Player" asp-action="Index">Oyunçular</a></li>
+                    <li><a asp-controller="Team" asp-action="Index">Komandalar</a></li>
+                    <li><a asp-controller="Field" asp-action="Index">Meydançalar</a></li>
+                    <li><a asp-controller="Tournament" asp-action="Index">Turnirler</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h4>Şirkət</h4>
                 <ul>
                     <li><a href="#">Haqqımızda</a></li>
-                    <li><a href="#">Blaqo</a></li>
+                    <li><a href="#">Bloq</a></li>
                     <li><a href="#">Karyera</a></li>
                     <li><a href="#">Blog</a></li>
                 </ul>
@@ -103,7 +153,24 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        function toggleNotifications() {
+            var dropdown = document.getElementById('notificationDropdown');
+            dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+        }
+
+        document.addEventListener('click', function(e) {
+            var wrapper = document.querySelector('.notification-wrapper');
+            if (wrapper && !wrapper.contains(e.target)) {
+                document.getElementById('notificationDropdown').style.display = 'none';
+            }
+        });
+    </script>
     <script src="~/assets/js/app.js"></script>
+</body>
+</html>
+    @* <script src="~/assets/js/create-team.js"></script> *@
     @* <script src="~/assets/js/admin-panel.js"></script>
     <script src="~/assets/js/api-config.js"></script>
     <script src="~/assets/js/backend-example-stripe.js"></script>
@@ -115,7 +182,6 @@
     <script src="~/assets/js/create-player.js"></script>
     <script src="~/assets/js/create-product.inline.js"></script>
     <script src="~/assets/js/create-size.inline.js"></script>
-    <script src="~/assets/js/create-team.js"></script>
     <script src="~/assets/js/create-tournament.js"></script>
     <script src="~/assets/js/dashboard-challenges.js"></script>
     <script src="~/assets/js/dashboard-notifications.js"></script>
@@ -149,6 +215,3 @@
     <script src="~/assets/js/update-tournament.js"></script>
     <script src="~/assets/js/products.js"></script>
     <script src="~/assets/js/products.js"></script> *@
-
-</body>
-</html>

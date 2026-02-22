@@ -3,16 +3,13 @@ using MatchArena.Domain;
 
 namespace MatchArena.MVC.ViewModels
 {
-    public record RegisterVM(
-        string Name,
-        string Surname,
-        PlayerPosition Position,
-        PlayerLevel Level,
-        Gender Gender,
-        string City,
-        string Email,
-        string Username,
-        string Password
-        );
-   
+    public class RegisterVM
+    {
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        public string Email { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
+    }
+        
 }

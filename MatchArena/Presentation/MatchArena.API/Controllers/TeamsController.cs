@@ -64,6 +64,33 @@ namespace MatchArena.API.Controllers
             return Ok();
         }
 
+
+        [HttpPost("{teamId}/invite/{playerId}")]
+        [Authorize]
+        public async Task<IActionResult> SendInvite(long teamId, long playerId)
+        {
+            string? userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (string.IsNullOrEmpty(userId)) return BadRequest();
+
+            await _service.SendInviteAsync(teamId, playerId, userId);
+            return Ok();
+        }
+
+        [HttpDelete("players/{playerId}")]
+        [Authorize]
+        public async Task<IActionResult> RemovePlayer(long playerId)
+        {
+            string? userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (string.IsNullOrEmpty(userId)) return BadRequest();
+
+            await _service.RemovePlayerFromTeamAsync(playerId, userId);
+
+            return NoContent();
+        }
+
+
+
         [HttpPut]
         public async Task<IActionResult> PutAsync(long id, [FromBody] PutTeamDto teamDto)
         {

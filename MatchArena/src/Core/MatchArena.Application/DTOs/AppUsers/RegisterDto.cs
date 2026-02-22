@@ -14,6 +14,7 @@ namespace MatchArena.Application.DTOs.AppUsers
         string Email,
         string Username,
         string Password
+
         );
    
 }

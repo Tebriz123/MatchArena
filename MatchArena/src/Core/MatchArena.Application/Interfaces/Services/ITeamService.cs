@@ -15,5 +15,7 @@ namespace MatchArena.Application.Interfaces.Services
         Task UpdateTeamAsync(long id, PutTeamDto teamDto);
         Task RemoveAsync(long id);
         Task AddPlayerToTeamAsync(long teamId, string userId);
+        Task RemovePlayerFromTeamAsync(long playerId, string userId);
+        Task SendInviteAsync(long teamId, long playerId, string userId);
     }
 }

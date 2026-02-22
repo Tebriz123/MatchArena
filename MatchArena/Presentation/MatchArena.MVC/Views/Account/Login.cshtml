@@ -1,0 +1,41 @@
+﻿@model LoginVM
+<main>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h1 class="auth-title">Xoş gəlmisiniz</h1>
+                <p class="auth-subtitle">Hesabınıza daxil olun</p>
+            </div>
+
+            <form method="post" class="auth-form" id="loginForm">
+                <div class="form-group">
+                    <label asp-for="UsernameOrEmail" class="form-label">Username or Email</label>
+                    <input asp-for="UsernameOrEmail" class="form-input" required placeholder="example@email.com or username">
+                    <span class="text-danger" asp-validation-for="UsernameOrEmail"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Password" class="form-label">Password</label>
+                    <input asp-for="Password" class="form-input" required placeholder="Password">
+                    <span class="text-danger" asp-validation-for="Password"></span>
+                </div>
+
+                <div class="auth-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="remember">
+                        <span>Məni xatırla</span>
+                    </label>
+                    <a href="#" class="auth-link">Şifrəni unutmusunuz?</a>
+                </div>
+
+                <button type="submit" class="btn btn-primary auth-btn">Daxil ol</button>
+            </form>
+
+            <div class="auth-footer">
+                Hesabınız yoxdur? <a asp-action="Register" class="auth-link">Qeydiyyatdan keç</a>
+            </div>
+
+           
+        </div>
+    </div>
+</main>

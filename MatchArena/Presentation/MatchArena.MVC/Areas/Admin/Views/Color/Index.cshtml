@@ -1,0 +1,45 @@
+﻿@model List<GetColorItemVM>
+@{
+    int count = 0;
+}
+
+<div class="admin-tab-content" id="colors">
+    <div class="admin-panel-header">
+        <h3>Rəngləri İdarə Et</h3>
+        <div class="admin-panel-actions">
+            <input type="text" class="search-input" placeholder="Rəng axtar..." onkeyup="filterTable('colorsTable', this.value)">
+            <a asp-action="Create" class="btn btn-primary" onclick="showCreateColorModal()">+ Rəng Əlavə Et</a>
+        </div>
+    </div>
+    <div class="admin-table-container">
+        <table class="admin-table" id="colorsTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Rəng Adı</th>
+                    <th>Məhsul Sayı</th>
+                    <th>Əməliyyatlar</th>
+                </tr>
+            </thead>
+            <tbody>
+               @foreach (GetColorItemVM colorVM in Model)
+                {
+                    count++;
+                    <tr>
+                        <td class="py-1">
+                            @count
+                        </td>
+                        <td>@colorVM.Name</td>
+                        <td>@colorVM.Products.Count</td>
+                        <td>
+                            <div class="table-actions">
+                                <a class="btn-icon" title="Redaktə" onclick="editColor('CL001')">✏️</a>
+                                <a class="btn-icon danger" title="Sil" onclick="deleteColor('CL001')">🗑️</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

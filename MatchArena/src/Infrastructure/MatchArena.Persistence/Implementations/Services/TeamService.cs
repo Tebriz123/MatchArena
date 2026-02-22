@@ -4,6 +4,7 @@ using MatchArena.Application.DTOs.Teams;
 using MatchArena.Application.Interfaces.Repositories;
 using MatchArena.Application.Interfaces.Services;
 using MatchArena.Domain.Entities;
+using MatchArena.Domain.Entities.Enums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic;
 using System;
@@ -15,24 +16,27 @@ using System.Threading.Tasks;
 
 namespace MatchArena.Persistence.Implementations.Services
 {
-    internal class TeamService:ITeamService
+    internal class TeamService : ITeamService
     {
         private readonly ITeamRepository _repository;
         private readonly IMapper _mapper;
         private readonly IPlayerRepository _playerRepository;
         private readonly IFileService _fileService;
+        private readonly IInviteRepository _inviteRepository;
 
         public TeamService(
             ITeamRepository repository,
             IMapper mapper,
             IPlayerRepository playerRepository,
-            IFileService fileService
+            IFileService fileService,
+            IInviteRepository inviteRepository
             )
         {
             _repository = repository;
             _mapper = mapper;
             _playerRepository = playerRepository;
             _fileService = fileService;
+            _inviteRepository = inviteRepository;
         }
 
         public async Task<IReadOnlyList<GetTeamItemDto>> GetAllAsync(int page, int take)
@@ -40,7 +44,7 @@ namespace MatchArena.Persistence.Implementations.Services
             IReadOnlyList<Team> teams = await _repository.GetAll(
                  page: page,
                take: take,
-               includes:"TeamPlayers.Player.User"
+               includes: "TeamPlayers.Player.User"
                 ).ToListAsync();
             return _mapper.Map<IReadOnlyList<GetTeamItemDto>>(teams);
         }
@@ -55,13 +59,13 @@ namespace MatchArena.Persistence.Implementations.Services
 
             return _mapper.Map<GetTeamDto>(team);
         }
-         
+
         public async Task CreateTeamAsync(PostTeamDto teamDto, string userId)
         {
             Team team = _mapper.Map<Team>(teamDto);
             team.Logo = await _fileService.FileCreateAsync(teamDto.Photo);
 
-            Player captain = _playerRepository.GetAll(p => p.UserId == userId).FirstOrDefault() 
+            Player captain = _playerRepository.GetAll(p => p.UserId == userId).FirstOrDefault()
                 ?? throw new Exception("You are not a player");
             team.TeamPlayers.Add(new TeamPlayer()
             {
@@ -93,12 +97,14 @@ namespace MatchArena.Persistence.Implementations.Services
             if (team.PlayerCount >= team.MaxPlayer)
                 throw new Exception("Team is Full");
 
-            Player player = _playerRepository.GetAll(p => p.UserId == userId).FirstOrDefault()
-                ?? throw new Exception("You are not player");
+            Player player = _playerRepository.GetAll(p => p.UserId == userId).FirstOrDefault();
+            if (player is null) throw new Exception("You are not player");
 
             bool alreadyInTeam = team.TeamPlayers.Any(tp => tp.PlayerId == player.Id);
-            if (alreadyInTeam)
-                throw new Exception("You are already on this team.");
+
+
+            if (alreadyInTeam) throw new Exception("You are already on this team.");
+
 
             team.TeamPlayers.Add(new TeamPlayer()
             {
@@ -106,12 +112,35 @@ namespace MatchArena.Persistence.Implementations.Services
                 IsCaptain = false
             });
 
-            team.PlayerCount++; 
+            team.PlayerCount++;
 
             _repository.Update(team);
             await _repository.SaveChangesAsync();
         }
 
+        public async Task RemovePlayerFromTeamAsync(long playerId, string userId)
+        {
+            Player? captain = _playerRepository.GetAll(p => p.UserId == userId).FirstOrDefault();
+
+            if (captain is null) throw new Exception("You are not a player");
+
+            Team? team = await _repository.GetAll(
+                t => t.TeamPlayers.Any(tp => tp.PlayerId == captain.Id && tp.IsCaptain),
+                includes: "TeamPlayers"
+            ).FirstOrDefaultAsync();
+            if (team is null) throw new Exception("You are not a captain of any team");
+
+            if (captain.Id == playerId) throw new Exception("Captain cannot remove himself");
+
+            TeamPlayer? teamPlayer = team.TeamPlayers.FirstOrDefault(tp => tp.PlayerId == playerId);
+            if (teamPlayer is null) throw new Exception("Player not found in team");
+
+            team.TeamPlayers.Remove(teamPlayer);
+            team.PlayerCount--;
+
+            _repository.Update(team);
+            await _repository.SaveChangesAsync();
+        }
         public async Task RemoveAsync(long id)
         {
             Team team = await _repository.GetByIdAsync(id);
@@ -119,6 +148,39 @@ namespace MatchArena.Persistence.Implementations.Services
             if (team is null) throw new Exception("Team not found");
 
             _repository.Remove(team);
+
+            await _repository.SaveChangesAsync();
+        }
+
+
+        public async Task SendInviteAsync(long teamId, long playerId, string userId)
+        {
+            Player? captain = _playerRepository.GetAll(p => p.UserId == userId).FirstOrDefault();
+            if (captain is null) throw new Exception("You are not a player");
+
+            Team team = await _repository.GetByIdAsync(teamId, "TeamPlayers");
+            if (team is null) throw new Exception("Team not found");
+
+            bool isCaptain = team.TeamPlayers.Any(tp => tp.PlayerId == captain.Id && tp.IsCaptain);
+            if (!isCaptain) throw new Exception("Only captain can send invites");
+
+
+            Player? player = _playerRepository.GetAll(p => p.Id == playerId).FirstOrDefault();
+            if (player is null) throw new Exception("Player not found");
+
+            bool alreadyInvited = await _inviteRepository.AnyAsync(
+                 i => i.TeamId == teamId && i.PlayerId == playerId && i.Status == InviteStatus.Pending);
+
+
+            if (alreadyInvited) throw new Exception("Invite already sent");
+
+            _inviteRepository.Add(new TeamInvite
+            {
+                TeamId = teamId,
+                PlayerId = playerId,
+                Status = InviteStatus.Pending,
+                SentAt = DateTime.UtcNow
+            });
 
             await _repository.SaveChangesAsync();
         }

@@ -1,0 +1,58 @@
+﻿@model List<GetFieldVM>
+@{
+    int count = 0;
+}
+<div class="admin-tab-content" id="fields">
+    <div class="admin-panel-header">
+        <h3>Meydançaları İdarə Et</h3>
+        <div class="admin-panel-actions">
+            <input type="text" class="search-input" placeholder="Meydança axtar..." onkeyup="filterTable('fieldsTable', this.value)">
+            <a asp-controller="Filed" asp-action="Create" class="btn btn-primary">+ Meydança Əlavə Et</a>
+        </div>
+    </div>
+    <div class="admin-table-container">
+        <table class="admin-table" id="fieldsTable">
+            <thead>
+                <tr>
+                    <th>Number</th>
+                    <th>Filed Name</th>
+                    <th>City</th>
+                    <th>Price</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                    <th>Raiting</th>
+                    <th>Operations</th>
+                </tr>
+            </thead>
+            <tbody>
+              @foreach (GetFieldVM fieldVM in Model)
+                {
+                    count++;
+                    <tr>
+                        <td class="py-1">
+                            @count
+                        </td>
+                        <td>
+                            <div class="table-user">
+                                <img src="@fieldVM.PrimayPhoto" alt="@fieldVM.Name" class="table-avatar">
+                                <span>@fieldVM.Name</span>
+                            </div>
+                        </td>
+                        <td>@fieldVM.City</td>
+                        <td>@fieldVM.PricePerHour₼/saat</td>
+                        <td>@fieldVM.StartDate</td>
+                        <td>@fieldVM.EndDate</td>
+                        <td>⭐ 4.9</td>
+                        <td>
+                            <div class="table-actions">
+                                <a asp-controller="Field" asp-action="Detail" asp-route-id="@fieldVM.Id" class="btn-icon" title="Bax" onclick="viewField(201)">👁️</a>
+                                <a asp-controller="Field" asp-action="Update" class="btn-icon" title="Redaktə" onclick="editField(201)">✏️</a>
+                                <a class="btn-icon danger" title="Sil" onclick="deleteField(201)">🗑️</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
