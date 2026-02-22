@@ -26,6 +26,11 @@ namespace MatchArena.Domain.Entities
         public string Information { get; set; }
         public int Goal { get; set; }
         public ICollection<TeamPlayer> PlayerTeams { get; set; }
+        public ICollection<PlayerRating> GivenRatings { get; set; } = new List<PlayerRating>();
+        public ICollection<PlayerRating> ReceivedRatings { get; set; } = new List<PlayerRating>();
+        public double AverageRating => ReceivedRatings != null && ReceivedRatings.Any()
+            ? ReceivedRatings.Average(r => r.Rating) : 0;
+        public int TotalRating => ReceivedRatings?.Count ?? 0;
     }
 
 

@@ -8,7 +8,7 @@ namespace MatchArena.Domain.Entities
 {
     public class FieldRating:BaseEntity
     {
-        public DateTime RatedAt { get; set; }
+        public DateTime RatedAt { get; set; } = DateTime.UtcNow;
         public string? Comment { get; set; }
         public int Rating { get; set; }
         public long PlayerId { get; set; }

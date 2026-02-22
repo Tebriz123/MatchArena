@@ -12,6 +12,7 @@ namespace MatchArena.Domain.Entities
         public string Name { get; set; }
         public string Surname { get; set; }
         public Player Player { get; set; }
+        public ICollection<ProductRating> ProductRatings { get; set; } = new List<ProductRating>();
 
     }
 }

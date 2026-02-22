@@ -212,6 +212,48 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "MatchArena.API.Controllers.FieldRatingsController",
+    "Method": "GetRatings",
+    "RelativePath": "FieldRatings/{fieldId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fieldId",
+        "Type": "System.Int64",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MatchArena.API.Controllers.FieldRatingsController",
+    "Method": "PostRating",
+    "RelativePath": "FieldRatings/{fieldId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "playerId",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "fieldId",
+        "Type": "System.Int64",
+        "IsRequired": true
+      },
+      {
+        "Name": "ratingDto",
+        "Type": "MatchArena.Application.DTOs.Ratings.PostRatingDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MatchArena.API.Controllers.FieldsController",
     "Method": "GetAsync",
     "RelativePath": "Fields",
@@ -465,6 +507,48 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "MatchArena.API.Controllers.PlayerRatingsController",
+    "Method": "GetRatings",
+    "RelativePath": "PlayerRatings/{playerId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "playerId",
+        "Type": "System.Int64",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MatchArena.API.Controllers.PlayerRatingsController",
+    "Method": "PostRating",
+    "RelativePath": "PlayerRatings/{ratedPlayerId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "raterPlayerId",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "ratedPlayerId",
+        "Type": "System.Int64",
+        "IsRequired": true
+      },
+      {
+        "Name": "ratingDto",
+        "Type": "MatchArena.Application.DTOs.Ratings.PostRatingDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MatchArena.API.Controllers.PlayersController",
     "Method": "GetAsync",
     "RelativePath": "Players",
@@ -629,6 +713,43 @@
       {
         "Name": "id",
         "Type": "System.Int64",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MatchArena.API.Controllers.ProductRatingsController",
+    "Method": "GetRatings",
+    "RelativePath": "ProductRatings/{productId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productId",
+        "Type": "System.Int64",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MatchArena.API.Controllers.ProductRatingsController",
+    "Method": "PostRating",
+    "RelativePath": "ProductRatings/{productId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productId",
+        "Type": "System.Int64",
+        "IsRequired": true
+      },
+      {
+        "Name": "ratingDto",
+        "Type": "MatchArena.Application.DTOs.Ratings.PostRatingDto",
         "IsRequired": true
       }
     ],

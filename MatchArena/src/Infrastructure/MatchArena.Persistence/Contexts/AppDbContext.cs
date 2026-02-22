@@ -41,6 +41,8 @@ namespace MatchArena.Persistence.Contexts
         public DbSet<Reservation> Reservations { get; set; }
         public DbSet<TournamentRegistration> TournamentRegistrations { get; set; }
         public DbSet<TeamInvite> TeamInvites { get; set; }
+        public DbSet<PlayerRating> PlayerRatings { get; set; }
+        public DbSet<ProductRating> ProductRatings { get; set; }
 
     }
 }

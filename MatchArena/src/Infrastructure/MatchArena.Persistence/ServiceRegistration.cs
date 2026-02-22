@@ -45,6 +45,9 @@ namespace MatchArena.Persistence
             services.AddScoped<IReservationRepository, ReservationRepository>();
             services.AddScoped<ITournamentRegistrationRepository, TournamentRegistrationRepository>();
             services.AddScoped<IInviteRepository, InviteRepository>();
+            services.AddScoped<IPlayerRatingRepository, PlayerRatingRepository>();
+            services.AddScoped<IFieldRatingRepository, FieldRatingRepository>();
+            services.AddScoped<IProductRatingRepository, ProductRatingRepository>();
 
 
 
@@ -62,6 +65,9 @@ namespace MatchArena.Persistence
             services.AddScoped<IPaymentService, PaymentService>();
             services.AddScoped<IReservationService, ReservationService>();
             services.AddScoped<ITournamentRegistrationService, TournamentRegistrationService>();
+            services.AddScoped<IPlayerRatingService, PlayerRatingService>();
+            services.AddScoped<IFieldRatingService, FieldRatingService>();
+            services.AddScoped<IProductRatingService, ProductRatingService>();
 
             return services;
         }

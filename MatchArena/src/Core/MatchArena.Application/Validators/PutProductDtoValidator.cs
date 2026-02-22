@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using MatchArena.Application.DTOs.Products;
+using MatchArena.Domain.Entities.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,6 +49,19 @@ namespace MatchArena.Application.Validators
                     .Must(sIds => sIds.Count > 0);
             RuleForEach(p => p.SizeIds)
                     .GreaterThan(0);
+
+            RuleFor(p => p.PrimaryPhoto)
+              .NotNull().WithMessage("Primary image is required")
+              .Must(file => file.ValidateType("image"))
+              .WithMessage("Primary image must be an image file")
+              .Must(file => file.ValidateSize(FileSize.MB, 5))
+              .WithMessage("Primary image must not exceed 5 MB");
+
+            RuleForEach(p => p.AdditionalPhotos)
+                .Must(file => file.ValidateType("image"))
+                .WithMessage("Images must be image files")
+                .Must(file => file.ValidateSize(FileSize.MB, 5))
+                .WithMessage("Each image must not exceed 5 MB");
         }
     }
 }

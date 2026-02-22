@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using MatchArena.Application.DTOs.Tournaments;
+using MatchArena.Domain.Entities.Enums;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
@@ -31,12 +32,12 @@ namespace MatchArena.Application.Validators
                 .NotEmpty().WithMessage("City is required.")
                 .MaximumLength(50).WithMessage("City cannot exceed 50 characters.");
 
-            //RuleFor(x => x.Photo)
-            //    .NotNull().WithMessage("Tournament photo is required.")
-            //    .Must(FileValidator.BeValidImage)
-            //    .WithMessage("Photo must be a JPG, JPEG or PNG image.")
-            //    .Must(f => FileValidator.BeValidSize(f, 5))
-            //    .WithMessage("Photo size must not exceed 5 MB.");
+            RuleFor(x => x.Photo)
+                  .NotNull().WithMessage("Tournament photo is required.")
+                  .Must(file => file.ValidateType("image"))
+                  .WithMessage("Photo must be an image file (JPG, JPEG or PNG).")
+                  .Must(file => file.ValidateSize(FileSize.MB, 5))
+                  .WithMessage("Photo size must not exceed 5 MB.");
 
             RuleFor(x => x.StartDate)
                 .GreaterThan(DateTime.Now)

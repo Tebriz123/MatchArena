@@ -306,7 +306,8 @@ namespace MatchArena.Persistence.Contexts.Migrations
 
                     b.Property<string>("Currency")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -321,7 +322,8 @@ namespace MatchArena.Persistence.Contexts.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("StripeSessionId")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<int>("Type")
                         .HasColumnType("int");
@@ -426,6 +428,41 @@ namespace MatchArena.Persistence.Contexts.Migrations
                     b.ToTable("Players");
                 });
 
+            modelBuilder.Entity("MatchArena.Domain.Entities.PlayerRating", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("Comment")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("RatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("RatedPlayerId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("RaterPlayerId")
+                        .HasColumnType("bigint");
+
+                    b.Property<int>("Rating")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RatedPlayerId");
+
+                    b.HasIndex("RaterPlayerId");
+
+                    b.ToTable("PlayerRatings");
+                });
+
             modelBuilder.Entity("MatchArena.Domain.Entities.Product", b =>
                 {
                     b.Property<long>("Id")
@@ -500,7 +537,8 @@ namespace MatchArena.Persistence.Contexts.Migrations
 
                     b.Property<string>("Image")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -511,11 +549,52 @@ namespace MatchArena.Persistence.Contexts.Migrations
                     b.Property<long>("ProductId")
                         .HasColumnType("bigint");
 
+                    b.Property<long?>("ProductId1")
+                        .HasColumnType("bigint");
+
                     b.HasKey("Id");
 
                     b.HasIndex("ProductId");
 
+                    b.HasIndex("ProductId1");
+
                     b.ToTable("ProductImage");
+                });
+
+            modelBuilder.Entity("MatchArena.Domain.Entities.ProductRating", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("Comment")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<long>("ProductId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("RatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Rating")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("ProductRatings");
                 });
 
             modelBuilder.Entity("MatchArena.Domain.Entities.ProductSize", b =>
@@ -544,6 +623,9 @@ namespace MatchArena.Persistence.Contexts.Migrations
                     b.Property<long>("FieldId")
                         .HasColumnType("bigint");
 
+                    b.Property<long?>("FieldId1")
+                        .HasColumnType("bigint");
+
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
@@ -565,11 +647,14 @@ namespace MatchArena.Persistence.Contexts.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("FieldId");
+                    b.HasIndex("FieldId1");
 
                     b.HasIndex("PaymentId");
 
                     b.HasIndex("UserId");
+
+                    b.HasIndex("FieldId", "ReservedDate", "ReservedTime")
+                        .IsUnique();
 
                     b.ToTable("Reservations");
                 });
@@ -700,7 +785,8 @@ namespace MatchArena.Persistence.Contexts.Migrations
 
                     b.HasIndex("PlayerId");
 
-                    b.HasIndex("TeamId");
+                    b.HasIndex("TeamId", "PlayerId")
+                        .IsUnique();
 
                     b.ToTable("TeamInvites");
                 });
@@ -839,12 +925,9 @@ namespace MatchArena.Persistence.Contexts.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
-                    b.Property<string>("CaptainId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<string>("CaptainUserId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -861,15 +944,21 @@ namespace MatchArena.Persistence.Contexts.Migrations
                     b.Property<long>("TournamentId")
                         .HasColumnType("bigint");
 
+                    b.Property<long?>("TournamentId1")
+                        .HasColumnType("bigint");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("CaptainId");
+                    b.HasIndex("CaptainUserId");
 
                     b.HasIndex("PaymentId");
 
                     b.HasIndex("TeamId");
 
-                    b.HasIndex("TournamentId");
+                    b.HasIndex("TournamentId1");
+
+                    b.HasIndex("TournamentId", "TeamId")
+                        .IsUnique();
 
                     b.ToTable("TournamentRegistrations");
                 });
@@ -1070,6 +1159,25 @@ namespace MatchArena.Persistence.Contexts.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("MatchArena.Domain.Entities.PlayerRating", b =>
+                {
+                    b.HasOne("MatchArena.Domain.Entities.Player", "RatedPlayer")
+                        .WithMany("ReceivedRatings")
+                        .HasForeignKey("RatedPlayerId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("MatchArena.Domain.Entities.Player", "RaterPlayer")
+                        .WithMany("GivenRatings")
+                        .HasForeignKey("RaterPlayerId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("RatedPlayer");
+
+                    b.Navigation("RaterPlayer");
+                });
+
             modelBuilder.Entity("MatchArena.Domain.Entities.Product", b =>
                 {
                     b.HasOne("MatchArena.Domain.Entities.Category", "Category")
@@ -1101,12 +1209,35 @@ namespace MatchArena.Persistence.Contexts.Migrations
             modelBuilder.Entity("MatchArena.Domain.Entities.ProductImage", b =>
                 {
                     b.HasOne("MatchArena.Domain.Entities.Product", "Product")
-                        .WithMany("ProductImages")
+                        .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("MatchArena.Domain.Entities.Product", null)
+                        .WithMany("ProductImages")
+                        .HasForeignKey("ProductId1");
+
                     b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("MatchArena.Domain.Entities.ProductRating", b =>
+                {
+                    b.HasOne("MatchArena.Domain.Entities.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MatchArena.Domain.Entities.AppUser", "User")
+                        .WithMany("ProductRatings")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("MatchArena.Domain.Entities.ProductSize", b =>
@@ -1131,10 +1262,14 @@ namespace MatchArena.Persistence.Contexts.Migrations
             modelBuilder.Entity("MatchArena.Domain.Entities.Reservation", b =>
                 {
                     b.HasOne("MatchArena.Domain.Entities.Field", "Field")
-                        .WithMany("Reservations")
+                        .WithMany()
                         .HasForeignKey("FieldId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("MatchArena.Domain.Entities.Field", null)
+                        .WithMany("Reservations")
+                        .HasForeignKey("FieldId1");
 
                     b.HasOne("MatchArena.Domain.Entities.Payment", "Payment")
                         .WithMany()
@@ -1195,23 +1330,30 @@ namespace MatchArena.Persistence.Contexts.Migrations
                 {
                     b.HasOne("MatchArena.Domain.Entities.AppUser", "Captain")
                         .WithMany()
-                        .HasForeignKey("CaptainId");
+                        .HasForeignKey("CaptainUserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.HasOne("MatchArena.Domain.Entities.Payment", "Payment")
                         .WithMany()
-                        .HasForeignKey("PaymentId");
+                        .HasForeignKey("PaymentId")
+                        .OnDelete(DeleteBehavior.SetNull);
 
                     b.HasOne("MatchArena.Domain.Entities.Team", "Team")
                         .WithMany()
                         .HasForeignKey("TeamId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("MatchArena.Domain.Entities.Tournament", "Tournament")
-                        .WithMany("Registrations")
+                        .WithMany()
                         .HasForeignKey("TournamentId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.HasOne("MatchArena.Domain.Entities.Tournament", null)
+                        .WithMany("Registrations")
+                        .HasForeignKey("TournamentId1");
 
                     b.Navigation("Captain");
 
@@ -1292,6 +1434,8 @@ namespace MatchArena.Persistence.Contexts.Migrations
                 {
                     b.Navigation("Player")
                         .IsRequired();
+
+                    b.Navigation("ProductRatings");
                 });
 
             modelBuilder.Entity("MatchArena.Domain.Entities.Category", b =>
@@ -1315,7 +1459,11 @@ namespace MatchArena.Persistence.Contexts.Migrations
 
             modelBuilder.Entity("MatchArena.Domain.Entities.Player", b =>
                 {
+                    b.Navigation("GivenRatings");
+
                     b.Navigation("PlayerTeams");
+
+                    b.Navigation("ReceivedRatings");
                 });
 
             modelBuilder.Entity("MatchArena.Domain.Entities.Product", b =>

@@ -67,9 +67,8 @@ namespace MatchArena.Persistence.Implementations.Services
             player.PlayedMatches = 0;
             player.GameCount = 0;
             player.Goal = 0;
-
             _repository.Add(player);
-            await _repository.SaveChangesAsync();
+            await _repository.SaveChangesAsync(); 
         }
         public async Task UpdatePlayerAsync(long id, PutPlayerDto playerDto)
         {

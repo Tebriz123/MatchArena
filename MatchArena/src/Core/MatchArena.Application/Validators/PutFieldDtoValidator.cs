@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using MatchArena.Application.DTOs.Fields;
+using MatchArena.Domain.Entities.Enums;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
@@ -42,18 +43,18 @@ namespace MatchArena.Application.Validators
                 .MinimumLength(10).WithMessage("Field information must be at least 10 characters.")
                 .MaximumLength(2000).WithMessage("Field information cannot exceed 2000 characters.");
 
-            //RuleFor(x => x.PrimaryPhoto)
-            //    .NotNull().WithMessage("Primary photo is required.")
-            //    .Must(FileValidator.BeValidImage)
-            //    .WithMessage("Primary photo must be a JPG, JPEG or PNG image.")
-            //    .Must(f => FileValidator.BeValidSize(f, 5))
-            //    .WithMessage("Primary photo size must not exceed 5 MB.");
+            RuleFor(x => x.PrimaryPhoto)
+                .NotNull().WithMessage("Primary photo is required.")
+                .Must(file => file.ValidateType("image"))
+                .WithMessage("Photo must be an image file.")
+                .Must(file => file.ValidateSize(FileSize.MB, 5))
+                .WithMessage("Photo size must not exceed 5 MB.");
 
-            //RuleForEach(x => x.AdditionalPhotos)
-            //    .Must(FileValidator.BeValidImage)
-            //    .WithMessage("Additional photos must be JPG, JPEG or PNG images.")
-            //    .Must(f => FileValidator.BeValidSize(f, 5))
-            //    .WithMessage("Each additional photo size must not exceed 5 MB.");
+            RuleForEach(x => x.AdditionalPhotos)
+                 .Must(file => file.ValidateType("image"))
+                 .WithMessage("Additional photos must be image files.")
+                .Must(file => file.ValidateSize(FileSize.MB, 5))
+                .WithMessage("Each additional photo must not exceed 5 MB.");
         }
     }
 }

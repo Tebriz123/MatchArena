@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using MatchArena.Application.DTOs.Player;
+using MatchArena.Domain.Entities.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,6 +46,13 @@ namespace MatchArena.Application.Validators
 
             RuleFor(x => x.Level)
                 .IsInEnum().WithMessage("Invalid player level.");
+
+            RuleFor(x => x.Photo)
+                .NotNull().WithMessage("Image is required.")
+                .Must(file => file!.ValidateType("image"))
+                .WithMessage("Only image files are allowed.")
+                .Must(file => file!.ValidateSize(FileSize.MB, 2))
+                .WithMessage("Image size must be less than 2 MB.");
         }
     }
     
