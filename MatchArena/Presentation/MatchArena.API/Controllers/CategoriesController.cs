@@ -1,12 +1,14 @@
 ﻿using MatchArena.Application.DTOs.Categories;
 using MatchArena.Application.Interfaces.Repositories;
 using MatchArena.Application.Interfaces.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MatchArena.API.Controllers
 {
     [Route("[controller]")]
+    
     [ApiController]
     public class CategoriesController : ControllerBase
     {
@@ -31,6 +33,8 @@ namespace MatchArena.API.Controllers
 
             return Ok(await _service.GetByIdAsync(id));
         }
+        [Authorize]
+        [Area("Admin")]
         [HttpPost]
         public async Task<IActionResult> Create(string name)
         {
@@ -39,6 +43,9 @@ namespace MatchArena.API.Controllers
             return Created();
 
         }
+
+        [Authorize]
+        [Area("Admin")]
 
         [HttpPut("{id}")]
 
@@ -50,6 +57,8 @@ namespace MatchArena.API.Controllers
             return NoContent();
         }
 
+        [Authorize]
+        [Area("Admin")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {

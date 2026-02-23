@@ -30,20 +30,23 @@ namespace MatchArena.API.Controllers
             return Ok(await _service.GetByIdAsync(id));
         }
         [HttpPost]
+        [Authorize]
+        [Area("Admin")]
         public async Task<IActionResult> PostAsync([FromForm] PostPlayerDto playerDto)
         {
-            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            string? userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (string.IsNullOrEmpty(userId))
-                return Unauthorized("User is not authenticated");
+                return NotFound();
 
             bool exists = await _service.PlayerExistsAsync(userId);
             if (exists)
-                return Conflict("Bu istifadəçinin artıq profili mövcuddur.");
+                return BadRequest("This user already has a profile.");
 
             await _service.CreatePlayerAsync(playerDto, userId);
             return Created();
         }
         [HttpPut]
+        [Authorize]
         public async Task<IActionResult> PutAsync(long id, [FromForm] PutPlayerDto playerDto)
         {
             if(id<1) return BadRequest();
@@ -52,11 +55,59 @@ namespace MatchArena.API.Controllers
         }
 
         [HttpDelete]
+        [Authorize]
+        [Area("Admin")]
         public async Task<IActionResult> DeleteAsync(long id)
         {
             if(id< 1) return BadRequest();
             await _service.RemoveAsync(id);
             return NoContent();
         }
+
+
+        [HttpDelete("leave/{teamId}")]
+        [Authorize]
+        public async Task<IActionResult> LeaveTeamAsync(long teamId)
+        {
+            if (teamId < 1) return BadRequest();
+
+            string? userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (string.IsNullOrEmpty(userId))
+                return NotFound();
+
+            await _service.LeaveTeamAsync(teamId, userId);
+            return NoContent();
+        }
+        [HttpPost("invites/{inviteId}/accept")]
+        [Authorize]
+        public async Task<IActionResult> AcceptInvite(long inviteId)
+        {
+            string? userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (string.IsNullOrEmpty(userId)) return NotFound();
+
+            await _service.AcceptInviteAsync(inviteId, userId);
+            return Ok();
+        }
+
+        [HttpPost("invites/{inviteId}/reject")]
+        [Authorize]
+        public async Task<IActionResult> RejectInvite(long inviteId)
+        {
+            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (string.IsNullOrEmpty(userId)) return NotFound();
+
+            await _service.RejectInviteAsync(inviteId, userId);
+            return Ok();
+        }
+        [HttpGet("my-invites")]
+        [Authorize]
+        public async Task<IActionResult> GetMyInvites()
+        {
+            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (string.IsNullOrEmpty(userId)) return NotFound();
+            var invites = await _service.GetMyInvitesAsync(userId);
+            return Ok(invites);
+        }
+
     }
 }

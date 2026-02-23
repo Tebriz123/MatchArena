@@ -16,5 +16,10 @@ namespace MatchArena.Application.Interfaces.Services
         Task UpdatePlayerAsync(long id, PutPlayerDto playerDto);
         Task RemoveAsync(long id);
         Task<bool> PlayerExistsAsync(string userId);
+        Task LeaveTeamAsync(long teamId, string userId);
+        Task AcceptInviteAsync(long inviteId, string userId);
+        Task RejectInviteAsync(long inviteId, string userId);
+        Task<List<GetInviteDto>> GetMyInvitesAsync(string userId);
+
     }
 }

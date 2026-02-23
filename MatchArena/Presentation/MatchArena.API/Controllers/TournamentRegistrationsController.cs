@@ -24,8 +24,8 @@ namespace MatchArena.API.Controllers
         [HttpPost]
         public async Task<IActionResult> RegisterAsync([FromForm] PostTournamentRegistrationDto dto)
         {
-            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier)
-                ?? throw new Exception("User not found");
+            string? userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                if(userId is null) NotFound();
 
             var (registrationId, sessionUrl) = await _service.RegisterAsync(dto, userId);
             return Ok(new { registrationId, sessionUrl });
@@ -40,12 +40,14 @@ namespace MatchArena.API.Controllers
         }
 
         [HttpDelete("{id}")]
+
         public async Task<IActionResult> CancelAsync(long id)
         {
             if (id < 1) return BadRequest();
 
-            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier)
-                ?? throw new Exception("User not found");
+            string? userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+                if(User is null) NotFound();
 
             await _service.CancelRegistrationAsync(id, userId);
             return NoContent();

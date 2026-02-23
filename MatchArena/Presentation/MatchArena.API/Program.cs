@@ -1,7 +1,9 @@
-﻿using MatchArena.Application;
+﻿using MatchArena.API.MiddleWares;
+using MatchArena.Application;
 using MatchArena.Domain.Settings.Stripes;
 using MatchArena.Infrastructure;
 using MatchArena.Persistence;
+using MatchArena.Persistence.Seeds;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -46,6 +48,11 @@ builder.Services
     .AddPersistenceServices(builder.Configuration)
     .AddInfrastructureServices(builder.Configuration);
 
+builder.Services.AddExceptionHandler<GlobalException>();
+builder.Services.AddProblemDetails();
+
+
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -53,10 +60,15 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseExceptionHandler();
 app.UseHttpsRedirection();
+
 app.UseAuthentication();
 app.UseAuthorization();
+
 app.MapControllers();
+
+await RoleSeeder.SeedRoleAsync(app.Services);
+await AdminSeeder.SeedAdminAsync(app.Services,builder.Configuration);
 
 app.Run();

@@ -31,7 +31,8 @@ namespace MatchArena.API.Controllers
         {
             string? userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (string.IsNullOrEmpty(userId))
-                return Unauthorized("User is not authenticated.");
+
+                return NotFound();
 
             await _service.PostProductRatingAsync(userId, productId, ratingDto);
             return Created();

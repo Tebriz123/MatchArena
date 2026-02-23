@@ -39,10 +39,8 @@ namespace MatchArena.API.Controllers
         public async Task<IActionResult> PostAsync([FromForm] PostTeamDto teamDto)
         {
             var userId = _httpContextAccessor.HttpContext?
-                .User?
-                .FindFirst(ClaimTypes.NameIdentifier)?
-                .Value
-                ?? throw new Exception("User's Id is in the wrong format!");
+                .User?.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                if(userId is null) NotFound();
 
             await _service.CreateTeamAsync(teamDto, userId);
             return Created();
@@ -55,10 +53,9 @@ namespace MatchArena.API.Controllers
             if (teamId < 1) return BadRequest();
 
             var userId = _httpContextAccessor.HttpContext?
-                .User?
-                .FindFirst(ClaimTypes.NameIdentifier)?
-                .Value
-                ?? throw new Exception("User Id tapılmadı!");
+                .User?.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+                if(userId is null) NotFound();
 
             await _service.AddPlayerToTeamAsync(teamId, userId);
             return Ok();
@@ -92,6 +89,7 @@ namespace MatchArena.API.Controllers
 
 
         [HttpPut]
+        [Authorize]
         public async Task<IActionResult> PutAsync(long id, [FromBody] PutTeamDto teamDto)
         {
             if (id < 1) return BadRequest();
@@ -101,6 +99,8 @@ namespace MatchArena.API.Controllers
 
 
         [HttpDelete]
+        [Authorize]
+        [Area("Admin")]
         public async Task<IActionResult> DeleteAsync(long id)
         {
             if(id < 1) return BadRequest();

@@ -17,7 +17,7 @@ namespace MatchArena.Application.MappingProfiles
                  .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.Player.Name + " " + src.Player.Surname));
 
             CreateMap<PlayerRating, GetRatingItemDto>()
-                .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.RaterPlayer.Name + " " + src.R aterPlayer.Surname));
+                .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.RaterPlayer.Name + " " + src.RaterPlayer.Surname));
 
             CreateMap<ProductRating, GetRatingItemDto>()
                 .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.User.Name+ " "+src.User.Surname));

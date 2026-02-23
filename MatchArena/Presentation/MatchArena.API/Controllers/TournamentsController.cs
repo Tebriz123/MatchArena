@@ -32,6 +32,8 @@ namespace MatchArena.API.Controllers
         }
 
         [HttpPost]
+        [Authorize]
+        [Area("Admin")]
         public async Task<IActionResult> PostAsync([FromForm] PostTournamentDto tournamentDto)
         {
             await _service.CreateTournamentAsync(tournamentDto);
@@ -39,6 +41,8 @@ namespace MatchArena.API.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize]
+        [Area("Admin")]
         public async Task<IActionResult> PutAsync(long id, [FromForm] PutTournamentDto tournamentDto)
         {
             if (id < 1) return BadRequest();
@@ -47,6 +51,8 @@ namespace MatchArena.API.Controllers
         }
 
         [HttpPatch("{id}/status")]
+        [Authorize]
+        [Area("Admin")]
         public async Task<IActionResult> UpdateStatusAsync(long id, [FromQuery] TournamentStatus status)
         {
             if (id < 1) return BadRequest();
@@ -55,6 +61,8 @@ namespace MatchArena.API.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize]
+        [Area("Admin")]
         public async Task<IActionResult> DeleteAsync(long id)
         {
             if (id < 1) return BadRequest();

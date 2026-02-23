@@ -28,9 +28,9 @@ namespace MatchArena.Persistence.Implementations.Services
             ITeamRepository repository,
             IMapper mapper,
             IPlayerRepository playerRepository,
-            IFileService fileService,
-            IInviteRepository inviteRepository
-            )
+            IFileService fileService
+,
+            IInviteRepository inviteRepository)
         {
             _repository = repository;
             _mapper = mapper;
@@ -65,8 +65,8 @@ namespace MatchArena.Persistence.Implementations.Services
             Team team = _mapper.Map<Team>(teamDto);
             team.Logo = await _fileService.FileCreateAsync(teamDto.Photo);
 
-            Player captain = _playerRepository.GetAll(p => p.UserId == userId).FirstOrDefault()
-                ?? throw new Exception("You are not a player");
+            Player? captain = _playerRepository.GetAll(p => p.UserId == userId).FirstOrDefault();
+                if(captain is null) throw new Exception("You are not a player");
             team.TeamPlayers.Add(new TeamPlayer()
             {
                 PlayerId = captain.Id,

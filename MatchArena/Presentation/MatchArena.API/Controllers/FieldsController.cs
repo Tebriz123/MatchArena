@@ -1,5 +1,6 @@
 ﻿using MatchArena.Application.DTOs.Fields;
 using MatchArena.Application.Interfaces.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -31,12 +32,14 @@ namespace MatchArena.API.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> PostAsync([FromForm] PostFieldDto fieldDto)
         {
             await _service.CreateFieldAsync(fieldDto);
             return Created();
         }
         [HttpPut]
+        [Authorize]
         public async Task<IActionResult> PutAsync(long id, [FromForm] PutFieldDto fieldDto)
         {
             if (id < 1) return BadRequest();
@@ -45,6 +48,8 @@ namespace MatchArena.API.Controllers
         }
 
         [HttpDelete]
+        [Authorize]
+        [Area("Admin")]
         public async Task<IActionResult> DeleteAsync(long id)
         {
             if(id < 1) return BadRequest(); 

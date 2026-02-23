@@ -73,7 +73,7 @@ namespace MatchArena.Persistence.Implementations.Services
             }
 
             var sessionOptions = new SessionCreateOptions
-            {
+            { 
                 PaymentMethodTypes = new List<string> { "card" },
                 Mode = "payment",
                 LineItems = new List<SessionLineItemOptions>
@@ -182,21 +182,21 @@ namespace MatchArena.Persistence.Implementations.Services
             {
                 case PaymentType.Product:
                     var product = await _productRepository.GetByIdAsync(sourceId);
-                    if (product == null) throw new Exception("Məhsul tapılmadı.");
+                    if (product == null) throw new Exception("Product is not found");
                     return product.Price;
 
                 case PaymentType.Field:
                     var field = await _fieldRepository.GetByIdAsync(sourceId);
-                    if (field == null) throw new Exception("Meydança tapılmadı.");
+                    if (field == null) throw new Exception("Field is not found");
                     return field.PricePerHour;
 
                 case PaymentType.Tournament:
                     var tournament = await _tournamentRepository.GetByIdAsync(sourceId);
-                    if (tournament == null) throw new Exception("Turnir tapılmadı.");
+                    if (tournament == null) throw new Exception("Tournament is not found.");
                     return tournament.EntryFee;
 
                 default:
-                    throw new Exception("Naməlum ödəniş növü.");
+                    throw new Exception("Unknown payment type.");
             }
         }
 
@@ -215,10 +215,10 @@ namespace MatchArena.Persistence.Implementations.Services
 
         private string ResolvePaymentLabel(PaymentType type) => type switch
         {
-            PaymentType.Product => "Məhsul alışı",
-            PaymentType.Tournament => "Turnir iştirak haqqı",
-            PaymentType.Field => "Meydança rezervasiyası",
-            _ => "Ödəniş"
+            PaymentType.Product => "Product purchase",
+            PaymentType.Tournament => "Tournament participation fee",
+            PaymentType.Field => "Field reservation",
+            _ => "Payment"
         };
     }
 }

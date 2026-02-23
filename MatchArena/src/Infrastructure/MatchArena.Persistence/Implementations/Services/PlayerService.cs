@@ -3,6 +3,8 @@ using MatchArena.Application.DTOs.Player;
 using MatchArena.Application.Interfaces.Repositories;
 using MatchArena.Application.Interfaces.Services;
 using MatchArena.Domain.Entities;
+using MatchArena.Domain.Entities.Enums;
+using MatchArena.Persistence.Implementations.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -18,18 +20,20 @@ namespace MatchArena.Persistence.Implementations.Services
         private readonly IMapper _mapper;
         private readonly ITeamRepository _teamRepository;
         private readonly IFileService _fileService;
+        private readonly IInviteRepository _inviteRepository;
 
         public PlayerService(
             IPlayerRepository repository,
             IMapper mapper,
             ITeamRepository teamRepository,
-            IFileService fileService
-        )
+            IFileService fileService,
+            IInviteRepository inviteRepository)
         {
             _repository = repository;
             _mapper = mapper;
             _teamRepository = teamRepository;
             _fileService = fileService;
+            _inviteRepository = inviteRepository;
         }
 
         public async Task<IReadOnlyList<GetPlayerItemDto>> GetAllAsync(int page, int take)
@@ -63,10 +67,9 @@ namespace MatchArena.Persistence.Implementations.Services
             Player player = _mapper.Map<Player>(playerDto);
             player.Image = imageUrl;
             player.UserId = userId;
+            player.Name = playerDto.Name;      
+            player.Surname = playerDto.Surname;
             player.Rating = 0;
-            player.PlayedMatches = 0;
-            player.GameCount = 0;
-            player.Goal = 0;
             _repository.Add(player);
             await _repository.SaveChangesAsync(); 
         }
@@ -113,6 +116,87 @@ namespace MatchArena.Persistence.Implementations.Services
         public async Task<bool> PlayerExistsAsync(string userId)
         {
             return await _repository.AnyAsync(p => p.UserId == userId);
+        }
+        public async Task LeaveTeamAsync(long teamId, string userId)
+        {
+            var player = await _repository.GetAll(
+                func: p => p.UserId == userId,
+                includes: "PlayerTeams"
+            ).FirstOrDefaultAsync();
+
+            if (player is null)
+                throw new Exception("Player not found");
+
+            var teamPlayer = player.PlayerTeams.FirstOrDefault(pt => pt.TeamId == teamId);
+            if (teamPlayer is null)
+                throw new Exception("Player is not a member of this team");
+
+            if (teamPlayer.IsCaptain)
+            {
+                var team = await _teamRepository.GetByIdAsync(teamId);
+                if (team is null)
+                    throw new Exception("Team not found");
+
+                _teamRepository.Remove(team);
+                await _teamRepository.SaveChangesAsync();
+                return;
+            }
+
+            player.PlayerTeams.Remove(teamPlayer);
+            await _repository.SaveChangesAsync();
+        }
+
+        public async Task AcceptInviteAsync(long inviteId, string userId)
+        {
+            Player? player = _repository.GetAll(p => p.UserId == userId).FirstOrDefault();
+            if (player is null) throw new Exception("You are not a player");
+
+            TeamInvite invite = await _inviteRepository.GetByIdAsync(inviteId, "Team.TeamPlayers");
+            if (invite is null) throw new Exception("Invite not found");
+
+            if (invite.PlayerId != player.Id) throw new Exception("This invite is not for you");
+            if (invite.Status != InviteStatus.Pending) throw new Exception("Invite is no longer valid");
+            if (invite.Team.PlayerCount >= invite.Team.MaxPlayer) throw new Exception("Team is full");
+
+            invite.Status = InviteStatus.Accepted;
+            invite.Team.TeamPlayers.Add(new TeamPlayer
+            {
+                PlayerId = player.Id,
+                IsCaptain = false
+            });
+            invite.Team.PlayerCount++;
+
+            await _inviteRepository.SaveChangesAsync();
+        }
+
+        public async Task RejectInviteAsync(long inviteId, string userId)
+        {
+            Player player = _repository.GetAll(p => p.UserId == userId).FirstOrDefault();
+            if (player is null) throw new Exception("You are not a player");
+
+            TeamInvite invite = await _inviteRepository.GetByIdAsync(inviteId);
+            if (invite is null) throw new Exception("Invite not found");
+
+            if (invite.PlayerId != player.Id) throw new Exception("This invite is not for you");
+            if (invite.Status != InviteStatus.Pending) throw new Exception("Invite is no longer valid");
+
+            invite.Status = InviteStatus.Rejected;
+            await _inviteRepository.SaveChangesAsync();
+        }
+
+        public async Task<List<GetInviteDto>> GetMyInvitesAsync(string userId)
+        {
+            Player player = _repository.GetAll(p => p.UserId == userId).FirstOrDefault();
+            if (player is null) return new List<GetInviteDto>();
+
+            return await _inviteRepository.GetAll(
+                i => i.PlayerId == player.Id && i.Status == InviteStatus.Pending,
+                includes: "Team"
+            ).Select(i => new GetInviteDto
+            {
+                Id = i.Id,
+                TeamName = i.Team.Name
+            }).ToListAsync();
         }
     }
 }

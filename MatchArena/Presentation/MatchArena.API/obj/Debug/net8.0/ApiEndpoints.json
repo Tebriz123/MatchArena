@@ -1,6 +1,22 @@
 [
   {
     "ContainingType": "MatchArena.API.Controllers.AccountsController",
+    "Method": "ForgotPassword",
+    "RelativePath": "Accounts/forgot-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MatchArena.Application.DTOs.AppUsers.ForgotPasswordDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MatchArena.API.Controllers.AccountsController",
     "Method": "Login",
     "RelativePath": "Accounts/login",
     "HttpMethod": "POST",
@@ -26,6 +42,22 @@
       {
         "Name": "registerDto",
         "Type": "MatchArena.Application.DTOs.AppUsers.RegisterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MatchArena.API.Controllers.AccountsController",
+    "Method": "ResetPassword",
+    "RelativePath": "Accounts/reset-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MatchArena.Application.DTOs.AppUsers.ResetPasswordDto",
         "IsRequired": true
       }
     ],
@@ -462,28 +494,8 @@
   },
   {
     "ContainingType": "MatchArena.API.Controllers.PaymentsController",
-    "Method": "GetAllPayments",
-    "RelativePath": "Payments/all",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "MatchArena.API.Controllers.PaymentsController",
     "Method": "PaymentCancel",
     "RelativePath": "Payments/cancel",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "MatchArena.API.Controllers.PaymentsController",
-    "Method": "GetMyPayments",
-    "RelativePath": "Payments/my",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -716,6 +728,64 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MatchArena.API.Controllers.PlayersController",
+    "Method": "AcceptInvite",
+    "RelativePath": "Players/invites/{inviteId}/accept",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "inviteId",
+        "Type": "System.Int64",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MatchArena.API.Controllers.PlayersController",
+    "Method": "RejectInvite",
+    "RelativePath": "Players/invites/{inviteId}/reject",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "inviteId",
+        "Type": "System.Int64",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MatchArena.API.Controllers.PlayersController",
+    "Method": "LeaveTeamAsync",
+    "RelativePath": "Players/leave/{teamId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "teamId",
+        "Type": "System.Int64",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MatchArena.API.Controllers.PlayersController",
+    "Method": "GetMyInvites",
+    "RelativePath": "Players/my-invites",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {

@@ -13,7 +13,7 @@ namespace MatchArena.Application.DTOs.Tournaments
         string Description,
         string Address,
         string City,
-        IFormFile Photo,
+        IFormFile? Photo,
         DateTime StartDate,
         DateTime EndDate,
         DateTime RegistrationDeadline,

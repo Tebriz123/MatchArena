@@ -36,27 +36,27 @@ internal class TournamentRegistrationService : ITournamentRegistrationService
     {
         Tournament tournament = await _tournamentRepository.GetByIdAsync(dto.TournamentId);
         if (tournament is null)
-            throw new Exception("Turnir tapılmadı");
+            throw new Exception("Tournament is not found");
 
         if (tournament.Status != TournamentStatus.RegistrationOpen)
-            throw new Exception("Turnirin qeydiyyatı açıq deyil");
+            throw new Exception("Tournament registration is not open.");
 
         if (DateTime.UtcNow > tournament.RegistrationDeadline)
-            throw new Exception("Qeydiyyat müddəti keçib");
+            throw new Exception("Registration has expired");
 
         if (tournament.CurrentTeams >= tournament.MaxTeams)
-            throw new Exception("Turnir doludur");
+            throw new Exception("The tournament is full");
 
         Team team = await _teamRepository.GetByIdAsync(dto.TeamId, "TeamPlayers");
         if (team is null)
-            throw new Exception("Komanda tapılmadı");
+            throw new Exception("Team is not found");
 
         Player player = _playerRepository.GetAll(p => p.UserId == userId).FirstOrDefault()
-            ?? throw new Exception("Siz player deyilsiniz");
+            ?? throw new Exception("You are not player");
 
         bool isCaptain = team.TeamPlayers.Any(tp => tp.PlayerId == player.Id && tp.IsCaptain);
         if (!isCaptain)
-            throw new Exception("Yalnız komanda kapitanı turnirə qeydiyyatdan keçə bilər");
+            throw new Exception("Only the team captain can register for the tournament.");
 
         bool alreadyRegistered = _registrationRepository.GetAll(
             r => r.TournamentId == dto.TournamentId &&
@@ -65,7 +65,7 @@ internal class TournamentRegistrationService : ITournamentRegistrationService
         ).Any();
 
         if (alreadyRegistered)
-            throw new Exception("Bu komanda artıq turnirə qeydiyyatdadır");
+            throw new Exception("This team is already registered for the tournament.");
 
         var registration = new TournamentRegistration
         {
@@ -127,10 +127,10 @@ internal class TournamentRegistrationService : ITournamentRegistrationService
     {
         var registration = await _registrationRepository.GetByIdAsync(id, "Tournament");
         if (registration is null)
-            throw new Exception("Qeydiyyat tapılmadı");
+            throw new Exception("Registration not found");
 
         if (registration.CaptainUserId != userId)
-            throw new Exception("Yalnız kapitan qeydiyyatı ləğv edə bilər");
+            throw new Exception("Only the captain can cancel the registration.");
 
         if (registration.Status == RegistrationStatus.Confirmed)
         {

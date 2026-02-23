@@ -15,7 +15,7 @@ namespace MatchArena.Application.DTOs.Player
         string Information,
         string City,
          int Height,
-        IFormFile Photo,
+        IFormFile? Photo,
         PlayerPosition Position,
         PlayerLevel Level
         );

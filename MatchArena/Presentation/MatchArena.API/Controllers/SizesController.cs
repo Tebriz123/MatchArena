@@ -1,6 +1,7 @@
 ﻿using MatchArena.Application.DTOs.Sizes;
 using MatchArena.Application.Interfaces.Repositories;
 using MatchArena.Application.Interfaces.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,12 +11,10 @@ namespace MatchArena.API.Controllers
     [ApiController]
     public class SizesController : ControllerBase
     {
-        private readonly ISizeRepository _repository;
         private readonly ISizeService _service;
 
-        public SizesController(ISizeRepository repository, ISizeService service)
+        public SizesController(ISizeService service)
         {
-            _repository = repository;
             _service = service;
         }
         [HttpGet]
@@ -34,6 +33,8 @@ namespace MatchArena.API.Controllers
         }
 
         [HttpPost]
+        [Authorize]
+        [Area("Admin")]
         public async Task<IActionResult> Create([FromForm] string Name)
         {
             await _service.CreateAsync(new PostSizeDto(Name));
@@ -42,7 +43,8 @@ namespace MatchArena.API.Controllers
 
         }
         [HttpPut("{id}")]
-
+        [Authorize]
+        [Area("Admin")]
         public async Task<IActionResult> Update(int id, [FromForm] PutSizeDto sizeDto)
         {
             if (id < 1) return BadRequest();
@@ -51,6 +53,8 @@ namespace MatchArena.API.Controllers
             return NoContent();
         }
         [HttpDelete("{id}")]
+        [Authorize]
+        [Area("Admin")]
         public async Task<IActionResult> Delete(int id)
         {
             if (id < 1) return BadRequest();

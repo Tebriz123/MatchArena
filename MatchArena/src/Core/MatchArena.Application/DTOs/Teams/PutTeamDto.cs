@@ -10,7 +10,7 @@ namespace MatchArena.Application.DTOs.Teams
     public record PutTeamDto(
        string Name,
         string CaptainName,
-        IFormFile Photo,
+        IFormFile? Photo,
         string City,
         string Information
         );

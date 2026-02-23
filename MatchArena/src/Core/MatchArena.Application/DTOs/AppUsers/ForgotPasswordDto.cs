@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MatchArena.Domain.Entities
+namespace MatchArena.Application.DTOs.AppUsers
 {
-    public enum Gender
+    public class ForgotPasswordDto
     {
-        Male=1,
-        Female=2,
-        Other = 3
+        public string Email { get; set; }
     }
 }

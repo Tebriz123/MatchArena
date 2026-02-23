@@ -13,6 +13,5 @@ namespace MatchArena.Persistence.Implementations.Repositories
     internal class InviteRepository:Repository<TeamInvite>,IInviteRepository
     {
         public InviteRepository(AppDbContext context) : base(context) { }
-        
     }
 }

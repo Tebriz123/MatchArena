@@ -1,6 +1,7 @@
 ﻿using MatchArena.Application.DTOs.Colors;
 using MatchArena.Application.Interfaces.Repositories;
 using MatchArena.Application.Interfaces.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -34,6 +35,8 @@ namespace MatchArena.API.Controllers
         }
 
         [HttpPost]
+        [Authorize]
+        [Area("Admin")]
         public async Task<IActionResult> Create([FromForm] string Name)
         {
             await _service.CreateAsync(new PostColorDto(Name));
@@ -42,6 +45,8 @@ namespace MatchArena.API.Controllers
 
         }
         [HttpPut("{id}")]
+        [Authorize]
+        [Area("Admin")]
 
         public async Task<IActionResult> Update(int id, [FromForm] PutColorDto colorDto)
         {
@@ -51,6 +56,8 @@ namespace MatchArena.API.Controllers
             return NoContent();
         }
         [HttpDelete("{id}")]
+        [Authorize]
+        [Area("Admin")]
         public async Task<IActionResult> Delete(int id)
         {
             if (id < 1) return BadRequest();

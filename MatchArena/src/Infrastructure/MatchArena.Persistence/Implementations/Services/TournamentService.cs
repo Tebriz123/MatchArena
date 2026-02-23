@@ -65,7 +65,7 @@ namespace MatchArena.Persistence.Implementations.Services
         public async Task UpdateTournamentAsync(long id, PutTournamentDto tournamentDto)
         {
             Tournament tournament = await _repository.GetByIdAsync(id);
-            if (tournament is null) throw new Exception("Turnir tapılmadı");
+            if (tournament is null) throw new Exception("Tournament is nott found");
 
             string? oldLogo = tournament.Logo;
             _mapper.Map(tournamentDto, tournament);
@@ -90,7 +90,7 @@ namespace MatchArena.Persistence.Implementations.Services
         public async Task UpdateStatusAsync(long id, TournamentStatus status)
         {
             Tournament tournament = await _repository.GetByIdAsync(id);
-            if (tournament is null) throw new Exception("Turnir tapılmadı");
+            if (tournament is null) throw new Exception("Tournament is nott found");
 
             tournament.Status = status;
             tournament.UpdatedAt = DateTime.UtcNow;
@@ -102,7 +102,7 @@ namespace MatchArena.Persistence.Implementations.Services
         public async Task RemoveAsync(long id)
         {
             Tournament tournament = await _repository.GetByIdAsync(id);
-            if (tournament is null) throw new Exception("Turnir tapılmadı");
+            if (tournament is null) throw new Exception("Tournament is nott found");
 
             if (!string.IsNullOrEmpty(tournament.Logo))
                 await _fileService.FileDeleteAsync(tournament.Logo);

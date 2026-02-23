@@ -31,43 +31,23 @@ namespace MatchArena.API.Controllers
         public async Task<IActionResult> PaymentSuccess([FromQuery] long paymentId)
         {
             var result = await _paymentService.ValidateAndApproveAsync(paymentId);
-            if (!result)
-                return BadRequest("Ödəniş təsdiqlənmədi.");
-
-            return Ok("Ödəniş uğurla tamamlandı.");
+            if (!result) return BadRequest("Payment could not be confirmed.");
+            return Ok("Payment completed successfully.");
         }
 
         [HttpGet("cancel")]
         [AllowAnonymous]
         public IActionResult PaymentCancel()
         {
-            return Ok("Ödəniş ləğv edildi.");
+            return Ok("Payment was cancelled.");
         }
 
         [HttpGet("{paymentId}")]
         public async Task<IActionResult> GetPayment(long paymentId)
         {
             var payment = await _paymentService.GetPaymentAsync(paymentId);
-            if (payment == null)
-                return NotFound("Ödəniş tapılmadı.");
-
+            if (payment == null) return NotFound("Payment not found.");
             return Ok(payment);
-        }
-
-        [HttpGet("my")]
-        public async Task<IActionResult> GetMyPayments()
-        {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var payments = await _paymentService.GetUserPaymentsAsync(userId);
-            return Ok(payments);
-        }
-
-        [HttpGet("all")]
-        [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> GetAllPayments()
-        {
-            var payments = await _paymentService.GetAllPaymentsAsync();
-            return Ok(payments);
         }
     }
 }

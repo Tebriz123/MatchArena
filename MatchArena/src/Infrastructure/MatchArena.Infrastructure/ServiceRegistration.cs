@@ -1,4 +1,5 @@
 ﻿using MatchArena.Application.Interfaces.Services;
+using MatchArena.Infrastructure.ForgotPassword;
 using MatchArena.Infrastructure.Implementations.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
@@ -32,6 +33,7 @@ namespace MatchArena.Infrastructure
                     LifetimeValidator = (_, exp, token, _) => token is not null && exp is not null ? exp > DateTime.UtcNow : false
 
                 });
+            services.AddScoped<IEmailService, EmailService>();
 
             return services;
         }
