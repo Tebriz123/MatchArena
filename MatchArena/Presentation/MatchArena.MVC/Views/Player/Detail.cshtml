@@ -15,7 +15,7 @@
                 <div class="player-stats-row">
                     <div class="stat-box stat-box-green">
                         <div class="stat-box-label">Reytinq</div>
-                        <div class="stat-box-value stat-box-value-green">⭐ 4.9</div>
+                        <div class="stat-box-value stat-box-value-green">⭐@Model.TotalRating</div>
                     </div>
                     <div class="stat-box stat-box-blue">
                         <div class="stat-box-label">Oyunlar</div>
@@ -28,10 +28,14 @@
                 </div>
 
                 <div class="player-action-buttons">
-                    <form asp-action="SendInvite" asp-controller="Team" method="post" style="display:inline;">
-                        <input type="hidden" name="playerId" value="@Model.Id" />
-                        <button type="submit" class="btn-invite">Komandaya Dəvət Et</button>
-                    </form>
+                    @if (ViewBag.CaptainTeamId != null)
+                    {
+                        <form asp-action="SendInvite" asp-controller="Team" method="post" style="display:inline;">
+                            <input type="hidden" name="playerId" value="@Model.Id" />
+                            <input type="hidden" name="teamId" value="@ViewBag.CaptainTeamId" />
+                            <button type="submit" class="btn-invite">Komandaya Dəvət Et</button>
+                        </form>
+                    }
                     <button class="btn-message">Mesaj Göndər</button>
                 </div>
             </div>
@@ -46,7 +50,7 @@
 
                 <div class="detail-row">
                     <span class="detail-row-label">Komanda</span>
-                    <span class="detail-row-value">Qarabag</span>
+                    <span class="detail-row-value">@Model.TeamVM</span>
                 </div>
 
                 <div class="detail-row">
@@ -85,7 +89,7 @@
 
             <div class="detail-card">
                 <h2>Rəylər</h2>
-                <p class="reviews-subtitle">67 rəy (⭐ 4.9 ortalama)</p>
+                <p class="reviews-subtitle">@Model.TotalRating rəy (⭐ @Model.AverageRating ortalama)</p>
 
                 <div class="reviews-list">
                     <div class="review-item">
@@ -109,12 +113,5 @@
     </div>
 
     <!-- Team History Section -->
-    <div class="detail-card">
-        <h2>⚽ Komanda Tarixçəsi</h2>
-        <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Oynadığı komandalar və statistikalar</p>
-        <div id="teamHistoryContainer" style="max-height: 400px; overflow-y: auto; padding-right: 0.5rem;">
-            <!-- Will be filled by JavaScript -->
-        </div>
-    </div>
 </main>
 

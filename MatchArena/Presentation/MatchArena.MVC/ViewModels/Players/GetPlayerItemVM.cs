@@ -10,7 +10,8 @@ namespace MatchArena.MVC.ViewModels
         string City,
         int Age,
         PlayerPosition Position,
-        double Rating,
+         double AverageRating,
+        int TotalRating,
         int GameCount,
         string Image,
         ICollection<Player> Players

@@ -1,5 +1,14 @@
 ﻿@model GetTeamVM
 <main class="team-detail-container">
+    @if (TempData["Success"] != null)
+    {
+        <div style="background:#22c55e;color:white;padding:1rem;border-radius:0.5rem;margin-bottom:1rem;">@TempData["Success"]</div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div style="background:#ef4444;color:white;padding:1rem;border-radius:0.5rem;margin-bottom:1rem;">@TempData["Error"]</div>
+    }
+
     <a href="teams.html" class="team-back-link">← Komandalar səhifəsinə qayıt</a>
 
     <div class="team-profile-card">
@@ -26,7 +35,14 @@
                 </div>
 
                 <div class="team-action-buttons">
-                    <button class="btn-join" onclick="alert('Qoşulmaq funksiyası tezliklə əlavə ediləcək')">Komandaya Qoşul</button>
+                    @if (User.Identity?.IsAuthenticated == true && ViewBag.CaptainTeamId != null)
+                    {
+                        <form asp-action="SendInvite" asp-controller="Team" method="post" style="display:inline;">
+                            <input type="hidden" name="playerId" value="@Model.Id" />
+                            <input type="hidden" name="teamId" value="@ViewBag.CaptainTeamId" />
+                            <button type="submit" class="btn-invite">Komandaya Dəvət Et</button>
+                        </form>
+                    }
                     <button class="btn-message" onclick="alert('Mesaj göndərmək funksiyası tezliklə əlavə ediləcək')">Mesaj Göndər</button>
                     <button class="btn-challenge" id="challengeTeamBtn" style="background: #f97316; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 0.5rem; cursor: pointer; font-size: 1rem; font-weight: 600; transition: all 0.3s;">⚽ Oyuna Dəvət Et</button>
                 </div>
@@ -160,4 +176,3 @@
         </div>
     </div>
 </main>
-

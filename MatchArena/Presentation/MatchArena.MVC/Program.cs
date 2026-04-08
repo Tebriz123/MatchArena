@@ -1,5 +1,7 @@
-﻿using MatchArena.MVC.Services.Implementations;
+﻿using MatchArena.MVC.Services;
+using MatchArena.MVC.Services.Implementations;
 using MatchArena.MVC.Services.Interfaces;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace MatchArena.MVC
 {
@@ -9,18 +11,32 @@ namespace MatchArena.MVC
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
-            builder.Services.AddControllersWithViews();
+            builder.Services.AddScoped<NotificationFilter>();
+
+            builder.Services.AddControllersWithViews(options =>
+            {
+                options.Filters.AddService<NotificationFilter>();
+            });
 
             builder.Services.AddHttpClient("MatchArenaClient", config =>
             {
                 config.BaseAddress = new Uri("https://localhost:7246/");
-                config.DefaultRequestHeaders.Add("accept","application/json"); 
+                config.DefaultRequestHeaders.Add("accept", "application/json");
             });
-            builder.Services.AddHttpContextAccessor();
 
+            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options =>
+                {
+                    options.LoginPath = "/Account/Login";
+                    options.LogoutPath = "/Account/Logout";
+                    options.AccessDeniedPath = "/Account/Login";
+                    options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
+                    options.SlidingExpiration = true;
+                });
+
+            builder.Services.AddHttpContextAccessor();
             builder.Services.AddScoped<IProductClientService, ProductClientService>();
-            builder.Services.AddScoped<IPlayerClientService, PlayerClientService>(); 
+            builder.Services.AddScoped<IPlayerClientService, PlayerClientService>();
             builder.Services.AddScoped<IFieldClientService, FieldClientService>();
             builder.Services.AddScoped<ITeamClientService, TeamClientService>();
             builder.Services.AddScoped<ITournamentClientService, TournamentClientService>();
@@ -28,35 +44,33 @@ namespace MatchArena.MVC
             builder.Services.AddScoped<IColorClientService, ColorClientService>();
             builder.Services.AddScoped<ISizeClientService, SizeClientService>();
             builder.Services.AddScoped<IAccountClientService, AccountClientService>();
+            builder.Services.AddScoped<ITournamentRegistrationClientService, TournamentRegistrationClientService>();
+            builder.Services.AddScoped<IReservationClientService, ReservationClientService>();
+            builder.Services.AddScoped<IProductRatingClientService, ProductRatingClientService>();
+            builder.Services.AddScoped<IPlayerRatingClientService, PlayerRatingClientService>();
+            builder.Services.AddScoped<IFieldRatingClientService, FieldRatingClientService>();
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
+            app.MapControllerRoute(
+                name: "areas",
+                pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
 
             app.MapControllerRoute(
-            name: "areas",
-            pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
-
-
-            app.MapControllerRoute(
-                 name: "default",
-                 pattern: "{controller=Home}/{action=Index}/{id?}");
-
-        
+                name: "default",
+                pattern: "{controller=Home}/{action=Index}/{id?}");
 
             app.Run();
         }

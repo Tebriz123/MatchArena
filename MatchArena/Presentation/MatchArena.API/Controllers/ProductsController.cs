@@ -33,8 +33,17 @@ namespace MatchArena.API.Controllers
         [Area("Admin")]
         public async Task<IActionResult> PostAsync([FromForm] PostProductDto productDto)
         {
-            await _service.CreateProductAsync(productDto);
-            return Created();
+
+            try
+            {
+                await _service.CreateProductAsync(productDto);
+                return Created();
+            }
+            catch (Exception ex)
+            {
+                var inner = ex.InnerException?.Message ?? ex.Message;
+                return BadRequest(new { error = inner });
+            }
         }
         [HttpPut("{id}")]
         [Authorize]

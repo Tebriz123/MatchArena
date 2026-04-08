@@ -592,7 +592,7 @@
           }
         }
       },
-      "put": {
+      "delete": {
         "tags": [
           "Fields"
         ],
@@ -600,6 +600,50 @@
           {
             "name": "id",
             "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Fields/{id}": {
+      "get": {
+        "tags": [
+          "Fields"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Fields"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int64"
@@ -681,49 +725,6 @@
             }
           }
         },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Fields"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int64"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/Fields/{id}": {
-      "get": {
-        "tags": [
-          "Fields"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int64"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -1092,15 +1093,18 @@
             "description": "OK"
           }
         }
-      },
-      "delete": {
+      }
+    },
+    "/Players/{id}": {
+      "get": {
         "tags": [
           "Players"
         ],
         "parameters": [
           {
             "name": "id",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int64"
@@ -1112,10 +1116,8 @@
             "description": "OK"
           }
         }
-      }
-    },
-    "/Players/{id}": {
-      "get": {
+      },
+      "delete": {
         "tags": [
           "Players"
         ],
@@ -1793,45 +1795,6 @@
           }
         }
       },
-      "put": {
-        "tags": [
-          "Teams"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int64"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PutTeamDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PutTeamDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/PutTeamDto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
       "delete": {
         "tags": [
           "Teams"
@@ -1869,6 +1832,71 @@
             }
           }
         ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Teams"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Name": {
+                    "type": "string"
+                  },
+                  "CaptainName": {
+                    "type": "string"
+                  },
+                  "Photo": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "City": {
+                    "type": "string"
+                  },
+                  "Information": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "Name": {
+                  "style": "form"
+                },
+                "CaptainName": {
+                  "style": "form"
+                },
+                "Photo": {
+                  "style": "form"
+                },
+                "City": {
+                  "style": "form"
+                },
+                "Information": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -2120,12 +2148,6 @@
                     "type": "number",
                     "format": "double"
                   },
-                  "Format": {
-                    "type": "string"
-                  },
-                  "GameFormat": {
-                    "type": "string"
-                  },
                   "Status": {
                     "$ref": "#/components/schemas/TournamentStatus"
                   }
@@ -2163,12 +2185,6 @@
                   "style": "form"
                 },
                 "PrizeFund": {
-                  "style": "form"
-                },
-                "Format": {
-                  "style": "form"
-                },
-                "GameFormat": {
                   "style": "form"
                 },
                 "Status": {
@@ -2260,10 +2276,6 @@
                     "type": "integer",
                     "format": "int32"
                   },
-                  "CurrentTeams": {
-                    "type": "integer",
-                    "format": "int32"
-                  },
                   "EntryFee": {
                     "type": "number",
                     "format": "double"
@@ -2271,12 +2283,6 @@
                   "PrizeFund": {
                     "type": "number",
                     "format": "double"
-                  },
-                  "Format": {
-                    "type": "string"
-                  },
-                  "GameFormat": {
-                    "type": "string"
                   },
                   "Status": {
                     "$ref": "#/components/schemas/TournamentStatus"
@@ -2311,19 +2317,10 @@
                 "MaxTeams": {
                   "style": "form"
                 },
-                "CurrentTeams": {
-                  "style": "form"
-                },
                 "EntryFee": {
                   "style": "form"
                 },
                 "PrizeFund": {
-                  "style": "form"
-                },
-                "Format": {
-                  "style": "form"
-                },
-                "GameFormat": {
                   "style": "form"
                 },
                 "Status": {
@@ -2504,33 +2501,6 @@
               "type": "integer",
               "format": "int64"
             },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "PutTeamDto": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "captainName": {
-            "type": "string",
-            "nullable": true
-          },
-          "photo": {
-            "type": "string",
-            "format": "binary",
-            "nullable": true
-          },
-          "city": {
-            "type": "string",
-            "nullable": true
-          },
-          "information": {
-            "type": "string",
             "nullable": true
           }
         },

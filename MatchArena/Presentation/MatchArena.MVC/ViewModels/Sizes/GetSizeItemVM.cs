@@ -4,9 +4,11 @@ using MatchArena.Domain.Entities;
 
 namespace MatchArena.MVC.ViewModels.Sizes
 {
-    public record GetSizeItemVM(
-        long Id,
-        string Name,
-        List<Product> Products
-        );
+    public class GetSizeItemVM
+    {
+        public long Id { get; set; }
+        public string Name { get; set; } = null!;
+        public int ProductCount { get; set; }
+    }
+
 }

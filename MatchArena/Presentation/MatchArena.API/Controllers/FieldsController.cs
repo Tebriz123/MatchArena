@@ -38,7 +38,7 @@ namespace MatchArena.API.Controllers
             await _service.CreateFieldAsync(fieldDto);
             return Created();
         }
-        [HttpPut]
+        [HttpPut("{id}")]
         [Authorize]
         public async Task<IActionResult> PutAsync(long id, [FromForm] PutFieldDto fieldDto)
         {

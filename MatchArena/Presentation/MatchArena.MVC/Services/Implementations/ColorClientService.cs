@@ -1,38 +1,66 @@
 ﻿using MatchArena.MVC.Services.Interfaces;
 using MatchArena.MVC.ViewModels.Category;
 using MatchArena.MVC.ViewModels.Colors;
+using System.Net.Http.Headers;
 
 namespace MatchArena.MVC.Services.Implementations
 {
-    public class ColorClientService:IColorClientService
+    public class ColorClientService : IColorClientService
     {
         private readonly HttpClient _httpClient;
-        public ColorClientService(IHttpClientFactory clientFactory)
+        private readonly IHttpContextAccessor _httpContextAccessor;
+
+        public ColorClientService(IHttpClientFactory clientFactory, IHttpContextAccessor httpContextAccessor)
         {
             _httpClient = clientFactory.CreateClient("MatchArenaClient");
+            _httpContextAccessor = httpContextAccessor;
+        }
+
+        private void AddJwtToken()
+        {
+            var token = _httpContextAccessor.HttpContext?.Request.Cookies["jwtToken"];
+            if (!string.IsNullOrEmpty(token))
+                _httpClient.DefaultRequestHeaders.Authorization =
+                    new AuthenticationHeaderValue("Bearer", token);
         }
 
         public async Task<List<GetColorItemVM>?> GetAllAsync()
         {
-            return await _httpClient.GetFromJsonAsync<List<GetColorItemVM>>("Colors");
+            var response = await _httpClient.GetAsync("Colors");
+            if (!response.IsSuccessStatusCode) return null;
+            return await response.Content.ReadFromJsonAsync<List<GetColorItemVM>>();
         }
 
         public async Task<GetColorVM?> GetByIdAsync(long id)
         {
-            return await _httpClient.GetFromJsonAsync<GetColorVM>($"Colors/{id}");
+            var response = await _httpClient.GetAsync($"Colors/{id}");
+            if (!response.IsSuccessStatusCode) return null;
+            return await response.Content.ReadFromJsonAsync<GetColorVM>();
         }
 
-        public async Task<bool> CreateAsync(PostColorVM colorVM)
+        public async Task<bool> CreateAsync(string name)
         {
-            var response = await _httpClient.PostAsJsonAsync("Colors", colorVM);
+            AddJwtToken();
+            using var content = new MultipartFormDataContent();
+            content.Add(new StringContent(name), "Name");
+            var response = await _httpClient.PostAsync("Colors", content);
             return response.IsSuccessStatusCode;
         }
 
-        public async Task<bool> UpdateAsync(long id, PutColorVM colorVM)
+        public async Task<bool> UpdateAsync(long id, string name)
         {
-            var response = await _httpClient.PutAsJsonAsync($"Colors/{id}", colorVM);
+            AddJwtToken();
+            using var content = new MultipartFormDataContent();
+            content.Add(new StringContent(name), "Name");
+            var response = await _httpClient.PutAsync($"Colors/{id}", content);
+            return response.IsSuccessStatusCode;
+        }
+
+        public async Task<bool> DeleteAsync(long id)
+        {
+            AddJwtToken();
+            var response = await _httpClient.DeleteAsync($"Colors/{id}");
             return response.IsSuccessStatusCode;
         }
     }
-
 }

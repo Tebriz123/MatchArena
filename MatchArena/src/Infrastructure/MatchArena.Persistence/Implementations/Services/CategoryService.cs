@@ -3,6 +3,7 @@ using MatchArena.Application.DTOs.Categories;
 using MatchArena.Application.Interfaces.Repositories;
 using MatchArena.Application.Interfaces.Services;
 using MatchArena.Domain.Entities;
+using MatchArena.Domain.Exceptions;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -83,23 +84,14 @@ namespace MatchArena.Persistence.Implementations.Services
 
         public async Task RemoveAsync(int id)
         {
-            Category? category = await _repository.GetByIdAsync(id);
-            if (category is null) throw new Exception("Category not found");
+            Category? category = await _repository.GetByIdAsync(id, nameof(Category.Products));
+            if (category is null) throw new NotFoundException("Category not found");
+
+            if (category.Products != null && category.Products.Any())
+                throw new BadRequestException("Bu kategoriyaya aid məhsullar var. Əvvəlcə məhsulları silin.");
 
             _repository.Remove(category);
             await _repository.SaveChangesAsync();
         }
-
-        public async Task SoftDeleteAsync(int id)
-        {
-            Category? category = await _repository.GetByIdAsync(id);
-
-            if (category is null) throw new Exception("Category not found");
-
-            category.IsDeleted = true;
-            _repository.Update(category);
-            await _repository.SaveChangesAsync();
-        }
-
     }
 }

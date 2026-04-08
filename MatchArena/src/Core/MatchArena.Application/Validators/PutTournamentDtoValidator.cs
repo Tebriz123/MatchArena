@@ -55,11 +55,7 @@ namespace MatchArena.Application.Validators
                 .InclusiveBetween(2, 64)
                 .WithMessage("Maximum teams must be between 2 and 64.");
 
-            RuleFor(x => x.CurrentTeams)
-                .GreaterThanOrEqualTo(0)
-                .WithMessage("Current teams cannot be negative.")
-                .LessThanOrEqualTo(x => x.MaxTeams)
-                .WithMessage("Current teams cannot exceed maximum teams.");
+           
 
             RuleFor(x => x.EntryFee)
                 .GreaterThanOrEqualTo(0)
@@ -69,13 +65,6 @@ namespace MatchArena.Application.Validators
                 .GreaterThanOrEqualTo(0)
                 .WithMessage("Prize fund cannot be negative.");
 
-            RuleFor(x => x.Format)
-                .NotEmpty().WithMessage("Tournament format is required.")
-                .MaximumLength(50).WithMessage("Tournament format cannot exceed 50 characters.");
-
-            RuleFor(x => x.GameFormat)
-                .NotEmpty().WithMessage("Game format is required.")
-                .MaximumLength(50).WithMessage("Game format cannot exceed 50 characters.");
 
             RuleFor(x => x.Status)
                 .IsInEnum()

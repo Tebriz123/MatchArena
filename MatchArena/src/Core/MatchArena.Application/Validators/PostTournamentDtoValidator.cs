@@ -63,13 +63,7 @@ namespace MatchArena.Application.Validators
                 .GreaterThanOrEqualTo(0)
                 .WithMessage("Prize fund cannot be negative.");
 
-            RuleFor(x => x.Format)
-                .NotEmpty().WithMessage("Tournament format is required.")
-                .MaximumLength(50).WithMessage("Tournament format cannot exceed 50 characters.");
-
-            RuleFor(x => x.GameFormat)
-                .NotEmpty().WithMessage("Game format is required.")
-                .MaximumLength(50).WithMessage("Game format cannot exceed 50 characters.");
+          
 
             RuleFor(x => x.Status)
                 .IsInEnum()

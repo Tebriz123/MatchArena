@@ -11,6 +11,7 @@ namespace MatchArena.MVC.ViewModels
           string Logo,
           ICollection<GetPlayerInTeamDto> PlayerDtos,
           int GameCount,
+          bool IsCaptain,
           int MaxPlayer,
           double Rating,
           string Information

@@ -17,8 +17,8 @@ namespace MatchArena.MVC.ViewModels
         string Format,
         string GameFormat,
         double Rting,
-        DateTime StartTime,
-        DateTime EndTime,
+        DateTime StartDate,
+        DateTime EndDate,
         DateTime RegistrationDeadline,
         DateTime FinalTime,
         ICollection<Team> Teams

@@ -6,8 +6,8 @@ namespace MatchArena.MVC.Services.Interfaces
     {
         Task<List<GetSizeItemVM>?> GetAllAsync();
         Task<GetSizeVM?> GetByIdAsync(long id);
-        Task<bool> CreateAsync(PostSizeVM sizeVM);
-        Task<bool> UpdateAsync(long id, PutSizeVM sizeVM);
-
+        Task<bool> CreateAsync(string name);
+        Task<bool> UpdateAsync(long id, string name);
+        Task<bool> DeleteAsync(long id);
     }
 }

@@ -1,10 +1,9 @@
-﻿@* @model PostTournamentVM
+﻿@model PostTournamentVM
 <main>
     <div class="form-container">
         <h1 class="section-title">Yeni Turnir Yarat</h1>
         <p class="section-subtitle">Yeni turnir təşkil edin və idarə edin</p>
-
-        <form class="create-form" id="createTournamentForm">
+        <form method="post" asp-action="Create" asp-controller="Tournament" enctype="multipart/form-data" class="create-form" id="createTournamentForm">
             <div class="form-section">
                 <h3 class="form-section-title">Əsas Məlumatlar</h3>
 
@@ -16,12 +15,16 @@
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label asp-for="Address" class="form-label">Address *</label>
-                        <input asp-for="Address" class="form-input" placeholder="Addrress">
-                        <span asp-validation-for="Address"></span>
+                        <label asp-for="City" class="form-label">City *</label>
+                        <input asp-for="City" class="form-input" placeholder="City">
+                        <span asp-validation-for="City"></span>
                     </div>
 
-                  
+                    <div class="form-group">
+                        <label asp-for="Address" class="form-label">Address *</label>
+                        <input asp-for="Address" class="form-input" placeholder="Address">
+                        <span asp-validation-for="Address"></span>
+                    </div>
                 </div>
 
                 <div class="form-group">
@@ -29,6 +32,7 @@
                     <input asp-for="Photo" class="form-input" accept="image/*">
                     <span asp-validation-for="Photo"></span>
                 </div>
+
             </div>
 
             <div class="form-section">
@@ -36,22 +40,22 @@
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label asp-for="StartTime" class="form-label">Start Time *</label>
-                        <input asp-for="StartTime" class="form-input">
-                        <span asp-validation-for="StartTime"></span>
+                        <label asp-for="StartDate" class="form-label">Start Date *</label>
+                        <input asp-for="StartDate" type="datetime-local" class="form-input">
+                        <span asp-validation-for="StartDate"></span>
                     </div>
 
                     <div class="form-group">
-                        <label asp-for="EndTime" class="form-label">End Time *</label>
-                        <input asp-for="EndTime" class="form-input">
-                        <span asp-validation-for="EndTime"></span>
+                        <label asp-for="EndDate" class="form-label">End Date *</label>
+                        <input asp-for="EndDate" type="datetime-local" class="form-input">
+                        <span asp-validation-for="EndDate"></span>
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
                         <label asp-for="RegistrationDeadline" class="form-label">Registration Deadline *</label>
-                        <input asp-for="RegistrationDeadline" class="form-input" required>
+                        <input asp-for="RegistrationDeadline" type="datetime-local" class="form-input">
                         <span asp-validation-for="RegistrationDeadline"></span>
                     </div>
                 </div>
@@ -62,16 +66,11 @@
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label asp-for="CurrentTeams" class="form-label">Cari Komanda Sayı *</label>
-                        <input asp-for="CurrentTeams" class="form-input" >
-                        <span asp-validation-for="CurrentTeams"></span>
-                    </div>
-
-                    <div class="form-group">
                         <label asp-for="MaxTeams" class="form-label">Max Teams *</label>
-                        <input asp-for="MaxTeams" class="form-input">
+                        <input asp-for="MaxTeams" class="form-input" placeholder="16">
                         <span asp-validation-for="MaxTeams"></span>
                     </div>
+
                 </div>
 
                 <div class="form-row">
@@ -88,21 +87,20 @@
                     </div>
                 </div>
 
-       
             </div>
 
             <div class="form-section">
                 <h3 class="form-section-title">Əlavə Məlumatlar</h3>
 
                 <div class="form-group">
-                    <label for="status" class="form-label">Status *</label>
-                    <select id="status" name="status" class="form-input" required>
+                    <label asp-for="Status" class="form-label">Status *</label>
+                    <select asp-for="Status" class="form-input">
                         @foreach (TournamentStatus tStatus in Enum.GetValues(typeof(TournamentStatus)))
-                            {
+                        {
                             <option value="@((int)tStatus)">@tStatus.ToString()</option>
-                            }
-                        
+                        }
                     </select>
+                    <span asp-validation-for="Status"></span>
                 </div>
 
                 <div class="form-group">
@@ -110,17 +108,12 @@
                     <textarea asp-for="Description" class="form-textarea" rows="5" placeholder="Turnir haqqında ətraflı məlumat yazın..."></textarea>
                     <span asp-validation-for="Description"></span>
                 </div>
-
-                <div class="form-group">
-                    <label for="rules" class="form-label">Qaydalar</label>
-                    <textarea id="rules" name="rules" class="form-textarea" rows="4" placeholder="Turnir qaydalarını yazın..."></textarea>
-                </div>
             </div>
 
             <div class="form-actions">
-                <button type="button" class="btn btn-secondary" onclick="window.location.href='tournaments.html'">Ləğv et</button>
+                <button type="button" class="btn btn-secondary" onclick="history.back()">Ləğv et</button>
                 <button type="submit" class="btn btn-primary">Turnir Yarat</button>
             </div>
         </form>
     </div>
-</main> *@
+</main>

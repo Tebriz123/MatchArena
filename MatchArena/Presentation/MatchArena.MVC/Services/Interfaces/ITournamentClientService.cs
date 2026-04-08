@@ -8,6 +8,6 @@ namespace MatchArena.MVC.Services.Interfaces
         Task<GetTournamentVM?> GetByIdAsync(long id);
         Task<bool> CreateAsync(PostTournamentVM tournamentVM);
         Task<bool> UpdateAsync(long id, PutTournamentVM tournamentVM);
-
+        Task<bool> DeleteAsync(long id);
     }
 }

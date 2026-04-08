@@ -14,14 +14,14 @@ namespace MatchArena.Persistence.Configurations
         public void Configure(EntityTypeBuilder<PlayerRating> builder)
         {
             builder.HasOne(pr => pr.RaterPlayer)
-                   .WithMany(p => p.GivenRatings)
-                   .HasForeignKey(pr => pr.RaterPlayerId)
-                   .OnDelete(DeleteBehavior.Restrict);
+                .WithMany(p => p.GivenRatings)
+                .HasForeignKey(pr => pr.RaterPlayerId)
+                .OnDelete(DeleteBehavior.NoAction);
 
             builder.HasOne(pr => pr.RatedPlayer)
                    .WithMany(p => p.ReceivedRatings)
                    .HasForeignKey(pr => pr.RatedPlayerId)
-                   .OnDelete(DeleteBehavior.Restrict);
+                   .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

@@ -5,19 +5,15 @@ namespace MatchArena.MVC.ViewModels
     public record PostTournamentVM(
         string Name,
         string Description,
-        String Address,
+        string Address,
         string City,
-        string Icon,
         IFormFile Photo,
-        DateTime StartTime,
-        DateTime EndTime,
+        DateTime StartDate,
+        DateTime EndDate,
         DateTime RegistrationDeadline,
         int MaxTeams,
-        int CurrentTeams,
         decimal EntryFee,
         decimal PrizeFund,
-        string Format,
-        string GameFormat,
         TournamentStatus Status
         );
 

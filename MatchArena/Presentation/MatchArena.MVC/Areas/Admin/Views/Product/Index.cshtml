@@ -1,4 +1,4 @@
-﻿@model List<GetProductVM>
+﻿@model List<GetProductItemVM>
 @{
     int count = 0;
 }
@@ -24,7 +24,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (GetProductVM productVM in Model)
+                @foreach (GetProductItemVM productVM in Model)
                 {
                     count++;
                     <tr>
@@ -37,9 +37,9 @@
                                 <span>@productVM.Name</span>
                             </div>
                         </td>
-                        <td><span class="badge badge-info">@productVM.CategoryDto.Name</span></td>
+                        <td><span class="badge badge-info">@productVM.CategoryName</span></td>
                         <td>@productVM.Price ₼</td>
-                        <td>@productVM.Products.Count</td>
+                        <td>@(productVM.Products?.Count ?? 0)</td>
                         <td>
                             <div class="table-actions">
                                 <a asp-controller="Product" asp-action="Detail" asp-route-id="@productVM.Id" class="btn-icon" title="Bax" onclick="viewProduct('P001')">👁️</a>

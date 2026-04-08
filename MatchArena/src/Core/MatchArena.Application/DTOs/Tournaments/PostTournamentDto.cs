@@ -20,8 +20,6 @@ namespace MatchArena.Application.DTOs.Tournaments
         int MaxTeams,
         decimal EntryFee,
         decimal PrizeFund,
-        string Format,
-        string GameFormat,
         TournamentStatus Status
         );
     

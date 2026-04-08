@@ -10,7 +10,7 @@ namespace MatchArena.Application.DTOs.Fields
         long Id,
         string Name,
         string Address,
-        int TotalRating,
+        int TotalRating,    
         string Image,
         double AverageRating,
         string City,

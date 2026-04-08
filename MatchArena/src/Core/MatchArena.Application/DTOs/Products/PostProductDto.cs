@@ -14,8 +14,8 @@ namespace MatchArena.Application.DTOs.Products
         ICollection<IFormFile>? AdditionalPhotos,
         string Description,
         long CategoryId,
-        ICollection<long> SizeIds,
-        ICollection<long> ColorIds
+        ICollection<long>? SizeIds,
+        ICollection<long>? ColorIds
         );
    
 }

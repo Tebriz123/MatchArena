@@ -218,7 +218,7 @@ function performSearch() {
 }
 
 function goToProduct(id) {
-    window.location.href = `product-detail.html?id=${id}`;
+    window.location.href = `/Product/Detail/${id}`;
 }
 
 function addToCart(id) {

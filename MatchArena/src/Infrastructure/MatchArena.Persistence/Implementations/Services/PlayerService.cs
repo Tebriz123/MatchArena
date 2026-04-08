@@ -4,6 +4,7 @@ using MatchArena.Application.Interfaces.Repositories;
 using MatchArena.Application.Interfaces.Services;
 using MatchArena.Domain.Entities;
 using MatchArena.Domain.Entities.Enums;
+using MatchArena.Domain.Exceptions;
 using MatchArena.Persistence.Implementations.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -21,19 +22,22 @@ namespace MatchArena.Persistence.Implementations.Services
         private readonly ITeamRepository _teamRepository;
         private readonly IFileService _fileService;
         private readonly IInviteRepository _inviteRepository;
+        private readonly IPlayerRatingRepository _playerRatingRepository;
 
         public PlayerService(
             IPlayerRepository repository,
             IMapper mapper,
             ITeamRepository teamRepository,
             IFileService fileService,
-            IInviteRepository inviteRepository)
+            IInviteRepository inviteRepository,
+            IPlayerRatingRepository playerRatingRepository)
         {
             _repository = repository;
             _mapper = mapper;
             _teamRepository = teamRepository;
             _fileService = fileService;
             _inviteRepository = inviteRepository;
+            _playerRatingRepository = playerRatingRepository;
         }
 
         public async Task<IReadOnlyList<GetPlayerItemDto>> GetAllAsync(int page, int take)
@@ -101,14 +105,17 @@ namespace MatchArena.Persistence.Implementations.Services
 
         public async Task RemoveAsync(long id)
         {
-            Player player = await _repository.GetByIdAsync(id);
+            Player? player = await _repository.GetByIdAsync(id, "ReceivedRatings", "GivenRatings");
             if (player is null)
-                throw new Exception("Player not found");
+                throw new NotFoundException("Player tapılmadı");
+
+            if (player.ReceivedRatings.Any() || player.GivenRatings.Any())
+            {
+                throw new Exception("Sistemde bu istifadecinin reyleri movcud oldugundan, onu silmek mumkun olmadi");
+            }
 
             if (!string.IsNullOrEmpty(player.Image))
-            {
                 await _fileService.FileDeleteAsync(player.Image);
-            }
 
             _repository.Remove(player);
             await _repository.SaveChangesAsync();

@@ -54,7 +54,7 @@ namespace MatchArena.API.Controllers
             return NoContent();
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         [Authorize]
         [Area("Admin")]
         public async Task<IActionResult> DeleteAsync(long id)

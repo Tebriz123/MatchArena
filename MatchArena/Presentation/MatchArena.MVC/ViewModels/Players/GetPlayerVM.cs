@@ -13,6 +13,8 @@ namespace MatchArena.MVC.ViewModels
          string Information,
          PlayerPosition Position,
          PlayerLevel Level,
+          double AverageRating,
+        int TotalRating,
          int Age,
          string City,
          ICollection<GetTeamInPlayerVM> TeamVM,

@@ -1,4 +1,4 @@
-﻿@model List<GetPlayerVM>
+﻿@model List<GetPlayerItemVM>
 @{
     int count = 0;
 }
@@ -19,14 +19,11 @@
                     <th>Full Name</th>
                     <th>Age</th>
                     <th>Positon</th>
-                    <th>Level</th>
-                    <th>Team</th>
-                    <th>Rating</th>
                     <th>Operations</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach (GetPlayerVM playerVM in Model)
+                @foreach (GetPlayerItemVM playerVM in Model)
                 {
                     count++;
                     <tr>
@@ -41,9 +38,6 @@
                         </td>
                         <td>@playerVM.Age</td>
                         <td><span class="badge badge-info">@playerVM.Position</span></td>
-                        <td><span class="badge badge-info">@playerVM.Level</span></td>
-                        <td>@playerVM.TeamVM</td>
-                        <td>⭐ 4.8</td>
 
                         <td>
                             <div class="table-actions">

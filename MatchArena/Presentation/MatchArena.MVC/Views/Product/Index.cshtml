@@ -1,14 +1,10 @@
-﻿
-@model List<GetProductItemVM>
+﻿@model List<GetProductItemVM>
 <main class="products-page">
     <div class="page-container">
-        <!-- Page Title -->
         <div class="page-header">
             <h1>Futbol Məhsulları</h1>
             <p>Keyfiyyətli idman və futbol aksesuarları</p>
         </div>
-
-        <!-- Filters Section -->
         <div class="products-filters">
             <div class="filter-search">
                 <input type="text" id="searchInput" placeholder="Məhsul axtar..." class="search-input">
@@ -19,46 +15,16 @@
                     </svg>
                 </button>
             </div>
-
-            <select id="categoryFilter" class="filter-dropdown" onchange="applyFilters()">
-                <option value="">Bütün kateqoriyalar</option>
-                <option value="balls">⚽ Toplar</option>
-                <option value="jerseys">👕 Formalar</option>
-                <option value="boots">👟 Botinlər</option>
-                <option value="accessories">🎽 Aksessuarlar</option>
-                <option value="training">🏋️ Məşq</option>
-                <option value="goalkeeper">🧤 Qapıçı</option>
-            </select>
-
-            <select id="priceFilter" class="filter-dropdown" onchange="applyFilters()">
-                <option value="">Bütün qiymətlər</option>
-                <option value="0-50">0₼ - 50₼</option>
-                <option value="50-100">50₼ - 100₼</option>
-                <option value="100-200">100₼ - 200₼</option>
-                <option value="200+">200₼+</option>
-            </select>
-
-            <select id="sortFilter" class="filter-dropdown" onchange="applyFilters()">
-                <option value="newest">Ən yeni</option>
-                <option value="price-low">Ucuzdan bahaya</option>
-                <option value="price-high">Bahadan ucuza</option>
-                <option value="popular">Ən populyar</option>
-            </select>
-
-            <button class="filter-reset" onclick="resetFilters()">Sıfırla</button>
         </div>
-
-        <!-- Products Grid -->
         <div id="productsGrid" class="products-grid-modern">
-
-            <!-- Product 1: Professional Match Football -->
-          @foreach (GetProductItemVM product in Model)
+            @foreach (GetProductItemVM product in Model)
             {
-               <a asp-action="Detail" asp-route-id="@product.Id">
-                    <div class="product-card-modern" onclick="goToProduct(1)"
-                         data-id="1" data-category="balls" data-categoryname="⚽ @product.CategoryName"
-                         data-price="@product.Price" data-name="Professional Match Football"
-                         data-brand="nike" data-rating="4.8" data-reviews="124">
+                <a asp-controller="Product" asp-action="Detail" asp-route-id="@product.Id">
+                    <div class="product-card-modern"
+                         data-id="@product.Id"
+                         data-categoryname="@product.CategoryName"
+                         data-price="@product.Price"
+                         data-name="@product.Name">
                         <div class="product-img-box">
                             <img src="@product.Image" alt="@product.Name">
                         </div>
@@ -72,7 +38,7 @@
                                 <div class="product-pricing">
                                     <span class="price-main">@product.Price₼</span>
                                 </div>
-                                <button class="product-add-btn" onclick="event.stopPropagation(); addToCart(1)">
+                                <button class="product-add-btn" onclick="event.stopPropagation(); addToCart(@product.Id)">
                                     <svg width="18" height="18" fill="currentColor" viewBox="0 0 20 20">
                                         <path d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" />
                                     </svg>
@@ -80,12 +46,9 @@
                             </div>
                         </div>
                     </div>
-               </a>
+                </a>
             }
-
         </div>
-
-        <!-- Empty State -->
         <div id="emptyState" class="empty-container" style="display: none;">
             <div class="empty-icon">📦</div>
             <h3>Məhsul tapılmadı</h3>
@@ -93,4 +56,3 @@
         </div>
     </div>
 </main>
-

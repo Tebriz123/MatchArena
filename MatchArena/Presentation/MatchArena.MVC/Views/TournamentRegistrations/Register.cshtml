@@ -1,0 +1,38 @@
+﻿@model PostTournamentRegistrationVM
+
+<main class="detail-main-container">
+    <div class="detail-card" style="max-width: 500px; margin: 60px auto;">
+        <h2 class="detail-card-title">🏆 Turnir Qeydiyyatı</h2>
+
+        @if (TempData["Error"] != null)
+        {
+            <div style="background:#ff4444;color:#fff;padding:12px;border-radius:8px;margin-bottom:16px;">
+                @TempData["Error"]
+            </div>
+        }
+
+        <div class="detail-info-row" style="margin-bottom:24px;">
+            <span class="info-label">Komanda</span>
+            <span class="info-value">@ViewBag.TeamName</span>
+        </div>
+
+        <p style="color:#aaa; margin-bottom:24px;">
+            Komandanız turnirə qeydiyyatdan keçəcək. Ödəniş səhifəsinə yönləndiriləcəksiniz.
+        </p>
+
+        <form asp-controller="TournamentRegistrations" asp-action="Register" method="post">
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="TournamentId" value="@Model.TournamentId" />
+            <input type="hidden" name="TeamId" value="@Model.TeamId" />
+
+            <button type="submit" class="btn btn-primary btn-large" style="width:100%;">
+                Ödəniş et və Qeydiyyatı Tamamla
+            </button>
+        </form>
+
+        <a asp-controller="Tournaments" asp-action="Details" asp-route-id="@Model.TournamentId"
+           class="btn btn-secondary btn-large" style="width:100%; margin-top:12px; display:block; text-align:center;">
+            Geri qayıt
+        </a>
+    </div>
+</main>

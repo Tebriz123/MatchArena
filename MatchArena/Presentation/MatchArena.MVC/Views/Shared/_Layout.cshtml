@@ -1,5 +1,4 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,11 +10,6 @@
     <link rel="stylesheet" href="~/assets/css/inline-styles.css">
 </head>
 <body>
-    @{
-        var invites = ViewBag.Invites as List<GetInviteVM> ?? new List<GetInviteVM>();
-        int inviteCount = invites.Count;
-    }
-
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
@@ -43,43 +37,58 @@
 
                 @if (User.Identity?.IsAuthenticated == true)
                 {
-                    <div class="notification-wrapper" style="position:relative;">
-                        <button class="notification-btn" onclick="toggleNotifications()">
-                            🔔
-                            @if (inviteCount > 0)
-                            {
-                                <span class="cart-badge">@inviteCount</span>
-                            }
-                        </button>
-                        <div id="notificationDropdown" style="display:none; position:absolute; right:0; background:#1a1a2e; border:1px solid #333; border-radius:8px; width:300px; z-index:999; padding:10px;">
-                            @if (inviteCount > 0)
-                            {
-                                foreach (var invite in invites)
+                    @if (ViewBag.Invites != null)
+                    {
+                        var invites = ViewBag.Invites as List<GetInviteVM> ?? new List<GetInviteVM>();
+                        int inviteCount = invites.Count;
+
+                        <div class="notification-wrapper" style="position:relative;">
+                            <button class="notification-btn" onclick="toggleNotifications()">
+                                🔔
+                                @if (inviteCount > 0)
                                 {
-                                    <div style="padding:10px; border-bottom:1px solid #333;">
-                                        <p>@invite.TeamName komandası sizi dəvət edir</p>
-                                        <form asp-action="AcceptInvite" asp-controller="Team" method="post" style="display:inline;">
-                                            <input type="hidden" name="inviteId" value="@invite.Id" />
-                                            <button type="submit" class="btn btn-success">Qəbul et</button>
-                                        </form>
-                                        <form asp-action="RejectInvite" asp-controller="Team" method="post" style="display:inline;">
-                                            <input type="hidden" name="inviteId" value="@invite.Id" />
-                                            <button type="submit" class="btn btn-danger">Rədd et</button>
-                                        </form>
-                                    </div>
+                                    <span class="cart-badge">@inviteCount</span>
                                 }
-                            }
-                            else
-                            {
-                                <p style="padding:10px;">Dəvət yoxdur</p>
-                            }
+                            </button>
+                            <div id="notificationDropdown" style="display:none; position:absolute; right:0; background:#1a1a2e; border:1px solid #333; border-radius:8px; width:300px; z-index:999; padding:10px;">
+                                @if (inviteCount > 0)
+                                {
+                                    foreach (var invite in invites)
+                                    {
+                                        <div style="padding:10px; border-bottom:1px solid #333;">
+                                            <p>@invite.TeamName komandası sizi dəvət edir</p>
+                                            <form asp-action="AcceptInvite" asp-controller="Player" method="post" style="display:inline;">
+                                                @Html.AntiForgeryToken()
+                                                <input type="hidden" name="inviteId" value="@invite.Id" />
+                                                <input type="hidden" name="returnUrl" value="@Context.Request.Path" />
+                                                <button type="submit" class="btn btn-success">Qəbul et</button>
+                                            </form>
+                                            <form asp-action="RejectInvite" asp-controller="Player" method="post" style="display:inline;">
+                                                @Html.AntiForgeryToken()
+                                                <input type="hidden" name="inviteId" value="@invite.Id" />
+                                                <input type="hidden" name="returnUrl" value="@Context.Request.Path" />
+                                                <button type="submit" class="btn btn-danger">Rədd et</button>
+                                            </form>
+                                        </div>
+                                    }
+                                }
+                                else
+                                {
+                                    <p style="padding:10px;">Dəvət yoxdur</p>
+                                }
+                            </div>
                         </div>
-                    </div>
+                    }
 
                     <div class="dropdown" style="position:relative;">
-                        <button class="user-btn" id="settingButton">👤 @User.Identity.Name</button>
+                        <a class="nav-link" id="settingButton">👤 @User.Identity.Name</a>
                         <ul class="dropdown-menu" aria-labelledby="settingButton">
-                            <li><a class="dropdown-item" asp-controller="Account" asp-action="Logout">Log Out</a></li>
+                            <li>
+                                <form asp-controller="Account" asp-action="Logout" method="post">
+                                    @Html.AntiForgeryToken()
+                                    <button type="submit" class="login-btn btn btn-primary">Log Out</button>
+                                </form>
+                            </li>
                         </ul>
                     </div>
                 }
@@ -163,55 +172,12 @@
         document.addEventListener('click', function(e) {
             var wrapper = document.querySelector('.notification-wrapper');
             if (wrapper && !wrapper.contains(e.target)) {
-                document.getElementById('notificationDropdown').style.display = 'none';
+                var dropdown = document.getElementById('notificationDropdown');
+                if (dropdown) dropdown.style.display = 'none';
             }
         });
     </script>
     <script src="~/assets/js/app.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
-    @* <script src="~/assets/js/create-team.js"></script> *@
-    @* <script src="~/assets/js/admin-panel.js"></script>
-    <script src="~/assets/js/api-config.js"></script>
-    <script src="~/assets/js/backend-example-stripe.js"></script>
-    <script src="~/assets/js/cart.js"></script>
-    <script src="~/assets/js/checkout.js"></script>
-    <script src="~/assets/js/create-category.inline.js"></script>
-    <script src="~/assets/js/create-color.inline.js"></script>
-    <script src="~/assets/js/create-field.js"></script>
-    <script src="~/assets/js/create-player.js"></script>
-    <script src="~/assets/js/create-product.inline.js"></script>
-    <script src="~/assets/js/create-size.inline.js"></script>
-    <script src="~/assets/js/create-tournament.js"></script>
-    <script src="~/assets/js/dashboard-challenges.js"></script>
-    <script src="~/assets/js/dashboard-notifications.js"></script>
-    <script src="~/assets/js/dashboard.js"></script>
-    <script src="~/assets/js/demo-data.js"></script>
-    <script src="~/assets/js/face-recognition.js"></script>
-    <script src="~/assets/js/field-detail.js"></script>
-    <script src="~/assets/js/fields.inline.js"></script>
-    <script src="~/assets/js/index.inline.js"></script>
-    <script src="~/assets/js/login.js"></script>
-    <script src="~/assets/js/payment-success.inline.js"></script>
-    <script src="~/assets/js/player-history.js"></script>
-    <script src="~/assets/js/player-notifications.js"></script>
-    <script src="~/assets/js/players.inline.js"></script>
-    <script src="~/assets/js/players.js"></script>
-    <script src="~/assets/js/product-detail.inline.js"></script>
-    <script src="~/assets/js/product-detail.js"></script>
-    <script src="~/assets/js/products.inline.js"></script>
-    <script src="~/assets/js/products.js"></script>
-    <script src="~/assets/js/register.js"></script>
-    <script src="~/assets/js/team-challenge.js"></script>
-    <script src="~/assets/js/teams.inline.js"></script>
-    <script src="~/assets/js/tournament-detail.js"></script>
-    <script src="~/assets/js/update-category.inline.js"></script>
-    <script src="~/assets/js/update-color.inline.js"></script>
-    <script src="~/assets/js/update-field.js"></script>
-    <script src="~/assets/js/update-player.js"></script>
-    <script src="~/assets/js/update-product.inline.js"></script>
-    <script src="~/assets/js/update-size.inline.js"></script>
-    <script src="~/assets/js/update-team.js"></script>
-    <script src="~/assets/js/update-tournament.js"></script>
-    <script src="~/assets/js/products.js"></script>
-    <script src="~/assets/js/products.js"></script> *@

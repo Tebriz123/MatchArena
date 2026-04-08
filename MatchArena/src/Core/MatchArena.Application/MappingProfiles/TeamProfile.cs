@@ -15,21 +15,22 @@ namespace MatchArena.Application.MappingProfiles
         public TeamProfile()
         {
             CreateMap<Team, GetTeamDto>()
-        .ForCtorParam(nameof(GetTeamDto.CaptainName),
-            opt => opt.MapFrom(src => src.TeamPlayers
-                .Where(tp => tp.IsCaptain && tp.Player != null)
-                .Select(tp => tp.Player.Name + " " + tp.Player.Surname)
-                .FirstOrDefault()))
-        .ForCtorParam(nameof(GetTeamDto.PlayerDtos),
-            opt => opt.MapFrom(src => src.TeamPlayers)); // ← tp.Player deyil, tp özü
-
+     .ForCtorParam(nameof(GetTeamDto.CaptainName),
+         opt => opt.MapFrom(src => src.TeamPlayers
+             .Where(tp => tp.IsCaptain && tp.Player != null)
+             .Select(tp => tp.Player.Name + " " + tp.Player.Surname)
+             .FirstOrDefault()))
+     .ForCtorParam(nameof(GetTeamDto.PlayerDtos),
+         opt => opt.MapFrom(src => src.TeamPlayers))
+     .ForCtorParam(nameof(GetTeamDto.IsCaptain),
+         opt => opt.MapFrom(src => src.TeamPlayers
+             .Any(tp => tp.IsCaptain)));
             CreateMap<PostTeamDto, Team>()
                 .ForMember(dest => dest.Logo, opt => opt.Ignore());
 
             CreateMap<PutTeamDto, Team>()
                 .ForMember(dest => dest.Logo, opt => opt.Ignore());
 
-            // Player -> GetPlayerInTeamDto map-ini SİL (ctx.Items istifadə edirdi)
 
             CreateMap<TeamPlayer, GetPlayerInTeamDto>()
      .ForCtorParam(nameof(GetPlayerInTeamDto.Id),
@@ -48,11 +49,16 @@ namespace MatchArena.Application.MappingProfiles
          opt => opt.MapFrom(src => src.IsCaptain));
 
             CreateMap<Team, GetTeamItemDto>()
-                .ForCtorParam(nameof(GetTeamItemDto.CaptainName),
-                    opt => opt.MapFrom(src => src.TeamPlayers
-                        .Where(tp => tp.IsCaptain && tp.Player != null)
-                        .Select(tp => tp.Player.Name + " " + tp.Player.Surname)
-                        .FirstOrDefault()));
+     .ForCtorParam(nameof(GetTeamItemDto.CaptainName),
+         opt => opt.MapFrom(src => src.TeamPlayers
+             .Where(tp => tp.IsCaptain && tp.Player != null)
+             .Select(tp => tp.Player.Name + " " + tp.Player.Surname)
+             .FirstOrDefault()))
+     .ForCtorParam(nameof(GetTeamItemDto.CaptainUserId),
+         opt => opt.MapFrom(src => src.TeamPlayers
+             .Where(tp => tp.IsCaptain && tp.Player != null)
+             .Select(tp => tp.Player.UserId)
+             .FirstOrDefault()));
 
         }
     }

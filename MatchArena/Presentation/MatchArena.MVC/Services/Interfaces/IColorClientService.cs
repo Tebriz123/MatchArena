@@ -6,8 +6,8 @@ namespace MatchArena.MVC.Services.Interfaces
     {
         Task<List<GetColorItemVM>?> GetAllAsync();
         Task<GetColorVM?> GetByIdAsync(long id);
-        Task<bool> CreateAsync(PostColorVM colorVM);
-        Task<bool> UpdateAsync(long id, PutColorVM colorVM);
-
-	}
+        Task<bool> CreateAsync(string name);
+        Task<bool> UpdateAsync(long id, string name);
+        Task<bool> DeleteAsync(long id);
+    }
 }

@@ -70,7 +70,7 @@
             <div class="player-card">
                 <div class="card-image">
                     <img src="@playerVM.Image" alt="@playerVM.Name @playerVM.Surname">
-                    <div class="rating">⭐ 4.9</div>
+                    <div class="rating">⭐ @playerVM.AverageRating</div>
                 </div>
                 <div class="card-content">
                     <div class="team-badge">@playerVM.Position</div>
@@ -100,14 +100,13 @@
                 <div class="card-image"><img src="@team.Logo" alt="@team.Name"></div>
                 <div class="card-content">
                     <h3 class="card-title">@team.Name</h3>
-                    <div class="card-subtitle">Kapitain: Öli Kazimov • 🏠 Baki</div>
+                    <div class="card-subtitle">Kapitain: @team.CaptainName • 🏠 Baki</div>
                     <div class="card-stats">
-                        <div class="stat-item"><div class="stat-item-value">15/15</div><div class="stat-item-label">qolaça</div></div>
-                        <div class="stat-item"><div class="stat-item-value">4.9</div><div class="stat-item-label">⭐</div></div>
-                        <div class="stat-item"><div class="stat-item-value">67</div><div class="stat-item-label">qolaça</div></div>
+                        <div class="stat-item"><div class="stat-item-value">@team.PlayerCount/@team.MaxPlayer</div><div class="stat-item-label">qolaça</div></div>
+                        <div class="stat-item"><div class="stat-item-value">@team.GameCount</div><div class="stat-item-label">qolaça</div></div>
                     </div>
                     <div class="card-buttons">
-                        <a href="team-detail.html?id=1" class="btn-small">Profil bax</a>
+                        <a asp-action="Detail" asp-route-id="@team.Id" class="btn-small">Profil bax</a>
                         <button class="btn-small btn-small-secondary">Qoşul</button>
                     </div>
                 </div>
@@ -123,19 +122,12 @@
       @foreach (GetFieldItemVM field in Model.Fields)
         {
             <div class="field-card">
-                <div class="card-image"><img src="@field.Image" alt="Mini Futbol Arena"><div class="rating">⭐ 4.5</div></div>
+                <div class="card-image"><img src="@field.Image" alt="Mini Futbol Arena"><div class="rating">⭐ @field.AverageRating</div></div>
                 <div class="card-content">
                     <div class="team-badge price-badge">@field.PricePerHour₼/saat</div>
                     <h3 class="card-title">@field.Name</h3>
                     <div class="card-subtitle">🏠 @field.City</div>
-                    <div class="time-slots time-slots-container">
-                      @foreach (var time in field.EmptySpace)
-                        {
-                            <button class="time-slot">@time</button>
-                        }
-                      
-                    </div>
-                    <div class="card-buttons"><a href="field-detail.html?id=1" class="btn-small">Rezerv et →</a></div>
+                    <div class="card-buttons"><a asp-action="Detail" asp-route-id="@field.Id" class="btn-small">Rezerv et →</a></div>
                 </div>
             </div>
         }
@@ -148,14 +140,13 @@
        @foreach (GetTournamentItemVM tournament in Model.Tournaments)
         {
             <div class="tournament-card">
-                <div class="card-image"><img src="@tournament.Logo" alt="@tournament.Name"><span class="status-badge-position">Devam edir</span></div>
+                <div class="card-image"><img src="@tournament.Logo" alt="@tournament.Name"><span class="status-badge-position">@tournament.Status</span></div>
                 <div class="card-content">
                     <div class="prize-badge">⭐@tournament.PrizeFund AZN</div>
                     <h3 class="card-title">@tournament.Name</h3>
                     <div class="tournament-details">
-                        <div class="tournament-detail-item">📅 @tournament.StartTime</div>
+                        <div class="tournament-detail-item">📅 @tournament.StartDate</div>
                     </div>
-                    <div class="progress-bar"><div class="progress-fill" data-width="66.67"></div></div>
                     <div class="progress-text">@tournament.CurrentTeams/@tournament.MaxTeams komanda</div>
                     <div class="card-buttons"><a href="#" class="btn-small">Qoşul →</a></div>
                 </div>

@@ -88,9 +88,9 @@ namespace MatchArena.API.Controllers
 
 
 
-        [HttpPut]
+        [HttpPut("{id}")]
         [Authorize]
-        public async Task<IActionResult> PutAsync(long id, [FromBody] PutTeamDto teamDto)
+        public async Task<IActionResult> PutAsync(long id, [FromForm] PutTeamDto teamDto)
         {
             if (id < 1) return BadRequest();
             await _service.UpdateTeamAsync(id, teamDto); 

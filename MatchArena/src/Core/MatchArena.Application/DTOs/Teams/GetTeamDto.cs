@@ -11,6 +11,7 @@ namespace MatchArena.Application.DTOs.Teams
         long Id,
         string Name,
         int PlayerCount,
+        bool IsCaptain,
         string CaptainName,
         string City,
         string Logo,

@@ -2,36 +2,63 @@
 using MatchArena.MVC.Services.Interfaces;
 using MatchArena.MVC.ViewModels.Category;
 using MatchArena.MVC.ViewModels.Products;
+using System.Net.Http.Headers;
 
 namespace MatchArena.MVC.Services.Implementations
 {
-    public class CategoryClientService:ICategoryClientService
+    public class CategoryClientService : ICategoryClientService
     {
         private readonly HttpClient _httpClient;
-        public CategoryClientService(IHttpClientFactory clientFactory)
+        private readonly IHttpContextAccessor _httpContextAccessor;
+
+        public CategoryClientService(IHttpClientFactory clientFactory, IHttpContextAccessor httpContextAccessor)
         {
             _httpClient = clientFactory.CreateClient("MatchArenaClient");
+            _httpContextAccessor = httpContextAccessor;
+        }
+
+        private void AddJwtToken()
+        {
+            var token = _httpContextAccessor.HttpContext?.Request.Cookies["jwtToken"];
+            if (!string.IsNullOrEmpty(token))
+                _httpClient.DefaultRequestHeaders.Authorization =
+                    new AuthenticationHeaderValue("Bearer", token);
         }
 
         public async Task<List<GetCategoryItemVM>?> GetAllAsync()
         {
-            return await _httpClient.GetFromJsonAsync<List<GetCategoryItemVM>>("Categories");
+            var response = await _httpClient.GetAsync("Categories");
+            if (!response.IsSuccessStatusCode) return null;
+            return await response.Content.ReadFromJsonAsync<List<GetCategoryItemVM>>();
         }
 
         public async Task<GetCategoryVM?> GetByIdAsync(long id)
         {
-            return await _httpClient.GetFromJsonAsync<GetCategoryVM>($"Categories/{id}");
+            var response = await _httpClient.GetAsync($"Categories/{id}");
+            if (!response.IsSuccessStatusCode) return null;
+            return await response.Content.ReadFromJsonAsync<GetCategoryVM>();
         }
 
-        public async Task<bool> CreateAsync(PostCategoryVM categoryVM)
+        public async Task<bool> CreateAsync(string name)
         {
-            var response = await _httpClient.PostAsJsonAsync("Categories", categoryVM);
+            AddJwtToken();
+            var response = await _httpClient.PostAsync($"Categories?name={name}", null);
             return response.IsSuccessStatusCode;
         }
 
-        public async Task<bool> UpdateAsync(long id, PutCategoryVM categoryVM)
+        public async Task<bool> UpdateAsync(long id, string name)
         {
-            var response = await _httpClient.PutAsJsonAsync($"Categories/{id}", categoryVM);
+            AddJwtToken();
+            using var content = new MultipartFormDataContent();
+            content.Add(new StringContent(name), "Name");
+            var response = await _httpClient.PutAsync($"Categories/{id}", content);
+            return response.IsSuccessStatusCode;
+        }
+
+        public async Task<bool> DeleteAsync(long id)
+        {
+            AddJwtToken();
+            var response = await _httpClient.DeleteAsync($"Categories/{id}");
             return response.IsSuccessStatusCode;
         }
     }

@@ -15,8 +15,8 @@ namespace MatchArena.API.MiddleWares
             {
                 NotFoundException ex => (StatusCodes.Status404NotFound, ex.Message),
                 AlreadyExistsException ex => (StatusCodes.Status409Conflict, ex.Message),
-                BadRequestException ex => (StatusCodes.Status400BadRequest, ex.Message),
-                _ => (StatusCodes.Status500InternalServerError, "An unexpected error occurred.")
+                BadRequestException ex => (StatusCodes.Status400BadRequest, ex.Message), 
+              _ => (StatusCodes.Status500InternalServerError, exception.Message + " | " + exception.InnerException?.Message)
             };
 
             httpContext.Response.StatusCode = statusCode;

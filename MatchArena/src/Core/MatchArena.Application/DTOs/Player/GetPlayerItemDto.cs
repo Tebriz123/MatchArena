@@ -14,7 +14,8 @@ namespace MatchArena.Application.DTOs.Player
         int Age,
         string City,
         PlayerPosition Position,
-        double Rating,
+        double AverageRating,
+        int TotalRating,
         int GameCount,
         string Image
         ); 

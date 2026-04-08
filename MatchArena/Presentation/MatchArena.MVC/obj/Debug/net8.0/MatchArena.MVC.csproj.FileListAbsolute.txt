@@ -245,3 +245,8 @@ C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\Presentation\MatchAr
 C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\Presentation\MatchArena.MVC\bin\Debug\net8.0\MatchArena.Domain.pdb
 C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\Presentation\MatchArena.MVC\obj\Debug\net8.0\MatchArena.MVC.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\Presentation\MatchArena.MVC\bin\Debug\net8.0\Stripe.net.dll
+C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\Presentation\MatchArena.MVC\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\Presentation\MatchArena.MVC\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\Presentation\MatchArena.MVC\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\Presentation\MatchArena.MVC\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\necef\OneDrive\İş masası\MatchArena2\MatchArena\Presentation\MatchArena.MVC\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll

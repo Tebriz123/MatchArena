@@ -1,6 +1,10 @@
 ﻿using MatchArena.Application.DTOs.Products;
 using MatchArena.MVC.Services.Interfaces;
+using MatchArena.MVC.ViewModels;
+using MatchArena.MVC.ViewModels.Category;
+using MatchArena.MVC.ViewModels.Colors;
 using MatchArena.MVC.ViewModels.Products;
+using MatchArena.MVC.ViewModels.Sizes;
 using Microsoft.AspNetCore.Mvc;
 using RestSharp;
 using System.Threading.Tasks;
@@ -9,76 +13,41 @@ namespace MatchArena.MVC.Controllers
 {
     public class ProductController : Controller
     {
-        private readonly IProductClientService _productClient;
+        private readonly IProductClientService _service;
+        private readonly ICategoryClientService _categoryService;
+        private readonly IColorClientService _colorService;
+        private readonly ISizeClientService _sizeService;
+        private readonly IProductRatingClientService _ratingService;
 
-        public ProductController(IProductClientService productClient)
+        public ProductController(
+            IProductClientService service,
+            ICategoryClientService categoryService,
+            IColorClientService colorService,
+            ISizeClientService sizeService,
+            IProductRatingClientService ratingService)
         {
-            _productClient = productClient;
+            _service = service;
+            _categoryService = categoryService;
+            _colorService = colorService;
+            _sizeService = sizeService;
+            _ratingService = ratingService;
         }
-
 
         public async Task<IActionResult> Index()
         {
-            return View(await _productClient.GetAllAsync());
+            var products = await _service.GetAllAsync();
+            return View(products ?? new List<GetProductItemVM>());
         }
 
         public async Task<IActionResult> Detail(long id)
         {
-            return View(await _productClient.GetByIdAsync(id));
-        }
-
-        public IActionResult Create()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Create(PostProductVM vm)
-        {
-            if (!ModelState.IsValid) return View(vm);
-
-            var result = await _productClient.CreateAsync(vm);
-            if (!result)
-            {
-                ModelState.AddModelError("", "Xəta baş verdi, yenidən cəhd edin.");
-                return View(vm);
-            }
-
-            return RedirectToAction(nameof(Index));
-        }
-
-        public async Task<IActionResult> Update(long id)
-        {
-            var product = await _productClient.GetByIdAsync(id);
+            var product = await _service.GetByIdAsync(id);
             if (product is null) return NotFound();
 
-            var vm = new PutProductDto(
-                product.Name,
-                product.Price,
-                product.Description,
-                product.CategoryDto.Id,
-                null!, 
-                null!, 
-                product.SizeDtos.Select(s => s.Id).ToList(),
-                product.ColorDtos.Select(c => c.Id).ToList()
-            );
+            var ratings = await _ratingService.GetProductRatingsAsync(id);
+            ViewBag.Ratings = ratings ?? new GetProductRatingResponseVM();
 
-            return View(vm);
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Update(long id, PutProductVM vm)
-        {
-            if (!ModelState.IsValid) return View(vm);
-
-            var result = await _productClient.UpdateAsync(id, vm);
-            if (!result)
-            {
-                ModelState.AddModelError("", "Xəta baş verdi, yenidən cəhd edin.");
-                return View(vm);
-            }
-
-            return RedirectToAction(nameof(Index));
+            return View(product);
         }
 
     }

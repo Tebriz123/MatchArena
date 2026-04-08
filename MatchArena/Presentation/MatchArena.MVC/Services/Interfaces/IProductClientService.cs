@@ -6,8 +6,9 @@ namespace MatchArena.MVC.Services.Interfaces
     {
         Task<List<GetProductItemVM>?> GetAllAsync();
         Task<GetProductVM?> GetByIdAsync(long id);
-        Task<bool> CreateAsync(PostProductVM productVM);
-        Task<bool> UpdateAsync(long id, PutProductVM productVM);
+        Task<bool> CreateAsync(PostProductVM vm);
+        Task<bool> UpdateAsync(long id, PutProductVM vm);
+        Task<bool> DeleteAsync(long id);
 
-	}
+    }
 }

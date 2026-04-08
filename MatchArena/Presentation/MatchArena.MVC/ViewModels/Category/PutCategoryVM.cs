@@ -1,4 +1,10 @@
-﻿namespace MatchArena.MVC.ViewModels.Category
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace MatchArena.MVC.ViewModels.Category
 {
-    public record PutCategoryVM(string Name);
+    public class PutCategoryVM
+    {
+        [Required(ErrorMessage = "Ad boş ola bilməz")]
+        public string Name { get; set; } = null!;
+    }
 }

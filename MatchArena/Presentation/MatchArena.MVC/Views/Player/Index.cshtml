@@ -6,15 +6,15 @@
             <h1 class="section-title">Oyunçular</h1>
             <p class="section-subtitle">Yüksək səviyəli oyunçuları tap və komandana dəvət et.</p>
         </div>
-        <a href="create-player.html" class="btn btn-primary" id="createPlayerBtn" style="display: none; white-space: nowrap;">
+        <a asp-action="Create" class="btn btn-primary" id="createPlayerBtn" >
             ⚽ Oyunçu Profili Yarat
         </a>
     </div>
     <div class="cards-grid">
        @foreach (GetPlayerItemVM player in Model)
         {
-            <a asp-action="Detail"  asp-route-id="@player.Id" class="player-card">
-                <div class="card-image" ><img src="@player.Image" alt="@player.Name @player.Surname"><div class="rating">⭐ 4.9</div></div>
+            <a asp-controller="Player" asp-action="Detail" asp-route-id="@player.Id" class="player-card">
+                <div class="card-image" ><img src="@player.Image" alt="@player.Name @player.Surname"><div class="rating">⭐ @player.AverageRating</div></div>
                 <div class="card-content">
                     <div class="team-badge">⚽ @player.Position</div>
                     <h3 class="card-title">@player.Name @player.Surname</h3>
@@ -26,23 +26,7 @@
                     <div class="card-buttons"><span class="btn-small">Profil bax</span></div>
                 </div>
             </a>
-            @* <a asp-action="Detail" asp-route-id="@player.Id" class="player-card">
-                <div class="card-image"><img src="@player.Image" alt="@player.Name"></div>
-                <div class="card-content">
-                    <div class="player-badge">👥 KOMANDA</div>
-                    <h3 class="card-title">@player.Name</h3>
-                    <div class="card-subtitle">Kapitain: @player.Name • 🏠 @player.City</div>
-                    <div class="card-stats">
-                        <div class="stat-item"><div class="stat-item-value">@player.Age/@player.Age</div><div class="stat-item-label">qolaça</div></div>
-                        <div class="stat-item"><div class="stat-item-value">4.9</div><div class="stat-item-label">⭐</div></div>
-                        <div class="stat-item"><div class="stat-item-value">@player.GameCount</div><div class="stat-item-label">oyun</div></div>
-                    </div>
-                    <div class="card-buttons">
-                        <span class="btn-small">Profil bax</span>
-                        <button class="btn-small btn-small-secondary">Qoşul</button>
-                    </div>
-                </div>
-            </a> *@
+          
         }
     </div>
 </main>

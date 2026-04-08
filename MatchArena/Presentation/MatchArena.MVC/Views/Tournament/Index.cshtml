@@ -1,4 +1,4 @@
-﻿@* @model GetTournamentItemVM
+﻿@model List<GetTournamentItemVM>
 <main>
     <h1 class="section-title">Turnirlər</h1>
     <p class="section-subtitle">Rəqabətli turnirlərə qoşul və komandanı sına.</p>
@@ -6,22 +6,23 @@
     <p class="tournaments-count">5 turnir tapıldı</p>
 
     <div class="cards-grid">
-       @foreach (Tournament tournament in Model.Tournaments)
+       @foreach (GetTournamentItemVM tournament in Model)
         {
             <div class="tournament-card">
-                <div class="card-image"><img src="assets/img/WhatsApp Şəkil 2025-06-02 saat 15.17.05_c54a2834.jpg" alt="Bakı Futbol Liqası"><span class="tournament-status-badge tournament-status-active">Davam etməkdə</span></div>
+                <div class="card-image"><img src="@tournament.Logo" alt="Bakı Futbol Liqası"><span class="tournament-status-badge tournament-status-active">@tournament.Status</span></div>
                 <div class="card-content">
                     <div class="team-badge">🏆 TURNİR</div>
-                    <h3 class="card-title">Bakı Futbol Liqası</h3>
-                    <div class="prize-badge">⭐ 50,000₼ MÜKAFAT</div>
+                    <h3 class="card-title">@tournament.Name</h3>
+                    <div class="prize-badge">⭐ @tournament.PrizeFund₼ MÜKAFAT</div>
                     <div class="tournament-details">
-                        <div class="tournament-detail-item">📅 15 Fevral 2024 - 30 İyun 2024</div>
-                        <div class="tournament-detail-item">📍 Baki</div>
-                        <div class="tournament-detail-item">👥 12 komanda • ⭐ 4.7</div>
+                        <div class="tournament-detail-item">📅 @tournament.StartDate - @tournament.EndDate</div>
+                        <div class="tournament-detail-item">📍 @tournament.City</div>
+                        <div class="tournament-detail-item">👥 @tournament.MaxTeams komanda </div>
                     </div>
-                    <div class="card-buttons"><a href="tournament-detail.html?id=1" class="btn-small">Ətraflı →</a></div>
+                    <div class="card-buttons"><a asp-action="Detail" asp-route-id="@tournament.id" class="btn-small">Ətraflı →</a></div>
                 </div>
             </div>
+
         }
     </div>
-</main> *@
+</main>

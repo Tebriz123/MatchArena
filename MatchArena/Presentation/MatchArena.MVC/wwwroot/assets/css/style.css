@@ -17,6 +17,12 @@
     --accent-orange: #f97316;
     --accent-yellow: #eab308;
 }
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 4px;
+}
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

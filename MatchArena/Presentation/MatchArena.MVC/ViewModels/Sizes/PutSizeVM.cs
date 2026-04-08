@@ -1,4 +1,11 @@
-﻿namespace MatchArena.MVC.ViewModels.Sizes
+﻿using System.ComponentModel.DataAnnotations;
+
+
+namespace MatchArena.MVC.ViewModels.Sizes
 {
-    public record PutSizeVM(string Name);
+    public class PutSizeVM
+    {
+        [Required(ErrorMessage = "Ad boş ola bilməz")]
+        public string Name { get; set; } = null!;
+    }
 }

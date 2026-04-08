@@ -1,330 +1,167 @@
 ﻿@model GetFieldVM
-<main class="detail-page-container">
-    <a href="fields.html" class="back-link">← Meydançalara qayıt</a>
 
-    <!-- Field Header -->
+<main class="detail-page-container">
+    <a asp-controller="Field" asp-action="Index" class="back-link">← Meydançalara qayıt</a>
+
     <div class="detail-card detail-header">
         <div class="detail-header-grid-field">
-            <div class="detail-avatar-field"><img src="assets/img/WhatsApp Şəkil 2025-06-02 saat 15.17.05_c54a2834.jpg" alt="Mini Futbol Arena"></div>
-
+            <div class="detail-avatar-field"><img src="@Model.PrimaryPhoto" alt="Mini Futbol Arena"></div>
             <div class="detail-info">
-                <h1 class="detail-title">Mini Futbol Arena</h1>
-                <p class="detail-location">🏠 Baki</p>
-
+                <h1 class="detail-title">@Model.Name</h1>
+                <p class="detail-location">🏠 @Model.City</p>
                 <div class="detail-stats-row">
                     <div class="detail-stat-box stat-primary">
                         <div class="stat-label">Qiymət</div>
-                        <div class="stat-value-primary">120₼/saat</div>
+                        <div class="stat-value-primary">@Model.PricePerHour₼/saat</div>
                     </div>
                     <div class="detail-stat-box stat-blue">
                         <div class="stat-label">Reytinq</div>
-                        <div class="stat-value-blue">⭐ 4.5</div>
+                        <div class="stat-value-blue">⭐ @Model.AverageRating</div>
                     </div>
                     <div class="detail-stat-box stat-orange">
                         <div class="stat-label">Rəylər</div>
-                        <div class="stat-value-orange">127</div>
+                        <div class="stat-value-orange">@Model.TotalRating</div>
                     </div>
-                </div>
-
-                <div class="detail-actions">
-                    <button class="btn-action-primary" onclick="openReservationModal()">Rezerv Et</button>
-                    <button class="btn-action-secondary">Mesaj Göndər</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Field Images Gallery -->
     <div class="detail-card">
         <h2 class="detail-card-title">Meydança Şəkilləri</h2>
-
         <div class="field-images-gallery">
-            <div class="main-image-container">
-                <img src="assets/img/WhatsApp Şəkil 2025-06-02 saat 15.17.05_c54a2834.jpg" alt="Mini Futbol Arena - Əsas Şəkil" class="gallery-main-image">
-                <span class="image-label">Əsas Şəkil</span>
-            </div>
-
             <div class="auxiliary-images">
-                <div class="auxiliary-image-item">
-                    <img src="assets/img/WhatsApp Şəkil 2025-06-02 saat 15.17.05_c54a2834.jpg" alt="Köməkçi Şəkil 1" class="gallery-aux-image">
-                    <span class="image-label-small">Köməkçi Şəkil 1</span>
-                </div>
-                <div class="auxiliary-image-item">
-                    <img src="assets/img/WhatsApp Şəkil 2025-06-02 saat 15.17.05_c54a2834.jpg" alt="Köməkçi Şəkil 2" class="gallery-aux-image">
-                    <span class="image-label-small">Köməkçi Şəkil 2</span>
-                </div>
-                <div class="auxiliary-image-item">
-                    <img src="assets/img/WhatsApp Şəkil 2025-06-02 saat 15.17.05_c54a2834.jpg" alt="Köməkçi Şəkil 3" class="gallery-aux-image">
-                    <span class="image-label-small">Köməkçi Şəkil 3</span>
-                </div>
-                <div class="auxiliary-image-item">
-                    <img src="assets/img/WhatsApp Şəkil 2025-06-02 saat 15.17.05_c54a2834.jpg" alt="Köməkçi Şəkil 4" class="gallery-aux-image">
-                    <span class="image-label-small">Köməkçi Şəkil 4</span>
-                </div>
+                @foreach (var item in Model.AdditionalPhoto)
+                {
+                    <div class="auxiliary-image-item">
+                        <img src="@item" alt="" class="gallery-aux-image">
+                    </div>
+                }
             </div>
         </div>
     </div>
 
-    <!-- Two Column Layout -->
     <div class="detail-two-column">
-        <!-- Left Column -->
         <div class="detail-column">
-            <!-- Field Information -->
             <div class="detail-card detail-info-card">
                 <h2 class="detail-card-title">Meydança Məlumatları</h2>
-
                 <div class="detail-info-row">
                     <span class="info-label">Şəhər</span>
-                    <span class="info-value">Baki</span>
+                    <span class="info-value">@Model.City</span>
                 </div>
-
                 <div class="detail-info-row">
                     <span class="info-label">Ünvan</span>
-                    <span class="info-value">Nizami r., 45A</span>
+                    <span class="info-value">@Model.Address</span>
                 </div>
-
-
                 <div class="detail-info-row">
                     <span class="info-label">İşçi Saatları</span>
-                    <span class="info-value">08:00 - 23:00</span>
+                    <span class="info-value">@Model.StartDate - @Model.EndDate</span>
                 </div>
-
                 <div class="detail-info-row detail-info-row-last">
                     <span class="info-label">Telefon</span>
-                    <span class="info-value">+994 50 XXX XX XX</span>
+                    <span class="info-value"></span>
                 </div>
             </div>
 
-            <!-- Services -->
             <div class="detail-card">
-                <h2 class="detail-card-title">Xidmətlər</h2>
-
-                <div class="services-list">
-                    <div class="service-item">
-                        <span class="service-check">✓</span>
-                        <span>Şual meydançası</span>
+                <h2 class="detail-card-title">Rezervasiya Et</h2>
+                @if (TempData["Error"] != null)
+                {
+                    <div class="error-message" style="margin-bottom:12px;">@TempData["Error"]</div>
+                }
+                <form asp-controller="Reservation" asp-action="Create" method="post">
+                    <input type="hidden" name="FieldId" value="@Model.Id" />
+                    <div class="form-group" style="margin-bottom:16px;">
+                        <label>Boş Saatlar *</label>
+                        <select name="ReservedTime" class="form-input" required>
+                            <option value="">-- Saat seçin --</option>
+                            @foreach (var time in Model.EmptySpace)
+                            {
+                                <option value="@time.ToString("HH:mm:ss")">@time.ToString("HH:mm")</option>
+                            }
+                        </select>
                     </div>
-                    <div class="service-item">
-                        <span class="service-check">✓</span>
-                        <span>Dəmir kafestir</span>
-                    </div>
-                    <div class="service-item">
-                        <span class="service-check">✓</span>
-                        <span>Soyunma otağı</span>
-                    </div>
-                    <div class="service-item">
-                        <span class="service-check">✓</span>
-                        <span>Şower</span>
-                    </div>
-                    <div class="service-item">
-                        <span class="service-check">✓</span>
-                        <span>Parklandırma</span>
-                    </div>
-                </div>
+                    <button type="submit" class="btn-action-primary" style="width:100%;">Rezerv Et</button>
+                </form>
             </div>
         </div>
 
-        <!-- Right Column -->
         <div class="detail-column">
-            <!-- Available Time Slots -->
             <div class="detail-card time-slots-card">
                 <h2 class="detail-card-title">Boş Saatlar</h2>
-
                 <div class="time-slots">
-                    <button class="time-slot-available">🕐 16:00 - 17:00</button>
-                    <button class="time-slot-available">🕐 17:00 - 18:00</button>
-                    <button class="time-slot-available">🕐 18:00 - 19:00</button>
-                    <button class="time-slot-available">🕐 19:00 - 20:00</button>
-                    <button class="time-slot-available">🕐 20:00 - 21:00</button>
+                    @foreach (TimeOnly time in Model.EmptySpace)
+                    {
+                        <button class="time-slot-available">🕐 @time</button>
+                    }
                 </div>
             </div>
 
-            <!-- Reviews -->
             <div class="detail-card">
                 <h2 class="detail-card-title">Rəylər</h2>
-                <p class="reviews-summary">127 rəy (⭐ 4.5 ortalama)</p>
+                <p class="reviews-summary">@Model.Ratings.TotalRatings rəy (⭐ @Model.Ratings.AverageRating ortalama)</p>
+
+                @if (TempData["Success"] != null)
+                {
+                    <div class="success-message" style="margin-bottom:12px;">@TempData["Success"]</div>
+                }
+                @if (TempData["RatingError"] != null)
+                {
+                    <div class="error-message" style="margin-bottom:12px;">@TempData["RatingError"]</div>
+                }
+
+                <form asp-controller="FieldRating" asp-action="PostRating" method="post" style="margin-bottom:24px;">
+                    <input type="hidden" name="fieldId" value="@Model.Id" />
+                    <div class="form-group" style="margin-bottom:12px;">
+                        <div class="form-group" style="margin-bottom:12px;">
+                            <label>Reytinq *</label>
+                            <select name="Rating" class="form-input" required>
+                                <option value="">-- Reytinq seçin --</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-bottom:12px;">
+                        <label>Şərh</label>
+                        <textarea name="Comment" class="form-input" rows="3"
+                                  placeholder="Rəyinizi yazın..."
+                                  style="resize:vertical;width:100%;"></textarea>
+                    </div>
+                    <button type="submit" class="btn-action-primary">Rəy Göndər</button>
+                </form>
 
                 <div class="reviews-list">
-                    <div class="review-item">
-                        <div class="review-avatar review-avatar-green">R</div>
-                        <div class="review-content">
-                            <div class="review-author">Rəşad B.</div>
-                            <div class="review-text">Xoş meydança, təmiz və əlverişli</div>
-                        </div>
-                    </div>
-
-                    <div class="review-item">
-                        <div class="review-avatar review-avatar-blue">A</div>
-                        <div class="review-content">
-                            <div class="review-author">Azər K.</div>
-                            <div class="review-text">Bahalı amma xidmət yüksəkdir</div>
-                        </div>
-                    </div>
+                    @if (Model.Ratings.Ratings != null && Model.Ratings.Ratings.Any())
+                    {
+                        foreach (var review in Model.Ratings.Ratings)
+                        {
+                            <div class="review-item">
+                                <div class="review-avatar review-avatar-green">
+                                    @review.UserName?.Substring(0, 1).ToUpper()
+                                </div>
+                                <div class="review-content"> 
+                                    <div class="review-author">@review.UserName</div>
+                                    <div class="review-stars">
+                                        @for (int i = 1; i <= 5; i++)
+                                        {
+                                            <span style="color: @(i <= review.Rating ? "#f59e0b" : "#d1d5db")">★</span>
+                                        }
+                                    </div>
+                                    <div class="review-text">@review.Comment</div>
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <p style="color:#6b7280;">Hələ rəy yoxdur.</p>
+                    }
                 </div>
             </div>
         </div>
     </div>
 </main>
-
-<!-- Reservation Modal -->
-<div id="reservationModal" class="modal" style="display: none;">
-    <div class="modal-content modal-large">
-        <div class="modal-header">
-            <h2>Meydança Rezervasiyası</h2>
-            <span class="modal-close" onclick="closeReservationModal()">&times;</span>
-        </div>
-
-        <!-- Progress Steps -->
-        <div class="modal-steps">
-            <div class="step active" data-step="1">
-                <div class="step-number">1</div>
-                <div class="step-label">Tarix & Saat</div>
-            </div>
-            <div class="step" data-step="2">
-                <div class="step-number">2</div>
-                <div class="step-label">Şəxsi Məlumatlar</div>
-            </div>
-            <div class="step" data-step="3">
-                <div class="step-number">3</div>
-                <div class="step-label">Ödəniş</div>
-            </div>
-        </div>
-
-        <div class="modal-body">
-            <form id="reservationForm">
-                <!-- Step 1: Date & Time Selection -->
-                <div class="form-step active" data-step="1">
-                    <h3 class="step-title">Rezervasiya Məlumatları</h3>
-
-                    <div class="form-group">
-                        <label for="reservationDate">Tarix *</label>
-                        <input type="date" id="reservationDate" class="form-input" required min="">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Boş Saatlar *</label>
-                        <div id="availableSlots" class="time-slots-grid">
-                            <!-- Time slots will be loaded here -->
-                        </div>
-                        <input type="hidden" id="selectedTimeSlot" required>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="duration">Müddət *</label>
-                            <select id="duration" class="form-input" required onchange="updateTotal()">
-                                <option value="1">1 saat</option>
-                                <option value="2">2 saat</option>
-                                <option value="3">3 saat</option>
-                                <option value="4">4 saat</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="playerCount">İştirakçı sayı</label>
-                            <input type="number" id="playerCount" class="form-input" min="1" max="22" value="10">
-                        </div>
-                    </div>
-
-                    <div class="reservation-total">
-                        <div class="total-label">Ümumi məbləğ:</div>
-                        <div class="total-amount" id="totalAmount">120₼</div>
-                    </div>
-
-                    <button type="button" class="btn-large btn-primary" onclick="nextStep(2)">Növbəti</button>
-                </div>
-
-                <!-- Step 2: Personal Information -->
-                <div class="form-step" data-step="2">
-                    <h3 class="step-title">Şəxsi Məlumatlar</h3>
-
-                    <div class="form-group">
-                        <label for="customerName">Ad Soyad *</label>
-                        <input type="text" id="customerName" class="form-input" required placeholder="Adınızı daxil edin">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="customerEmail">Email *</label>
-                        <input type="email" id="customerEmail" class="form-input" required placeholder="email@example.com">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="customerPhone">Telefon *</label>
-                        <input type="tel" id="customerPhone" class="form-input" required placeholder="+994 XX XXX XX XX">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="customerNote">Qeyd (istəyə bağlı)</label>
-                        <textarea id="customerNote" class="form-input" rows="3" placeholder="Əlavə qeydləriniz..."></textarea>
-                    </div>
-
-                    <div class="form-actions">
-                        <button type="button" class="btn-large btn-secondary" onclick="prevStep(1)">Geri</button>
-                        <button type="button" class="btn-large btn-primary" onclick="nextStep(3)">Növbəti</button>
-                    </div>
-                </div>
-
-                <!-- Step 3: Payment -->
-                <div class="form-step" data-step="3">
-                    <h3 class="step-title">Ödəniş Məlumatları</h3>
-
-                    <div class="payment-summary-box">
-                        <div class="summary-row">
-                            <span>Meydança:</span>
-                            <strong id="summaryField"></strong>
-                        </div>
-                        <div class="summary-row">
-                            <span>Tarix:</span>
-                            <strong id="summaryDate"></strong>
-                        </div>
-                        <div class="summary-row">
-                            <span>Saat:</span>
-                            <strong id="summaryTime"></strong>
-                        </div>
-                        <div class="summary-row">
-                            <span>Müddət:</span>
-                            <strong id="summaryDuration"></strong>
-                        </div>
-                        <div class="summary-row summary-total">
-                            <span>Ümumi məbləğ:</span>
-                            <strong id="summaryTotal"></strong>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Kart Nömrəsi *</label>
-                        <div id="card-number-element-modal" class="stripe-element">
-                            <!-- Stripe Card Number Element -->
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Son İstifadə Tarixi *</label>
-                            <div id="card-expiry-element-modal" class="stripe-element">
-                                <!-- Stripe Card Expiry Element -->
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label>CVC *</label>
-                            <div id="card-cvc-element-modal" class="stripe-element">
-                                <!-- Stripe Card CVC Element -->
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="card-errors-modal" class="error-message"></div>
-
-                    <div class="form-actions">
-                        <button type="button" class="btn-large btn-secondary" onclick="prevStep(2)">Geri</button>
-                        <button type="submit" class="btn-large btn-primary" id="submitReservation">
-                            <span id="submitText">Ödəniş et və Təsdiqlə</span>
-                            <span id="submitLoader" class="spinner" style="display: none;"></span>
-                        </button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>

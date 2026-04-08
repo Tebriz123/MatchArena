@@ -12,7 +12,6 @@ namespace MatchArena.Application.Interfaces.Services
         Task CreateAsync(PostColorDto colorDto);
         Task<IReadOnlyList<GetColorItemDto>> GetAllAsync(int page, int take);
         Task<GetColorDto> GetByIdAsync(int id);
-        Task RemoveAsync(int id);
         Task UpdateAsync(PutColorDto colorDto, int id);
         Task RemoveAsync(long id);
     }

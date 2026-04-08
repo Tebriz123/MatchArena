@@ -9,15 +9,16 @@ using System.Threading.Tasks;
 namespace MatchArena.Application.DTOs.Teams
 {
     public record GetTeamItemDto(
-        long Id,
-        string Name,
-        int PlayerCount,
-        int MaxPlayer,
-        string City,
-        int GameCount,
-        string CaptainName,
-        string Logo,
-        double Rating
-        );
-  
+     long Id,
+     string Name,
+     int PlayerCount,
+     int MaxPlayer,
+     string City,
+     int GameCount,
+     string CaptainName,
+     string Logo,
+     double Rating,
+     string CaptainUserId
+ );
+
 }

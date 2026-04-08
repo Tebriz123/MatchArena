@@ -62,68 +62,71 @@ using Microsoft.EntityFrameworkCore;
                 return _mapper.Map<GetProductDto>(product);
             }
 
-            public async Task CreateProductAsync(PostProductDto productDto)
+        public async Task CreateProductAsync(PostProductDto productDto)
+        {
+            bool exists = await _repository.AnyAsync(p => p.Name == productDto.Name);
+            if (exists)
+                throw new Exception("Entity already exists");
+
+            bool categoryExists = await _categoryRepository.AnyAsync(c => c.Id == productDto.CategoryId);
+            if (!categoryExists)
+                throw new Exception("Category does not exist");
+
+            if (productDto.ColorIds != null && productDto.ColorIds.Any())
             {
-                bool exists = await _repository.AnyAsync(p => p.Name == productDto.Name);
-                if (exists)
-                    throw new Exception("Entity already exists");
-
-
-                bool categoryExists = await _categoryRepository.AnyAsync(c => c.Id == productDto.CategoryId);
-                if (!categoryExists)
-                    throw new Exception("Category does not exist");
-
-
                 var colors = await _colorRepository
                     .GetAll(c => productDto.ColorIds.Distinct().Contains(c.Id))
                     .ToListAsync();
                 if (colors.Count != productDto.ColorIds.Distinct().Count())
                     throw new Exception("One or more colors do not exist");
+            }
 
-
+            if (productDto.SizeIds != null && productDto.SizeIds.Any())
+            {
                 var sizes = await _sizeRepository
                     .GetAll(s => productDto.SizeIds.Distinct().Contains(s.Id))
                     .ToListAsync();
                 if (sizes.Count != productDto.SizeIds.Distinct().Count())
                     throw new Exception("One or more sizes do not exist");
-
-
-                string primaryImageUrl = string.Empty;
-                if (productDto.PrimaryPhoto is not null)
-                    primaryImageUrl = await _fileService.FileCreateAsync(productDto.PrimaryPhoto);
-
-
-                Product product = _mapper.Map<Product>(productDto);
-                product.Image = primaryImageUrl;
-                product.ProductImages = new List<ProductImage>();
-
-                if (!string.IsNullOrEmpty(primaryImageUrl))
-                {
-                    product.ProductImages.Add(new ProductImage
-                    {
-                        Image = primaryImageUrl,
-                        IsPrimary = true
-                    });
-                }
-
-                if (productDto.AdditionalPhotos is not null && productDto.AdditionalPhotos.Any())
-                {
-                    foreach (IFormFile photo in productDto.AdditionalPhotos)
-                    {
-                        string imageUrl = await _fileService.FileCreateAsync(photo);
-                        product.ProductImages.Add(new ProductImage
-                        {
-                            Image = imageUrl,
-                            IsPrimary = false
-                        });
-                    }
-                }
-
-                _repository.Add(product);
-                await _repository.SaveChangesAsync();
             }
 
-            public async Task UpdateProductAsync(long id, PutProductDto productDto)
+            string primaryImageUrl = string.Empty;
+            if (productDto.PrimaryPhoto is not null)
+                primaryImageUrl = await _fileService.FileCreateAsync(productDto.PrimaryPhoto);
+
+            Product product = _mapper.Map<Product>(productDto);
+            product.Image = primaryImageUrl;
+            product.ProductImages = new List<ProductImage>();
+
+            if (!string.IsNullOrEmpty(primaryImageUrl))
+            {
+                product.ProductImages.Add(new ProductImage
+                {
+                    Image = primaryImageUrl,
+                    IsPrimary = true,
+                    Product = product
+                });
+            }
+
+            if (productDto.AdditionalPhotos is not null && productDto.AdditionalPhotos.Any())
+            {
+                foreach (IFormFile photo in productDto.AdditionalPhotos)
+                {
+                    string imageUrl = await _fileService.FileCreateAsync(photo);
+                    product.ProductImages.Add(new ProductImage
+                    {
+                        Image = imageUrl,
+                        IsPrimary = false,
+                        Product = product
+                    });
+                }
+            }
+
+            _repository.Add(product);
+            await _repository.SaveChangesAsync();
+        }
+
+        public async Task UpdateProductAsync(long id, PutProductDto productDto)
             {
 
                 bool exists = await _repository.AnyAsync(p => p.Name == productDto.Name && p.Id != id);

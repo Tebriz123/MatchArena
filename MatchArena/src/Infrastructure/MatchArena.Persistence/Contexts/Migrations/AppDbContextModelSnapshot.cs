@@ -127,7 +127,7 @@ namespace MatchArena.Persistence.Contexts.Migrations
                     b.HasIndex("Name")
                         .IsUnique();
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("MatchArena.Domain.Entities.Color", b =>
@@ -160,7 +160,7 @@ namespace MatchArena.Persistence.Contexts.Migrations
                     b.HasIndex("Name")
                         .IsUnique();
 
-                    b.ToTable("Colors");
+                    b.ToTable("Colors", (string)null);
                 });
 
             modelBuilder.Entity("MatchArena.Domain.Entities.Field", b =>
@@ -226,7 +226,7 @@ namespace MatchArena.Persistence.Contexts.Migrations
 
                     b.HasIndex("TournamentId");
 
-                    b.ToTable("Fields");
+                    b.ToTable("Fields", (string)null);
                 });
 
             modelBuilder.Entity("MatchArena.Domain.Entities.FieldImage", b =>
@@ -255,7 +255,7 @@ namespace MatchArena.Persistence.Contexts.Migrations
 
                     b.HasIndex("FieldId");
 
-                    b.ToTable("FieldImages");
+                    b.ToTable("FieldImages", (string)null);
                 });
 
             modelBuilder.Entity("MatchArena.Domain.Entities.FieldRating", b =>
@@ -290,7 +290,7 @@ namespace MatchArena.Persistence.Contexts.Migrations
 
                     b.HasIndex("PlayerId");
 
-                    b.ToTable("FieldRatings");
+                    b.ToTable("FieldRatings", (string)null);
                 });
 
             modelBuilder.Entity("MatchArena.Domain.Entities.Payment", b =>
@@ -334,7 +334,7 @@ namespace MatchArena.Persistence.Contexts.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Payments");
+                    b.ToTable("Payments", (string)null);
                 });
 
             modelBuilder.Entity("MatchArena.Domain.Entities.Player", b =>
@@ -425,7 +425,7 @@ namespace MatchArena.Persistence.Contexts.Migrations
                     b.HasIndex("UserId")
                         .IsUnique();
 
-                    b.ToTable("Players");
+                    b.ToTable("Players", (string)null);
                 });
 
             modelBuilder.Entity("MatchArena.Domain.Entities.PlayerRating", b =>
@@ -460,7 +460,7 @@ namespace MatchArena.Persistence.Contexts.Migrations
 
                     b.HasIndex("RaterPlayerId");
 
-                    b.ToTable("PlayerRatings");
+                    b.ToTable("PlayerRatings", (string)null);
                 });
 
             modelBuilder.Entity("MatchArena.Domain.Entities.Product", b =>
@@ -509,7 +509,7 @@ namespace MatchArena.Persistence.Contexts.Migrations
                     b.HasIndex("Name")
                         .IsUnique();
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
                 });
 
             modelBuilder.Entity("MatchArena.Domain.Entities.ProductColor", b =>
@@ -524,7 +524,7 @@ namespace MatchArena.Persistence.Contexts.Migrations
 
                     b.HasIndex("ColorId");
 
-                    b.ToTable("ProductColors");
+                    b.ToTable("ProductColors", (string)null);
                 });
 
             modelBuilder.Entity("MatchArena.Domain.Entities.ProductImage", b =>
@@ -558,7 +558,7 @@ namespace MatchArena.Persistence.Contexts.Migrations
 
                     b.HasIndex("ProductId1");
 
-                    b.ToTable("ProductImage");
+                    b.ToTable("ProductImage", (string)null);
                 });
 
             modelBuilder.Entity("MatchArena.Domain.Entities.ProductRating", b =>
@@ -594,7 +594,7 @@ namespace MatchArena.Persistence.Contexts.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("ProductRatings");
+                    b.ToTable("ProductRatings", (string)null);
                 });
 
             modelBuilder.Entity("MatchArena.Domain.Entities.ProductSize", b =>
@@ -609,7 +609,7 @@ namespace MatchArena.Persistence.Contexts.Migrations
 
                     b.HasIndex("SizeId");
 
-                    b.ToTable("ProductSizes");
+                    b.ToTable("ProductSizes", (string)null);
                 });
 
             modelBuilder.Entity("MatchArena.Domain.Entities.Reservation", b =>
@@ -656,7 +656,7 @@ namespace MatchArena.Persistence.Contexts.Migrations
                     b.HasIndex("FieldId", "ReservedDate", "ReservedTime")
                         .IsUnique();
 
-                    b.ToTable("Reservations");
+                    b.ToTable("Reservations", (string)null);
                 });
 
             modelBuilder.Entity("MatchArena.Domain.Entities.Size", b =>
@@ -689,7 +689,7 @@ namespace MatchArena.Persistence.Contexts.Migrations
                     b.HasIndex("Name")
                         .IsUnique();
 
-                    b.ToTable("Sizes");
+                    b.ToTable("Sizes", (string)null);
                 });
 
             modelBuilder.Entity("MatchArena.Domain.Entities.Team", b =>
@@ -755,7 +755,7 @@ namespace MatchArena.Persistence.Contexts.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Teams");
+                    b.ToTable("Teams", (string)null);
                 });
 
             modelBuilder.Entity("MatchArena.Domain.Entities.TeamInvite", b =>
@@ -788,7 +788,7 @@ namespace MatchArena.Persistence.Contexts.Migrations
                     b.HasIndex("TeamId", "PlayerId")
                         .IsUnique();
 
-                    b.ToTable("TeamInvites");
+                    b.ToTable("TeamInvites", (string)null);
                 });
 
             modelBuilder.Entity("MatchArena.Domain.Entities.TeamPlayer", b =>
@@ -820,7 +820,7 @@ namespace MatchArena.Persistence.Contexts.Migrations
                         .IsUnique()
                         .HasFilter("[IsCaptain] = 1");
 
-                    b.ToTable("TeamPlayers");
+                    b.ToTable("TeamPlayers", (string)null);
                 });
 
             modelBuilder.Entity("MatchArena.Domain.Entities.Tournament", b =>
@@ -914,7 +914,7 @@ namespace MatchArena.Persistence.Contexts.Migrations
 
                     b.HasIndex("Status");
 
-                    b.ToTable("Tournaments");
+                    b.ToTable("Tournaments", (string)null);
                 });
 
             modelBuilder.Entity("MatchArena.Domain.Entities.TournamentRegistration", b =>
@@ -960,7 +960,7 @@ namespace MatchArena.Persistence.Contexts.Migrations
                     b.HasIndex("TournamentId", "TeamId")
                         .IsUnique();
 
-                    b.ToTable("TournamentRegistrations");
+                    b.ToTable("TournamentRegistrations", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

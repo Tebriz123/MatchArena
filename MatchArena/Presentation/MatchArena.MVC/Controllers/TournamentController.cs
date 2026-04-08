@@ -22,6 +22,7 @@ namespace MatchArena.MVC.Controllers
         {
             return View(await _tournamentClient.GetByIdAsync(id));
         }
+
         public IActionResult Create()
         {
             return View();
@@ -31,6 +32,12 @@ namespace MatchArena.MVC.Controllers
         public async Task<IActionResult> Create(PostTournamentVM vm)
         {
             if (!ModelState.IsValid) return View(vm);
+
+            if (vm.Photo is null)
+            {
+                ModelState.AddModelError("Photo", "Şəkil seçin.");
+                return View(vm);
+            }
 
             var result = await _tournamentClient.CreateAsync(vm);
             if (!result)
@@ -48,23 +55,19 @@ namespace MatchArena.MVC.Controllers
             if (tournament is null) return NotFound();
 
             var vm = new PutTournamentVM(
-                tournament.Name,
-                tournament.Description,
-                tournament.Address,
-                tournament.City,
-                tournament.Logo,
-                null!,
-                tournament.StartTime,
-                tournament.EndTime,
-                tournament.RegistrationDeadline,
-                tournament.MaxTeams,
-                tournament.CurrentTeams,
-                tournament.EntryFee,
-                tournament.PrizeFund,
-                tournament.Format,
-                tournament.GameFormat,
-                tournament.Status
-            );
+     tournament.Name,
+     tournament.Description,
+     tournament.Address,
+     tournament.City,      
+     null,                 
+     tournament.StartDate,
+     tournament.EndDate,
+     tournament.RegistrationDeadline,
+     tournament.MaxTeams, 
+     tournament.EntryFee,
+     tournament.PrizeFund,  
+     tournament.Status
+ );
 
             return View(vm);
         }
@@ -82,6 +85,15 @@ namespace MatchArena.MVC.Controllers
             }
 
             return RedirectToAction(nameof(Index));
-        } 
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(long id)
+        {
+            var result = await _tournamentClient.DeleteAsync(id);
+            if (!result) TempData["Error"] = "Turnir silinə bilmədi.";
+            else TempData["Success"] = "Turnir silindi.";
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

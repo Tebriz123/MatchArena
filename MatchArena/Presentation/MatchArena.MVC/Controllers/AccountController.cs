@@ -1,62 +1,137 @@
 ﻿using MatchArena.MVC.Services.Interfaces;
 using MatchArena.MVC.ViewModels;
+using MatchArena.MVC.ViewModels.AppUsers;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 
 namespace MatchArena.MVC.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly IAccountClientService _clientService;
+        private readonly IAccountClientService _accountService;
 
-        public AccountController(IAccountClientService clientService)
+        public AccountController(IAccountClientService accountService)
         {
-            _clientService = clientService;
+            _accountService = accountService;
         }
-         
-        public IActionResult Login() => View();
+
+        [HttpGet]
+        public IActionResult Register() => View();
 
         [HttpPost]
-        public async Task<IActionResult> Login(LoginVM loginVM)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Register(RegisterVM model)
         {
-            if (!ModelState.IsValid) return View(loginVM);
+            if (!ModelState.IsValid) return View(model);
 
-            var token = await _clientService.LoginAsync(loginVM);
-            if (token == null)
+            var success = await _accountService.RegisterAsync(model);
+            if (!success)
             {
-                ModelState.AddModelError("", "İstifadəçi adı və ya şifrə yanlışdır.");
-                return View(loginVM);
+                ModelState.AddModelError("", "Qeydiyyat alınmadı. Email və ya istifadəçi adı artıq mövcuddur.");
+                return View(model);
             }
 
-            Response.Cookies.Append("token", token, new CookieOptions
+            TempData["Success"] = "Qeydiyyat uğurla tamamlandı!";
+            return RedirectToAction("Login");
+        }
+
+        [HttpGet]
+        public IActionResult Login(string? returnUrl = null)
+        {
+            ViewData["ReturnUrl"] = returnUrl;
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Login(LoginVM model, string? returnUrl = null)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            var tokenResponse = await _accountService.LoginAsync(model);
+            if (tokenResponse is null)
+            {
+                ModelState.AddModelError("", "İstifadəçi adı/email və ya şifrə yanlışdır.");
+                return View(model);
+            }
+
+            var handler = new JwtSecurityTokenHandler();
+            var jwt = handler.ReadJwtToken(tokenResponse.Token);
+
+            var identity = new ClaimsIdentity(
+                jwt.Claims,
+                CookieAuthenticationDefaults.AuthenticationScheme);
+
+            await HttpContext.SignInAsync(
+                CookieAuthenticationDefaults.AuthenticationScheme,
+                new ClaimsPrincipal(identity),
+                new AuthenticationProperties
+                {
+                    IsPersistent = model.RememberMe,
+                    ExpiresUtc = jwt.ValidTo
+                });
+
+            Response.Cookies.Append("jwtToken", tokenResponse.Token, new CookieOptions
             {
                 HttpOnly = true,
-                Expires = DateTimeOffset.UtcNow.AddHours(1)
+                Secure = true,
+                SameSite = SameSiteMode.Strict,
+                Expires = jwt.ValidTo
             });
+
+            TempData["Success"] = $"Xoş gəldiniz, {tokenResponse.UserName}!";
+
+            if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
+                return Redirect(returnUrl);
 
             return RedirectToAction("Index", "Home");
         }
 
-        public IActionResult Register() => View();
-
         [HttpPost]
-        public async Task<IActionResult> Register(RegisterVM registerVM)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Logout()
         {
-            if (!ModelState.IsValid) return View(registerVM);
-
-            var result = await _clientService.RegisterAsync(registerVM);
-            if (!result)
-            {
-                ModelState.AddModelError("", "Qeydiyyat zamanı xəta baş verdi.");
-                return View(registerVM);
-            } 
-
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            Response.Cookies.Delete("jwtToken");
             return RedirectToAction(nameof(Login));
         }
 
-        public IActionResult Logout()
+        [HttpGet]
+        public IActionResult ForgotPassword() => View();
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ForgotPassword(ForgotPasswordVM model)
         {
-            Response.Cookies.Delete("token");
-            return RedirectToAction(nameof(Login));
+            if (!ModelState.IsValid) return View(model);
+
+            await _accountService.ForgotPasswordAsync(model);
+            TempData["Success"] = "Əgər bu email mövcuddursa, sıfırlama linki göndəriləcək.";
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult ResetPassword(string email, string token)
+            => View(new ResetPasswordVM { Email = email, Token = token });
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ResetPassword(ResetPasswordVM model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            var success = await _accountService.ResetPasswordAsync(model);
+            if (!success)
+            {
+                ModelState.AddModelError("", "Şifrə dəyişdirilmədi. Token etibarsız və ya müddəti bitib.");
+                return View(model);
+            }
+
+            TempData["Success"] = "Şifrəniz uğurla dəyişdirildi!";
+            return RedirectToAction("Login");
         }
     }
 }

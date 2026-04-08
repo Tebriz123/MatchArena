@@ -5,12 +5,11 @@
             <h1 class="section-title">Komandalar</h1>
             <p class="section-subtitle">Ən yaxşı futbol komandalarını tap və qoşul.</p>
         </div>
-        <a href="create-team.html" class="btn btn-primary" id="createTeamBtn" style="display: none; white-space: nowrap;">
+        <a asp-action="Create" class="btn btn-primary" id="createTeamBtn">
             👥 Komanda Yarat
         </a>
     </div>
 
-    <p style="color: var(--text-muted); margin-bottom: 2rem;">8 komanda tapıldı</p>
 
     <div class="cards-grid">
         @foreach (GetTeamItemVM team in Model)
@@ -23,7 +22,6 @@
                     <div class="card-subtitle">Kapitain: @team.CaptainName • 🏠 @team.City</div>
                     <div class="card-stats">
                         <div class="stat-item"><div class="stat-item-value">@team.PlayerCount/@team.MaxPlayer</div><div class="stat-item-label">qolaça</div></div>
-                        <div class="stat-item"><div class="stat-item-value">4.9</div><div class="stat-item-label">⭐</div></div>
                         <div class="stat-item"><div class="stat-item-value">@team.GameCount</div><div class="stat-item-label">oyun</div></div>
                     </div>
                     <div class="card-buttons">
