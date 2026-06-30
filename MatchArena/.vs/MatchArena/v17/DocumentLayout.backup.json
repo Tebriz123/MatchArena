@@ -202,9 +202,9 @@
               "Title": "FieldService.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Services\\FieldService.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Services\\FieldService.cs",
-              "ToolTip": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Services\\FieldService.cs*",
-              "RelativeToolTip": "src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Services\\FieldService.cs*",
-              "ViewState": "AgIAABoAAAAAAAAAAAAIwCoAAAA8AAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Services\\FieldService.cs",
+              "RelativeToolTip": "src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Services\\FieldService.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAcwDYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-28T09:20:39.907Z",
               "EditorCaption": ""
@@ -219,8 +219,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\MappingProfiles\\FieldProfile.cs",
               "ViewState": "AgIAABkAAAAAAAAAAAAUwCkAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-28T09:03:42.771Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-28T09:03:42.771Z"
             },
             {
               "$type": "Document",
@@ -232,8 +231,7 @@
               "RelativeToolTip": "Presentation\\MatchArena.MVC\\Views\\Team\\Index.cshtml",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-28T01:57:56.218Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-28T01:57:56.218Z"
             },
             {
               "$type": "Document",
@@ -265,12 +263,11 @@
               "Title": "GlobalException.cs",
               "DocumentMoniker": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.API\\MiddleWares\\GlobalException.cs",
               "RelativeDocumentMoniker": "Presentation\\MatchArena.API\\MiddleWares\\GlobalException.cs",
-              "ToolTip": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.API\\MiddleWares\\GlobalException.cs*",
-              "RelativeToolTip": "Presentation\\MatchArena.API\\MiddleWares\\GlobalException.cs*",
+              "ToolTip": "C:\\Users\\necef\\OneDrive\\\u0130\u015F masas\u0131\\MatchArena2\\MatchArena\\Presentation\\MatchArena.API\\MiddleWares\\GlobalException.cs",
+              "RelativeToolTip": "Presentation\\MatchArena.API\\MiddleWares\\GlobalException.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAABZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-28T00:27:59.416Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-28T00:27:59.416Z"
             },
             {
               "$type": "Document",
@@ -546,8 +543,7 @@
               "RelativeToolTip": "src\\Infrastructure\\MatchArena.Persistence\\Implementations\\Services\\PlayerService.cs",
               "ViewState": "AgIAALUAAAAAAAAAAAAIwMEAAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-27T19:09:51.594Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-27T19:09:51.594Z"
             },
             {
               "$type": "Document",
@@ -559,8 +555,7 @@
               "RelativeToolTip": "src\\Core\\MatchArena.Application\\Interfaces\\Services\\IPlayerService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-27T19:09:24.061Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-27T19:09:24.061Z"
             },
             {
               "$type": "Document",
@@ -596,8 +591,7 @@
               "RelativeToolTip": "Presentation\\MatchArena.MVC\\Services\\Implementations\\PlayerClientService.cs",
               "ViewState": "AgIAAG4AAAAAAAAAAAAUwIcAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-27T18:50:53.941Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-27T18:50:53.941Z"
             },
             {
               "$type": "Document",

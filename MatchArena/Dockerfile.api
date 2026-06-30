@@ -1,0 +1,19 @@
+# MatchArena API — ASP.NET Core Web API (.NET 8)
+# Build context must be the solution directory (where MatchArena.sln lives).
+
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
+
+# Copy everything and restore the API's dependency graph (pulls Core + Infrastructure)
+COPY . .
+RUN dotnet restore "Presentation/MatchArena.API/MatchArena.API.csproj"
+RUN dotnet publish "Presentation/MatchArena.API/MatchArena.API.csproj" \
+    -c Release -o /app/publish /p:UseAppHost=false
+
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
+WORKDIR /app
+EXPOSE 8080
+# Bind to the platform-provided $PORT (Render/Railway inject it); default 8080
+# locally. The platform terminates TLS, so we serve plain HTTP.
+COPY --from=build /app/publish .
+ENTRYPOINT ["sh", "-c", "ASPNETCORE_URLS=http://+:${PORT:-8080} exec dotnet MatchArena.API.dll"]

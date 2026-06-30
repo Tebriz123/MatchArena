@@ -1,0 +1,279 @@
+diff --git a/MatchArena/.dockerignore b/MatchArena/.dockerignore
+new file mode 100644
+index 0000000..d469914
+--- /dev/null
++++ b/MatchArena/.dockerignore
+@@ -0,0 +1,12 @@
++**/bin/
++**/obj/
++**/.vs/
++**/*.user
++**/.git/
++**/.gitignore
++**/appsettings.Development.json
++.env
++.env.*
++!.env.example
++Dockerfile*
++docker-compose*
+diff --git a/MatchArena/.env.example b/MatchArena/.env.example
+new file mode 100644
+index 0000000..1ceabdf
+--- /dev/null
++++ b/MatchArena/.env.example
+@@ -0,0 +1,32 @@
++# Copy to .env and fill with REAL values. Never commit .env.
++# All previously committed secrets are public — rotate them before using.
++
++# --- Database ---
++SA_PASSWORD=Your_Strong!Passw0rd
++
++# --- JWT ---
++JWT_ISSUER=https://your-api-domain/
++JWT_AUDIENCE=https://your-mvc-domain/
++JWT_SECRET_KEY=generate-a-new-long-random-secret
++
++# --- Seeded admin account ---
++ADMIN_USERNAME=admin
++ADMIN_EMAIL=admin@example.com
++ADMIN_PASSWORD=Change_This_Strong_Password1
++
++# --- Email (Mailtrap or real SMTP) ---
++EMAIL_HOST=sandbox.smtp.mailtrap.io
++EMAIL_PORT=587
++EMAIL_USERNAME=your-smtp-username
++EMAIL_PASSWORD=your-smtp-password
++
++# --- Cloudinary ---
++CLOUDINARY_CLOUD_NAME=your-cloud-name
++CLOUDINARY_API_KEY=your-api-key
++CLOUDINARY_API_SECRET=your-api-secret
++
++# --- Stripe (test keys) ---
++STRIPE_PUBLISHABLE_KEY=pk_test_...
++STRIPE_SECRET_KEY=sk_test_...
++STRIPE_SUCCESS_URL=https://your-mvc-domain/payments/success
++STRIPE_CANCEL_URL=https://your-mvc-domain/payments/cancel
+diff --git a/MatchArena/.gitignore b/MatchArena/.gitignore
+index c3b3d9f..4ecefc2 100644
+--- a/MatchArena/.gitignore
++++ b/MatchArena/.gitignore
+@@ -1 +1,13 @@
+- appsettings.json
+\ No newline at end of file
++## .NET build output
++**/bin/
++**/obj/
++**/.vs/
++*.user
++
++## Secrets — do NOT commit. Use env vars / .env instead.
++appsettings.json
++appsettings.*.json
++!appsettings.Example.json
++.env
++.env.*
++!.env.example
+diff --git a/MatchArena/Dockerfile.api b/MatchArena/Dockerfile.api
+new file mode 100644
+index 0000000..190ad9f
+--- /dev/null
++++ b/MatchArena/Dockerfile.api
+@@ -0,0 +1,19 @@
++# MatchArena API — ASP.NET Core Web API (.NET 8)
++# Build context must be the solution directory (where MatchArena.sln lives).
++
++FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
++WORKDIR /src
++
++# Copy everything and restore the API's dependency graph (pulls Core + Infrastructure)
++COPY . .
++RUN dotnet restore "Presentation/MatchArena.API/MatchArena.API.csproj"
++RUN dotnet publish "Presentation/MatchArena.API/MatchArena.API.csproj" \
++    -c Release -o /app/publish /p:UseAppHost=false
++
++FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
++WORKDIR /app
++EXPOSE 8080
++# Bind to the platform-provided $PORT (Render/Railway inject it); default 8080
++# locally. The platform terminates TLS, so we serve plain HTTP.
++COPY --from=build /app/publish .
++ENTRYPOINT ["sh", "-c", "ASPNETCORE_URLS=http://+:${PORT:-8080} exec dotnet MatchArena.API.dll"]
+diff --git a/MatchArena/Dockerfile.mvc b/MatchArena/Dockerfile.mvc
+new file mode 100644
+index 0000000..7d238bc
+--- /dev/null
++++ b/MatchArena/Dockerfile.mvc
+@@ -0,0 +1,17 @@
++# MatchArena MVC — ASP.NET Core MVC frontend (.NET 8)
++# Build context must be the solution directory (where MatchArena.sln lives).
++
++FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
++WORKDIR /src
++
++COPY . .
++RUN dotnet restore "Presentation/MatchArena.MVC/MatchArena.MVC.csproj"
++RUN dotnet publish "Presentation/MatchArena.MVC/MatchArena.MVC.csproj" \
++    -c Release -o /app/publish /p:UseAppHost=false
++
++FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
++WORKDIR /app
++EXPOSE 8080
++# Bind to the platform-provided $PORT (Render/Railway inject it); default 8080 locally.
++COPY --from=build /app/publish .
++ENTRYPOINT ["sh", "-c", "ASPNETCORE_URLS=http://+:${PORT:-8080} exec dotnet MatchArena.MVC.dll"]
+diff --git a/MatchArena/Presentation/MatchArena.API/Program.cs b/MatchArena/Presentation/MatchArena.API/Program.cs
+index 7f460dd..444b8bf 100644
+--- a/MatchArena/Presentation/MatchArena.API/Program.cs
++++ b/MatchArena/Presentation/MatchArena.API/Program.cs
+@@ -1,5 +1,6 @@
+ ﻿using MatchArena.API.MiddleWares;
+ using MatchArena.Application;
++using MatchArena.Application.Interfaces.Services;
+ using MatchArena.Domain.Settings.Stripes;
+ using MatchArena.Infrastructure;
+ using MatchArena.Persistence;
+@@ -68,6 +69,13 @@ app.UseAuthorization();
+ 
+ app.MapControllers();
+ 
++// Ensure the database exists / migrations are applied before seeding.
++using (var scope = app.Services.CreateScope())
++{
++    var initializer = scope.ServiceProvider.GetRequiredService<IAppDbContextInitializer>();
++    await initializer.InitializeDbContext();
++}
++
+ await RoleSeeder.SeedRoleAsync(app.Services);
+ await AdminSeeder.SeedAdminAsync(app.Services,builder.Configuration);
+ 
+diff --git a/MatchArena/Presentation/MatchArena.MVC/Program.cs b/MatchArena/Presentation/MatchArena.MVC/Program.cs
+index bf7eafc..8566dc8 100644
+--- a/MatchArena/Presentation/MatchArena.MVC/Program.cs
++++ b/MatchArena/Presentation/MatchArena.MVC/Program.cs
+@@ -18,9 +18,12 @@ namespace MatchArena.MVC
+                 options.Filters.AddService<NotificationFilter>();
+             });
+ 
++            // API root URL — overridable via the ApiSettings__BaseUrl env var in deployment.
++            var apiBaseUrl = builder.Configuration["ApiSettings:BaseUrl"] ?? "https://localhost:7246/";
++
+             builder.Services.AddHttpClient("MatchArenaClient", config =>
+             {
+-                config.BaseAddress = new Uri("https://localhost:7246/");
++                config.BaseAddress = new Uri(apiBaseUrl);
+                 config.DefaultRequestHeaders.Add("accept", "application/json");
+             });
+ 
+diff --git a/MatchArena/Presentation/MatchArena.MVC/appsettings.json b/MatchArena/Presentation/MatchArena.MVC/appsettings.json
+index 45541c0..a3e7e89 100644
+--- a/MatchArena/Presentation/MatchArena.MVC/appsettings.json
++++ b/MatchArena/Presentation/MatchArena.MVC/appsettings.json
+@@ -1,6 +1,6 @@
+ {
+   "ApiSettings": {
+-    "BaseUrl": "https://localhost:7246/api/"
++    "BaseUrl": "https://localhost:7246/"
+   },
+   "Logging": {
+     "LogLevel": {
+diff --git a/MatchArena/docker-compose.yml b/MatchArena/docker-compose.yml
+new file mode 100644
+index 0000000..b4e9cf9
+--- /dev/null
++++ b/MatchArena/docker-compose.yml
+@@ -0,0 +1,69 @@
++# Local / VPS deployment for the full MatchArena stack:
++# SQL Server + API + MVC. Run from the solution directory:
++#   docker compose up -d --build
++#
++# Copy .env.example to .env and fill in real values first.
++
++services:
++  sqlserver:
++    image: mcr.microsoft.com/mssql/server:2022-latest
++    environment:
++      ACCEPT_EULA: "Y"
++      MSSQL_SA_PASSWORD: ${SA_PASSWORD}
++    ports:
++      - "1433:1433"
++    volumes:
++      - sqldata:/var/opt/mssql
++    healthcheck:
++      test: ["CMD-SHELL", "/opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P \"$$MSSQL_SA_PASSWORD\" -C -Q 'SELECT 1' || exit 1"]
++      interval: 10s
++      timeout: 5s
++      retries: 12
++      start_period: 30s
++
++  api:
++    build:
++      context: .
++      dockerfile: Dockerfile.api
++    depends_on:
++      sqlserver:
++        condition: service_healthy
++    environment:
++      ASPNETCORE_ENVIRONMENT: Production
++      ConnectionStrings__Default: "Server=sqlserver,1433;Database=MatchArena;User Id=sa;Password=${SA_PASSWORD};TrustServerCertificate=true"
++      JWT__issuer: ${JWT_ISSUER}
++      JWT__audience: ${JWT_AUDIENCE}
++      JWT__secretKey: ${JWT_SECRET_KEY}
++      AdminSettings__userName: ${ADMIN_USERNAME}
++      AdminSettings__email: ${ADMIN_EMAIL}
++      AdminSettings__password: ${ADMIN_PASSWORD}
++      Email__Host: ${EMAIL_HOST}
++      Email__Port: ${EMAIL_PORT}
++      Email__Username: ${EMAIL_USERNAME}
++      Email__Password: ${EMAIL_PASSWORD}
++      CloudinarySettings__CloudName: ${CLOUDINARY_CLOUD_NAME}
++      CloudinarySettings__APIKey: ${CLOUDINARY_API_KEY}
++      CloudinarySettings__APISecret: ${CLOUDINARY_API_SECRET}
++      Stripe__PublishableKey: ${STRIPE_PUBLISHABLE_KEY}
++      Stripe__SecretKey: ${STRIPE_SECRET_KEY}
++      Stripe__SuccessUrl: ${STRIPE_SUCCESS_URL}
++      Stripe__CancelUrl: ${STRIPE_CANCEL_URL}
++    ports:
++      - "5080:8080"
++
++  mvc:
++    build:
++      context: .
++      dockerfile: Dockerfile.mvc
++    depends_on:
++      - api
++    environment:
++      ASPNETCORE_ENVIRONMENT: Production
++      # Must point at the API ROOT (trailing slash). Containers talk over the
++      # internal network, so use the service name + internal port.
++      ApiSettings__BaseUrl: "http://api:8080/"
++    ports:
++      - "8080:8080"
++
++volumes:
++  sqldata:
+diff --git a/MatchArena/src/Infrastructure/MatchArena.Persistence/Contexts/AppDbContextInitializer.cs b/MatchArena/src/Infrastructure/MatchArena.Persistence/Contexts/AppDbContextInitializer.cs
+index 4601e06..e02bbd5 100644
+--- a/MatchArena/src/Infrastructure/MatchArena.Persistence/Contexts/AppDbContextInitializer.cs
++++ b/MatchArena/src/Infrastructure/MatchArena.Persistence/Contexts/AppDbContextInitializer.cs
+@@ -27,11 +27,15 @@ namespace MatchArena.Persistence.Contexts
+         }
+         public async Task InitializeDbContext()
+         {
+-            if (!await _context.Database.EnsureCreatedAsync())
+-            {
+-                await _context.Database.MigrateAsync();
+-            }
+-
++            // Create the schema directly from the model on a fresh database.
++            // Returns false (no-op) when the DB already exists, so this is safe on
++            // every restart/redeploy.
++            //
++            // We deliberately do NOT call MigrateAsync(): the existing migration
++            // scripts fail from scratch (SQL error 206, operand type clash), so
++            // EnsureCreated is the only path that builds a working schema. The
++            // earlier EnsureCreated+Migrate combo also crashed on restart (2714).
++            await _context.Database.EnsureCreatedAsync();
+         }
+         public async Task InitializeAdmin()
+         {

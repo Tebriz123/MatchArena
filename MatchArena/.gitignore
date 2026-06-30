@@ -1,1 +1,13 @@
- appsettings.json
+## .NET build output
+**/bin/
+**/obj/
+**/.vs/
+*.user
+
+## Secrets — do NOT commit. Use env vars / .env instead.
+appsettings.json
+appsettings.*.json
+!appsettings.Example.json
+.env
+.env.*
+!.env.example

@@ -1,0 +1,69 @@
+# Local / VPS deployment for the full MatchArena stack:
+# SQL Server + API + MVC. Run from the solution directory:
+#   docker compose up -d --build
+#
+# Copy .env.example to .env and fill in real values first.
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: ${SA_PASSWORD}
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqldata:/var/opt/mssql
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P \"$$MSSQL_SA_PASSWORD\" -C -Q 'SELECT 1' || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 30s
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ConnectionStrings__Default: "Server=sqlserver,1433;Database=MatchArena;User Id=sa;Password=${SA_PASSWORD};TrustServerCertificate=true"
+      JWT__issuer: ${JWT_ISSUER}
+      JWT__audience: ${JWT_AUDIENCE}
+      JWT__secretKey: ${JWT_SECRET_KEY}
+      AdminSettings__userName: ${ADMIN_USERNAME}
+      AdminSettings__email: ${ADMIN_EMAIL}
+      AdminSettings__password: ${ADMIN_PASSWORD}
+      Email__Host: ${EMAIL_HOST}
+      Email__Port: ${EMAIL_PORT}
+      Email__Username: ${EMAIL_USERNAME}
+      Email__Password: ${EMAIL_PASSWORD}
+      CloudinarySettings__CloudName: ${CLOUDINARY_CLOUD_NAME}
+      CloudinarySettings__APIKey: ${CLOUDINARY_API_KEY}
+      CloudinarySettings__APISecret: ${CLOUDINARY_API_SECRET}
+      Stripe__PublishableKey: ${STRIPE_PUBLISHABLE_KEY}
+      Stripe__SecretKey: ${STRIPE_SECRET_KEY}
+      Stripe__SuccessUrl: ${STRIPE_SUCCESS_URL}
+      Stripe__CancelUrl: ${STRIPE_CANCEL_URL}
+    ports:
+      - "5080:8080"
+
+  mvc:
+    build:
+      context: .
+      dockerfile: Dockerfile.mvc
+    depends_on:
+      - api
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      # Must point at the API ROOT (trailing slash). Containers talk over the
+      # internal network, so use the service name + internal port.
+      ApiSettings__BaseUrl: "http://api:8080/"
+    ports:
+      - "8080:8080"
+
+volumes:
+  sqldata:
