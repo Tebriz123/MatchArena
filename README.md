@@ -5,10 +5,6 @@ and sign up for tournaments. It's built with ASP.NET Core on .NET 8 and split in
 apps: a Web API that holds all the logic and data, and an MVC site that people actually
 use in the browser.
 
-This is a cleaned-up, deployable version of the original project. The app worked on a
-developer machine but couldn't really be run anywhere else, so most of the changes here
-are about making it start reliably and ship in a container. If you want the full list of
-what changed and why, it's in [CHANGES.md](CHANGES.md).
 
 ## What you can do with it
 
@@ -27,7 +23,7 @@ emails go out through SMTP (Mailtrap in development), and payments run on Stripe
 
 It follows a fairly standard onion/clean-architecture layout:
 
-```
+``
 MatchArena/
 ├─ src/
 │  ├─ Core/
