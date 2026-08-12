@@ -75,13 +75,6 @@ every key it expects. In Docker and on a host, values are passed in as env vars 
 usual `Section__Key` form, e.g. `ConnectionStrings__Default`, `Stripe__SecretKey`,
 `JWT__secretKey`. See `.env.example` for the full set.
 
-## Deploying
-
-The two apps are small and containerised, so they'll run on most hosts. The one thing to
-plan for is the database: SQL Server needs around 2 GB of RAM, which rules out the free
-tiers — so you either pay a few dollars a month for it, use Azure SQL (free for students),
-or switch the provider to PostgreSQL. There's a step-by-step for Railway and the trade-offs
-in [CHANGES.md](CHANGES.md).
 
 ## A note on the migrations
 
